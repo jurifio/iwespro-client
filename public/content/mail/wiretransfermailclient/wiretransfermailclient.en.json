@@ -1,0 +1,13 @@
+{
+    "subject": "Pickyshop.com Order # {orderId}: Accounting payment request",
+    "newArrivals": "NUOVI ARRIVI",
+    "woman": "DONNA",
+    "man": "UOMO",
+    "hallo": "Ciao %s,",
+    "line1": "Grazie per il tuo ordine.",
+    "line2": "Ti chiediamo cortesia di mandarci copia del pagamento, procederemo all'elaborazione prima dell'effettivo accredito in banca.",
+    "line3": "L'invio della contabile renderà più veloce la consegna.",
+    "line4": "DETTAGLIO ORDINE",
+    "line5": "Grazie per averci scelto,",
+    "line6": "Speriamo di incontrarti nel nostro eshop!"
+}

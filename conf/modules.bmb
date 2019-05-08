@@ -1,0 +1,9 @@
+client=/client
+core=/core
+site=/front/site
+ecommerce=/front/ecommerce
+blueseal=/back
+blog=/front/blog
+ebay=/front/ebay
+eloy=/front/eloy
+amazon=/front/amazon

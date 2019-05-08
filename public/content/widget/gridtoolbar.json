@@ -1,0 +1,98 @@
+{
+    "catalog": {
+        "template": {
+            "name": "gridtoolbar.php"
+        },
+        "helper": "CWidgetCatalogHelper",
+        "data": {
+            "default": {
+                "placeholders": {
+                    "image": "blueseal_logo_symbol_black.png",
+                    "title": "Pagina Catalogo prodotti",
+                    "sorting": [
+                        {
+                            "field": "tagPriority",
+                            "order": "desc"
+                        },
+                        {
+                            "field": "productPriority",
+                            "order": "desc"
+                        },
+                        {
+                            "field": "creation",
+                            "order": "desc"
+                        }
+                    ],
+                    "limits": [
+                        "6",
+                        "12",
+                        "24",
+                        "48",
+                        "96"
+                    ],
+                    "limitDefault": "24",
+                    "showLabel": "Prodotti per pagina",
+                    "sortLabel": "Ordinamento",
+                    "latestLabel": "Ultime uscite",
+                    "highPriceLabel": "I pi\u00f9 costosi",
+                    "lowPriceLabel": "I pi\u00f9 economici",
+                    "filterLabel": "Filtri applicati"
+                }
+            }
+        }
+    },
+    "brandlanding": {
+        "template": {
+            "name": "brandlandinggridtoolbar.php"
+        },
+        "helper": "CWidgetCatalogHelper",
+        "data": {
+            "default": {
+                "placeholders": {
+                    "image": "blueseal_logo_symbol_black.png",
+                    "title": "Pagina Brand",
+                    "sorting": [
+                        {
+                            "field": "tagPriority",
+                            "order": "desc"
+                        },
+                        {
+                            "field": "productPriority",
+                            "order": "desc"
+                        },
+                        {
+                            "field": "creation",
+                            "order": "desc"
+                        }
+                    ],
+                    "limits": [
+                        "6",
+                        "12",
+                        "24",
+                        "48",
+                        "96"
+                    ],
+                    "limitDefault": "24",
+                    "showLabel": "Prodotti per pagina",
+                    "sortLabel": "Ordinamento",
+                    "latestLabel": "Ultime uscite",
+                    "highPriceLabel": "I pi\u00f9 costosi",
+                    "lowPriceLabel": "I pi\u00f9 economici",
+                    "filterLabel": "Vai al Catalogo:",
+                    "mainCategories": [
+                        {
+                            "id": 2,
+                            "slug": "donna",
+                            "title": "Donna"
+                        },
+                        {
+                            "id": 3,
+                            "slug": "uomo",
+                            "title": "Uomo"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+[
+    {
+        "name": "registration",
+        "address": "login",
+        "active": true,
+        "permission_required": null
+    },{
+        "name": "activateAccount",
+        "address": "account-ist-nicht-aktiviert",
+        "active": true,
+        "permission_required": null
+    },{
+        "name": "paymentMethod",
+        "address": "zahlungsart",
+        "active": true,
+        "permission_required": null
+    },{
+        "name": "shipping",
+        "address": "versand",
+        "active": true,
+        "permission_required": null
+    },{
+        "name": "checkout",
+        "address": "checkout",
+        "active": true,
+        "permission_required": null
+    },{
+        "name": "payment",
+        "address": "zahlung",
+        "active": true,
+        "permission_required": null
+    },{
+        "name": "thankyou",
+        "address": "vielen-dank",
+        "active": true,
+        "permission_required": null
+    }
+]

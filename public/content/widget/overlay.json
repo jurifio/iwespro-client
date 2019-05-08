@@ -1,0 +1,45 @@
+{
+    "home": {
+        "template": {
+            "name": "overlay.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/modal.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                },
+                {
+                    "src": "\/js\/overlay.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "title": "Un codice Sconto per te!",
+                    "content": "Utilizza questo coupon per avere uno sconto ",
+                    "newsletterTitle": "Benvenuto in Pickyshop.com!",
+                    "newsletterSubtitle": "Iscriviti alla Newsletter e ottieni un coupon del 10%",
+                    "newsletterContent": "Ricevi in anteprima tutte le novit\u00e0 <\/br> e le promozioni di Pickyshop!",
+                    "newsletterContent2": "",
+                    "newsletterPlaceHolder": "Scrivi qui la tua e-mail",
+                    "newsletterPlaceHolderName": "Nome",
+                    "newsletterPlaceHolderSurname": "Cognome",
+                    "success": "Complimenti! Sei iscritto alla nostra newsletter!",
+                    "fail": "Ops, qualcosa \u00e8 andato storto, riprova piu tardi!",
+                    "search": "Cerca in Pickyshop",
+                    "searchTips": "Scrivi qui cosa cercare",
+                    "searchButtonLabel": "Cerca"
+                }
+            }
+        }
+    }
+}

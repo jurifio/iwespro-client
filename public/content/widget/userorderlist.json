@@ -1,0 +1,35 @@
+{
+    "user": {
+        "template": {
+            "name": "userorderlist.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "title": "I tuoi ordini",
+                    "footer": "<p>Per effettuare il reso di un ordine contattaci su <a href=\"mailto:support@pickyshop.com\" target=\"_blank\">support@pickyshop.com<\/a> specificando il numero d'ordine che vuoi rendere.<\/p>",
+                    "columns": [
+                        "Numero d'ordine",
+                        "Data",
+                        "Pagamento",
+                        "Importo",
+                        "Stato",
+                        "Azione"
+                    ],
+                    "retry": "Ritenta Pagamento"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Order",
+                    "type": "collection",
+                    "method": "AllOrders",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "999"
+                }
+            }
+        }
+    }
+}

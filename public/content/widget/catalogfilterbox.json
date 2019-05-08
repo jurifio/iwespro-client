@@ -1,0 +1,94 @@
+{
+    "default": {
+        "template": {
+            "name": "catalogfilterbox.php"
+        },
+        "cacheable": {
+            "timetolive": 86400,
+            "level": "routedata"
+        },
+        "helper": "CWidgetCatalogHelper",
+        "data": {
+            "brand": {
+                "placeholders": {
+                    "title": "Brand",
+                    "contained": "brand"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "ProductBrand",
+                    "method": "AppliedFilters",
+                    "params": [
+                        "category",
+                        "size",
+                        "color",
+                        "tag"
+                    ],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "500"
+                }
+            },
+            "size": {
+                "placeholders": {
+                    "title": "Taglie",
+                    "contained": "size"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "ProductSize",
+                    "method": "AppliedFilters",
+                    "params": [
+                        "category",
+                        "brand",
+                        "color",
+                        "tag"
+                    ],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "20"
+                }
+            },
+            "color": {
+                "placeholders": {
+                    "title": "Colori",
+                    "contained": "color"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "ProductColorGroup",
+                    "method": "AppliedFilters",
+                    "params": [
+                        "category",
+                        "size",
+                        "brand",
+                        "tag"
+                    ],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "20"
+                }
+            },
+            "tag": {
+                "placeholders": {
+                    "title": "Tag",
+                    "contained": "tag"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Tag",
+                    "method": "AppliedFilters",
+                    "params": [
+                        "category",
+                        "size",
+                        "brand",
+                        "tag"
+                    ],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "20"
+                }
+            }
+        }
+    }
+}

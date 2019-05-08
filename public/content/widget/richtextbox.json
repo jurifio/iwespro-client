@@ -1,0 +1,29 @@
+{
+    "default": {
+        "template": {
+            "name": "richtextbox.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": [],
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "FixedPage",
+                    "type": "entity",
+                    "method": "PageId",
+                    "params": [
+                        "params"
+                    ],
+                    "args": [
+                        "args"
+                    ],
+                    "sorting": [
+                        "sorting"
+                    ],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    }
+}

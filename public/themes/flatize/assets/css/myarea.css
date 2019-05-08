@@ -1,0 +1,23 @@
+.submenu {
+    min-height: 600px;
+}
+.myarea-menu {
+    padding-left:0;
+}
+.myarea-menu li {
+    list-style-type: none;
+    padding-bottom:10px;
+}
+.myarea-menu li a:hover, .myarea-menu li a:active {
+    color:#cbac59;
+}
+.table tfoot {
+    background:#f9f9f9;
+    font-size:0.8em;
+}
+.table tfoot tr td {
+    padding:20px;
+}
+.table tfoot tr td p {
+    margin-bottom:0;
+}

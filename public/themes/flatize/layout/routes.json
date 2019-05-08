@@ -1,0 +1,4140 @@
+{
+  "__comment": "",
+  "__comment": "+++++++++++++++++++++++++++++++",
+  "__comment": "+++ PAGE CONFIG STARTS HERE +++",
+  "__comment": "+++++++++++++++++++++++++++++++",
+  "__comment": "",
+  "__comment": "+++ HOMEPAGE +++",
+  "CHome.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.home.default"
+    ]
+  },
+  "CHead.default": {
+    "headTags": [
+      {
+        "tag": "meta",
+        "name": "",
+        "attrs": {
+          "charset": "utf-8"
+        },
+        "content": ""
+      },
+      {
+        "tag": "meta",
+        "name": "keywords",
+        "attrs": {
+          "content": "calzature, borse, accessori, gioielli, bigiotteria, moda uomo, moda donna, moda bambino"
+        },
+        "content": ""
+      },
+      {
+        "tag": "meta",
+        "name": "description",
+        "attrs": {
+          "content": "Negozio online di moda, calzature, borse, accessori gioielli e molto altro."
+        },
+        "content": ""
+      },
+      {
+        "tag": "meta",
+        "name": "generator",
+        "attrs": {
+          "content": "BlueSeal 1.0a"
+        },
+        "content": ""
+      },
+      {
+        "tag": "meta",
+        "name": "author",
+        "attrs": {
+          "content": "Pickyshop (https://www.pickyshop.com)"
+        },
+        "content": ""
+      },
+      {
+        "tag": "meta",
+        "name": "viewport",
+        "attrs": {
+          "content": "width=device-width, initial-scale=1"
+        },
+        "content": ""
+      },
+      {
+        "tag": "link",
+        "name": "favicon",
+        "attrs": {
+          "rel": "icon",
+          "type": "image/x-icon",
+          "href": "/it/assets/favicon.png"
+        },
+        "content": ""
+      },
+      {
+        "tag": "title",
+        "name": "",
+        "attrs": {},
+        "content": "Pickyshop.com"
+      }
+    ],
+    "template": {
+      "name": "head.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [],
+    "assets": {
+      "css": [
+        {
+          "href": "https://fonts.googleapis.com/css?family=Raleway:400,700",
+          "options": {
+            "media": "all",
+            "remote": true
+          }
+        },
+        {
+          "href": "https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300",
+          "options": {
+            "media": "all",
+            "remote": true
+          }
+        },
+        {
+          "href": "/css/lib.css",
+          "options": {
+            "media": "all"
+          }
+        },
+        {
+          "href": "/css/common.css",
+          "options": {
+            "defer": false,
+            "async": false
+          }
+        }
+      ],
+      "js": [
+        {
+          "src": "/js/lib.js",
+          "options": {
+            "defer": false,
+            "async": false
+          }
+        },
+        {
+          "src": "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js",
+          "options": {
+            "condition": "lt ie 9",
+            "remote": true
+          }
+        },
+        {
+          "src": "https://oss.maxcdn.com/respond/1.4.2/respond.min.js",
+          "options": {
+            "condition": "lt ie 9",
+            "remote": true
+          }
+        },
+        {
+          "src": "/js/common.js",
+          "options": {
+            "defer": false,
+            "async": false
+          }
+        },
+        {
+          "src": "/js/consoleLogger.js",
+          "options": {
+            "defer": false,
+            "async": false
+          }
+        },
+        {
+          "src": "/js/cookielaw.js",
+          "options": {
+            "defer": false,
+            "async": false
+          }
+        },
+        {
+          "src": "/js/happyfox-chat.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        },
+        {
+          "src": "//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js",
+          "options": {
+            "remote": true,
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CPage.home": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.home.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CHeader.home": {
+    "template": {
+      "name": "header.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CTextnote.default.topnav",
+      "CLangselector.default.default",
+      "CMyshop.default.default",
+      "CCartSummary.widget.widget",
+      "CMainnav.default.default"
+    ]
+  },
+  "CContent.home": {
+    "cacheable": {
+      "timetolive": 86400,
+      "level": "route"
+    },
+    "template": {
+      "name": "content.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CEditorialImage.default.summer0",
+      "CEditorialImage.default.summer1",
+      "CEditorialImage.default.summer2",
+      "CEditorialImage.default.summer3",
+      "CEditorialImage.default.summer4",
+      "CEditorialImage.default.summer5",
+      "CEditorialImage.default.summer6",
+      "CEditorialImage.default.summer7",
+      "CEditorialImage.default.summer8",
+      "CEditorialImage.default.summer9",
+      "CEditorialImage.default.summer10",
+      "CEditorialImage.default.summer11",
+      "CEditorialImage.default.summer12"
+
+    ]
+  },
+  "CFooter.home": {
+    "cacheable": {
+      "timetolive": 86400,
+      "level": "route"
+    },
+    "template": {
+      "name": "footer.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CAddress.footer.default",
+      "CSSLLogo.footer.default",
+      "CLinkbox.footer.default",
+      "CCopyright.footer.default",
+      "CNewsletterbox.default.default",
+      "CSocialicons.footer.default"
+    ]
+  },
+  "COverlay.home": {
+    "template": {
+      "name": "overlay.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/modal.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        },
+        {
+          "src": "/js/overlay.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "__comment": "+++ CART +++",
+  "CCart.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.cart.default"
+    ]
+  },
+  "CPage.cart": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.cart.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.cart": {
+    "template": {
+      "name": "cart.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.default.cart",
+      "CCartSummary.cart.default",
+      "CCartSideSummary.cart.default",
+      "CCouponBox.cart.default",
+      "CShippingCalculator.cart.default"
+    ]
+  },
+  "__comment": "+++ LOGIN +++",
+  "CLogin.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.login.default"
+    ]
+  },
+  "CPage.login": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.login.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.login": {
+    "template": {
+      "name": "login.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.default.login",
+      "CForm.login.login"
+    ]
+  },
+  "__comment": "+++ REGISTER +++",
+  "CRegister.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.register.default"
+    ]
+  },
+  "CPage.register": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.register.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.register": {
+    "template": {
+      "name": "register.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.default.register",
+      "CForm.register.register"
+    ]
+  },
+  "__comment": "+++ CATALOG +++",
+  "CCatalog.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.catalog.default"
+    ]
+  },
+  "CPage.catalog": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.catalog.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.catalog": {
+    "cacheable": {
+      "timetolive": 14400,
+      "level": "routedataargs"
+    },
+    "template": {
+      "name": "catalog.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CCatalogtitle.default.default",
+      "CMobileGridToolbar.default.default",
+      "CCatalogCategoryfilterbox.categories.category",
+      "CCatalogFilterBox.default.tag",
+      "CCatalogFilterBox.default.brand",
+      "CCatalogFilterBox.default.color",
+      "CCatalogFilterBox.default.size",
+      "CGridtoolbar.catalog.default",
+      "CProductgrid.catalog.default",
+      "CPagination.catalog.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/catalog.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "__comment": "+++ PRODUCT DETAIL +++",
+  "CDetail.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.detail.default"
+    ]
+  },
+  "CPage.detail": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.detail.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.detail": {
+    "template": {
+      "name": "detail.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/productdetails.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": [
+      "CProducttitle.default.default",
+      "CProductdetail.detail.default"
+    ]
+  },
+  "__comment": "+++ BRAND LIST +++",
+  "CBrandList.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.brandList.default"
+    ]
+  },
+  "CPage.brandList": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.brandList.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.brandList": {
+    "template": {
+      "name": "brandlist.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "assets": {},
+    "children": [
+      "CContentTitle.default.brandList",
+      "CBrandDirectory.default.default",
+      "CBrandDirectoryNav.default.default"
+    ]
+  },
+    "__comment": "+++ CONTACTS+++",
+    "CContacts.default": {
+        "children": [
+            "CHead.default.default",
+            "CPage.contacts.default"
+        ]
+    },
+    "CPage.contacts": {
+        "template": {
+            "name": "page.php"
+        },
+        "data": {
+            "default": {
+                "src": "json"
+            }
+        },
+        "children": [
+            "CHeader.home.default",
+            "CGoogleTagManager.default.default",
+            "CContent.contacts.default",
+            "CFooter.home.default",
+            "COverlay.home.default"
+        ],
+        "assets": {
+            "js": [
+                {
+                    "src": "/js/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        }
+    },
+    "CContent.contacts": {
+        "template": {
+            "name": "contacts.php"
+        },
+        "data": {
+            "default": {
+                "src": "json"
+            }
+        },
+        "children": [
+            "CContentTitle.default.contacts",
+            "CTextbox.simple.contacts"
+        ]
+    },
+
+  "__comment": "+++ ARTICLE +++",
+  "CArticle.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.article.default"
+    ]
+  },
+  "CPage.article": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.article.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.article": {
+    "template": {
+      "name": "article.php"
+    },
+    "data": {
+      "default": {
+        "src": "PandaORM",
+        "repository": "Article",
+        "type": "entity",
+        "method": "Params",
+        "params": [
+          "article"
+        ],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/productdetails.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "__comment": "+++ WELCOME +++",
+  "CWelcome.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.welcome.default"
+    ]
+  },
+  "CPage.welcome": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.welcome.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.welcome": {
+    "template": {
+      "name": "welcome.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "__comment": "+++ THANKYOU +++",
+  "CThankYou.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.thankYou.default"
+    ]
+  },
+  "CPage.thankYou": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/thankyou.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        },
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.thankYou.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ]
+  },
+  "CContent.thankYou": {
+    "template": {
+      "name": "thankyou.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.default.thankYou",
+      "CTextbox.orderReturn.thankYou",
+      "CShopalikeTracking.default.thankyou",
+      "CProductgrid.catalogexcerpt.similar"
+    ]
+  },
+  "__comment": "+++ ORDERERROR +++",
+  "COrderError.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.ordererror.default"
+    ]
+  },
+  "CPage.ordererror": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.ordererror.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.ordererror": {
+    "template": {
+      "name": "ordererror.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.default.ordererror",
+      "CTextbox.orderReturn.ordererror"
+    ]
+  },
+  "__comment": "+++ CHECKOUT +++",
+  "CCheckout.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.checkout.default"
+    ]
+  },
+  "CPage.checkout": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.checkout.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.checkout": {
+    "template": {
+      "name": "checkout.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.default.checkout",
+      "CCartSummary.checkout.default",
+      "CCartSideSummary.checkout.default",
+      "CCouponBox.cart.default",
+      "CAddressDisplay.checkout.billing",
+      "CAddressDisplay.checkout.shipping",
+      "CPaymentDisplay.checkout.default"
+    ]
+  },
+  "__comment": "+++ PAYMENT METHOD +++",
+  "CPaymentMethod.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.paymentMethod.default"
+    ]
+  },
+  "CPage.paymentMethod": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.paymentMethod.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.paymentMethod": {
+    "template": {
+      "name": "paymentmethodchose.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.default.payment",
+      "CPaymentSelection.checkout.default",
+      "CCartSideSummary.checkout.default"
+    ]
+  },
+  "__comment": "+++ SHIPPING ADDRESS +++",
+  "CShippingAddress.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.shippingAddress.default"
+    ]
+  },
+  "CPage.shippingAddress": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.shippingAddress.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.shippingAddress": {
+    "template": {
+      "name": "checkoutaddresses.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.default.shipping",
+      "CAddressForm.checkout.default",
+      "CCartSideSummary.checkout.default"
+    ]
+  },
+  "__comment": "+++ REGISTRATION THANKYOU +++",
+  "CRegThankYou.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.regThankYou.default"
+    ]
+  },
+  "CPage.regThankYou": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.regThankYou.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ],
+      "css": [
+        {
+          "href": "https://fonts.googleapis.com/css?family=Kaushan+Script&subset=latin,latin-ext",
+          "options": {
+            "media": "all",
+            "remote": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.regThankYou": {
+    "template": {
+      "name": "regthankyou.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.default.regThankYou",
+      "CTextbox.regThankYou.regThankYou"
+    ]
+  },
+  "__comment": "+++ REGISTRATION THANKYOU +++",
+  "CActivationThankYou.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.activationThankYou.default"
+    ]
+  },
+  "CPage.activationThankYou": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.activationThankYou.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ],
+      "css": [
+        {
+          "href": "https://fonts.googleapis.com/css?family=Kaushan+Script&subset=latin,latin-ext",
+          "options": {
+            "media": "all",
+            "remote": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.activationThankYou": {
+    "template": {
+      "name": "regactthankyou.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.default.activationThankYou",
+      "CTextbox.activationThankYou.activationThankYou"
+    ]
+  },
+  "__comment": "+++ ACTIVATION REQUIRED +++",
+  "CActivationRequired.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.activationRequired.default"
+    ]
+  },
+  "CPage.activationRequired": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.activationRequired.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.activationRequired": {
+    "template": {
+      "name": "activationrequired.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.default.activationRequired",
+      "CTextbox.activationRequired.activationRequired"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/activationEmail.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "__comment": "+++ RECOVER PASSWORD+++",
+  "CRecoverPasswordFromEmail.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.recoverPasswordFromEmail.default"
+    ]
+  },
+  "CPage.recoverPasswordFromEmail": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.recoverPasswordFromEmail.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.recoverPasswordFromEmail": {
+    "template": {
+      "name": "recoverpasswordfromemail.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.default.recoverPasswordFromEmail",
+      "CForm.recoverPasswordFromEmail.recoverPasswordFromEmail"
+    ]
+  },
+  "__comment": "+++ NEW PASSWORD+++",
+  "CNewPasswordFromToken.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.newPasswordFromToken.default"
+    ]
+  },
+  "CPage.newPasswordFromToken": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.newPasswordFromToken.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.newPasswordFromToken": {
+    "template": {
+      "name": "newpasswordfromtoken.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.default.newPasswordFromToken",
+      "CForm.newPasswordFromToken.newPasswordFromToken"
+    ]
+  },
+  "__comment": "+++ USER ACCOUNT DASHBOARD +++",
+  "CUserAccountDashboard.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.userAccountDashboard.default"
+    ]
+  },
+  "CPage.userAccountDashboard": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.userAccountDashboard.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.userAccountDashboard": {
+    "template": {
+      "name": "userdashboard.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.user.userDashboard",
+      "CInPageMenu.user.default"
+    ]
+  },
+  "__comment": "+++ USER ACCOUNT MYDATA HOME +++",
+  "CUserAccountDataHome.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.userAccountDataHome.default"
+    ]
+  },
+  "CPage.userAccountDataHome": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.userAccountDataHome.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.userAccountDataHome": {
+    "template": {
+      "name": "userdatahome.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.user.userDashboard",
+      "CInPageMenu.user.default",
+      "CAccordion.default.userPersonalData"
+    ]
+  },
+  "__comment": "+++ USER ACCOUNT MYDATA FORM +++",
+  "CUserAccountData.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.userAccountData.default"
+    ]
+  },
+  "CPage.userAccountData": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.userAccountData.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.userAccountData": {
+    "template": {
+      "name": "userdata.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.user.userDashboard",
+      "CInPageMenu.user.default",
+      "CForm.userAccountData.userPersonalData"
+    ]
+  },
+  "__comment": "+++ USER ACCOUNT MYADDRESSES +++",
+  "CUserAccountAddresses.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.userAccountAddresses.default"
+    ]
+  },
+  "CPage.userAccountAddresses": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.userAccountAddresses.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.userAccountAddresses": {
+    "template": {
+      "name": "useraddresses.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.user.userDashboard",
+      "CInPageMenu.user.default"
+    ]
+  },
+  "__comment": "+++ USER ACCOUNT MYORDERS +++",
+  "CUserAccountOrders.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.userAccountOrders.default"
+    ]
+  },
+  "CPage.userAccountOrders": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.userAccountOrders.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.userAccountOrders": {
+    "template": {
+      "name": "userorders.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.user.userDashboard",
+      "CInPageMenu.user.default",
+      "CUserOrderList.user.default"
+    ]
+  },
+  "__comment": "+++ USER ACCOUNT SUPPORT +++",
+  "CUserAccountSupport.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.userAccountSupport.default"
+    ]
+  },
+  "CPage.userAccountSupport": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.userAccountSupport.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.userAccountSupport": {
+    "template": {
+      "name": "usersupport.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.user.userDashboard",
+      "CInPageMenu.user.default",
+      "CTextbox.simple.userAccountSupport",
+      "CAddress.userAccountSupport.default"
+    ]
+  },
+  "__comment": "+++ BLOG MAIN +++",
+  "CBlogHomepage.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.blogHomePage.default"
+    ]
+  },
+  "CPage.blogHomePage": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.blogHome.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/masonry.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.blogHome": {
+    "template": {
+      "name": "bloghome.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.default.blogHome",
+      "CBlogArticleList.masonry.default"
+    ]
+  },
+  "CBlogArticleList.masonry": {
+    "template": {
+      "name": "blogmasonry.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "Post",
+        "type": "collection",
+        "method": "Latest",
+        "params": [],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "9"
+      }
+    },
+    "children": {
+    }
+  },
+  "__comment": "+++ BLOG SINGLE POST",
+  "CBlogSingle.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.blogSinglePage.default"
+    ]
+  },
+  "CPage.blogSinglePage": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.blogSingle.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ]
+  },
+  "CContent.blogSingle": {
+    "template": {
+      "name": "blogsingle.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CBlogSingleContent.default.default"
+    ]
+  },
+  "CBlogSingleContent.default": {
+    "template": {
+      "name": "blogsinglecontent.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "Post",
+        "type": "entity",
+        "method": "Id",
+        "params": [
+          "postId"
+        ],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "9"
+      }
+    },
+    "children": {
+    }
+  },
+  "__comment": "+++ FIXED PAGE +++",
+  "CFixedPage.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.fixedPage.default"
+    ]
+  },
+  "CPage.fixedPage": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.fixedPage.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.fixedPage": {
+    "template": {
+      "name": "fixedpage.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.fixedPage.fixedPage",
+      "CRichTextBox.default.default"
+    ]
+  },
+  "__comment": "",
+  "__comment": "+++++++++++++++++++++++++++++++++++++",
+  "__comment": "+++ FOCUS PAGE CONFIG STARTS HERE +++",
+  "__comment": "+++++++++++++++++++++++++++++++++++++",
+  "__comment": "",
+  "CFocusPage.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.focusPage.default"
+    ]
+  },
+  "CPage.focusPage": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.focusPage.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ]
+  },
+  "CContent.focusPage": {
+    "cacheable": {
+      "timetolive": 259200,
+      "level": "routedata"
+    },
+    "template": {
+      "name": "focuspage.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.focusPage.focusPage",
+      "CFocusPageButtons.default.default",
+      "CTextbox.focusPage.focusPage",
+      "CCatalogProductSelection.focusPage.default",
+      "CProductSlider.default.default",
+      "CFocusPageBanners.default.default"
+    ]
+  },
+  "__comment": "",
+  "__comment": "++++++++++++++++++++++++++++++++++++++",
+  "__comment": "+++ SEARCH PAGE CONFIG STARTS HERE +++",
+  "__comment": "++++++++++++++++++++++++++++++++++++++",
+  "__comment": "",
+  "CSearchResult.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.searchPage.default"
+    ]
+  },
+  "CPage.searchPage": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.searchPage.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ]
+  },
+  "CContent.searchPage": {
+    "template": {
+      "name": "searchpage.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.default.searchPage",
+      "CProductgrid.searchPage.default"
+    ]
+  },
+  "CProductgrid.searchPage": {
+    "template": {
+      "name": "searchresult.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "Product",
+        "type": "collection",
+        "method": "Search",
+        "params": [
+          "query"
+        ],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "96"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/catalogDataLayer.js",
+          "options": {
+            "defer": false,
+            "async": false
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "__comment": "",
+  "__comment": "+++++++++++++++++++++++++++++++++",
+  "__comment": "+++ WIDGET CONFIG STARTS HERE +++",
+  "__comment": "+++++++++++++++++++++++++++++++++",
+  "__comment": "",
+  "__comment": "+++ TEXT, IMAGES, BOXES, LINKS, SLIDESHOWS +++",
+  "CGoogleTagManager.default": {
+    "template": {
+      "name": "googletagmanager.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CFocusPageButtons.default": {
+    "template": {
+      "name": "focuspagebuttons.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CFocusPageBanners.default": {
+    "template": {
+      "name": "focuspagebanners.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CProductSlider.default": {
+    "template": {
+      "name": "productslide.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CTextnote.default": {
+    "template": {
+      "name": "textnote.php"
+    },
+    "data": {
+      "topnav": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CImagebox.default": {
+    "template": {
+      "name": "imagebox.php"
+    },
+    "data": {
+      "home1": {
+        "src": "json"
+      },
+      "home2": {
+        "src": "json"
+      },
+      "home3": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CHeadingtext.default": {
+    "template": {
+      "name": "headingtext.php"
+    },
+    "data": {
+      "home": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CCaptionimage.default": {
+    "template": {
+      "name": "captionimage.php"
+    },
+    "data": {
+      "home1": {
+        "src": "json"
+      },
+      "home2": {
+        "src": "json"
+      },
+      "home3": {
+        "src": "json"
+      },
+      "home4": {
+        "src": "json"
+      },
+      "home5": {
+        "src": "json"
+      },
+      "home6": {
+        "src": "json"
+      },
+      "home7": {
+        "src": "json"
+      },
+      "home8": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CEditorialImage.default": {
+    "template": {
+      "name": "editorialimage.php"
+    },
+    "data": {
+      "newWoman": {
+        "src": "json"
+      },
+      "newMan": {
+        "src": "json"
+      },
+      "newShoes": {
+        "src": "json"
+      },
+      "newNeeds": {
+        "src": "json"
+      },
+      "newBag": {
+        "src": "json"
+      },
+      "newAccessories": {
+        "src": "json"
+      },
+      "newLover": {
+        "src": "json"
+      },
+      "newRing": {
+        "src": "json"
+      },
+      "summer0": {
+        "src": "json"
+      },
+      "summer1": {
+        "src": "json"
+      },
+      "summer2": {
+        "src": "json"
+      },
+      "summer3": {
+        "src": "json"
+      },
+      "summer4": {
+        "src": "json"
+      },
+      "summer5": {
+        "src": "json"
+      },
+      "summer6": {
+        "src": "json"
+      },
+      "summer7": {
+        "src": "json"
+      },
+      "summer8": {
+        "src": "json"
+      },
+      "summer9": {
+        "src": "json"
+      },
+      "summer10": {
+        "src": "json"
+      },
+      "summer11": {
+        "src": "json"
+      },
+      "summer12": {
+        "src": "json"
+      },
+      "summer13": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CEditorialImage.textbox": {
+    "template": {
+      "name": "editorialimagetextbox.php"
+    },
+    "data": {},
+    "children": []
+  },
+  "CTextbox.simple": {
+    "template": {
+      "name": "textboxsimple.php"
+    },
+    "data": {
+      "userAccountSupport": {
+        "src": "json"
+      },
+      "contacts": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CTextbox.default": {
+    "template": {
+      "name": "textbox.php"
+    },
+    "data": {
+      "donna": {
+        "src": "json"
+      },
+      "uomo": {
+        "src": "json"
+      },
+      "bambini": {
+        "src": "json"
+      },
+      "brands": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CTextbox.orderReturn": {
+    "template": {
+      "name": "orderreturntextbox.php"
+    },
+    "data": {
+      "thankYou": {
+        "src": "mixed",
+        "repository": "Order",
+        "type": "entity",
+        "method": "JustBought",
+        "params": [
+          "order"
+        ],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      },
+      "ordererror": {
+        "src": "mixed",
+        "repository": "Order",
+        "type": "entity",
+        "method": "BoughtError",
+        "params": [
+          "order"
+        ],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/orderDataLayer.js",
+          "options": {
+            "defer": false,
+            "async": false
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "CTextbox.regThankYou": {
+    "template": {
+      "name": "regthankyoutextbox.php"
+    },
+    "data": {
+      "regThankYou": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CTextbox.activationThankYou": {
+    "template": {
+      "name": "activationthankyoutextbox.php"
+    },
+    "data": {
+      "activationThankYou": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CTextbox.activationRequired": {
+    "template": {
+      "name": "activationrequiredtextbox.php"
+    },
+    "data": {
+      "activationRequired": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CTextbox.focusPage": {
+    "template": {
+      "name": "focuspagetextbox.php"
+    },
+    "data": {
+      "focusPage": {
+        "src": "json"
+      }
+    },
+    "helper": "CWidgetFocusPageHelper",
+    "children": []
+  },
+  "CRichTextBox.default": {
+    "template": {
+      "name": "richtextbox.php"
+    },
+    "data": {
+      "default": {
+        "src": "PandaORM",
+        "repository": "FixedPage",
+        "type": "entity",
+        "method": "PageId",
+        "params": [
+          "params"
+        ],
+        "args": [
+          "args"
+        ],
+        "sorting": [
+          "sorting"
+        ],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "children": []
+  },
+  "CQuotes.default": {
+    "template": {
+      "name": "quotes.php"
+    },
+    "data": {
+      "home": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CMainslide.default": {
+    "template": {
+      "name": "mainslide.php"
+    },
+    "data": {
+      "home": {
+        "src": "json"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/mainslide.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "CAddress.footer": {
+    "template": {
+      "name": "footeraddress.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CAddress.userAccountSupport": {
+    "template": {
+      "name": "usersupportcontact.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CCopyright.footer": {
+    "template": {
+      "name": "footercopyright.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CSSLLogo.footer": {
+    "template": {
+      "name": "footerssllogo.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CSocialicons.footer": {
+    "template": {
+      "name": "footersocial.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CLinkbox.footer": {
+    "template": {
+      "name": "footermenu.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CTaglist.footer": {
+    "template": {
+      "name": "footertags.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CContentTitle.default": {
+    "template": {
+      "name": "contenttitle.php"
+    },
+    "data": {
+      "blogHome": {
+        "src": "json"
+      },
+      "cart": {
+        "src": "json"
+      },
+      "login": {
+        "src": "json"
+      },
+      "register": {
+        "src": "json"
+      },
+      "checkout": {
+        "src": "json"
+      },
+      "payment": {
+        "src": "json"
+      },
+      "shipping": {
+        "src": "json"
+      },
+      "thankYou": {
+        "src": "json"
+      },
+      "ordererror": {
+        "src": "json"
+      },
+      "regThankYou": {
+        "src": "json"
+      },
+      "activationThankYou": {
+        "src": "json"
+      },
+      "activationRequired": {
+        "src": "json"
+      },
+      "recoverPasswordFromEmail": {
+        "src": "json"
+      },
+      "newPasswordFromToken": {
+        "src": "json"
+      },
+      "contacts": {
+        "src": "json"
+      },
+      "brandList": {
+        "src": "json"
+      },
+      "searchPage": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CContentTitle.user": {
+    "template": {
+      "name": "usercontenttitle.php"
+    },
+    "data": {
+      "userDashboard": {
+        "src": "json"
+      }
+    },
+    "assets": {
+      "css": [
+        {
+          "href": "/css/myarea.css",
+          "options": {
+            "media": "all"
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "CContentTitle.focusPage": {
+    "template": {
+      "name": "contenttitlefocuspage.php"
+    },
+    "data": {
+      "focusPage": {
+        "src": "json"
+      }
+    },
+    "helper": "CWidgetFocusPageHelper",
+    "children": []
+  },
+  "CContentTitle.fixedPage": {
+    "template": {
+      "name": "contenttitlefixedpage.php"
+    },
+    "data": {
+      "fixedPage": {
+        "src": "PandaORM",
+        "repository": "FixedPage",
+        "type": "entity",
+        "method": "PageId",
+        "params": [
+          "params"
+        ],
+        "args": [
+          "args"
+        ],
+        "sorting": [
+          "sorting"
+        ],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "children": []
+  },
+  "CAccordion.default": {
+    "template": {
+      "name": "userdataaccordion.php"
+    },
+    "data": {
+      "userPersonalData": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CUserOrderList.user": {
+    "template": {
+      "name": "userorderlist.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "Order",
+        "type": "collection",
+        "method": "AllOrders",
+        "params": [],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "999"
+      }
+    },
+    "children": []
+  },
+  "__comment": "+++ CART AND CHECKOUT WIDGETS +++",
+  "COrderDisplay.thankYou": {
+    "template": {
+      "name": "orderdisplay.php"
+    },
+    "data": {
+      "src": "json"
+    },
+    "children": []
+  },
+  "CCartSummary.widget": {
+    "template": {
+      "name": "wcart.php"
+    },
+    "data": {
+      "widget": {
+        "src": "mixed",
+        "repository": "CartOrder",
+        "type": "entity",
+        "method": "CurrentCart",
+        "params": [],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/wcart.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "CCartSummary.cart": {
+    "template": {
+      "name": "cartsummary.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "CartOrder",
+        "type": "entity",
+        "method": "CurrentCart",
+        "params": [],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/cartEdit.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        },
+        {
+          "src": "/js/cartDataLayer.js",
+          "options": {
+            "defer": false,
+            "async": false
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "CCartSummary.checkout": {
+    "template": {
+      "name": "displaycartsummary.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "CartOrder",
+        "type": "entity",
+        "method": "CurrentCart",
+        "params": [],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/cartEdit.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        },
+        {
+          "src": "/js/cartDataLayer.js",
+          "options": {
+            "defer": false,
+            "async": false
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "CCartSummary.thankYou": {
+    "template": {
+      "name": "displaycartsummary.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "Order",
+        "type": "entity",
+        "method": "Order",
+        "params": [
+          "order"
+        ],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "children": []
+  },
+  "CCartSideSummary.cart": {
+    "template": {
+      "name": "cartsidesummary.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "CartOrder",
+        "type": "entity",
+        "method": "CurrentCart",
+        "params": [],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/cartSummary.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "CAddressForm.checkout": {
+    "template": {
+      "name": "checkoutaddressform.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "UserAddress",
+        "type": "collection",
+        "method": "User",
+        "params": [],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "99"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/checkoutaddress.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": [
+      "CCountrySelector.default.default"
+    ]
+  },
+  "CCartSideSummary.checkout": {
+    "template": {
+      "name": "cartsidesummary.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "CartOrder",
+        "type": "entity",
+        "method": "CurrentCart",
+        "params": [],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/cartSummary.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "CPaymentSelection.checkout": {
+    "template": {
+      "name": "paymentselection.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "OrderPaymentMethod",
+        "type": "collection",
+        "method": "Available",
+        "params": [],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "99"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/paymentselection.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "CCouponBox.cart": {
+    "template": {
+      "name": "couponbox.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "CartOrder",
+        "type": "entity",
+        "method": "CurrentCart",
+        "params": [],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/couponbox.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "CShippingCalculator.cart": {
+    "template": {
+      "name": "shippingcalculator.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "Country",
+        "type": "collection",
+        "method": "All",
+        "params": [],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "999"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/shippingcalculator.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "CAddressDisplay.checkout": {
+    "template": {
+      "name": "addressdisplay.php"
+    },
+    "data": {
+      "shipping": {
+        "src": "mixed",
+        "repository": "UserAddress",
+        "type": "entity",
+        "method": "CurrentShipping",
+        "params": [],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      },
+      "billing": {
+        "src": "mixed",
+        "repository": "UserAddress",
+        "type": "entity",
+        "method": "CurrentBilling",
+        "params": [],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "children": []
+  },
+  "CPaymentDisplay.checkout": {
+    "template": {
+      "name": "paymentdisplay.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "CartOrder",
+        "type": "entity",
+        "method": "CurrentCart",
+        "params": [],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "children": []
+  },
+  "CShopalikeTracking.default": {
+    "template": {
+      "name": "shopaliketracking.php"
+    },
+    "data": {
+      "thankyou": {
+        "src": "mixed",
+        "repository": "Order",
+        "type": "entity",
+        "method": "JustBought",
+        "params": [
+          "order"
+        ],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "children": []
+  },
+  "CMyshop.default": {
+    "template": {
+      "name": "myshop.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CCountrySelector.default": {
+    "template": {
+      "name": "countryselector.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "Country",
+        "type": "collection",
+        "method": "All",
+        "params": [],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "999"
+      }
+    },
+    "children": []
+  },
+  "__comment": "+++ NAVIGATION AND LANGUAGE +++",
+  "CLangselector.default": {
+    "template": {
+      "name": "langselector.php"
+    },
+    "data": {
+      "default": {
+        "src": "PandaORM",
+        "repository": "Lang",
+        "method": "All",
+        "params": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "99"
+      }
+    },
+    "children": []
+  },
+  "CMainnav.default": {
+    "cacheable": {
+      "timetolive": 86400,
+      "level": "route"
+    },
+    "template": {
+      "name": "mainnav.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CMobilenav.default.default",
+      "CSitelogo.default.default",
+      "CSearchbutton.default.default",
+      "CMainnavdropdown.megamenu.donna",
+      "CMainnavdropdown.megamenu.uomo",
+      "CMainnavdropdown.megamenu.bambini",
+      "CMainnavdropdown.megamenuBrands.brands",
+      "CMainnavdropdown.dlink.blog",
+      "CMainnavdropdown.toggle.sales",
+      "CMainnavdropdown.toggle.aiuto"
+    ]
+  },
+  "CMobilenav.default": {
+    "template": {
+      "name": "mobilenav.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CSitelogo.default": {
+    "template": {
+      "name": "sitelogo.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CSearchbutton.default": {
+    "template": {
+      "name": "searchbutton.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/search.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CMainnavlink.default": {
+    "template": {
+      "name": "mainnavlink.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CMainnavdropdown.megamenu": {
+    "template": {
+      "name": "mainnavdropdownmega.php"
+    },
+    "data": {
+      "uomo": {
+        "src": "mixed",
+        "repository": "ProductCategory",
+        "method": "DisposableCategoryChildren",
+        "params": [],
+        "args": [
+          "/uomo"
+        ],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      },
+      "donna": {
+        "src": "mixed",
+        "repository": "ProductCategory",
+        "method": "DisposableCategoryChildren",
+        "params": [],
+        "args": [
+          "/donna"
+        ],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      },
+      "bambini": {
+        "src": "mixed",
+        "repository": "ProductCategory",
+        "method": "DisposableCategoryChildren",
+        "params": [],
+        "args": [
+          "/bambini"
+        ],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/dropdown.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": [
+      "CTextbox.default.[asData]"
+    ]
+  },
+  "CMainnavdropdown.megamenuBrands": {
+    "template": {
+      "name": "mainnavdropdownmegabrands.php"
+    },
+    "data": {
+      "brands": {
+        "src": "mixed",
+        "repository": "ProductBrand",
+        "method": "MacroCategory",
+        "params": [],
+        "args": [
+          {
+            "category": 2,
+            "brands": [
+              355,
+              319,
+              339,
+              465,
+              318,
+              141
+            ]
+          },
+          {
+            "category": 3,
+            "brands": [
+              319,
+              355,
+              336,
+              318
+            ]
+          },
+          {
+            "category": 712,
+            "brands": []
+          }
+        ],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/dropdown.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": [
+      "CTextbox.default.[asData]"
+    ]
+  },
+  "CMainnavdropdown.toggle": {
+    "template": {
+      "name": "mainnavdropdowntoggle.php"
+    },
+    "data": {
+      "sales": {
+        "src": "json"
+      },
+      "aiuto": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CMainnavdropdown.dlink": {
+    "template": {
+      "name": "mainnavdropdowndlink.php"
+    },
+    "data": {
+      "contatti": {
+        "src": "json"
+      },
+      "blog": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CInPageMenu.user": {
+    "template": {
+      "name": "usersubmenu.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "__comment": "+++ CATALOG SPECIFIC +++",
+  "CMobileGridToolbar.default": {
+    "template": {
+      "name": "mobilegridtoolbar.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "helper": "CWidgetCatalogHelper",
+    "children": []
+  },
+  "CCatalogCategoryfilterbox.categories": {
+    "template": {
+      "name": "catalogcategoryfilterbox.php"
+    },
+    "data": {
+      "category": {
+        "src": "mixed",
+        "repository": "ProductCategory",
+        "method": "AppliedFiltersWithParent",
+        "params": [
+          "category",
+          "brand",
+          "size",
+          "color",
+          "tag"
+        ],
+        "sorting": [],
+        "offset": "0",
+        "limit": "99"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/catfilters.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "CCatalogFilterBox.default": {
+    "template": {
+      "name": "catalogfilterbox.php"
+    },
+    "data": {
+      "brand": {
+        "src": "mixed",
+        "repository": "ProductBrand",
+        "method": "AppliedFilters",
+        "params": [
+          "category",
+          "size",
+          "color",
+          "tag"
+        ],
+        "sorting": [],
+        "offset": "0",
+        "limit": "500"
+      },
+      "size": {
+        "src": "mixed",
+        "repository": "ProductSize",
+        "method": "AppliedFilters",
+        "params": [
+          "category",
+          "brand",
+          "color",
+          "tag"
+        ],
+        "sorting": [],
+        "offset": "0",
+        "limit": "20"
+      },
+      "color": {
+        "src": "mixed",
+        "repository": "ProductColorGroup",
+        "method": "AppliedFilters",
+        "params": [
+          "category",
+          "size",
+          "brand",
+          "tag"
+        ],
+        "sorting": [],
+        "offset": "0",
+        "limit": "20"
+      },
+      "tag": {
+        "src": "mixed",
+        "repository": "Tag",
+        "method": "AppliedFilters",
+        "params": [
+          "category",
+          "size",
+          "brand",
+          "tag"
+        ],
+        "sorting": [],
+        "offset": "0",
+        "limit": "20"
+      }
+    },
+    "helper": "CWidgetCatalogHelper",
+    "children": []
+  },
+  "CGridtoolbar.catalog": {
+    "template": {
+      "name": "gridtoolbar.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CProductgrid.catalogexcerpt": {
+    "template": {
+      "name": "catalogexcerpt.php"
+    },
+    "data": {
+      "bestsellers": {
+        "src": "mixed",
+        "repository": "Product",
+        "type": "collection",
+        "method": "TagPriority",
+        "params": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "8"
+      },
+      "variants": {
+        "src": "mixed",
+        "repository": "Product",
+        "type": "collection",
+        "method": "Variants",
+        "params": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "10"
+      },
+      "similar": {
+        "src": "mixed",
+        "repository": "Product",
+        "type": "collection",
+        "method": "TagPriority",
+        "params": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "8"
+      },
+      "sameBrand": {
+        "src": "mixed",
+        "repository": "Product",
+        "type": "collection",
+        "method": "SameBrand",
+        "params": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "40"
+      },
+      "sameCategory": {
+        "src": "mixed",
+        "repository": "Product",
+        "type": "collection",
+        "method": "SameCategory",
+        "params": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "40"
+      }
+    },
+    "children": []
+  },
+  "CProductgrid.catalog": {
+    "template": {
+      "name": "productgrid.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "Product",
+        "method": "AfterAppliedFilters",
+        "params": [
+          "category",
+          "color",
+          "brand",
+          "size",
+          "tag"
+        ],
+        "sorting": [],
+        "offset": "0",
+        "limit": "24"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/catalogDataLayer.js",
+          "options": {
+            "defer": false,
+            "async": false
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "CPagination.catalog": {
+    "template": {
+      "name": "pagination.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "Product",
+        "method": "AfterAppliedFilters",
+        "params": [
+          "category",
+          "color",
+          "brand",
+          "size",
+          "tag"
+        ],
+        "offset": "0",
+        "limit": "32"
+      }
+    },
+    "children": []
+  },
+  "CCategorypath.detail": {
+    "template": {
+      "name": "categorypath.php"
+    },
+    "data": {
+      "default": {
+        "src": "PandaORM",
+        "repository": "ProductCategory",
+        "method": "CategoryPath",
+        "params": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "7"
+      }
+    },
+    "children": []
+  },
+  "CProductdetail.detail": {
+    "template": {
+      "name": "productdetail.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CProductphotopreview.detail.default",
+      "CProductsummary.detail.default",
+      "CProductgrid.catalogexcerpt.sameBrand",
+      "CProductgrid.catalogexcerpt.sameCategory"
+    ]
+  },
+  "CProductphotopreview.detail": {
+    "template": {
+      "name": "productphotopreview.php"
+    },
+    "data": {
+      "default": {
+        "src": "PandaORM",
+        "repository": "Product",
+        "type": "entity",
+        "method": "Id",
+        "params": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/jquery.elevateZoom-3.0.8.min.js",
+          "options": {
+            "defer": false,
+            "async": false
+          }
+        },
+        {
+          "src": "/js/productPhotoPreview.js",
+          "options": {
+            "defer": false,
+            "async": false
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "CProductsummary.detail": {
+    "template": {
+      "name": "productsummary.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "Product",
+        "type": "entity",
+        "method": "Id",
+        "params": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "assets": {
+      "css": [
+        {
+          "href": "/css/prdet.css",
+          "options": {
+            "media": "all"
+          }
+        }
+      ],
+      "js": [
+        {
+          "src": "/js/productDetailDataLayer.js",
+          "options": {
+            "defer": false,
+            "async": false
+          }
+        }
+      ]
+    },
+    "children": [
+      "CAddToCartBox.detail.default",
+      "CCategorypath.detail.default"
+    ],
+    "meta": [
+      "og:title",
+      "og:site_name",
+      "og:url",
+      "og:description",
+      "og:image"
+    ]
+  },
+  "CAddToCartBox.detail": {
+    "template": {
+      "name": "addtocartbox.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "Product",
+        "type": "entity",
+        "method": "Id",
+        "params": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/addtocartbox.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "CCatalogtitle.default": {
+    "template": {
+      "name": "catalogtitle.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "assets": [],
+    "children": []
+  },
+  "CProducttitle.default": {
+    "template": {
+      "name": "producttitle.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "Product",
+        "type": "entity",
+        "method": "Id",
+        "params": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "1"
+      }
+    },
+    "assets": [],
+    "children": []
+  },
+  "CCatalogProductSelection.focusPage": {
+    "template": {
+      "name": "productselection.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "helper": "CWidgetCatalogHelper",
+    "children": []
+  },
+  "__comment": "+++ PRODUCT PRESENTATION / ALTERNATIVE NAVIGATION FOCUSED ON PRODUCTS +++",
+  "CTabbedproducts.default": {
+    "template": {
+      "name": "tabbedproducts.php"
+    },
+    "data": {
+      "latestByCategory": {
+        "src": "json"
+      }
+    },
+    "assets": {
+      "js": [
+        {
+          "src": "/js/tabbedproducts.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    },
+    "children": []
+  },
+  "CTabContent.default": {
+    "template": {
+      "name": "tabcontent.php"
+    },
+    "data": {
+      "donna": {
+        "src": "mixed",
+        "repository": "Product",
+        "method": "Category",
+        "args": {
+          "category": 2
+        },
+        "params": [],
+        "sorting": [
+          {
+            "field": "creation",
+            "order": "desc"
+          }
+        ],
+        "offset": "0",
+        "limit": "8"
+      },
+      "uomo": {
+        "src": "mixed",
+        "repository": "Product",
+        "method": "Category",
+        "args": {
+          "category": 3
+        },
+        "params": [],
+        "sorting": [
+          {
+            "field": "creation",
+            "order": "desc"
+          }
+        ],
+        "offset": "0",
+        "limit": "8"
+      },
+      "bambino": {
+        "src": "mixed",
+        "repository": "Product",
+        "method": "Category",
+        "args": {
+          "category": 4
+        },
+        "params": [],
+        "sorting": [
+          {
+            "field": "creation",
+            "order": "desc"
+          }
+        ],
+        "offset": "0",
+        "limit": "8"
+      },
+      "bambina": {
+        "src": "mixed",
+        "repository": "Product",
+        "method": "Category",
+        "args": {
+          "category": 97
+        },
+        "params": [],
+        "sorting": [
+          {
+            "field": "creation",
+            "order": "desc"
+          }
+        ],
+        "offset": "0",
+        "limit": "8"
+      }
+    },
+    "children": []
+  },
+  "__comment": "+++ FORMS +++",
+  "CForm.login": {
+    "template": {
+      "name": "loginform.php"
+    },
+    "data": {
+      "login": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CFormInput.default.loginName",
+      "CFormInput.default.loginPassword",
+      "CFormCheckbox.default.loginRememberMe",
+      "CFacebookLogin.default.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/userLogin.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CForm.register": {
+    "template": {
+      "name": "regform.php"
+    },
+    "data": {
+      "register": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CFormInput.default.registerName",
+      "CFormInput.default.registerSurname",
+      "CFormInput.default.registerEmail",
+      "CFormInput.default.registerEmailConfirm",
+      "CFormDate.default.birthday",
+      "CFormInput.default.registerPassword",
+      "CFormRadio.default.registerGender",
+      "CFormLegal.default.register",
+      "CFormButton.default.registerSubmit"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/userRegistration.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CForm.newaddress": {
+    "template": {
+      "name": "addressinsert.php"
+    },
+    "data": {
+      "newaddress": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CFormInput.default.addressName",
+      "CFormInput.default.addressSurname",
+      "CFormInput.default.addressCompany",
+      "CFormInput.default.addressPhone",
+      "CFormInput.default.addressAddress",
+      "CFormInput.default.addressExtra",
+      "CFormInput.default.addressPostCode",
+      "CFormSelect.default.country",
+      "CFormInput.default.addressProvince",
+      "CFormInput.default.addressCity",
+      "CFormButton.default.addressSubmit"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/newaddressform.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CForm.recoverPasswordFromEmail": {
+    "template": {
+      "name": "recoverpasswordform.php"
+    },
+    "data": {
+      "recoverPasswordFromEmail": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CFormInput.default.registerEmail"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/recoverPassword.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CForm.newPasswordFromToken": {
+    "template": {
+      "name": "newpasswordfromtokenform.php"
+    },
+    "data": {
+      "newPasswordFromToken": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CFormInput.default.registerPassword",
+      "CFormInput.default.registerPasswordConfirm"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/newPassword.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CFormDate.default": {
+    "template": {
+      "name": "frmdate.php"
+    },
+    "data": {
+      "birthday": {
+        "src": "json"
+      }
+    },
+    "children": [],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/frmdate.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CFormInput.default": {
+    "template": {
+      "name": "frmtextinput.php"
+    },
+    "data": {
+      "registerName": {
+        "src": "json"
+      },
+      "registerSurname": {
+        "src": "json"
+      },
+      "registerEmail": {
+        "src": "json"
+      },
+      "registerEmailConfirm": {
+        "src": "json"
+      },
+      "registerBirthDate": {
+        "src": "json"
+      },
+      "registerPassword": {
+        "src": "json"
+      },
+      "registerPasswordConfirm": {
+        "src": "json"
+      },
+      "addressName": {
+        "src": "json"
+      },
+      "addressSurname": {
+        "src": "json"
+      },
+      "addressCompany": {
+        "src": "json"
+      },
+      "addressAddress": {
+        "src": "json"
+      },
+      "addressExtra": {
+        "src": "json"
+      },
+      "addressPostCode": {
+        "src": "json"
+      },
+      "addressCity": {
+        "src": "json"
+      },
+      "addressProvince": {
+        "src": "json"
+      },
+      "addressPhone": {
+        "src": "json"
+      },
+      "loginName": {
+        "src": "json"
+      },
+      "loginPassword": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CFormCheckbox.default": {
+    "template": {
+      "name": "frmcheckbox.php"
+    },
+    "data": {
+      "loginRememberMe": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CFormRadio.default": {
+    "template": {
+      "name": "frmradio.php"
+    },
+    "data": {
+      "registerGender": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CFormButton.default": {
+    "template": {
+      "name": "frmbutton.php"
+    },
+    "data": {
+      "registerSubmit": {
+        "src": "json"
+      },
+      "addressSubmit": {
+        "src": "json"
+      },
+      "editAccountData": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CFormLegal.default": {
+    "template": {
+      "name": "frmlegal.php"
+    },
+    "data": {
+      "register": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CFormSelect.default": {
+    "template": {
+      "name": "frmselect.php"
+    },
+    "data": {
+      "country": {
+        "src": "mixed",
+        "repository": "Country",
+        "type": "collection",
+        "method": "All",
+        "params": [],
+        "sorting": [
+          {
+            "field": "name",
+            "order": "asc"
+          }
+        ],
+        "offset": "0",
+        "limit": "999"
+      }
+    },
+    "children": []
+  },
+  "CForm.userAccountData": {
+    "template": {
+      "name": "userdataform.php"
+    },
+    "data": {
+      "userPersonalData": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CFormInput.default.registerName",
+      "CFormInput.default.registerSurname",
+      "CFormInput.default.registerEmail",
+      "CFormInput.default.registerEmailConfirm",
+      "CFormInput.default.registerBirthDate",
+      "CFormRadio.default.registerGender",
+      "CFormButton.default.editAccountData"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/userDataEdit.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CFacebookLogin.default": {
+    "template": {
+      "name": "facebooklogin.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": []
+  },
+  "CBrandDirectory.default": {
+    "template": {
+      "name": "branddirectory.php"
+    },
+    "data": {
+      "default": {
+        "src": "PandaORM",
+        "repository": "ProductBrand",
+        "type": "collection",
+        "method": "AppliedFilters",
+        "params": [
+          "category"
+        ],
+        "sorting": [],
+        "offset": "0",
+        "limit": "9999"
+      }
+    },
+    "helper": "CWidgetCatalogHelper",
+    "children": []
+  },
+  "CBrandDirectoryNav.default": {
+    "template": {
+      "name": "branddirectorynav.php"
+    },
+    "data": {
+      "default": {
+        "src": "PandaORM",
+        "repository": "ProductCategory",
+        "type": "collection",
+        "method": "MainCategories",
+        "params": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "9999"
+      }
+    },
+    "children": []
+  },
+  "CNewsletterbox.default": {
+    "template": {
+      "name": "newsletterbox.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/newsletterbox.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  }
+}

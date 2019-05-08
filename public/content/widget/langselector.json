@@ -1,0 +1,21 @@
+{
+    "default": {
+        "template": {
+            "name": "langselector.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": [],
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Lang",
+                    "method": "All",
+                    "params": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "99"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "general": {
+      "name": "Flatize",
+      "version": "1.0"
+    },
+    "products": {
+        "imageSize": {
+            "lg": 1124,
+            "md": 843,
+            "sm": 562,
+            "xs": 281
+        }
+    },
+    "navigation": {
+        "firstVisibleNode": 3
+    },
+    "paths": {
+        "root": "/client/public/themes/flatize/",
+        "css": "/client/public/themes/flatize/assets/css/",
+        "js": "/client/public/themes/flatize/assets/js/",
+        "img": "/client/public/themes/flatize/assets/img/",
+        "files": "/client/public/themes/flatize/assets/files/",
+        "vendor": "/client/public/themes/flatize/assets/vendor/",
+        "layout": "/client/public/themes/flatize/layout/",
+        "widgets": "/client/public/themes/flatize/widgets/",
+        "404": "/client/public/themes/flatize/404.php",
+        "500": "/client/public/themes/flatize/500.php"
+    }
+}

@@ -1,0 +1,69 @@
+<?php
+use bamboo\core\theming\CMailerHelper;
+/** @var CMailerHelper $app */ ?>
+<html lang="<?php echo $app->lang(); ?>">
+<head>
+    <meta charset="UTF-8" />
+    <style type="text/css"><?php echo $css; ?></style>
+</head>
+<body>
+
+Ciao,<br>
+    Ho il piacere di comunicarTi che il Tuo oggetto è stato venduto.<br>
+    Ti prego di <a href="https://www.pickyshop.com/blueseal/friend/ordini" target="_blank">confermare le righe dell'ordine</a> (previo login) e preparare il pacco per la spedizione.<br>
+
+    <br>
+    <table>
+        <?php
+        $extId = isset($lines[0]['extId']);
+
+        echo '<head>';
+        echo '<th>Ordine-Riga</th>';
+        echo '<th>Nome Prodotto</th>';
+        if($extId) {
+            echo '<th>Codice Friend</th>';
+        }
+        echo '<th>Codice Prodotto Fornitore</th>';
+        echo '<th>Colore</th>';
+        echo '<th>Brand</th>';
+        echo '<th>Taglia</th>';
+        echo '<th>Prezzo Friend</th>';
+        echo '<th>Anteprima</th>';
+
+        foreach($lines as $line){
+            echo '<tr>';
+            echo '<td>'.$line['orderId'].'-'.$line['orderLineId'].'</td>';
+            echo '<td>'.$line['productNameTranslation'].'</td>';
+            if($extId) {
+                echo '<td>'; echo $line['extId']; echo '</td>';
+            }
+            echo '<td>'; echo $line['itemno']; echo '</td>';
+            echo '<td>'; echo $line['var']; echo '</td>';
+            echo '<td>'; echo $line['brand']; echo '</td>';
+            echo '<td>'; echo $line['size']; echo '</td>';
+            echo '<td>'; echo $line['friendRevenue']; echo '</td>';
+            echo '<td><img height="70" src="'.$app->image($line['photo'],'amazon').'"></td>';
+            echo '</tr>';
+            }
+        ?>
+    </table>
+    <br>
+    <a href="https://www.pickyshop.com/blueseal/friend/ordini" target="_blank">Affrettati a confermare</a> e riceverai notifica del pagamento del prodotto e la prenotazione del corriere per il ritiro.<br>
+    <br>
+    Indirizzo di spedizione del prodotto:<br>
+    <br>
+    <p style="font-weight:bold">IWES s.n.c.<br>
+    International Web Ecommerce Services<br></p>
+    Via Cesare Pavese, 1<br>
+    62012 - Civitanova Marche (MC)<br>
+<br>
+    P.I.: 01865380438<br>
+<br>
+    <p style="font-weight:bold">In caso di domande, richieste o suggerimenti, non esitate a contattarci tramite telefono al seguente numero 0733-471365 o via e-mail all'indirizzo friends@iwes.it<br></p>
+
+    Saluti<br>
+
+    <img src="https://www.pickyshop.com/it/assets/logowide.png"><br>
+    Friends Support
+</body>
+</html>

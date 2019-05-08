@@ -1,0 +1,36 @@
+{
+    "default": {
+        "template": {
+            "name": "imagebox.php"
+        },
+        "data": {
+            "home1": {
+                "placeholders": {
+                    "image": "uomobassa.jpg",
+                    "alt": "Calzature uomo",
+                    "href": "\/it\/calzature-76",
+                    "grid": "col-sm-4 col-xs-12",
+                    "animation": "animation animated fadeInUp"
+                }
+            },
+            "home2": {
+                "placeholders": {
+                    "image": "donna.jpg",
+                    "alt": "Calzature donna",
+                    "href": "\/it\/calzature-5",
+                    "grid": "col-sm-4 col-xs-12",
+                    "animation": "animation animated fadeInUp"
+                }
+            },
+            "home3": {
+                "placeholders": {
+                    "image": "borsa.jpg",
+                    "alt": "Borse donna",
+                    "href": "\/it\/borse-298",
+                    "grid": "col-sm-4 col-xs-12",
+                    "animation": "animation animated fadeInUp"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,194 @@
+{
+    "default": {
+        "template": {
+            "name": "head.php"
+        },
+        "assets": {
+            "css": [
+                {
+                    "href": "https:\/\/fonts.googleapis.com\/css?family=Raleway:400,700",
+                    "options": {
+                        "media": "all",
+                        "remote": true
+                    }
+                },
+                {
+                    "href": "https:\/\/fonts.googleapis.com\/css?family=Roboto+Slab:400,700,300",
+                    "options": {
+                        "media": "all",
+                        "remote": true
+                    }
+                },
+                {
+                    "href": "\/css\/lib.css",
+                    "options": {
+                        "media": "all"
+                    }
+                },
+                {
+                    "href": "\/css\/common.css",
+                    "options": {
+                        "defer": false,
+                        "async": false
+                    }
+                }
+            ],
+            "js": [
+                {
+                    "src": "\/js\/lib.js",
+                    "options": {
+                        "defer": false,
+                        "async": false
+                    }
+                },
+                {
+                    "src": "https:\/\/oss.maxcdn.com\/html5shiv\/3.7.2\/html5shiv.min.js",
+                    "options": {
+                        "condition": "lt ie 9",
+                        "remote": true
+                    }
+                },
+                {
+                    "src": "https:\/\/oss.maxcdn.com\/respond\/1.4.2\/respond.min.js",
+                    "options": {
+                        "condition": "lt ie 9",
+                        "remote": true
+                    }
+                },
+                {
+                    "src": "\/js\/common.js",
+                    "options": {
+                        "defer": false,
+                        "async": false
+                    }
+                },
+                {
+                    "src": "\/js\/consoleLogger.js",
+                    "options": {
+                        "defer": false,
+                        "async": false
+                    }
+                },
+                {
+                    "src": "\/js\/monkeyWidgetRender.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                },
+                {
+                    "src": "\/js\/cookielaw.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                },
+                {
+                    "src": "https:\/\/embed.small.chat\/T27NXKWCWG5MC0PHHV.js",
+                    "options": {
+                        "remote": true,
+                        "defer": true,
+                        "async": true
+                    }
+                },
+                {
+                    "src": "\/\/cdnjs.cloudflare.com\/ajax\/libs\/cookieconsent2\/1.0.9\/cookieconsent.min.js",
+                    "options": {
+                        "remote": true,
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "headTags": [
+            {
+                "tag": "meta",
+                "name": "",
+                "attrs": {
+                    "charset": "utf-8"
+                },
+                "content": ""
+            },
+            {
+                "tag": "meta",
+                "name": "keywords",
+                "attrs": {
+                    "content": "calzature, borse, accessori, gioielli, bigiotteria, moda uomo, moda donna, moda bambino"
+                },
+                "content": ""
+            },
+            {
+                "tag": "meta",
+                "name": "description",
+                "attrs": {
+                    "content": "Negozio online di moda, calzature, borse, accessori gioielli e molto altro."
+                },
+                "content": ""
+            },
+            {
+                "tag": "meta",
+                "name": "generator",
+                "attrs": {
+                    "content": "BlueSeal 1.0a"
+                },
+                "content": ""
+            },
+            {
+                "tag": "meta",
+                "name": "author",
+                "attrs": {
+                    "content": "Pickyshop (https:\/\/www.pickyshop.com)"
+                },
+                "content": ""
+            },
+            {
+                "tag": "meta",
+                "name": "viewport",
+                "attrs": {
+                    "content": "width=device-width, initial-scale=1"
+                },
+                "content": ""
+            },
+            {
+                "tag": "link",
+                "name": "favicon",
+                "attrs": {
+                    "rel": "icon",
+                    "type": "image\/x-icon",
+                    "href": "\/it\/assets\/favicon.png"
+                },
+                "content": ""
+            },
+            {
+                "tag": "title",
+                "name": "",
+                "attrs": {
+                    "itemprop": "name"
+                },
+                "content": "Pickyshop.com"
+            },
+            {
+                "tag": "link",
+                "name": "",
+                "attrs": {
+                    "rel": "canonical",
+                    "href": "www.pickyshop.com",
+                    "itemprop": "url"
+                }
+            }
+        ],
+        "data": {
+            "default": {
+                "placeholders": {
+                    "charset": "utf-8",
+                    "generator": "BlueSeal 0.0.1a",
+                    "author": "BambooShoot (http:\/\/iwes.it)",
+                    "title": "Pickyshop.com",
+                    "description": "Negozio online di moda, calzature, borse, accessori gioielli e molto altro.",
+                    "keywords": "calzature, borse, accessori, gioielli, bigiotteria, moda uomo, moda donna, moda bambino"
+                }
+            }
+        }
+    }
+}

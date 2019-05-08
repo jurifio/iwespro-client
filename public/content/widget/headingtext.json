@@ -1,0 +1,16 @@
+{
+    "default": {
+        "template": {
+            "name": "headingtext.php"
+        },
+        "data": {
+            "home": {
+                "placeholders": {
+                    "introduction": "introduzione",
+                    "title": "titolo",
+                    "text": "testo del box"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "subject": "Bestellung Pickyshop.com # {orderId}!",
+    "start": "<p style=\"font:Arial,sans-serif\">Hallo %s,<br> leider muss Ich Sie darüber informieren dass der Artikel Sie bestellt nicht mehr verfügbar ist!  Es gab ein Problem in der Lager Aktualisierung Prozedur und der Artikel ist nicht mehr verfügbar.<br /><br />Ich entschuldige mich für die Unannehmlichkeiten!  Sie können eine andere Artikel wählen, sogar zu einem höheren Preis von über 10%% und Sie müssen nicht die Differenz bezahlen!</p>",
+    "end": "<p style=\"font:Arial,sans-serif\">Wenn Sie keine andere Alternative finden, erstatten wir Ihnen den Gesamtbetrag zurück<br /><br />Bitte geben Sie mir ein Feedback und Ich werde machen, was Sie sich entschieden haben! <br /><br />Ich warte auf Ihre Antwort und MfG<br />%s<br /><br />Pickyshop.com Kundenservice</p>",
+    "footer": "<p style=\"font-size:9px\">Wenn Sie nicht registriert sind oder Sie haben diese E-Mail irrtümlich erhalten,  kontaktieren Sie bitte unsere Kundendienst. Wir werden Ihr Konto löschen<br />Kundenservice: support@pickyshop.com<br />Vielen Dank,<br />Pickyshop.com</p>"
+}

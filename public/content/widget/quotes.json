@@ -1,0 +1,23 @@
+{
+    "default": {
+        "template": {
+            "name": "quotes.php"
+        },
+        "data": {
+            "home": {
+                "placeholders": {
+                    "dataCollection": [
+                        {
+                            "quote": "Design is a funny word. Some people think design means how it looks. But of course, if you dig deeper, it\u2019s really how it works.",
+                            "author": "Steve Jobs"
+                        },
+                        {
+                            "quote": "They may forget what you said, but they will never forget how you made them feel.",
+                            "author": "Carl W. Buechner"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

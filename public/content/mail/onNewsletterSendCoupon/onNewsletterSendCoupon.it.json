@@ -1,0 +1,11 @@
+{
+    "subject": "Iscrizione newsletter",
+    "content": [
+        "<p>Grazie per aver esserti registrato alla nostra newsletter</p>",
+        "<p>Il codice del coupon di sconto è: {couponCode}</p>",
+        "<p>&nbsp;</p>",
+        "<p>Servizio clienti: support@pickyshop.com</p>",
+        "<p>Grazie,</p>",
+        "<p>Pickyshop.com</p>"
+    ]
+}

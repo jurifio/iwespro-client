@@ -1,0 +1,12 @@
+{
+    "subject": "Pickyshop.com Order # {orderId} unpaid order",
+    "newArrivals": "NEW ARRIVALS",
+    "woman": "WOMAN",
+    "man": "MAN",
+    "hallo": "Hi %s,",
+    "line1": "Looks like your order still hasn't gotten paid.",
+    "line2": "You can try the payment again by clicking on your name (in the upper right near to shopping bag) and entering in MyPickyshop/MyOrdersandReturns/TryPaymentAgain or via this <a style=\"text-decoration: none; color: black; font-weight: 600\" href=\"%s/\">link</a>.",
+    "line3": "If you want to change the payment method, for example in COD, just send an email to <a href=\"mailto:support@pickyshop.com\" style=\"text-decoration: none; color: black; font-weight: 600\">support@pickyshop.com</a>.",
+    "line4": "ORDER DETAIL",
+    "line5": "Thank for choosing us,"
+}

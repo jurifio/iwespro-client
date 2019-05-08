@@ -1,0 +1,215 @@
+{
+    "framework": {
+        "name": "BlueSeal",
+        "version": "0.0.1a"
+    },
+    "general": {
+        "timezone": "Europe/Rome",
+        "admin-email": "it@iwes.it",
+        "product-photo-host": "https://cdn.iwes.it/",
+        "multi-shop": true,
+        "main-shop-address": 4,
+        "debug-mode": false,
+        "name": "IwesPro",
+        "default-lang": "it"
+    },
+    "paths": {
+        "domain": "www.iwes.pro",
+        "subfolder": "",
+        "config": "/conf",
+        "maintenanceTemplate": "/client/public/maintenance.php",
+        "dummyFolder": "/client/public/media/dummyPictures",
+        "friendLogo": "/client/public/media/friend-logo",
+        "dummyUrl": "/assets",
+        "public": "/client/public",
+        "themes": "/client/public/themes",
+        "errorlog": "/rplogs/bamboo.error.log",
+        "store-theme": "/client/public/themes/flatize",
+        "admin-theme": "/back",
+        "image-temp-folder": "/client/public/media/tempPhotos",
+        "local-images": "/client/public/themes/flatize/assets/img",
+        "local-fonts": "/client/public/themes/flatize/assets/fonts",
+        "blueseal": "/back",
+        "packed-assets": "/client/public/themes/flatize/assets/",
+        "business-data": "/client/public/content/business",
+        "widget-data": "/client/public/content/widget",
+        "productSync": "/client/public/media/productsync",
+        "blogImages": "/client/public/media/blogImages",
+        "tempFolder": "/temp",
+        "tempFolderCsv":"/temp-eancsv",
+        "blueseal-addon": "/back/addon"
+    },
+    "urls": {
+        "home": "",
+        "assets": "/:loc/assets",
+        "blueseal": "/blueseal",
+        "cart": "/carrello"
+    },
+    "cookies": {
+        "session": {
+            "domain": "www.iwes.pro",
+            "expire": 2591999,
+            "path": "/",
+            "httpOnly": true,
+            "secure": true
+        },
+        "jwt": {
+            "domain": "www.iwes.pro",
+            "expire": 256320,
+            "path": "/",
+            "httpOnly": true,
+            "secure": true
+        }
+    },
+    "fattureInCloud": {
+        "api_uid": "34021",
+        "api_key": "443884d05056b5f0831446538c6e840f"
+    },
+    "miscellaneous": {
+        "facebook": {
+            "app_id": "828467800598522",
+            "app_secret": "1b1b2fe1f918e4608f4fbecdab9bb4b6",
+            "default_graph_version":"v2.8"
+        },
+        "personalAreaUrl": "/mypickyshop",
+        "cacheEntityExpiration": 84600,
+        "orderGateways": {
+            "thankYou": "https://www.iwes.pro/:loc/thank-you/:ord",
+            "error": "https://www.iwes.pro/:loc/error/:ord",
+            "creditCard": {
+                "secret": "nY39ECW86g6x323Si78u1Zn7671hV6RR2DEVq32R",
+                "alias": "payment_756234",
+                "urlpost": "https://www.iwes.pro/WebServiceLight/CreditCard"
+            },
+            "payPal": {
+                "business": "transazioni@pickyshop.com",
+                "urlPost": "https://www.iwes.pro/WebServiceLight/PayPal"
+            }
+        },
+        "confirmExpiration": 172800,
+        "orderStatus": {
+            "CRT": "Cart status",
+            "CRT_MRG": "Cart merged in an older one, to be deleted",
+            "ORD_PENDNG_PP": "Pending, not paid, PayPal",
+            "ORD_PENDNG_CC": "Pending, not paid, CreditCard",
+            "ORD_PENDNG_CB": "Pending, not paid, Bonifico",
+            "ORD_PENDNG_PY": "Pending, not paid, PickAndPay",
+            "ORD_PENDNG_CS": "Pending, not paid, Contrassegno",
+            "ORD_WAIT_PAYD": "Paid",
+            "ORD_WAIT_NPAY": "Not Paid due to payment method",
+            "ORD_WAIT_PERR": "Error in payment"
+        },
+        "mailer": {
+            "clientRecipient": {
+                "orders": [
+                    "internal@pickyshop.com"
+                ]
+            },
+            "templateFolder": "/client/public/content/mail",
+            "senders": {
+                "no-reply": {
+                    "smtp": {
+                        "Host": "smtp.gmail.com",
+                        "SMTPAuth": true,
+                        "Username": "noreply@pickyshop.com",
+                        "Password": "cartne02",
+                        "SMTPSecure": "TLS",
+                        "Port": 587
+                    },
+                    "From": "noreply@pickyshop.com",
+                    "FromName": "Pickyshop.com",
+                    "Reply-To": "support@pickyshop.com"
+                },
+                "default": {
+                }
+            }
+        },
+        "photoFTPClient": {
+            "host": "fiber.office.iwes.it",
+            "user": "shooting",
+            "pass": "PBYI34nbf",
+            "port": "21",
+            "timeout": "10",
+            "mode": "2"
+        },
+        "amazonConfiguration": {
+            "bucket": "iwes",
+            "credential": {
+                "key": "AKIAJAT27PGJ6XWXBY6A",
+                "secret": "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"
+            }
+        },
+        "ebayConfig": {
+            "version": "947",
+            "isProduction": false,
+            "config": {
+                "production": {
+                    "devId": "Production_devID",
+                    "appId": "Production_appID",
+                    "certId": "Production_certID",
+                    "serverUrl": "https://api.ebay.com/ws/api.dll",
+                    "userToken": "Production_usertoken",
+                    "payPalEmailAddress": "PAYPAL_EMAIL_ADDRESS"
+                },
+                "sandbox": {
+                    "devId": "sandbox_devID",
+                    "appId": "sandbox_appID",
+                    "certId": "sandbox_certID",
+                    "serverUrl": "https://api.sandbox.ebay.com/ws/api.dll",
+                    "userToken": "sandbox_usertoken",
+                    "payPalEmailAddress": "SANDBOX_PAYPAL_EMAIL_ADDRESS"
+                }
+            }
+        },
+        "logo": "/assets/logowide.png",
+        "newsletterOverly": true,
+        "siteInvoiceChar": "P",
+        "fiscalData": {
+          "intestation" : "Iwes snc",
+          "intestation2" : "International Web Ecommerce Services",
+          "address" : "Via Cesare Pavese, 1",
+          "address2" : "62012 - Civitanova Marche (MC)",
+          "iva" : "P.IVA: 01865380438",
+          "tel" : "Tel.: +39.0733.471365",
+          "email" : "Email: support@pickyshop.com"
+        }
+    },
+    "uploadDrivers": {
+        "ftp": {
+            "shooting": {
+                "host": "fiber.office.iwes.it",
+                "user": "shooting",
+                "pass": "PBYI34nbf",
+                "port": "21",
+                "timeout": "10",
+                "mode": "2"
+            }
+        },
+        "cloud": {
+            "s3": {
+                "bucket": "iwes",
+                "credential": {
+                    "key": "AKIAJAT27PGJ6XWXBY6A",
+                    "secret": "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"
+                }
+            }
+        }
+    },
+    "assets": {
+        "minifier": {
+            "engine": "bamboo\\core\\asset\\CYuiCompressor",
+            "options": {
+                "charset": "UTF-8",
+                "line-break": 160,
+                "v": false,
+                "nomunge": false,
+                "preserve-semi": false,
+                "disable-optimization": false
+            }
+        },
+        "writer": {
+            "engine": "bamboo\\core\\asset\\CAssetWriter",
+            "options": {}
+        }
+    }
+}

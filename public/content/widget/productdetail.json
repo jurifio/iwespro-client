@@ -1,0 +1,14 @@
+{
+    "detail": {
+        "template": {
+            "name": "productdetail.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "divAttrs": "class=\"col-sm-6\""
+                }
+            }
+        }
+    }
+}

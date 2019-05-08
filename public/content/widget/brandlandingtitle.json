@@ -1,0 +1,23 @@
+{
+    "default": {
+        "template": {
+            "name": "brandlandingtitle.php"
+        },
+        "assets": [],
+        "data": {
+            "default": {
+                "placeholders": {},
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "ProductBrand",
+                    "type": "entity",
+                    "method": "AppliedFilters",
+                    "params": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    }
+}

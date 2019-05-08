@@ -1,0 +1,286 @@
+{
+    "activationRequired": {
+        "template": {
+            "name": "activationrequiredtextbox.php"
+        },
+        "data": {
+            "activationRequired": {
+                "placeholders": {
+                    "pageTitle": "E' necessario attivare il tuo account",
+                    "pageText": [
+                        "<p>Ciao [user.getName],<br \/>",
+                        "\u00e8 necessario attivare l'account per procedere con l'acquisto. Quando ti sei registrat|o\/a| ti abbiamo inviato una email con un link da seguire per attivare l'account.<\/p>"
+                    ],
+                    "pageTextCoupon": [
+                        "<p><\/p>"
+                    ],
+                    "pageTextLastpart": [
+                        "<p>Controlla la cartella spam, in caso tu non abbia visto ancora l'email, potrebbe essere finita l\u00ec in mezzo purtroppo.<\/p>",
+                        "<p>Se non trovi l'email neanche fra lo spam, puoi richiedere un nuovo invio:<\/p>",
+                        "<button class=\"btn btn-primary\" id=\"resend\">Invia di nuovo l'email di attivazione &nbsp;<i class=\"fa fa-envelope\"><\/i><\/button>"
+                    ]
+                }
+            }
+        }
+    },
+    "activationThankYou": {
+        "template": {
+            "name": "activationthankyoutextbox.php"
+        },
+        "data": {
+            "activationThankYou": {
+                "placeholders": {
+                    "pageTitle": "Benvenut|o\/a| in Pickyshop.com",
+                    "pageText": [
+                        "<p>Il tuo account \u00e8 stato attivato con successo.<\/p>"
+                    ],
+                    "pageTextCoupon": [
+                        "<p>Il tuo account \u00e8 stato attivato con successo! <\/p>",
+                        "<p>Prosegui pure la tua eperienza in PickyShop, ricorda che il nostro servizio clienti \u00e8 sempre pronto a rispondere ad ogni tua domanda!<\/p>",
+                        "<p>Contattaci al nostro indirzzo: <a href=\"mailto:support@pickyshop.com\">support@pickyshop.com<\/a> o chiamaci al numero 02 3792 0266<\/p>",
+                        "<p>Nel frattempo sentiti libero di esplorare il nostro catalogo, o leggi le ultime novit\u00e0 nel <a href=\"\/it\/blog\" >Blog<\/a><\/p>"
+                    ],
+                    "pageTextLastpart": [
+                        ""
+                    ],
+                    "ticket": "<p>Benvenuto in Pickyshop.com!<\/p>"
+                }
+            }
+        }
+    },
+    "default": {
+        "template": {
+            "name": "textbox.php"
+        },
+        "data": {
+            "donna": {
+                "placeholders": {
+                    "title": "Sandali flat o tacchi?",
+                    "subtitle": "Estate 2015",
+                    "image": "menuimage.jpg",
+                    "href": "\/sandali-46",
+                    "text": "<p>Tutti i modelli pi\u00f9 in voga per <strong>l'estate 2015<\/strong><\/p>"
+                }
+            },
+            "uomo": {
+                "placeholders": {
+                    "title": "Titolo uomo",
+                    "subtitle": "Sottotitolo",
+                    "image": "ad-1.png",
+                    "href": "#",
+                    "text": "<p>Testo con <strong>html<\/strong><\/p>"
+                }
+            },
+            "bambini": {
+                "placeholders": {
+                    "title": "Titolo bambini",
+                    "subtitle": "Sottotitolo",
+                    "image": "ad-1.png",
+                    "href": "#",
+                    "text": "<p>Testo con <strong>html<\/strong><\/p>"
+                }
+            },
+            "brands": {
+                "placeholders": {
+                    "title": "Titolo brand",
+                    "subtitle": "Sottotitolo",
+                    "image": "ad-1.png",
+                    "href": "#",
+                    "text": "<p>Testo con <strong>html<\/strong><\/p>"
+                }
+            }
+        }
+    },
+    "focusPage": {
+        "template": {
+            "name": "focuspagetextbox.php"
+        },
+        "helper": "CWidgetFocusPageHelper",
+        "data": {
+            "focusPage": {
+                "placeholders": {
+                    "title": "[getIntroTitle]",
+                    "text": "[getIntroText]"
+                }
+            }
+        }
+    },
+    "orderReturn": {
+        "template": {
+            "name": "orderreturntextbox.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/orderDataLayer.js",
+                    "options": {
+                        "defer": false,
+                        "async": false
+                    }
+                }
+            ]
+        },
+        "data": {
+            "thankYou": {
+                "placeholders": {
+                    "OrderPaymentMethod": {
+                        "1": {
+                            "titleLabel": "Riguardo il pagamento con PayPal",
+                            "text": "Abbiamo ricevuto il pagamento via PayPal e stiamo elaborando l'ordine"
+                        },
+                        "2": {
+                            "titleLabel": "Riguardo il pagamento con carta di credito",
+                            "text": "Abbiamo ricevuto il pagamento con carta di credito e stiamo elaborando l'ordine"
+                        },
+                        "3": {
+                            "titleLabel": "Istruzioni per il pagamento con bonifico",
+                            "text": "Non dimenticare di scrivere nella causale il numero dell'ordine, che trova sia in questa pagina che nella mail di conferma che abbiamo appena inviato. <br \/>BENEFICIARIO: IWES snc<br \/>IBAN: IT51 W052 1668 8700 0000 0001 056<br \/>BIC: BPCVIT2S<br \/>BANCA: CREDITO VALTELLINESE S.p.A.<br \/>Ag. Civitanova Marche"
+                        },
+                        "4": {
+                            "titleLabel": "Istruzioni per il Pick&Pay",
+                            "text": "Ti verr\u00e0 comunicato via email quando il prodotto sar\u00e0 disponibile per il prelievo presso il punto vendita di Via Dante Alighieri, 148 - 62012 Civitanova Marche (MC) negli orari 9:30-13:00 e 16:15-20:00. Luned\u00ec mattino chiuso, domenica pomeriggio aperto. Grazie."
+                        },
+                        "5": {
+                            "titleLabel": "Istruzioni per il pagamento in contrassegno",
+                            "text": "Il corriere che verr\u00e0 a consegnare il pacco all'indirizzo da te indicato non \u00e8 autorizzato a dare il resto, quindi prepara l'importo esatto di "
+                        }
+                    },
+                    "pageTitle": "Conferma Ordine n:",
+                    "mainSectionTitle": "Ordine ricevuto",
+                    "mainSectionText": [
+                        "<p>Abbiamo ricevuto il tuo ordine che \u00e8 stato preso in consegna da un nostro operatore.<\/p>",
+                        "<p>Puoi controllare lo stato del tuo ordine nella sezione ordini del tuo pannello <a data-toggle=\"tooltip\" data-placement=\"top\" title=\"Dove vedi il tuo nome!\" href=\"#\" data-original-title=\"Tooltip here\"><strong>MyPickyshop<\/strong><\/a>, <br \/>",
+                        "sarai aggiornato su ogni fase di elaborazione e una volta che l'ordine sar\u00e0 stato spedito <br \/>",
+                        "riceverai il <kbd>tracking code<\/kbd> per seguire il tuo pacco. <br \/>Normalmente inviamo una mail per ogni fase",
+                        "di avanzamento del tuo ordine, ma se non vuoi essere disturbato, puoi disattivare l'opzione nel tuo pannello MyPickyshop.<\/p>",
+                        "<p>Se lo desideri puoi contattare il nostro servizio clienti per informazioni riguardo il tuo ordine, ecco i recapiti:<\/p>",
+                        "<ul class=\"thankyoucontacts\"><li><i class=\"fa fa-phone\"><\/i> +39 02 379 20 266 e +39 327 55 90 09 89<\/li><li><i class=\"fa fa-envelope\"><\/i> support@pickyshop.com<\/li><\/ul>",
+                        "<p>Il servizio clienti \u00e8 attivo da lunedi a sabato dalle ore 09:30-13:00 e 15:00-19:00<\/p>"
+                    ],
+                    "socialSectionTitle": "Seguici sui social media!",
+                    "socialSectionText": [
+                        "<p>Siamo presenti su Facebook, Twitter, Instagram e Pinterest<\/p>",
+                        "<p>Seguici sul tuo social media preferito per essere aggiornato sulle novit\u00e0 e le iniziative di Pickyshop.com<\/p>",
+                        "<ul class=\"list-inline social-list\">",
+                        "<li><a data-toggle=\"tooltip\" data-placement=\"top\" title=\"Facebook\" href=\"https:\/\/www.facebook.com\/pickyshoppky\" data-original-title=\"Facebook\"><i class=\"fa fa-facebook\"><\/i><\/a><\/li>",
+                        "<li><a data-toggle=\"tooltip\" data-placement=\"top\" title=\"Twitter\" href=\"https:\/\/twitter.com\/PKYshop\" data-original-title=\"Twitter\"><i class=\"fa fa-twitter\"><\/i><\/a><\/li>",
+                        "<li><a data-toggle=\"tooltip\" data-placement=\"top\" title=\"Instagram\" href=\"https:\/\/instagram.com\/PKYshop\" data-original-title=\"Instagram\"><i class=\"fa fa-instagram\"><\/i><\/a><\/li>",
+                        "<li><a data-toggle=\"tooltip\" data-placement=\"top\" title=\"Pinterest\" href=\"https:\/\/it.pinterest.com\/pickyshop\/\" data-original-title=\"Pinterest\"><i class=\"fa fa-pinterest\"><\/i><\/a><\/li>",
+                        "<\/ul>"
+                    ],
+                    "backToShopLabel": "Torna al negozio",
+                    "noOrderText": "Ordine non trovato!"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Order",
+                    "type": "entity",
+                    "method": "JustBought",
+                    "params": [
+                        "order"
+                    ],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            },
+            "ordererror": {
+                "placeholders": {
+                    "OrderPaymentMethod": {
+                        "1": {
+                            "titleLabel": "C'\u00e8 stato un errore nel pagamento, puoi ritentare il pagamento  dall'area utente",
+                            "text": ""
+                        },
+                        "2": {
+                            "titleLabel": "C'\u00e8 stato un errore nel pagamento, puoi ritentare il pagamentodall'area utente",
+                            "text": ""
+                        },
+                        "3": {
+                            "titleLabel": "Errore nell'elaborazione dell'ordine",
+                            "text": ""
+                        },
+                        "4": {
+                            "titleLabel": "Errore nell'elaborazione dell'ordine",
+                            "text": "Ti verr\u00e0 comunicato via email quando il prodotto sar\u00e0 disponibile per il prelievo"
+                        },
+                        "5": {
+                            "titleLabel": "Errore nell'elaborazione dell'ordine",
+                            "text": "Ti ricordiamo che hai scelto di pagare alla consegna. Assicurati di avere a portata di mano l'importo esatto poich\u00e9 il corriere non \u00e8 autorizzato a dare il resto."
+                        }
+                    },
+                    "globalTitleLabel": "Conferma Ordine n: ",
+                    "globalText": "Grazie per aver acquistato nel nostro negozio.",
+                    "backToShopLabel": "Torna al negozio",
+                    "noOrderText": "Ordine non trovato!"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Order",
+                    "type": "entity",
+                    "method": "OrderParam",
+                    "params": [
+                        "order"
+                    ],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    },
+    "regThankYou": {
+        "template": {
+            "name": "regthankyoutextbox.php"
+        },
+        "data": {
+            "regThankYou": {
+                "placeholders": {
+                    "pageTitle": "Benvenut|o\/a| in Pickyshop.com",
+                    "pageText": [
+                        "<p>Grazie per esserti |registrato\/registrata| a Pickyshop.com [user.getName]. Ti abbiamo inviato una email di conferma all'indirizzo di posta da te specificato in fase di registrazione ([user.getEmail]) aprila e clicca sul link contenuto, oppure incollalo nella barra degli indirizzi del tuo browser.<\/p>",
+                        "<p>Da quel momento il tuo account risulter\u00e0 attivato e potrai procedere con gli acquisti. Puoi anche attivare pi\u00f9 tardi il tuo account se lo preferisci, durante il processo di acquisto.<\/p>"
+                    ],
+                    "pageTextCoupon": [
+                        "<p><\/p>"
+                    ],
+                    "pageTextLastpart": [
+                        ""
+                    ]
+                }
+            }
+        }
+    },
+    "simple": {
+        "template": {
+            "name": "textboxsimple.php"
+        },
+        "data": {
+            "userAccountSupport": {
+                "placeholders": {
+                    "title": "Servizio clienti",
+                    "text": [
+                        "<p>Per modifiche riguardanti indirizzi, informazioni sugli ordini, effettuare resi o cambi puoi contattare il nostro servizio clienti<br \/>",
+                        "da luned\u00ec a venerd\u00ec, dalle 9:30 alle 12:30 e dalle 14:30 alle 18:30.<\/p>"
+                    ]
+                }
+            },
+            "contacts": {
+                "placeholders": {
+                    "title": "Domande? Scrivici!",
+                    "text": [
+                        "<p>Per qualsiasi genere di informazione o per richieste di aiuto nell'acquisto puoi contattare il nostro servizio clienti da luned\u00ec a venerd\u00ec, dalle 9:30 CET alle 12:30 CET e dalle 14:30 CET alle 18:30 CET ai seguenti recapiti telefonici.<\/p>",
+                        "<address>",
+                        "<i class=\"fa fa-phone\"><\/i> tel. +39 02 379 20 266<br>",
+                        "<i class=\"fa fa-mobile\"><\/i> mob. +39 327 55 90 989<br>",
+                        "<i class=\"fa fa-envelope\"><\/i> email. <a href=\"mailto:support@pickyshop.com\">support@pickyshop.com<\/a>",
+                        "<\/address>"
+                    ]
+                }
+            }
+
+
+        }
+    }
+}

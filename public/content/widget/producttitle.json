@@ -1,0 +1,25 @@
+{
+    "default": {
+        "template": {
+            "name": "producttitle.php"
+        },
+        "assets": [],
+        "data": {
+            "default": {
+                "placeholders": {
+                    "phoneOrder": "Ordine Telefonico"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Product",
+                    "type": "entity",
+                    "method": "Id",
+                    "params": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    }
+}

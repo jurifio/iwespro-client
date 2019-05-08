@@ -1,0 +1,128 @@
+{
+    "register" : {
+        "setup": {
+            "repository": "User",
+            "method": "insertNewUserFromSite"
+        },
+        "callback": {
+            "onSuccess": {
+                "auth": true,
+                "redirectTo": "{this}/thankYou",
+                "break": true
+            },
+            "onFail": {
+                "auth": false,
+                "redirectTo": false,
+                "break": true
+            },
+            "onAlways": {
+
+            }
+        },
+        "rules": {
+            "name": {
+                "pattern": "/^\\w+$/u",
+                "mandatory": true,
+                "requireAction": false
+            },
+            "surname": {
+                "pattern": "/^\\w+$/u",
+                "mandatory": true,
+                "requireAction": false
+            },
+            "email": {
+                "pattern": "/^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$/u",
+                "mandatory": true,
+                "match": "emailc",
+                "requireAction": false
+            },
+            "emailc": {
+                "pattern": "/^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$/u",
+                "mandatory": true,
+                "match": "email"
+            },
+            "birthDate": {
+                "pattern": "/^[\\w-]+$/u",
+                "mandatory": true,
+                "requireAction": "validateAge"
+            },
+            "password": {
+                "pattern": "/^[\\w]{8,}$/u",
+                "mandatory": true,
+                "requireAction": false
+            },
+            "gender": {
+                "pattern": "/^\\w+$/u",
+                "mandatory": true,
+                "requireAction": false
+            }
+        }
+    },
+    "address" : {
+        "setup": {
+            "repository": "User",
+            "method": "insertNewAddressFromSite"
+        },
+        "callback": {
+            "onSuccess": {
+                "auth": false,
+                "redirectTo": "{this}/checkout",
+                "break": true
+            },
+            "onFail": {
+                "auth": false,
+                "redirectTo": false,
+                "break": false
+            },
+            "onAlways": {
+
+            }
+        },
+        "rules": {
+            "name": {
+                "pattern": "/^\\w+$/u",
+                "mandatory": true,
+                "requireAction": false
+            },
+            "surname": {
+                "pattern": "/^\\w+$/u",
+                "mandatory": true,
+                "requireAction": false
+            },
+            "company": {
+                "pattern": "/^\\w+$/u",
+                "mandatory": true,
+                "match": "emailc",
+                "requireAction": false
+            },
+            "address": {
+                "pattern": "/^\\w+$/u",
+                "mandatory": true,
+                "match": "email"
+            },
+            "city": {
+                "pattern": "/^\\w+$/u",
+                "mandatory": true,
+                "requireAction": "validateAge"
+            },
+            "postcode": {
+                "pattern": "/^\\w+$/u",
+                "mandatory": true,
+                "requireAction": false
+            },
+            "phone": {
+                "pattern": "/^\\w+$/u",
+                "mandatory": true,
+                "requireAction": false
+            },
+            "notes": {
+                "pattern": "/^\\w+$/u",
+                "mandatory": true,
+                "requireAction": false
+            }
+        }
+    },
+    "login": {
+
+    }
+}

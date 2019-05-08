@@ -1,0 +1,47 @@
+{
+    "default": {
+        "template": {
+            "name": "mainslide.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/mainslide.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "home": {
+                "placeholders": {
+                    "dataCollection": [
+                        {
+                            "image": "sopradonna.jpg",
+                            "introduction": "",
+                            "headline": "sigerson morrison",
+                            "href": "\/it\/salvador-ribes-b230\/calzature-5",
+                            "button": ">>"
+                        },
+                        {
+                            "image": "donnasopra.jpg",
+                            "introduction": "Su tutta la collezione",
+                            "headline": "Sconti fino al 50%",
+                            "href": "#",
+                            "button": ">>>"
+                        },
+                        {
+                            "image": "donnasopradue.jpg",
+                            "introduction": "Sei in Italia?",
+                            "headline": "Spedizione gratuita per ordini superiori a &euro;300",
+                            "href": "#",
+                            "button": ">>>"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

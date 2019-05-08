@@ -1,0 +1,28 @@
+{
+    "catalog": {
+        "template": {
+            "name": "pagination.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "defaultLimit": 30
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Product",
+                    "method": "AfterAppliedFilters",
+                    "params": [
+                        "category",
+                        "color",
+                        "brand",
+                        "size",
+                        "tag"
+                    ],
+                    "offset": "0",
+                    "limit": "32"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "default": {
+        "template": {
+            "name": "branddirectory.php"
+        },
+        "helper": "CWidgetCatalogHelper",
+        "data": {
+            "default": {
+                "placeholders": [],
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "ProductBrand",
+                    "type": "collection",
+                    "method": "AppliedFilters",
+                    "params": [
+                        "category"
+                    ],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "9999"
+                }
+            }
+        }
+    }
+}

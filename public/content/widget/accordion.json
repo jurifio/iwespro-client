@@ -1,0 +1,51 @@
+{
+    "default": {
+        "template": {
+            "name": "userdataaccordion.php"
+        },
+        "data": {
+            "userPersonalData": {
+                "placeholders": {
+                    "id": "accordion2",
+                    "title": "I tuoi dati",
+                    "tabs": [
+                        {
+                            "title": "Dati personali",
+                            "href": "collapseOne2",
+                            "text": [
+                                "<p>Con questo pannello puoi modificare i tuoi dati personali in qualsiasi momento lo desideri.<\/p>",
+                                "<p>Se non hai ancora attivato l'account, puoi cambiare la tua mail in qualunque momento, ma dovrai attivarla di nuovo in seguito.<\/p>",
+                                "<p>&nbsp;<\/p>",
+                                "<p>&gt;&gt;&nbsp;<a href=\"https:\/\/www.pickyshop.com\/it\/mypickyshop\/mydata\/change\">Modifica i tuoi dati<\/a><\/p>"
+                            ],
+                            "initialCss": "",
+                            "initialPanelClass": "panel-collapse collapse in"
+                        },
+                        {
+                            "title": "Cambio password",
+                            "href": "collapseTwo2",
+                            "text": [
+                                "<p>Se desideri cambiare la tua password puoi farlo qui quando lo desideri.<\/p>",
+                                "<p>&nbsp;<\/p>",
+                                "<p>&gt;&gt;&nbsp;<a href=\"#\">Cambia password<\/a><\/p>"
+                            ],
+                            "initialCss": "height:0;",
+                            "initialPanelClass": "panel-collapse collapse"
+                        },
+                        {
+                            "title": "Disattivazione account",
+                            "href": "collapseThree2",
+                            "text": [
+                                "<p>Qui puoi disattivare il tuo account.<\/p>",
+                                "<p>&nbsp;<\/p>",
+                                "<p>&gt;&gt;&nbsp;<a href=\"#\">Procedi alla disattivazione<\/a><\/p>"
+                            ],
+                            "initialCss": "height:0;",
+                            "initialPanelClass": "panel-collapse collapse"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

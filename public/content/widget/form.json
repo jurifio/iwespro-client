@@ -1,0 +1,202 @@
+{
+    "login": {
+        "template": {
+            "name": "loginform.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/userLogin.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "login": {
+                "placeholders": {
+                    "title": "Dati Personali",
+                    "text": "Visualizza e modifica le informazioni che ti riguardano",
+                    "id": "login-form",
+                    "method": "post",
+                    "action": "",
+                    "enctype": "",
+                    "autocomplete": "on",
+                    "repository": "User",
+                    "onPost": "loginFakeAuth",
+                    "forgotPassword": "Password dimenticata?",
+                    "notRegistered": "Non sei registrato?",
+                    "registerNow": "Registrati subito!",
+                    "registerButton": "Registrati"
+                }
+            }
+        }
+    },
+    "newPasswordFromToken": {
+        "template": {
+            "name": "newpasswordfromtokenform.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/newPassword.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "newPasswordFromToken": {
+                "placeholders": {
+                    "title": "Inserisci la nuova Password",
+                    "text": "Inserisci e conferma la nuova Password per il tuo account",
+                    "id": "new-password-form",
+                    "method": "post",
+                    "action": "",
+                    "enctype": "",
+                    "autocomplete": "on",
+                    "repository": "User",
+                    "onGet": "readToken",
+                    "onPost": "changePassword",
+                    "notRegistered": "Non sei registrato?",
+                    "registerNow": "Registrati subito!",
+                    "registerButton": "Registrati"
+                }
+            }
+        }
+    },
+    "newaddress": {
+        "template": {
+            "name": "addressinsert.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/newaddressform.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "newaddress": {
+                "placeholders": {
+                    "title": "Nuovo indirizzo",
+                    "text": "",
+                    "id": "form-newaddress",
+                    "method": "post",
+                    "action": "Form",
+                    "widgetDataAddress": "newaddress.newaddress",
+                    "enctype": "",
+                    "autocomplete": "on",
+                    "repository": "UserAddress",
+                    "onPost": "insertAddress"
+                }
+            }
+        }
+    },
+    "recoverPasswordFromEmail": {
+        "template": {
+            "name": "recoverpasswordform.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/recoverPassword.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "recoverPasswordFromEmail": {
+                "placeholders": {
+                    "title": "Recupera la tua Password",
+                    "text": "Inserisci la tua mail per poter recuperare la tua password",
+                    "id": "recover-password-form",
+                    "method": "post",
+                    "action": "",
+                    "enctype": "",
+                    "autocomplete": "on",
+                    "repository": "User",
+                    "onPost": "recoverPassword",
+                    "forgotPassword": "Password dimenticata?",
+                    "notRegistered": "Non sei registrato?",
+                    "registerNow": "Registrati subito!",
+                    "registerButton": "Registrati"
+                }
+            }
+        }
+    },
+    "register": {
+        "template": {
+            "name": "regform.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/userRegistration.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "register": {
+                "placeholders": {
+                    "title": "Registrati",
+                    "text": "Entra a far parte di Pickyshop.com e scopri i vantaggi riservati ai soci",
+                    "id": "form-register",
+                    "method": "post",
+                    "action": "",
+                    "enctype": "",
+                    "autocomplete": "on",
+                    "repository": "User",
+                    "onPost": "insertNewUserFromSite"
+                }
+            }
+        }
+    },
+    "userAccountData": {
+        "template": {
+            "name": "userdataform.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/userDataEdit.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "userPersonalData": {
+                "placeholders": {
+                    "title": "Dati Personali",
+                    "text": "Visualizza e modifica le informazioni che ti riguardano",
+                    "id": "form-user-data",
+                    "method": "post",
+                    "action": "",
+                    "enctype": "",
+                    "autocomplete": "on",
+                    "repository": "User",
+                    "onPut": "updatePersonalData",
+                    "onGet": "extractPersonalData"
+                }
+            }
+        }
+    }
+}

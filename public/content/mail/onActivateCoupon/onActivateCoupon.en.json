@@ -1,0 +1,13 @@
+{
+    "subject": "Account activation",
+    "content": [
+        "<p>Thank You For Activating Your Account!</p>",
+        "<p>The promotion code [getCouponValue=onActivate] discount off is: <strong>[getCouponCode=onActivate]</strong></p>",
+        "<p>Coupon is valid until [getCouponExpiration=d/m/Y] on all purchases over [getCouponMinCartValidity=onActivate].</p>",
+        "<p>&nbsp;</p>",
+        "<p>If you have received this e-mail message in error and you are not registered to Pickyshop.com, please contact our Customer Care Department by deleting your account on Pickyshop.com.</p>",
+        "<p>Customer Service: support@pickyshop.com</p>",
+        "<p>Thanks,</p>",
+        "<p>pickyshop.com</p>"
+    ]
+}

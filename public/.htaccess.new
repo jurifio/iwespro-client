@@ -1,0 +1,26 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteBase /
+
+#dev
+#RewriteCond %{HTTP_HOST} ^www\.pickyshop\.com$ [NC,OR]
+#RewriteCond %{HTTP_HOST} ^www\.pickyshop\.com$ [NC]
+#RewriteCond %{HTTPS} !=on
+#RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
+
+#production
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,R=301]
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST} [L,R=301]
+
+#if is you
+RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REMOTE_ADDR} 93.43.116.170
+RewriteRule ^(.*)$ /router.php/$1 [L]
+
+#if is mine (dev)
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REMOTE_ADDR} !=93.43.116.170
+#RewriteRule ^(.*)$ /maintenance.php/$1 [L]

@@ -1,0 +1,39 @@
+{
+    "cart": {
+        "template": {
+            "name": "shippingcalculator.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/shippingcalculator.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "title": "Calcola spedizione",
+                    "text": "Inserisci il paese verso cui intendi spedire per avere un'anteprima del costo",
+                    "hint": "Scegli un paese",
+                    "button": "Calcola spedizione"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Country",
+                    "type": "collection",
+                    "method": "All",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "999"
+                }
+            }
+        }
+    }
+}

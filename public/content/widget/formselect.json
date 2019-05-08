@@ -1,0 +1,34 @@
+{
+    "default": {
+        "template": {
+            "name": "frmselect.php"
+        },
+        "data": {
+            "country": {
+                "placeholders": {
+                    "id": "countryId",
+                    "name": "userAddress.countryId",
+                    "label": "Paese",
+                    "required": "required",
+                    "requiredMessage": "Seleziona un paese",
+                    "autocomplete": "on"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Country",
+                    "type": "collection",
+                    "method": "All",
+                    "params": [],
+                    "sorting": [
+                        {
+                            "field": "name",
+                            "order": "asc"
+                        }
+                    ],
+                    "offset": "0",
+                    "limit": "999"
+                }
+            }
+        }
+    }
+}

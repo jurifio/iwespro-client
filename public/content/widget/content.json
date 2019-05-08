@@ -1,0 +1,1016 @@
+{
+    "activationRequired": {
+        "template": {
+            "name": "activationrequired.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/activationEmail.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "activationThankYou": {
+        "template": {
+            "name": "regactthankyou.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/activationDataLayer.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "detail": {
+        "template": {
+            "name": "detail.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/productdetails.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "article": {
+        "template": {
+            "name": "article.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/productdetails.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Article",
+                    "type": "entity",
+                    "method": "Params",
+                    "params": [
+                        "article"
+                    ],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    },
+    "blogHome": {
+        "template": {
+            "name": "bloghome.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "blogSingle": {
+        "template": {
+            "name": "blogsingle.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "brandList": {
+        "template": {
+            "name": "brandlist.php"
+        },
+        "assets": [],
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "cart": {
+        "template": {
+            "name": "cart.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "catalog": {
+        "template": {
+            "name": "catalog.php"
+        },
+        "cacheable": {
+            "timetolive": 14400,
+            "level": "routedataargs"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/catalog.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "checkout": {
+        "template": {
+            "name": "checkout.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "contacts": {
+        "template": {
+            "name": "contacts.php"
+        },
+        "cacheable": {
+            "timetolive": 14400,
+            "level": "routedataargs"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "userUnsuscribe": {
+        "template": {
+            "name": "userUnsuscribe.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+
+                }
+            }
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/userUnsuscribe.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        }
+    },
+
+    "fixedPage": {
+        "template": {
+            "name": "fixedpage.php"
+        },
+        "cacheable": {
+            "timetolive": 86400,
+            "level": "routedata"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "fixedPageLead": {
+        "template": {
+            "name": "fixedpagelead.php"
+        },
+        "cacheable": {
+            "timetolive": 86400,
+            "level": "routedata"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "focusPage": {
+        "template": {
+            "name": "focuspage.php"
+        },
+        "cacheable": {
+            "timetolive": 259200,
+            "level": "routedata"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "home": {
+        "template": {
+            "name": "content.php"
+        },
+        "cacheable": {
+            "timetolive": 86400,
+            "level": "route"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/homeDataLayer.js",
+                    "options": {
+                        "defer": false,
+                        "async": false
+                    }
+                }
+            ]
+        }
+    },
+    "login": {
+        "template": {
+            "name": "login.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/loginDataLayer.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        }
+    },
+    "newPasswordFromToken": {
+        "template": {
+            "name": "newpasswordfromtoken.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "ordererror": {
+        "template": {
+            "name": "ordererror.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "paymentMethod": {
+        "template": {
+            "name": "paymentmethodchose.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "recoverPasswordFromEmail": {
+        "template": {
+            "name": "recoverpasswordfromemail.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "regThankYou": {
+        "template": {
+            "name": "regthankyou.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "register": {
+        "template": {
+            "name": "register.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "searchPage": {
+        "template": {
+            "name": "searchpage.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "shippingAddress": {
+        "template": {
+            "name": "checkoutaddresses.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "thankYou": {
+        "template": {
+            "name": "thankyou.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "userAccountAddresses": {
+        "template": {
+            "name": "useraddresses.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "userAccountDashboard": {
+        "template": {
+            "name": "userdashboard.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "userAccountData": {
+        "template": {
+            "name": "userdata.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "userAccountDataHome": {
+        "template": {
+            "name": "userdatahome.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "userAccountOrders": {
+        "template": {
+            "name": "userorders.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "userAccountOrder": {
+        "template": {
+            "name": "userorder.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "userAccountSupport": {
+        "template": {
+            "name": "usersupport.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "welcome": {
+        "template": {
+            "name": "welcome.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    },
+    "brandlanding": {
+        "template": {
+            "name": "brandlandingcontent.php"
+        },
+        "cacheable": {
+            "timetolive": 14400,
+            "level": "routedataargs"
+        },
+        "data": {
+            "default": {
+                "placeholders": []
+            }
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/catalog.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        }
+    },
+    "userWishlist": {
+        "template": {
+            "name": "userwishlistsummary.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "ads": [
+                        {
+                            "titleColor": "#000000",
+                            "title": "<i class='fa fa-thumbs-o-up'><\/i>",
+                            "text": "Spedizione gratuita*"
+                        },
+                        {
+                            "titleColor": "#000000",
+                            "title": "Registrati Subito!",
+                            "text": ""
+                        }
+                    ],
+                    "phrase1": "SCONTO del 10% e un ulteriore 10% sul il tuo prossimo acquisto!",
+                    "phrase2": "Inserisci il codice EBF16 nella sezione \"COUPON SCONTO\" del tuo carrello per te subito un 10% di sconto valido fino al 28\/11 compreso. Riceverai inoltre un ulteriore sconto del 10% sul tuo prossimo acquisto a partire dal 29\/11."
+                }
+            }
+        }
+    }
+}

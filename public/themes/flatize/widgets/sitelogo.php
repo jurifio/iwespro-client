@@ -1,0 +1,1 @@
+<a class="logo" href="<?php echo $app->baseUrlLang(); ?>"><img src="/assets/logowide.png" width="260" alt="Pickyshop.com"></a>

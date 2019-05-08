@@ -1,0 +1,45 @@
+{
+    "userWishlist": {
+        "template": {
+            "name": "userwishlist.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/userwishlist.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "title": "La tua lista dei desideri",
+                    "footer": "<p>Hai scelto i tuoi prodotti?<\/p>",
+                    "cartButton": "Aggiungi ",
+                    "wishListButton": "Cancella",
+                    "sizeSelector":"Seleziona la Taglia",
+                    "columns": [
+                        "Prodotto",
+                        "Foto",
+                        "Operazioni"
+                    ]
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "WishList",
+                    "type": "collection",
+                    "method": "WishList",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "999"
+                }
+            }
+        }
+    }
+}

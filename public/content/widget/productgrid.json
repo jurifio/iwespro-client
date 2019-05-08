@@ -1,0 +1,202 @@
+{
+    "catalog": {
+        "template": {
+            "name": "productgrid.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/catalogDataLayer.js",
+                    "options": {
+                        "defer": false,
+                        "async": false
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "image": "blueseal_logo_symbol_black.png",
+                    "title": "",
+                    "variablePriceBySize": "Il prezzo varia con la taglia dell'oggetto",
+                    "noProductsAvailableText": "Nessun prodotto presente in questa categoria.",
+                    "productsPerRow": 3,
+                    "newArrivals": "Nuovi Arrivi",
+                    "availableSizes": "Taglie Disponibili: "
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Product",
+                    "method": "AfterAppliedFilters",
+                    "params": [
+                        "category",
+                        "color",
+                        "brand",
+                        "size",
+                        "tag"
+                    ],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "24"
+                }
+            }
+        }
+    },
+    "catalogexcerpt": {
+        "template": {
+            "name": "catalogexcerpt.php"
+        },
+        "data": {
+            "bestsellers": {
+                "placeholders": {
+                    "image": "blueseal_logo_symbol_black.png",
+                    "title": "Pi\u00f9 venduti",
+                    "variablePriceBySize": "",
+                    "noProductsAvailableText": "",
+                    "productsPerRow": 0
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Product",
+                    "type": "collection",
+                    "method": "TagPriority",
+                    "params": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "8"
+                }
+            },
+            "variants": {
+                "placeholders": {
+                    "image": "blueseal_logo_symbol_black.png",
+                    "title": "Varianti Disponibili",
+                    "variablePriceBySize": "",
+                    "noProductsAvailableText": "",
+                    "productsPerRow": 0
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Product",
+                    "type": "collection",
+                    "method": "Variants",
+                    "params": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "10"
+                }
+            },
+            "similar": {
+                "placeholders": {
+                    "image": "blueseal_logo_symbol_black.png",
+                    "title": "Prodotti simili",
+                    "variablePriceBySize": "",
+                    "noProductsAvailableText": "",
+                    "productsPerRow": 0
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Product",
+                    "type": "collection",
+                    "method": "TagPriority",
+                    "params": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "8"
+                }
+            },
+            "sameBrand": {
+                "placeholders": {
+                    "image": "blueseal_logo_symbol_black.png",
+                    "title": "Altri di questo brand",
+                    "variablePriceBySize": "",
+                    "noProductsAvailableText": "",
+                    "productsPerRow": 0
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Product",
+                    "type": "collection",
+                    "method": "SameBrand",
+                    "params": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "40"
+                }
+            },
+            "sameCategory": {
+                "placeholders": {
+                    "image": "blueseal_logo_symbol_black.png",
+                    "title": "Altri di questa categoria",
+                    "variablePriceBySize": "",
+                    "noProductsAvailableText": "",
+                    "productsPerRow": 0
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Product",
+                    "type": "collection",
+                    "method": "SameCategory",
+                    "params": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "40"
+                }
+            }
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/catalogExceptStarter.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        }
+
+    },
+    "searchPage": {
+        "template": {
+            "name": "productgrid.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/catalogDataLayer.js",
+                    "options": {
+                        "defer": false,
+                        "async": false
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "image": "blueseal_logo_symbol_black.png",
+                    "title": "",
+                    "variablePriceBySize": "Il prezzo varia con la taglia dell'oggetto",
+                    "noProductsAvailableText": "Nessun prodotto presente in questa categoria.",
+                    "productsPerRow": 3,
+                    "newArrivals": "Nuovi Arrivi",
+                    "availableSizes": "Taglie Disponibili: "
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Product",
+                    "type": "collection",
+                    "method": "Search",
+                    "params": [
+                        "query"
+                    ],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "96"
+                }
+            }
+        }
+    }
+}

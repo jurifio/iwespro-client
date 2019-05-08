@@ -1,0 +1,30 @@
+{
+    "checkout": {
+        "template": {
+            "name": "paymentdisplay.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "title": "Tipo di pagamento",
+                    "paypalIcon": "fa-cc-paypal",
+                    "carta-di-creditoIcon": "fa-credit-card",
+                    "bonificoIcon": "fa-bank",
+                    "pickandpayIcon": "fa-money",
+                    "contrassegnoIcon": "fa-truck"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Cart",
+                    "type": "entity",
+                    "method": "CurrentCart",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    }
+}

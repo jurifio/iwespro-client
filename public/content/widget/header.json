@@ -1,0 +1,14 @@
+{
+    "home": {
+        "template": {
+            "name": "header.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "headerAttrs": ""
+                }
+            }
+        }
+    }
+}

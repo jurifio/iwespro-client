@@ -1,0 +1,266 @@
+{
+    "default": {
+        "template": {
+            "name": "frmtextinput.php"
+        },
+        "data": {
+            "registerName": {
+                "placeholders": {
+                    "id": "name",
+                    "name": "userDetails.name",
+                    "label": "Nome*",
+                    "type": "text",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "required",
+                    "requiredMessage": "Manca il tuo nome",
+                    "autocomplete": "on"
+                }
+            },
+            "registerSurname": {
+                "placeholders": {
+                    "id": "surname",
+                    "name": "userDetails.surname",
+                    "label": "Cognome*",
+                    "type": "text",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "required",
+                    "requiredMessage": "Manca il tuo cognome",
+                    "autocomplete": "on",
+                    "minlength": "3",
+                    "maxlength": "20"
+                }
+            },
+            "registerEmail": {
+                "placeholders": {
+                    "id": "email",
+                    "name": "user.email",
+                    "label": "E-mail*",
+                    "type": "email",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "required",
+                    "requiredMessage": "Non hai inserito la tua e-mail",
+                    "autocomplete": "on"
+                }
+            },
+            "registerEmailConfirm": {
+                "placeholders": {
+                    "id": "emailc",
+                    "name": "user.emailc",
+                    "label": "Inserisci di nuovo la tua e-mail",
+                    "type": "email*",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "required",
+                    "requiredMessage": "Devi scrivere di nuovo la tua e-mail",
+                    "autocomplete": "off"
+                }
+            },
+            "registerBirthDate": {
+                "placeholders": {
+                    "id": "birthDate",
+                    "name": "userDetails.birthDate",
+                    "label": "Data di nascita",
+                    "type": "date",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "required",
+                    "min": "1900-01-01",
+                    "max": "2005-01-01",
+                    "requiredMessage": "Specifica la tua data di nascita",
+                    "autocomplete": "on"
+                }
+            },
+            "registerPassword": {
+                "placeholders": {
+                    "id": "password",
+                    "name": "user.password",
+                    "label": "Password",
+                    "type": "password",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "required",
+                    "title": "La password deve essere lunga almeno 8 caratteri e contenere lettere e numeri",
+                    "pattern": "^(?=.*[a-zA-Z])(?=.*[0-9]).{8,}$",
+                    "requiredMessage": "Hai dimenticato la tua password",
+                    "autocomplete": "off"
+                }
+            },
+            "registerPasswordConfirm": {
+                "placeholders": {
+                    "id": "password",
+                    "name": "user.passwordc",
+                    "label": "Inserisci di nuovo la tua Password",
+                    "type": "password",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "required",
+                    "requiredMessage": "Hai dimenticato di confermare la tua password",
+                    "autocomplete": "off"
+                }
+            },
+            "addressName": {
+                "placeholders": {
+                    "id": "name",
+                    "name": "userAddress.name",
+                    "label": "Nome*",
+                    "type": "text",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "required",
+                    "requiredMessage": "Hai dimenticato di inserire il tuo nome",
+                    "autocomplete": "on",
+                    "validtext" : "length",
+                    "validationLength": "3-20"
+                }
+            },
+            "addressSurname": {
+                "placeholders": {
+                    "id": "surname",
+                    "name": "userAddress.surname",
+                    "label": "Cognome*",
+                    "type": "text",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "required",
+                    "requiredMessage": "Hai dimenticato di inserire il tuo cognome",
+                    "autocomplete": "on"
+
+                }
+            },
+            "addressCompany": {
+                "placeholders": {
+                    "id": "company",
+                    "name": "userAddress.company",
+                    "label": "Azienda",
+                    "type": "text",
+                    "value": "",
+                    "css": "form-control",
+                    "requiredMessage": "",
+                    "autocomplete": "on"
+                }
+            },
+            "addressAddress": {
+                "placeholders": {
+                    "id": "address",
+                    "name": "userAddress.address",
+                    "label": "Indirizzo*",
+                    "type": "text",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "required",
+                    "requiredMessage": "Specifica un indirizzo",
+                    "autocomplete": "on"
+                }
+            },
+            "addressExtra": {
+                "placeholders": {
+                    "id": "extra",
+                    "name": "userAddress.extra",
+                    "label": "Indirizzo (seconda riga)",
+                    "type": "text",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "",
+                    "requiredMessage": "",
+                    "autocomplete": "on"
+                }
+            },
+            "addressPostCode": {
+                "placeholders": {
+                    "id": "postcode",
+                    "name": "userAddress.postcode",
+                    "label": "Codice Postale*",
+                    "type": "text",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "required",
+                    "requiredMessage": "",
+                    "autocomplete": "on"
+                }
+            },
+            "addressCity": {
+                "placeholders": {
+                    "id": "city",
+                    "name": "userAddress.city",
+                    "label": "Citt\u00e0*",
+                    "type": "text",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "required",
+                    "requiredMessage": "Specifica una citt\u00e0",
+                    "autocomplete": "on"
+                }
+            },
+            "addressFiscalCode": {
+                "placeholders": {
+                    "id": "fiscalCode",
+                    "name": "userAddress.fiscalCode",
+                    "label": "Codice Fiscale / P.iva*",
+                    "type": "text",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "",
+                    "requiredMessage": "required",
+                    "autocomplete": "on"
+
+                }
+            },
+            "addressProvince": {
+                "placeholders": {
+                    "id": "province",
+                    "name": "userAddress.province",
+                    "label": "Provincia*",
+                    "type": "text",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "required",
+                    "requiredMessage": "Specifica una provincia",
+                    "autocomplete": "on"
+                }
+            },
+            "addressPhone": {
+                "placeholders": {
+                    "id": "phone",
+                    "name": "userAddress.phone",
+                    "label": "Telefono*",
+                    "type": "text",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "required",
+                    "requiredMessage": "Inserisci un numero di telefono",
+                    "autocomplete": "on",
+                    "pattern": "^\\s*\\+?\\s*([0-9][\\s-]*){9,}$"
+                }
+            },
+            "loginName": {
+                "placeholders": {
+                    "id": "username",
+                    "name": "username",
+                    "label": "Nome utente (o email)",
+                    "type": "text",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "required",
+                    "requiredMessage": "Non hai inserito la tua email",
+                    "autocomplete": "on"
+                }
+            },
+            "loginPassword": {
+                "placeholders": {
+                    "id": "password",
+                    "name": "password",
+                    "label": "Password",
+                    "type": "password",
+                    "value": "",
+                    "css": "form-control",
+                    "required": "required",
+                    "requiredMessage": "Non hai inserito la tua password",
+                    "autocomplete": "on"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "default": {
+        "template": {
+            "name": "mobilegridtoolbar.php"
+        },
+        "helper": "CWidgetCatalogHelper",
+        "data": {
+            "default": {
+                "placeholders": []
+            }
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/mobilegridtoolbar.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        }
+    }
+}

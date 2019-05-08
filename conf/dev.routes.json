@@ -1,0 +1,137 @@
+{
+    "error": {
+        "404": "/themes/flatize/404.php"
+    },
+    "hosts": [
+        "dev.iwes.pro",
+        "www.iwes.pro",
+        "iwes.pro",
+        "www.iwes.com",
+        "pickyshop.com",
+        "debug.pickyshop.clo.ud.it",
+        "dev.pickyshop.com",
+        "stage.pickyshop.com",
+        "localhost"
+    ],
+    "routes": [
+        {
+            "pattern": "/:loc/mypickyshop(/dashboard)?(/)?",
+            "behaviour": {
+                "ctrl": "\\bamboo\\ecommerce\\controllers\\CUserAccountDashboardController"
+            },
+            "filters": {
+                "loc": "[a-z]{2}"
+            },
+            "translations": {},
+            "methods": [
+                "GET"
+            ]
+        },
+        {
+            "pattern": "/:loc/mypickyshop/mydata(/dashboard)?(/)?",
+            "behaviour": {
+                "ctrl": "\\bamboo\\ecommerce\\controllers\\CUserAccountMyDataHomeController"
+            },
+            "filters": {
+                "loc": "[a-z]{2}"
+            },
+            "translations": {},
+            "methods": [
+                "GET"
+            ]
+        },
+        {
+            "pattern": "/:loc/mypickyshop/mydata/change(/)?",
+            "behaviour": {
+                "ctrl": "\\bamboo\\ecommerce\\controllers\\CUserAccountMyDataController"
+            },
+            "filters": {
+                "loc": "[a-z]{2}"
+            },
+            "translations": {},
+            "methods": [
+                "GET",
+                "PUT"
+            ]
+        },
+        {
+            "pattern": "/:loc/mypickyshop/myaddresses(/)?",
+            "behaviour": {
+                "ctrl": "\\bamboo\\ecommerce\\controllers\\CUserAccountMyAddressesController"
+            },
+            "filters": {
+                "loc": "[a-z]{2}"
+            },
+            "translations": {},
+            "methods": [
+                "GET"
+            ]
+        },
+        {
+            "pattern": "/:loc/mypickyshop/myorders(/)?",
+            "behaviour": {
+                "ctrl": "\\bamboo\\ecommerce\\controllers\\CUserAccountMyOrdersController"
+            },
+            "filters": {
+                "loc": "[a-z]{2}"
+            },
+            "translations": {},
+            "methods": [
+                "GET"
+            ]
+        },
+        {
+            "pattern": "/:loc/mypickyshop/myorder/:orderId",
+            "behaviour": {
+                "ctrl": "\\bamboo\\ecommerce\\controllers\\CUserAccountMyOrderController"
+            },
+            "filters": {
+                "loc": "[a-z]{2}",
+                "orderId": "[0-9]{5,10}"
+            },
+            "translations": {},
+            "methods": [
+                "GET"
+            ]
+        },
+        {
+            "pattern": "/:loc/mypickyshop/support(/)?",
+            "behaviour": {
+                "ctrl": "\\bamboo\\ecommerce\\controllers\\CUserAccountSupportController"
+            },
+            "filters": {
+                "loc": "[a-z]{2}"
+            },
+            "translations": {},
+            "methods": [
+                "GET"
+            ]
+        },
+        {
+            "pattern": "/:loc/mypickyshop/logout(/)?",
+            "behaviour": {
+                "ctrl": "\\bamboo\\ecommerce\\controllers\\CUserLogoutPageController"
+            },
+            "filters": {
+                "loc": "[a-z]{2}"
+            },
+            "translations": {},
+            "methods": [
+                "GET"
+            ]
+        },
+        {
+            "pattern": "/:loc/mypickyshop/mywishlist(/)?",
+            "behaviour": {
+                "ctrl": "\\bamboo\\ecommerce\\controllers\\CUserWishListController"
+            },
+            "filters": {
+                "loc": "[a-z]{2}"
+            },
+            "translations": {},
+            "methods": [
+                "GET"
+            ]
+        }
+    ]
+}

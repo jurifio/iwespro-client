@@ -1,0 +1,16 @@
+{
+    "default": {
+        "template": {
+            "name": "textnote.php"
+        },
+        "data": {
+            "topnav": {
+                "placeholders": {
+                    "align": "pull-left",
+                    "note": "Spedizione Gratuita*",
+                    "style": ""
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,738 @@
+{
+    "activationRequired": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "activationThankYou": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ],
+            "css": [
+                {
+                    "href": "https:\/\/fonts.googleapis.com\/css?family=Kaushan+Script&subset=latin,latin-ext",
+                    "options": {
+                        "media": "all",
+                        "remote": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "article": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "blogHomePage": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/masonry.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "blogSinglePage": {
+        "template": {
+            "name": "page.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "brandList": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "cart": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "catalog": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "checkout": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "contacts": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "detail": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "fixedPage": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "focusPage": {
+        "template": {
+            "name": "page.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "home": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "login": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "newPasswordFromToken": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "ordererror": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "paymentMethod": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "recoverPasswordFromEmail": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "regThankYou": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ],
+            "css": [
+                {
+                    "href": "https:\/\/fonts.googleapis.com\/css?family=Kaushan+Script&subset=latin,latin-ext",
+                    "options": {
+                        "media": "all",
+                        "remote": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "register": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "searchPage": {
+        "template": {
+            "name": "page.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "shippingAddress": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "thankYou": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/thankyou.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                },
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "userAccountAddresses": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "userAccountDashboard": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "userAccountData": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "userAccountDataHome": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "userAccountOrders": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "userAccountSupport": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    },
+    "welcome": {
+        "template": {
+            "name": "page.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/home.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "bodyAttrs": "",
+                    "containerAttrs": "id=\"page\""
+                }
+            }
+        }
+    }
+}

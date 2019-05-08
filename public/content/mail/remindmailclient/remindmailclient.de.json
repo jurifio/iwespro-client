@@ -1,0 +1,7 @@
+{
+    "subject": "Pickyshop.com: Unbezahlte Bestellung # {orderId}",
+    "start": "<p>Hallo %s,</p>",
+    "content": "<p>Ich schreibe, um ihnen mitzuteilen, dass Ihre Bestellung nicht bezahlt ist. Sie können die Zahlung wiederholen!</p><p>Bitte anmelden und auf Ihr Konto MyPickyshop gehen - Bestellungs und Rückgabe - Hier sehen Sie Ihre Bestellung, Sie sollten auf Wiederholungszahlen klicken.</p><p>Oder verwenden Sie eine alternative Zahlungsmethode, beispielsweise Banküberweiung oder Paypal (Ich kann die Paypal Zahlungsaufforderung zu Ihnen senden)</p>",
+    "end": "<p style=\"font:Arial,sans-serif\">Ich warte auf Ihre Antwort und MfG.<br /><br />%s<br /><br />Pickyshop.com<br />Kundendienst</p>",
+    "footer": "<p style=\"font-size:9px\">If you have received this e-mail message in error and you are not registered to Pickyshop.com, please contact our Customer Care Department by deleting your account on Pickyshop.com.<br />Customer Service: support@pickyshop.com<br />Thanks,<br />Pickyshop.com</p>"
+}

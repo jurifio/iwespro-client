@@ -1,0 +1,16 @@
+{
+    "default": {
+        "template": {
+            "name": "myshop.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "loginLabel": "Accedi",
+                    "myLabel": "MyPickyshop",
+                    "logoutLabel": "Esci"
+                }
+            }
+        }
+    }
+}

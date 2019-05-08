@@ -1,0 +1,71 @@
+{
+    "paths" : [
+        "/"
+
+    ],
+    "bundles": [
+        {
+            "name": "img",
+            "theme": "flatize",
+            "ui": "store",
+            "type": "img",
+            "files": [
+                {
+                    "path": "/img/*.{jpg,png,gif}"
+                },{
+                    "path": "/img/content/products/*.{jpg,png,gif}"
+                },{
+                    "path": "/img/content/partners/*.{jpg,png,gif}"
+                },{
+                    "path": "/img/content/slides/*.{jpg,png,gif}"
+                },{
+                    "path": "/img/flags/*.{jpg,png,gif}"
+                },{
+                    "path": "/img/content/blog/*.{jpg,png,gif}"
+                },{
+                    "path": "/img/home/*.{jpg,png,gif}"
+                },{
+                    "path": "/img/focus/*.{jpg,png,gif}"
+                },{
+                    "path": "/img/layout/*.{jpg,png,gif}"
+                },{
+                    "path": "/img/widgets/*.{jpg,png,gif}"
+                }
+            ]
+        },{
+            "name": "test",
+            "theme": "flatize",
+            "ui": "store",
+            "type": "js",
+            "files": [
+                {
+                    "path": "/js/home.js"
+                },{
+                    "path": "/js/wcart.js"
+                },{
+                    "path": "/js/dropdown.js"
+                },{
+                    "path": "/js/tabbedproducts.js"
+                }
+            ],
+            "options": { "async": true, "defer": true }
+        }
+    ],
+    "options": {
+        "minifier": {
+            "engine": "bamboo\\core\\asset\\CYuiCompressor",
+            "options": {
+                "charset": "UTF-8",
+                "line-break": 160,
+                "v": false,
+                "nomunge": false,
+                "preserve-semi": false,
+                "disable-optimization": false
+            }
+        },
+        "writer": {
+            "engine": "bamboo\\core\\asset\\CAssetWriter",
+            "options": {}
+        }
+    }
+}

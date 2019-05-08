@@ -1,0 +1,25 @@
+{
+    "detail": {
+        "template": {
+            "name": "categorypath.php"
+        },
+        "cacheable": {
+            "timetolive": 86400,
+            "level": "routedata"
+        },
+        "data": {
+            "default": {
+                "placeholders": {},
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "ProductCategory",
+                    "method": "CategoryPath",
+                    "params": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "7"
+                }
+            }
+        }
+    }
+}

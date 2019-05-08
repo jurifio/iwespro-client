@@ -1,0 +1,97 @@
+[
+    {
+        "name": "cart",
+        "pattern": "/:loc/§cartLabelName(/)?",
+        "address": {
+            "it": "carrello",
+            "en": "cart",
+            "de": "warenkorb"
+        },
+        "active": true,
+        "skipIfValid": false,
+        "permission_required": null
+    },{
+        "name": "registration",
+        "pattern": "/:loc/login(/)?",
+        "address": {
+            "it": "login",
+            "en": "login",
+            "de": "login"
+        },
+        "active": true,
+        "skipIfValid": true,
+        "permission_required": null
+    },
+    {
+        "name": "activateAccount",
+        "pattern": "/:loc/account-non-attivo(/)?",
+        "address": {
+            "it": "account-non-attivo",
+            "en": "account-need-activation",
+            "de": "account-non-attivo"
+        },
+        "active": true,
+        "skipIfValid": true,
+        "permission_required": null
+    },
+    {
+        "name": "shipping",
+        "pattern": "/:loc/§spedizione(/)?",
+        "address": {
+            "it":"spedizione",
+            "en":"shipment",
+            "de":"versand"
+        },
+        "active": true,
+        "skipIfValid": false,
+        "permission_required": null
+    },
+    {
+        "name": "paymentMethod",
+        "pattern": "/:loc/§metodopagamento(/)?",
+        "address": {
+            "it": "metodo-pagamento",
+            "en": "payment-method",
+            "de": "zahlungsart"
+        },
+        "active": true,
+        "skipIfValid": false,
+        "permission_required": null
+    },
+    {
+        "name": "checkout",
+        "pattern": "/:loc/§checkout(/)?",
+        "address": {
+            "it": "riepilogo-ordine",
+            "en": "checkout",
+            "de": "checkout"
+        },
+        "active": true,
+        "skipIfValid": false,
+        "permission_required": null
+    },
+    {
+        "name": "payment",
+        "pattern": "/:loc/§pagamento(/)?",
+        "address": {
+            "it":"pagamento",
+            "en":"payment",
+            "de":"payment"
+        },
+        "active": true,
+        "skipIfValid": false,
+        "permission_required": null
+    },
+    {
+        "name": "thankyou",
+        "pattern": "/:loc/thank-you/:orderId(/)?",
+        "address": {
+            "it": "grazie",
+            "en": "thank-you",
+            "de": "grazie"
+        },
+        "active": true,
+        "skipIfValid": false,
+        "permission_required": null
+    }
+]

@@ -1,0 +1,18 @@
+{
+    "subject": "Hai un coupon da utilizzare su Pickyshop.com",
+    "firstReminder" : "http://iwes.s3.amazonaws.com/assets/coupon2.jpg",
+    "secondReminder" : "http://iwes.s3.amazonaws.com/assets/coupon1.jpg",
+    "thirdReminder" : "http://iwes.s3.amazonaws.com/assets/coupon3.jpg",
+    "newArrivals": "NUOVI ARRIVI",
+    "woman": "DONNA",
+    "man": "UOMO",
+    "designer": "DESIGNER",
+    "sales": "SALDI",
+    "hello": "Ciao %s,",
+    "simpleHello": "Ciao,",
+    "line1": "Ti ricordiamo che il tuo coupon non è stato ancora utilizzato.",
+    "couponCode": "Codice: %s",
+    "line3": "Inserisci il coupon nell'area riservata del tuo carrello.",
+    "line4": "Non farti sfuggire questa fantastica occasione!",
+    "line5": "Grazie per averci scelto,"
+}

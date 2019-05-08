@@ -1,0 +1,29 @@
+{
+    "default": {
+        "template": {
+            "name": "shopaliketracking.php"
+        },
+        "data": {
+            "thankyou": {
+                "placeholders": {
+                    "trackingId": "it-0PG30GM540",
+                    "type": "confirmed",
+                    "currency": "EUR"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Order",
+                    "type": "entity",
+                    "method": "JustBought",
+                    "params": [
+                        "order"
+                    ],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    }
+}

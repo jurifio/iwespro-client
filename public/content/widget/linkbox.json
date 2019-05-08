@@ -1,0 +1,37 @@
+{
+    "footer": {
+        "template": {
+            "name": "footermenu.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "title": "supporto",
+                    "columnWidthCss": "col-xs-6 col-sm-3",
+                    "dataCollection": [
+                        {
+                            "href": "\/it\/page\/spedizioni\/5",
+                            "name": "Spedizioni"
+                        },
+                        {
+                            "href": "\/it\/page\/modalita-di-pagamento\/2",
+                            "name": "Modalita' di pagamento"
+                        },
+                        {
+                            "href": "\/it\/page\/recesso\/3",
+                            "name": "Recesso"
+                        },
+                        {
+                            "href": "\/it\/page\/condizioni-di-vendita\/1",
+                            "name": "Condizioni di vendita"
+                        },
+                        {
+                            "href": "\/it\/page\/privacy\/4",
+                            "name": "Privacy"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

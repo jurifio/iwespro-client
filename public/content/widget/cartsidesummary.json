@@ -1,0 +1,116 @@
+{
+    "cart": {
+        "template": {
+            "name": "cartsidesummary.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/cartSummary.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                },
+                {
+                    "src": "\/js\/cartDataLayer.js",
+                    "options": {
+                        "defer": false,
+                        "async": false
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "subTotal": "Subtotale",
+                    "yourCart": "Il tuo Carrello",
+                    "yourSelection": "La tua Selezione",
+                    "shipping": "Spedizione",
+                    "freeShipping": "Spedizione gratuita per ordini superiori a &euro;300!",
+                    "cartTotal": "Totale Carrello",
+                    "cartSummary": "Riassunto del carrello",
+                    "updateCart": "Aggiorna il carrello",
+                    "goPayment": "Vai al Metodo di pagamento",
+                    "goCheckout": "Vai al Checkout",
+                    "goShopping": "Continua ad Esplorare",
+                    "continue": "Continua",
+                    "confirm": "Conferma Ordine",
+                    "confirmAndContinue": "Conferma Ordine e Continua",
+                    "payment": "Pagamento",
+                    "pickandpay": "Ritiro nel negozio di",
+                    "coupon": "Sconto Coupon"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Cart",
+                    "type": "entity",
+                    "method": "CurrentCart",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    },
+    "checkout": {
+        "template": {
+            "name": "cartsidesummary.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/cartSummary.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                },
+                {
+                    "src": "\/js\/cartDataLayer.js",
+                    "options": {
+                        "defer": false,
+                        "async": false
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "subTotal": "Subtotale",
+                    "yourCart": "Il tuo Carrello",
+                    "yourSelection": "La tua Selezione",
+                    "shipping": "Spedizione",
+                    "freeShipping": "Spedizione gratuita per ordini superiori a &euro;300!",
+                    "cartTotal": "Totale Carrello",
+                    "cartSummary": "Riassunto del carrello",
+                    "updateCart": "Aggiorna il carrello",
+                    "goPayment": "Vai al Metodo di pagamento",
+                    "goCheckout": "Vai al Checkout",
+                    "goShopping": "Continua ad Esplorare",
+                    "continue": "Continua",
+                    "confirm": "Conferma Ordine",
+                    "confirmAndContinue": "Conferma Ordine e Continua",
+                    "payment": "Pagamento",
+                    "pickandpay": "Ritiro nel negozio di",
+                    "coupon": "Sconto Coupon"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Cart",
+                    "type": "entity",
+                    "method": "CurrentCart",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,337 @@
+{
+    "default": {
+        "template": {
+            "name": "editorialimage.php"
+        },
+        "cacheable": {
+            "timetolive": 86400,
+            "level": "route"
+        },
+        "data": {
+            "newWoman": {
+                "placeholders": {
+                    "image": "woman.jpg",
+                    "alt": "Day To Night",
+                    "href": "\/abbigliamento-193",
+                    "captionCss": "cat-description-top-left",
+                    "captionHref": "\/abbigliamento-193",
+                    "captionTitle": "Day To Night",
+                    "captionText": "",
+                    "colorCss": "editorial-black",
+                    "grid": "col-sm-6 col-xs-6",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": "shop now"
+                }
+            },
+            "newMan": {
+                "placeholders": {
+                    "image": "man1.jpg",
+                    "alt": "Pure Fashion",
+                    "href": "\/abbigliamento-376",
+                    "captionCss": "cat-description-top-left",
+                    "captionHref": "\/abbigliamento-376",
+                    "captionTitle": "Pure Fashion",
+                    "captionText": "",
+                    "colorCss": "editorial-black",
+                    "grid": "col-sm-6 col-xs-6",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": "shop now"
+                }
+            },
+            "newShoes": {
+                "placeholders": {
+                    "image": "sandals.jpg",
+                    "alt": "Springtime Shoes",
+                    "href": "\/calzature-5",
+                    "captionCss": "cat-description-top-left",
+                    "captionHref": "\/calzature-5",
+                    "captionTitle": "Springtime Shoes",
+                    "captionText": "",
+                    "colorCss": "editorial-black",
+                    "grid": "col-sm-12 col-xs-12",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": "shop now"
+                }
+            },
+            "newNeeds": {
+                "placeholders": {
+                    "image": "wallet.jpg",
+                    "alt": "Everyday Needs",
+                    "href": "\/piccola-pelletteria-347",
+                    "captionCss": "cat-description-top-left",
+                    "captionHref": "\/piccola-pelletteria-347",
+                    "captionTitle": "Everyday Needs",
+                    "captionText": "",
+                    "colorCss": "editorial-black",
+                    "grid": "col-sm-6 col-xs-6",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": "shop now"
+                }
+            },
+            "newBag": {
+                "placeholders": {
+                    "image": "bag2.jpg",
+                    "alt": "\"It\"Bag",
+                    "href": "\/borse-298",
+                    "captionCss": "cat-description-top-left",
+                    "captionHref": "\/borse-298",
+                    "captionTitle": "\"It\"Bag",
+                    "captionText": "",
+                    "colorCss": "editorial-black",
+                    "grid": "col-sm-6 col-xs-6",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": "shop now"
+                }
+            },
+            "newAccessories": {
+                "placeholders": {
+                    "image": "accessori.jpg",
+                    "alt": "Must For Him",
+                    "href": "\/borse-520",
+                    "captionCss": "cat-description-top-left",
+                    "captionHref": "\/borse-520",
+                    "captionTitle": "Must For Him",
+                    "captionText": "",
+                    "colorCss": "editorial-black",
+                    "grid": "col-sm-12 col-xs-12",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": "shop now"
+                }
+            },
+            "newLover": {
+                "placeholders": {
+                    "image": "cinta2.jpg",
+                    "alt": "Accessories Lover",
+                    "href": "\/accessori-313",
+                    "captionCss": "cat-description-top-left",
+                    "captionHref": "\/accessori-313",
+                    "captionTitle": "Accessories Lover",
+                    "captionText": "",
+                    "colorCss": "editorial-black",
+                    "grid": "col-sm-6 col-xs-6",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": "shop now"
+                }
+            },
+            "newRing": {
+                "placeholders": {
+                    "image": "rings.jpg",
+                    "alt": "Brilliant Ideas",
+                    "href": "\/bijoux-289",
+                    "captionCss": "cat-description-top-left",
+                    "captionHref": "\/bijoux-289",
+                    "captionTitle": "Brilliant Ideas",
+                    "captionText": "",
+                    "colorCss": "editorial-black",
+                    "grid": "col-sm-6 col-xs-6",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": "shop now"
+                }
+            },
+            "summer0": {
+                "placeholders": {
+                    "image": "19new.jpg",
+                    "alt": "slider",
+                    "href": "\/abbigliamento-193\/tag-nuovi-arrivi-t6",
+                    "captionCss": "cat-description-center",
+                    "captionHref": "\/abbigliamento-193\/tag-nuovi-arrivi-t6",
+                    "captionTitle": "",
+                    "captionText": "",
+                    "colorCss": "editorial-black-center",
+                    "grid": "col-sm-12 col-xs-12",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": ""
+                }
+            },
+            "summer1": {
+                "placeholders": {
+                    "image": "50sale.jpg",
+                    "alt": "sale",
+                    "href": "\/donna-2\/tag-special-sale-50-t86",
+                    "captionCss": "cat-description-center",
+                    "captionHref": "\/donna-2\/tag-special-sale-50-t86",
+                    "captionTitle": "",
+                    "captionText": "",
+                    "colorCss": "editorial-black-center",
+                    "grid": "col-sm-12 col-xs-12",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": ""
+                }
+            },
+            "summer2": {
+                "placeholders": {
+                    "image": "woman.jpg",
+                    "alt": "woman",
+                    "href": "\/donna-2\/tag-flower-t84",
+                    "captionCss": "cat-description-center",
+                    "captionHref": "\/donna-2\/tag-flower-t84",
+                    "captionTitle": "",
+                    "captionText": "",
+                    "colorCss": "editorial-black-big",
+                    "grid": "col-sm-6 col-xs-6",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": ""
+                }
+            },
+            "summer3": {
+                "placeholders": {
+                    "image": "jimmy.jpg",
+                    "alt": "choo",
+                    "href": "\/golden-goose-b385",
+                    "captionCss": "cat-description-center",
+                    "captionHref": "\/golden-goose-b385",
+                    "captionTitle": "",
+                    "captionText": "",
+                    "colorCss": "editorial-black-due",
+                    "grid": "col-sm-12 col-xs-12",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": ""
+                }
+            },
+            "summer4": {
+                "placeholders": {
+                    "image": "wom2.gif",
+                    "alt": "wom2",
+                    "href": "\/giacche-221",
+                    "captionCss": "cat-description-center",
+                    "captionHref": "\/giacche-221",
+                    "captionTitle": "",
+                    "captionText": "",
+                    "colorCss": "editorial-black-due",
+                    "grid": "col-sm-12 col-xs-12",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": ""
+                }
+            },
+            "summer5": {
+                "placeholders": {
+                    "image": "1.jpg",
+                    "alt": "stella",
+                    "href": "\/stella-mccartney\/cpf\/363998-w0zr5\/p\/89557\/v\/3956319",
+                    "captionCss": "cat-description-center",
+                    "captionHref": "\/stella-mccartney\/cpf\/363998-w0zr5\/p\/89557\/v\/3956319",
+                    "captionTitle": "",
+                    "captionText": "",
+                    "colorCss": "editorial-black-tre",
+                    "grid": "col-sm-3 col-xs-3 goldenBorder",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": ""
+                }
+            },
+            "summer6": {
+                "placeholders": {
+                    "image": "2.jpg",
+                    "alt": "fendi",
+                    "href": "\/fendi\/cpf\/8t6562\/p\/86577\/v\/3950591",
+                    "captionCss": "cat-description-center",
+                    "captionHref": "\/fendi\/cpf\/8t6562\/p\/86577\/v\/3950591",
+                    "captionTitle": "",
+                    "captionText": "",
+                    "colorCss": "editorial-black-tre",
+                    "grid": "col-sm-3 col-xs-3",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": ""
+                }
+            },
+            "summer7": {
+                "placeholders": {
+                    "image": "3.jpg",
+                    "alt": "gucci",
+                    "href": "\/gucci\/cpf\/476662\/p\/86469\/v\/3950461",
+                    "captionCss": "cat-description-center",
+                    "captionHref": "\/gucci\/cpf\/476662\/p\/86469\/v\/3950461",
+                    "captionTitle": "",
+                    "captionText": "",
+                    "colorCss": "editorial-black-tre",
+                    "grid": "col-sm-3 col-xs-3 goldenBorder",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": ""
+                }
+            },
+            "summer8": {
+                "placeholders": {
+                    "image": "4.jpg",
+                    "alt": "zanotti",
+                    "href": "\/giuseppe-zanotti\/cpf\/i70050shoar\/p\/82180\/v\/3944820",
+                    "captionCss": "cat-description-center",
+                    "captionHref": "\/giuseppe-zanotti\/cpf\/i70050shoar\/p\/82180\/v\/3944820",
+                    "captionTitle": "",
+                    "captionText": "",
+                    "colorCss": "editorial-black-tre",
+                    "grid": "col-sm-3 col-xs-3 goldenBorder",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": ""
+                }
+            },
+            "summer9": {
+                "placeholders": {
+                    "image": "pinko.jpg",
+                    "alt": "pasini",
+                    "href": "\/gabriele-pasini\/cpf\/g90030-gp9436\/p\/89959\/v\/3956897",
+                    "captionCss": "cat-description-center",
+                    "captionHref": "\/gabriele-pasini\/cpf\/g90030-gp9436\/p\/89959\/v\/3956897",
+                    "captionTitle": "",
+                    "captionText": "",
+                    "colorCss": "editorial-black-tre",
+                    "grid": "col-sm-4 col-xs-4 goldenBorder",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": ""
+                }
+            },
+            "summer10": {
+                "placeholders": {
+                    "image": "cavalli.gif",
+                    "alt": "pinko",
+                    "href": "\/gucci\/cpf\/480064-0fo10\/p\/89985\/v\/3956938",
+                    "captionCss": "cat-description-center",
+                    "captionHref": "\/gucci\/cpf\/480064-0fo10\/p\/89985\/v\/3956938",
+                    "captionTitle": "",
+                    "captionText": "",
+                    "colorCss": "editorial-black-tre",
+                    "grid": "col-sm-4 col-xs-4 goldenBorder",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": ""
+                }
+            },
+            "summer11": {
+                "placeholders": {
+                    "image": "fedetosi.jpg",
+                    "alt": "tosi",
+                    "href": "\/red-valentino\/cpf\/nr0ci0g0395\/p\/87613\/v\/3953156",
+                    "captionCss": "cat-description-tre",
+                    "captionHref": "\/red-valentino\/cpf\/nr0ci0g0395\/p\/87613\/v\/3953156",
+                    "captionTitle": "",
+                    "captionText": "",
+                    "colorCss": "editorial-black-tre",
+                    "grid": "col-sm-4 col-xs-4",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": ""
+                }
+            },
+            "summer12": {
+                "placeholders": {
+                    "image": "man.jpg",
+                    "alt": "man",
+                    "href": "\/dsquared2-b318\/calzature-76",
+                    "captionCss": "cat-description-center",
+                    "captionHref": "\/dsquared2-b318\/calzature-76",
+                    "captionTitle": "",
+                    "captionText": "",
+                    "colorCss": "editorial-black-center",
+                    "grid": "col-sm-12 col-xs-12 goldenBorder",
+                    "animation": "animation animated fadeInUp",
+                    "buttonCallToAction": ""
+                }
+            },
+            "summer13": {
+                "placeholders": []
+            }
+        }
+    },
+    "textbox": {
+        "template": {
+            "name": "editorialimagetextbox.php"
+        },
+        "data": []
+    }
+}

@@ -1,0 +1,9 @@
+order deny,allow
+deny from all
+allow from 95.227.121.16
+allow from 185.23.29.90
+allow from 2.237.91.3
+allow from 79.6.214.120
+allow from localhost
+allow from 5.189.152.89
+allow from 5.189.159.187

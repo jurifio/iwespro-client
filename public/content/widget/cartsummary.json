@@ -1,0 +1,177 @@
+{
+    "cart": {
+        "template": {
+            "name": "cartsummary.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/cartEdit.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "item": "Oggetto",
+                    "productNameTranslation": "Nome Prodotto",
+                    "price": "Prezzo",
+                    "quantityLabel": "Quantit\u00e0",
+                    "subTotal": "Subtotale",
+                    "yourSelection": "La tua Selezione",
+                    "items": "Oggetti",
+                    "cartSummary": "Riassunto del carrello",
+                    "editLabel": "Modifica",
+                    "emptyCartTitle": "Carrello vuoto",
+                    "emptyCartText": "Il carrello risulta vuoto, torna al catalogo utilizzando il menu principale se desideri altro.",
+                    "shippingToTitle": "Spedizione in:",
+                    "sizeLabel": "Taglia",
+                    "quantity": "Quantit\u00e0",
+                    "yourOrderLabel": "Il tuo Ordine"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Cart",
+                    "type": "entity",
+                    "method": "CurrentCart",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    },
+    "checkout": {
+        "template": {
+            "name": "displaycartsummary.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/cartEdit.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "item": "Oggetto",
+                    "productNameTranslation": "Nome Prodotto",
+                    "price": "Prezzo",
+                    "quantityLabel": "Quantit\u00e0",
+                    "subTotal": "Subtotale",
+                    "yourSelection": "La tua Selezione",
+                    "items": "Oggetti",
+                    "cartSummary": "Riassunto del carrello",
+                    "editLabel": "Modifica",
+                    "emptyCartTitle": "Carrello vuoto",
+                    "emptyCartText": "Il carrello risulta vuoto, torna al catalogo utilizzando il menu principale se desideri altro.",
+                    "shippingToTitle": "Spedizione in:",
+                    "sizeLabel": "Taglia",
+                    "quantity": "Quantit\u00e0",
+                    "yourOrderLabel": "Il tuo Ordine"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Cart",
+                    "type": "entity",
+                    "method": "CurrentCart",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    },
+    "thankYou": {
+        "template": {
+            "name": "displaycartsummary.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "item": "Oggetto",
+                    "productNameTranslation": "Nome Prodotto",
+                    "price": "Prezzo",
+                    "quantityLabel": "Quantit\u00e0",
+                    "subTotal": "Subtotale",
+                    "yourSelection": "La tua Selezione",
+                    "items": "Oggetti",
+                    "cartSummary": "Riassunto del carrello",
+                    "editLabel": "Modifica",
+                    "emptyCartTitle": "Carrello vuoto",
+                    "emptyCartText": "Il carrello risulta vuoto, torna al catalogo utilizzando il menu principale se desideri altro.",
+                    "shippingToTitle": "Spedizione in:",
+                    "sizeLabel": "Taglia",
+                    "quantity": "Quantit\u00e0",
+                    "yourOrderLabel": "Il tuo Ordine"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Order",
+                    "type": "entity",
+                    "method": "Order",
+                    "params": [
+                        "order"
+                    ],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    },
+    "widget": {
+        "template": {
+            "name": "wcart.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/wcart.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "widget": {
+                "placeholders": {
+                    "show": 3,
+                    "title": "Oggetti aggiunti di recente",
+                    "subtotal": "Subtotale",
+                    "checkout": "Checkout",
+                    "toCart": "Vai al Carrello",
+                    "titleEmpty": "Il carrello \u00e8 vuoto",
+                    "textEmpty": "Aggiungici qualcosa su"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Cart",
+                    "type": "entity",
+                    "method": "CurrentCart",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    }
+}

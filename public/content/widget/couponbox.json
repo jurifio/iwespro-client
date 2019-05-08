@@ -1,0 +1,42 @@
+{
+    "cart": {
+        "template": {
+            "name": "couponbox.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/couponbox.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "title": "Coupon sconto",
+                    "text": "Se possiedi un coupon di sconto, inseriscilo qui sotto e clicca \"Applica promozione\"",
+                    "hint": "Scrivi qui il tuo codice del coupon",
+                    "button": "Calcola sconto",
+                    "cancelButton": "Elimina Coupon",
+                    "textCouponPercent": "Al tuo ordine verr\u00e0 applicato uno sconto del %s%%",
+                    "textCouponEur": "Al tuo ordine verr\u00e0 applicato uno sconto di %s€"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Cart",
+                    "type": "entity",
+                    "method": "CurrentCart",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    }
+}

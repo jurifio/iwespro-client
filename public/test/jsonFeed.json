@@ -1,0 +1,128 @@
+{
+    "$schema": "http://iwes.it/schemas/productsFeed/JSON/1.0/",
+    "feed" : {
+        "shop": "Cappelli Moderni",
+        "shopId": 35,
+        "date" : "2015-12-22T16:05:43",
+        "action" : "add",
+        "items": [
+            {
+                "brand": "KUDETA",
+                "season": "AI 2015",
+                "sizeGroup" : "IT",
+                "categories": {
+                    "audience": "Donna",
+                    "cat1": "Calzature",
+                    "cat2": "Ballerine"
+                },
+                "variants": [
+                    {
+                        "cpf": "523510",
+                        "extId": "13245asdv3345",
+                        "name": "Ballerina vintage",
+                        "description": "Una bellissima vallerina vintage in pelle color panna",
+                        "brandColor": "BLK",
+                        "colorDescription": "panna",
+                        "mainColor": "bianco",
+                        "sizes": [
+                            {
+                                "sku":"130941210200203",
+                                "barcode":"1321548798",
+                                "size":"36",
+                                "quantity":"1",
+                                "value": 30.23,
+                                "price": 90,
+                                "salePrice": 60
+                            },
+                            {
+                                "sku":"130941210200213",
+                                "barcode":"1321548798",
+                                "size":"37",
+                                "quantity":"2",
+                                "value": 30.23,
+                                "price": 90,
+                                "salePrice": 60
+                            }
+                        ],
+                        "details" : [
+                            {
+                                "content": "Senza tacco"
+                            },{
+                                "content": "Vera pelle"
+                            },{
+                                "label": "Made In",
+                                "content": "Made in italy"
+                            }
+                        ],
+                        "photos": [
+                            {
+                                "url": "http://www.mycdn.it/photos/foto-123-01.jpg",
+                                "position": 1
+                            },{
+                                "url": "http://www.mycdn.it/photos/foto-123-02.jpg",
+                                "position": 1
+                            }
+                        ],
+                        "tags": [
+                            "new-in",
+                            "wonderful",
+                            "wedding"
+                        ]
+                    },
+                    {
+                        "cpf": "523510",
+                        "extId": "13245asdv3346",
+                        "name": "Ballerina vintage",
+                        "description": "Una bellissima vallerina vintage in pelle di camoscio",
+                        "brandColor": "BRN",
+                        "colorDescription": "Camoscio",
+                        "mainColor": "Marrone",
+                        "sizes": [
+                            {
+                                "sku":"130941210200303",
+                                "barcode":"1321548738",
+                                "size":"36",
+                                "quantity":"2",
+                                "value": 30.23,
+                                "price": 90,
+                                "salePrice": 60
+                            },
+                            {
+                                "sku":"130941210200313",
+                                "barcode":"1321548738",
+                                "size":"37",
+                                "quantity":"3",
+                                "value": 30.23,
+                                "price": 90,
+                                "salePrice": 60
+                            }
+                        ],
+                        "details" : [
+                            {
+                                "content": "Senza tacco"
+                            },{
+                                "content": "Vera pelle"
+                            },{
+                                "label": "Made In",
+                                "content": "Made in italy"
+                            }
+                        ],
+                        "photos": [
+                            {
+                                "url": "http://www.mycdn.it/photos/foto-133-01.jpg",
+                                "position": 1
+                            },{
+                                "url": "http://www.mycdn.it/photos/foto-133-02.jpg",
+                                "position": 1
+                            }
+                        ],
+                        "tags": [
+                            "new-in",
+                            "wonderful"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "default": {
+        "template": {
+            "name": "focuspagebanners.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "registerNowLong": "",
+                    "registerNow": "Registrati Subito!"
+                }
+            }
+        }
+    }
+}

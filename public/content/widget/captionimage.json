@@ -1,0 +1,105 @@
+{
+    "default": {
+        "template": {
+            "name": "captionimage.php"
+        },
+        "data": {
+            "home1": {
+                "placeholders": {
+                    "image": "cuoiobassa.jpg",
+                    "alt": "alt text",
+                    "href": "#",
+                    "captionHref": "#",
+                    "captionTitle": "WELCOME SPRING",
+                    "captionText": "Nuovi Arrivi",
+                    "grid": "col-sm-6 col-xs-12",
+                    "animation": "animation animated fadeInUp"
+                }
+            },
+            "home2": {
+                "placeholders": {
+                    "image": "borsabassa.jpg",
+                    "alt": "alt text",
+                    "href": "#",
+                    "captionHref": "#",
+                    "captionTitle": "MICHEAL KORS",
+                    "captionText": "",
+                    "grid": "col-sm-3 col-xs-12",
+                    "animation": "animation animated fadeInUp"
+                }
+            },
+            "home3": {
+                "placeholders": {
+                    "image": "uomo.jpg",
+                    "alt": "alt text",
+                    "href": "#",
+                    "captionHref": "#",
+                    "captionTitle": "CASADEI",
+                    "captionText": "",
+                    "grid": "col-sm-3 col-xs-12",
+                    "animation": "animation animated fadeInUp"
+                }
+            },
+            "home4": {
+                "placeholders": {
+                    "image": "cordabassa.jpg",
+                    "alt": "alt text",
+                    "href": "#",
+                    "captionHref": "#",
+                    "captionTitle": "#",
+                    "captionText": "#",
+                    "grid": "col-sm-3 col-xs-12",
+                    "animation": "animation animated fadeInUp"
+                }
+            },
+            "home5": {
+                "placeholders": {
+                    "image": "snbassa.jpg",
+                    "alt": "alt text",
+                    "href": "#",
+                    "captionHref": "#",
+                    "captionTitle": "HIGH HILLS",
+                    "captionText": "Tacco Da Vertigine",
+                    "grid": "col-sm-3 col-xs-12",
+                    "animation": "animation animated fadeInUp"
+                }
+            },
+            "home6": {
+                "placeholders": {
+                    "image": "platformbassa.jpg",
+                    "alt": "alt text",
+                    "href": "#",
+                    "captionHref": "#",
+                    "captionTitle": "#",
+                    "captionText": "#",
+                    "grid": "col-sm-4 col-xs-12",
+                    "animation": "animation animated fadeInUp"
+                }
+            },
+            "home7": {
+                "placeholders": {
+                    "image": "sportivabassa.jpg",
+                    "alt": "alt text",
+                    "href": "#",
+                    "captionHref": "#",
+                    "captionTitle": "#",
+                    "captionText": "#",
+                    "grid": "col-sm-4 col-xs-12",
+                    "animation": "animation animated fadeInUp"
+                }
+            },
+            "home8": {
+                "placeholders": {
+                    "image": "glitterbassa.jpg",
+                    "alt": "alt text",
+                    "href": "#",
+                    "captionHref": "#",
+                    "captionTitle": "#",
+                    "captionText": "#",
+                    "grid": "col-sm-4 col-xs-12",
+                    "animation": "animation animated fadeInUp"
+                }
+            }
+        }
+    }
+}

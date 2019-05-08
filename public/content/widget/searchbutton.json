@@ -1,0 +1,23 @@
+{
+    "default": {
+        "template": {
+            "name": "searchbutton.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/search.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": []
+            }
+        }
+    }
+}

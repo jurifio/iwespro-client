@@ -1,0 +1,86 @@
+{
+    "default": {
+        "template": {
+            "name": "frmdate.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/frmdate.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "birthday": {
+                "placeholders": {
+                    "id": "birthDate",
+                    "name": "userDetails.birthDate",
+                    "label": "Data di nascita",
+                    "format": "dmy",
+                    "required": "required",
+                    "requiredMessageDay": "Seleziona il giorno di nascita",
+                    "requiredMessageMonth": "Seleziona il mese di nascita",
+                    "requiredMessageYear": "Seleziona l'anno di nascita",
+                    "defaultMessageDay": "giorno",
+                    "defaultMessageMonth": "mese",
+                    "defaultMessageYear": "anno",
+                    "autocomplete": "on",
+                    "dataCollection": [
+                        {
+                            "id": "01",
+                            "name": "gennaio"
+                        },
+                        {
+                            "id": "02",
+                            "name": "febbraio"
+                        },
+                        {
+                            "id": "03",
+                            "name": "marzo"
+                        },
+                        {
+                            "id": "04",
+                            "name": "aprile"
+                        },
+                        {
+                            "id": "05",
+                            "name": "maggio"
+                        },
+                        {
+                            "id": "06",
+                            "name": "giugno"
+                        },
+                        {
+                            "id": "07",
+                            "name": "luglio"
+                        },
+                        {
+                            "id": "08",
+                            "name": "agosto"
+                        },
+                        {
+                            "id": "09",
+                            "name": "settembre"
+                        },
+                        {
+                            "id": "10",
+                            "name": "ottobre"
+                        },
+                        {
+                            "id": "11",
+                            "name": "novembre"
+                        },
+                        {
+                            "id": "12",
+                            "name": "dicembre"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

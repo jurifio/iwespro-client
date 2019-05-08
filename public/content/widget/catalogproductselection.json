@@ -1,0 +1,17 @@
+{
+    "focusPage": {
+        "template": {
+            "name": "productselection.php"
+        },
+        "helper": "CWidgetCatalogHelper",
+        "data": {
+            "default": {
+                "placeholders": {
+                    "variablePriceBySize": "Il prezzo varia con la taglia dell'oggetto",
+                    "newArrivals": "Nuovi Arrivi",
+                    "availableSizes": "Taglie Disponibili"
+                }
+            }
+        }
+    }
+}

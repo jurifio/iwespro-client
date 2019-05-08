@@ -1,0 +1,15 @@
+{
+    "default": {
+        "template": {
+            "name": "facebooklogin.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "notRegistered": "Accedi con Facebook",
+                    "registerNow": ""
+                }
+            }
+        }
+    }
+}

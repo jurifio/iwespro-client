@@ -1,0 +1,24 @@
+{
+    "default": {
+        "template": {
+            "name": "mainnav.php"
+        },
+        "cacheable": {
+            "timetolive": 86400,
+            "level": "route"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "home": "home",
+                    "shopByLook": "Shop by Look",
+                    "brands": "Shop by Brand",
+                    "fidelity": "Fidelity",
+                    "contatti": "Contatti",
+                    "newIn": "New In",
+                    "sales": "Saldi"
+                }
+            }
+        }
+    }
+}

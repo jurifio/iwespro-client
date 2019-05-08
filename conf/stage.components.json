@@ -1,0 +1,57 @@
+{
+    "dbAdapter": {
+        "options": {
+            "engine": "mysql",
+            "host": "db",
+            "port": "3306",
+            "name": "pickyshop_stage",
+            "user": "pickystage",
+            "pass": "rkXlbBB8",
+            "options": {}
+        }
+    },
+    "authManager": {
+        "options": {
+            "secret-key": "36c3e9c3fb7de260572d66d1823c3e28d98219c601026dc633bca115c687ed03dbda782e749a7ad7c86871edcd02daa533fb508f42e037c03f815cb82781dcea87d6bec2fcb213d7e37431871221f841d354d7d5083563425716baba765ee2b388d139fafde6cf94554800748566f8e5166a89423422996942856f27237de667"
+        }
+    },
+    "photoFTPClient": {
+        "class": "\\bamboo\\core\\base\\CFTPComponent",
+        "executeMethod": [
+            "setup"
+        ],
+        "options": {
+            "host": "fiber.office.iwes.it",
+            "user": "shooting",
+            "pass": "shoot",
+            "port": "21",
+            "timeout": "10",
+            "mode": "2",
+            "options": {}
+        }
+    },
+    "cacheService": {
+        "options": {
+            "entities": {
+                "type": "Redis",
+                "host": "127.0.0.1",
+                "db": 3
+            },
+            "widgets": {
+                "type": "Redis",
+                "host": "127.0.0.1",
+                "db": 3
+            },
+            "misc": {
+                "type": "Redis",
+                "host": "127.0.0.1",
+                "db": 3
+            },
+            "index": {
+                "type": "Redis",
+                "host": "127.0.0.1",
+                "db": 3
+            }
+        }
+    }
+}

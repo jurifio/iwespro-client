@@ -1,0 +1,61 @@
+{
+    "checkout": {
+        "template": {
+            "name": "paymentselection.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/paymentselection.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "title": "Metodo di pagamento",
+                    "paypal": {
+                        "name": "PayPal",
+                        "description": "Paga con PayPal per la massima sicurezza e comodit\u00e0",
+                        "icon": "fa-cc-paypal"
+                    },
+                    "carta-di-credito": {
+                        "name": "Carta di Credito",
+                        "description": "Paga con Carta di Credito",
+                        "icon": "fa-credit-card"
+                    },
+                    "bonifico": {
+                        "name": "Bonifico",
+                        "description": "Paga con bonifico e ottinei uno sconto dell'1\u0025",
+                        "icon": "fa-bank"
+                    },
+                    "pickandpay": {
+                        "name": "Pick and Pay",
+                        "description": "Scegli il punto vendita pi\u00f9 vicino a te, ritira il tuo prodotto e paga in contanti",
+                        "icon": "fa-money"
+                    },
+                    "contrassegno": {
+                        "name": "Contrassegno",
+                        "description": "Paga in contrassegno",
+                        "icon": "fa-truck"
+                    }
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "OrderPaymentMethod",
+                    "type": "collection",
+                    "method": "Available",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "99"
+                }
+            }
+        }
+    }
+}

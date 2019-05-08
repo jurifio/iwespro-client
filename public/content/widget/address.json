@@ -1,0 +1,52 @@
+{
+    "footer": {
+        "template": {
+            "name": "footeraddress.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "columnWidthCss": "col-xs-6 col-sm-3",
+                    "title": "Contatti",
+                    "address": "Via Cesare Pavese, 1",
+                    "addressIconCss": "fa-map-marker",
+                    "zip": "62012",
+                    "city": "Civitanova Marche",
+                    "province": "MC",
+                    "phone": "+39 02 379 20 266",
+                    "phoneIconCss": "fa-phone",
+                    "fax": "+39 327 55 90 989",
+                    "faxIconCss": "fa-mobile",
+                    "email": "support@pickyshop.com",
+                    "emailIconCss": "fa-envelope",
+                    "specialMessage": "*Spedizione gratuita in Italia per ordini superiori a € 300"
+                }
+            }
+        }
+    },
+    "userAccountSupport": {
+        "template": {
+            "name": "usersupportcontact.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "columnWidthCss": "col-xs-6 col-sm-3",
+                    "title": "Contatti",
+                    "address": "Via Cesare Pavese, 1",
+                    "addressIconCss": "fa-map-marker",
+                    "zip": "62012",
+                    "city": "Civitanova Marche",
+                    "province": "MC",
+                    "phone": "+39 02 379 20 266",
+                    "phoneIconCss": "fa-phone",
+                    "fax": "+39 327 55 90 989",
+                    "faxIconCss": "fa-mobile",
+                    "email": "support@pickyshop.com",
+                    "emailIconCss": "fa-envelope",
+                    "specialMessage": "*Spedizione gratuita in Italia per ordini superiori a € 300"
+                }
+            }
+        }
+    }
+}

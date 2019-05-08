@@ -1,0 +1,24 @@
+{
+    "userUnsuscribe": {
+        "template": {
+            "name": "userUnsuscribe.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                }
+            }
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/userUnsuscribe.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "default": {
+        "template": {
+            "name": "frmlegal.php"
+        },
+        "data": {
+            "register": {
+                "placeholders": {
+                    "text": "Cliccando su Registrati, accetti le nostre <a href=\"https:\/\/www.pickyshop.com\/it\/page\/condizioni-di-vendita\/1\">Condizioni<\/a> e confermi di aver letto la nostra <a href=\"https:\/\/www.pickyshop.com\/it\/page\/privacy\/4\">Normativa sui dati<\/a>, compresa la sezione dedicata all'<a href=\"https:\/\/www.pickyshop.com\/it\/page\/privacy\/4\">uso dei cookie<\/a>."
+                }
+            }
+        }
+    }
+}

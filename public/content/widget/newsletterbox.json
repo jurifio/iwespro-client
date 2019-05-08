@@ -1,0 +1,33 @@
+{
+    "default": {
+        "template": {
+            "name": "newsletterbox.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/newsletterbox.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "columnWidthCss": "col-xs-6 col-sm-3",
+                    "title": "Newsletter",
+                    "text": "Vivi un'esperienza di shopping unica tra le firme più prestigiose e prezzi irrinunciabili e ottieni uno sconto del 10%.",
+                    "newsletterPlaceHolder": "Scrivi qui la tua e-mail",
+                    "newsletterPlaceHolderName": "Nome",
+                    "newsletterPlaceHolderSurname": "Cognome",
+                    "button": "Iscriviti alla Newsletter",
+                    "success": "Complimenti! Sei iscritto alla nostra newsletter!",
+                    "fail": "Ops, qualcosa \u00e8 andato storto, riprova piu tardi!"
+                }
+            }
+        }
+    }
+}

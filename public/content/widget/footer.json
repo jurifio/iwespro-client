@@ -1,0 +1,18 @@
+{
+    "home": {
+        "template": {
+            "name": "footer.php"
+        },
+        "cacheable": {
+            "timetolive": 86400,
+            "level": "route"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "footerAttrs": "class=\"footer\""
+                }
+            }
+        }
+    }
+}

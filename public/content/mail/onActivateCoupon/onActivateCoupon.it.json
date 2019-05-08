@@ -1,0 +1,13 @@
+{
+    "subject": "Attivazione account",
+    "content": [
+        "<p>Grazie per aver attivato il tuo account</p>",
+        "<p>Il codice del coupon del valore di [getCouponValue=onActivate] di sconto è: <strong>[getCouponCode=onActivate]</strong></p>",
+        "<p>Il coupon è valido fino al [getCouponExpiration=d/m/Y] su tutti gli acquisti superiori a [getCouponMinCartValidity=onActivate].</p>",
+        "<p>&nbsp;</p>",
+        "<p>Se non ti sei registrato a pickyshop.com e hai ricevuto questa e-mail per errore, contattaci al servizio clienti, provvederemo alla cancellazione dell'account dai nostri database.</p>",
+        "<p>Servizio clienti: support@pickyshop.com</p>",
+        "<p>Grazie,</p>",
+        "<p>pickyshop.com</p>"
+    ]
+}

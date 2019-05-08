@@ -1,0 +1,28 @@
+{
+    "default": {
+        "template": {
+            "name": "blogsinglecontent.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "postNotFound": "Post non trovato",
+                    "sorry": "L'articolo che stavi cercando sembra non essere disponibile"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Post",
+                    "type": "entity",
+                    "method": "Id",
+                    "params": [
+                        "postId"
+                    ],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "9"
+                }
+            }
+        }
+    }
+}

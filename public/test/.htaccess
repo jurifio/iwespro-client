@@ -1,0 +1,14 @@
+order deny,allow
+#//deny from all
+allow from 95.227.121.16
+allow from 185.23.29.90
+allow from 2.237.91.3
+allow from 79.6.214.120
+allow from 192.168.1.13
+allow from 192.168.1.87
+allow from 192.168.1.230
+allow from 93.40.237.61
+allow from 82.49.6.4
+allow from 192.168.1.246
+allow from 192.168.1.156
+allow from 93.43.116.170

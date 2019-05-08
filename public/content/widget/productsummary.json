@@ -1,0 +1,89 @@
+{
+    "detail": {
+        "template": {
+            "name": "productsummary.php"
+        },
+        "assets": {
+            "css": [
+                {
+                    "href": "\/css\/prdet.css",
+                    "options": {
+                        "media": "all"
+                    }
+                }
+            ],
+            "js": [
+                {
+                    "src": "\/js\/productDetailDataLayer.js",
+                    "options": {
+                        "defer": false,
+                        "async": false
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "image": "blueseal_logo_symbol_black.png",
+                    "title": "Pagina Scheda Prodotto",
+                    "skuLabel": "Cod. Articolo",
+                    "categoryLabel": "Categorie",
+                    "tagLabel": "Tag",
+                    "descrLabel": "Descrizione",
+                    "sizeFitLabel": "Vestibilit\u00e0 e misure",
+                    "compLabel": "Composizione",
+                    "shippingLabel": "Consegna e resi",
+                    "brandStyleId": "ID Designer Style",
+                    "brandStyleColor": "Designer colour",
+                    "colorDescription": "Descrizione Colore",
+                    "detailLabel": "Dettagli",
+                    "variablePriceBySize": "Il prezzo varia con la taglia dell'oggetto",
+                    "dividerLabel": "etichetta",
+                    "tables": [
+                        {
+                            "name": "Spedizioni",
+                            "head": [
+                                "Paese",
+                                "Tempi di consegna",
+                                "Costi"
+                            ],
+                            "rows": [
+                                [
+                                    "Italia",
+                                    "3-4 giorni lavorativi",
+                                    "5,00 EUR"
+                                ],
+                                [
+                                    "Europa",
+                                    "3-5 giorni lavorativi",
+                                    "10,00 EUR"
+                                ],
+                                [
+                                    "Nord America",
+                                    "3-5 giorni lavorativi",
+                                    "10,00 EUR"
+                                ],
+                                [
+                                    "Altri",
+                                    "5-7 giorni lavorativi",
+                                    "45,00 EUR"
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Product",
+                    "type": "entity",
+                    "method": "Id",
+                    "params": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    }
+}

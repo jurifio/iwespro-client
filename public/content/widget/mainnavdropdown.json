@@ -1,0 +1,213 @@
+{
+    "dlink": {
+        "template": {
+            "name": "mainnavdropdowndlink.php"
+        },
+        "data": {
+            "contatti": {
+                "placeholders": {
+                    "name": "Contatti",
+                    "href": "\/contatti"
+                }
+            },
+            "blog": {
+                "placeholders": {
+                    "name": "Editorials",
+                    "href": "\/blog"
+                }
+            }
+        }
+    },
+    "megamenu": {
+        "template": {
+            "name": "mainnavdropdownmega.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/dropdown.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "uomo": {
+                "placeholders": {
+                    "label": "Uomo",
+                    "image": "menu-mainnav-uomo.jpg"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "ProductCategory",
+                    "method": "DisposableCategoryChildren",
+                    "params": [],
+                    "args": [
+                        "\/uomo"
+                    ],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            },
+            "donna": {
+                "placeholders": {
+                    "label": "Donna",
+                    "image": "menu-mainnav-donna.jpg"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "ProductCategory",
+                    "method": "DisposableCategoryChildren",
+                    "params": [],
+                    "args": [
+                        "\/donna"
+                    ],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            },
+            "bambini": {
+                "placeholders": {
+                    "label": "Bambini",
+                    "image": "menu-mainnav-bambino.png"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "ProductCategory",
+                    "method": "DisposableCategoryChildren",
+                    "params": [],
+                    "args": [
+                        "\/bambini"
+                    ],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    },
+    "megamenuBrands": {
+        "template": {
+            "name": "mainnavdropdownmegabrands.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/dropdown.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "brands": {
+                "placeholders": {
+                    "label": "Designers",
+                    "allBrands": "Esplora Tutti",
+                    "image": "menu-mainnav-designers.png"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "ProductBrand",
+                    "method": "MacroCategory",
+                    "params": [],
+                    "args": [
+                        {
+                            "category": 2,
+                            "brands": [
+                                355,
+                                319,
+                                339,
+                                465,
+                                318,
+                                141
+                            ]
+                        },
+                        {
+                            "category": 3,
+                            "brands": [
+                                319,
+                                355,
+                                336,
+                                318
+                            ]
+                        },
+                        {
+                            "category": 717,
+                            "brands": []
+                        }
+                    ],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    },
+    "toggle": {
+        "template": {
+            "name": "mainnavdropdowntoggle.php"
+        },
+        "data": {
+            "sales": {
+                "placeholders": {
+                    "href": "#",
+                    "name": "Saldi",
+                    "plusClass": "red",
+                    "dataCollection": [
+                        {
+                            "href": "\/it\/uomo-3\/tag-sales-t11",
+                            "name": "Uomo"
+                        },
+                        {
+                            "href": "\/it\/donna-2\/tag-sales-t11",
+                            "name": "Donna"
+                        },
+                        {
+                            "href": "\/it\/bambini-717\/tag-sales-t11",
+                            "name": "Bambini"
+                        }
+                    ]
+                }
+            },
+            "aiuto": {
+                "placeholders": {
+                    "href": "#",
+                    "name": "supporto",
+                    "dataCollection": [
+                        {
+                            "name": "Contatti",
+                            "href": "\/it\/contatti"
+                        },
+                        {
+                            "href": "\/it\/page\/spedizioni\/5",
+                            "name": "Spedizioni"
+                        },
+                        {
+                            "href": "\/it\/page\/modalita-di-pagamento\/2",
+                            "name": "Modalita' di pagamento"
+                        },
+                        {
+                            "href": "\/it\/page\/recesso\/3",
+                            "name": "Recesso"
+                        },
+                        {
+                            "href": "\/it\/page\/condizioni-di-vendita\/1",
+                            "name": "Condizioni di vendita"
+                        },
+                        {
+                            "href": "\/it\/page\/privacy\/4",
+                            "name": "Privacy"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "subject": "Attivazione account",
+    "confirmUserSubscription": "Conferma Iscrizione Utente",
+    "newArrivals": "NUOVI ARRIVI",
+    "woman": "DONNA",
+    "man": "UOMO",
+    "hello": "Ciao %s,",
+    "line1": "Grazie per esserti registrat|o/a| su Pickyshop.com!",
+    "line2": "Attiva il tuo account cliccando su questo <a href=\"%s\" style=\"text-decoration: none; color: black; font-weight: 600; background-color: #cec5be; border: 1px solid black; padding: 0 10px\">LINK</a> oppure copia e incolla questo indirizzo sul tuo browser:",
+    "line3": "Siamo davvero felici di averti conosciut|o/a| ed entusiasti di aiutarti in ogni tua scelta, approfitta pure del nostro servizio clienti.",
+    "line4": "Contatta<a href=\"mailto:support@pickyshop.com\" style=\"color: black; text-decoration: none; font-weight: 600\"> support@pickyshop.com</a>, un costumer service dedicato sarà a tua completa disposizione!",
+    "line5": "BUON ACQUISTO IN <a href=\"https://www.pickyshop.com\" style=\"color: black; text-decoration: none;\">PICKYSHOP.COM!</a>",
+    "line6": "Saluti,<br><span style=\"color: #AAAAAA\">Pickyshop Team</span>"
+}

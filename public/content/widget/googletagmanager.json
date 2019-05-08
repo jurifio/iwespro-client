@@ -1,0 +1,14 @@
+{
+    "default": {
+        "template": {
+            "name": "googletagmanager.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "tagId": "GTM-P8QB3S"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "headpart": {
+        "template": {
+            "name": "pixelshead.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "tagId": "GTM-P8QB3S"
+                }
+            }
+        }
+    },
+    "bodypart": {
+        "template": {
+            "name": "pixelsbody.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "tagId": "GTM-P8QB3S"
+                }
+            }
+        }
+    }
+}

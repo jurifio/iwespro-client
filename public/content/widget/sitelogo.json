@@ -1,0 +1,12 @@
+{
+    "default": {
+        "template": {
+            "name": "sitelogo.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": []
+            }
+        }
+    }
+}

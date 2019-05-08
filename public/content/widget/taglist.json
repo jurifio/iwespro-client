@@ -1,0 +1,12 @@
+{
+    "footer": {
+        "template": {
+            "name": "footertags.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": []
+            }
+        }
+    }
+}

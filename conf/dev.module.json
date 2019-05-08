@@ -1,0 +1,284 @@
+{
+    "framework": {
+        "name": "BlueSeal",
+        "version": "0.0.1a"
+    },
+    "general": {
+        "timezone": "Europe/Rome",
+        "admin-email": "it@iwes.it",
+        "product-photo-host": "https://cdn.iwes.it/",
+        "multi-shop": true,
+        "main-shop-address": 4,
+        "debug-mode": true,
+        "name": "Iwes",
+        "default-lang": "it"
+    },
+    "paths": {
+        "domain": "dev.iwes.pro",
+        "subfolder": "",
+        "config": "/conf",
+        "maintenanceTemplate": "/client/public/maintenance.php",
+        "dummyFolder": "/client/public/media/dummyPictures",
+        "friendLogo": "/client/public/media/friend-logo",
+        "dummyUrl": "/assets",
+        "public": "/client/public",
+        "themes": "/client/public/themes",
+        "errorlog": "/rplogs/bamboo.error.log",
+        "store-theme": "/client/public/themes/flatize",
+        "admin-theme": "/back",
+        "image-temp-folder": "/client/public/media/tempPhotos",
+        "local-images": "/client/public/themes/flatize/assets/img",
+        "local-fonts": "/client/public/themes/flatize/assets/fonts",
+        "blueseal": "/back",
+        "packed-assets": "/client/public/themes/flatize/assets/",
+        "business-data": "/client/public/content/business",
+        "widget-data": "/client/public/content/widget",
+        "productSync": "/client/public/media/productsync",
+        "blogImages": "/client/public/media/blogImages",
+        "tempFolder": "/temp",
+        "tempFolderCsv": "/temp-eancsv",
+        "blueseal-addon": "/back/addon"
+    },
+    "urls": {
+        "home": "",
+        "assets": "/:loc/assets",
+        "blueseal": "/blueseal",
+        "cart": "/carrello"
+    },
+    "cookies": {
+        "session": {
+            "domain": "dev.iwes.pro",
+            "expire": 256320,
+            "path": "/",
+            "httpOnly": true,
+            "secure": false
+        },
+        "jwt": {
+            "domain": "dev.iwes.pro",
+            "expire": 256320,
+            "path": "/",
+            "httpOnly": true,
+            "secure": false
+        }
+    },
+    "fattureInCloud": {
+        "api_uid": "494941",
+        "api_key": "dc6ba1bdce245ae8e6251d7d1df83542"
+    },
+    "miscellaneous": {
+        "facebook": {
+            "app_id": "828468470598455",
+            "app_secret": "f1af6f9e34dc71843313696685529477",
+            "default_graph_version":"v2.5"
+        },
+        "cacheEntityExpiration": 84600,
+        "orderGateways": {
+            "thankYou": "http://dev.iwes.pro/:loc/thank-you/:ord",
+            "error": "http://dev.iwes.pro/:loc/error/:ord",
+            "creditCard": {
+                "secret": "nY39ECW86g6x323Si78u1Zn7671hV6RR2DEVq32R",
+                "alias": "payment_756234",
+                "urlpost": "http://dev.iwes.pro/WebServiceLight/CreditCard"
+            },
+            "payPal": {
+                "business": "transazioni@pickyshop.com",
+                "urlPost": "https://dev.iwes.pro/WebServiceLight/PayPal"
+            }
+        },
+        "confirmExpiration": 172800,
+        "mailer": {
+            "clientRecipient": {
+                "orders": [
+                    "internal@pickyshop.com"
+                ]
+            },
+            "templateFolder": "/client/public/content/mail",
+            "senders": {
+                "no-reply": {
+                    "smtp": {
+                        "Host": "smtp.gmail.com",
+                        "SMTPAuth": true,
+                        "Username": "noreply@pickyshop.com",
+                        "Password": "cartne02",
+                        "SMTPSecure": "TLS",
+                        "Port": 587
+                    },
+                    "From": "noreply@pickyshop.com",
+                    "FromName": "Pickyshop.com"
+                },
+                "default": {
+                }
+            }
+        },
+        "photoFTPClient": {
+            "host": "fiber.office.iwes.it",
+            "user": "shooting",
+            "pass": "PBYI34nbf",
+            "port": "21",
+            "timeout": "10",
+            "mode": "2"
+        },
+        "amazonConfiguration": {
+            "bucket": "iwes",
+            "credential": {
+                "key": "AKIAJAT27PGJ6XWXBY6A",
+                "secret": "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"
+            }
+        },
+        "ebayConfig": {
+            "version": "947",
+            "isProduction": false,
+            "config": {
+                "production": {
+                    "devId": "Production_devID",
+                    "appId": "Production_appID",
+                    "certId": "Production_certID",
+                    "serverUrl": "https://api.ebay.com/ws/api.dll",
+                    "userToken": "Production_usertoken",
+                    "payPalEmailAddress": "PAYPAL_EMAIL_ADDRESS"
+                },
+                "sandbox": {
+                    "devId": "sandbox_devID",
+                    "appId": "sandbox_appID",
+                    "certId": "sandbox_certID",
+                    "serverUrl": "https://api.sandbox.ebay.com/ws/api.dll",
+                    "userToken": "sandbox_usertoken",
+                    "payPalEmailAddress": "SANDBOX_PAYPAL_EMAIL_ADDRESS"
+                }
+            }
+        },
+        "logo": "/assets/logowide.png",
+        "newsletterOverly": true,
+        "siteInvoiceChar": "P",
+        "fiscalData": {
+          "intestation" : "Iwes snc",
+          "intestation2" : "International Web Ecommerce Services",
+          "address" : "Via Cesare Pavese, 1",
+          "address2" : "62012 - Civitanova Marche (MC)",
+          "iva" : "P.IVA: 01865380438",
+          "tel" : "Tel.: +39.0733.471365",
+          "email" : "Email: support@pickyshop.com"
+        },
+        "logipblacklist": [
+            "79.6.214.120",
+            "66.249.78.245",
+            "66.249.66.90",
+            "66.249.90.52",
+            "66.249.69.35",
+            "66.249.64.70",
+            "40.77.167.61",
+            "157.55.39.35",
+            "66.249.75.201",
+            "66.249.75.209",
+            "66.249.75.217",
+            "66.249.65.94",
+            "157.55.39.21",
+            "66.249.69.43",
+            "66.249.78.251",
+            "66.249.69.51",
+            "66.249.78.1",
+            "157.55.39.140",
+            "66.249.90.53",
+            "66.249.66.93",
+            "66.249.90.54",
+            "157.55.39.212",
+            "66.249.66.94",
+            "157.55.39.191",
+            "66.249.64.75",
+            "157.55.39.211",
+            "157.55.39.204",
+            "207.46.13.171",
+            "66.249.64.80",
+            "66.249.89.40",
+            "40.77.167.15",
+            "207.46.13.175",
+            "157.55.39.99",
+            "157.55.39.43",
+            "207.46.13.45",
+            "157.55.39.119",
+            "66.249.91.33",
+            "72.14.199.154",
+            "207.46.13.158",
+            "207.46.13.180",
+            "40.77.167.54",
+            "66.249.89.42",
+            "40.77.167.84",
+            "207.46.13.173",
+            "207.46.13.55",
+            "66.249.89.44",
+            "207.46.13.42",
+            "157.55.39.190",
+            "40.77.167.13",
+            "207.46.13.114",
+            "40.77.167.80",
+            "40.77.167.10",
+            "207.46.13.118",
+            "157.55.39.83",
+            "157.55.39.97",
+            "66.249.91.49",
+            "207.46.13.72",
+            "66.249.91.41",
+            "157.55.39.53",
+            "207.46.13.130",
+            "157.55.39.28",
+            "40.77.167.29",
+            "157.55.39.162",
+            "66.249.92.152",
+            "207.46.13.153",
+            "207.46.13.26",
+            "40.77.167.5",
+            "207.46.13.86",
+            "157.55.39.84",
+            "40.77.167.83",
+            "157.55.39.149",
+            "157.55.39.231",
+            "157.55.39.203",
+            "157.55.39.251",
+            "157.55.39.153",
+            "157.55.39.129",
+            "40.77.167.60",
+            "66.249.90.62",
+            "157.55.39.198",
+            "207.46.13.58",
+            "40.77.167.2"
+        ]
+    },
+    "uploadDrivers": {
+        "ftp": {
+            "shooting": {
+                "host": "fiber.office.iwes.it",
+                "user": "shooting",
+                "pass": "PBYI34nbf",
+                "port": "21",
+                "timeout": "10",
+                "mode": "2"
+            }
+        },
+        "cloud": {
+            "s3": {
+                "bucket": "iwes",
+                "credential": {
+                    "key": "AKIAJAT27PGJ6XWXBY6A",
+                    "secret": "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"
+                }
+            }
+        }
+    },
+    "assets": {
+        "minifier": {
+            "engine": "bamboo\\core\\asset\\CYuiCompressor",
+            "options": {
+                "charset": "UTF-8",
+                "line-break": 160,
+                "v": false,
+                "nomunge": false,
+                "preserve-semi": false,
+                "disable-optimization": false
+            }
+        },
+        "writer": {
+            "engine": "bamboo\\core\\asset\\CAssetWriter",
+            "options": {}
+        }
+    }
+}

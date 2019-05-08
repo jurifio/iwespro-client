@@ -1,0 +1,46 @@
+{
+    "checkout": {
+        "template": {
+            "name": "checkoutaddressform2.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "https:\/\/cdn.jsdelivr.net\/jquery.validation\/1.16.0\/jquery.validate.min.js",
+                    "options": {
+                        "defer": true,
+                        "async": true,
+                        "remote": true
+                    }
+
+                },
+                {
+                    "src": "\/js\/checkoutaddress.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "existingAddressLabel": "I tuoi indirizzi",
+                    "title": "L'ordine verr\u00e0 spedito a:"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "UserAddress",
+                    "type": "collection",
+                    "method": "CartPrefill",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "99"
+                }
+            }
+        }
+    }
+}

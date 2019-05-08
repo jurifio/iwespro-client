@@ -1,0 +1,10 @@
+.flex-viewport {
+    margin-bottom: 0 !important;
+    overflow: visible !important;
+}
+.flex-viewport .slides li {
+    opacity: 0.3;
+}
+.flex-active-slide {
+    opacity: 1.0 !important;
+}

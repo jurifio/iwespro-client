@@ -1,0 +1,97 @@
+{
+    "default": {
+        "template": {
+            "name": "tabcontent.php"
+        },
+        "data": {
+            "donna": {
+                "placeholders": {
+                    "productsPerRow": 4
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Product",
+                    "method": "Category",
+                    "args": {
+                        "category": 2
+                    },
+                    "params": [],
+                    "sorting": [
+                        {
+                            "field": "creation",
+                            "order": "desc"
+                        }
+                    ],
+                    "offset": "0",
+                    "limit": "8"
+                }
+            },
+            "uomo": {
+                "placeholders": {
+                    "productsPerRow": 4
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Product",
+                    "method": "Category",
+                    "args": {
+                        "category": 3
+                    },
+                    "params": [],
+                    "sorting": [
+                        {
+                            "field": "creation",
+                            "order": "desc"
+                        }
+                    ],
+                    "offset": "0",
+                    "limit": "8"
+                }
+            },
+            "bambino": {
+                "placeholders": {
+                    "productsPerRow": 4
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Product",
+                    "method": "Category",
+                    "args": {
+                        "category": 4
+                    },
+                    "params": [],
+                    "sorting": [
+                        {
+                            "field": "creation",
+                            "order": "desc"
+                        }
+                    ],
+                    "offset": "0",
+                    "limit": "8"
+                }
+            },
+            "bambina": {
+                "placeholders": {
+                    "productsPerRow": 4
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Product",
+                    "method": "Category",
+                    "args": {
+                        "category": 97
+                    },
+                    "params": [],
+                    "sorting": [
+                        {
+                            "field": "creation",
+                            "order": "desc"
+                        }
+                    ],
+                    "offset": "0",
+                    "limit": "8"
+                }
+            }
+        }
+    }
+}

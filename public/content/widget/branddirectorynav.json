@@ -1,0 +1,22 @@
+{
+    "default": {
+        "template": {
+            "name": "branddirectorynav.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": [],
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "ProductCategory",
+                    "type": "collection",
+                    "method": "MainCategories",
+                    "params": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "9999"
+                }
+            }
+        }
+    }
+}

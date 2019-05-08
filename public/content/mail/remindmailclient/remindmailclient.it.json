@@ -1,0 +1,12 @@
+{
+    "subject": "Ordine Pickyshop.com # {orderId} sprovvisto di pagamento",
+    "newArrivals": "NUOVI ARRIVI",
+    "woman": "DONNA",
+    "man": "UOMO",
+    "hallo": "Ciao %s,",
+    "line1": "Ti informiamo che abbiamo ricevuto il tuo ordine sprovvisto di pagamento.",
+    "line2": "Puoi ritentare il pagamento cliccando sul tuo nome (in alto a destra vicino alla shopping bag) ed entrando nella sezione MyPickyshop/Ordini e Resi/Ritenta pagamento o seguendo questo <a style=\"text-decoration: none; color: black; font-weight: 600\" href=\"%s/\">link</a>.",
+    "line3": "Qualora volessi modificare la modalità di pagamento, ad esempio in contrassegno, è sufficiente inviare una email a <a href=\"mailto:support@pickyshop.com\" style=\"text-decoration: none; color: black; font-weight: 600\">support@pickyshop.com</a>.",
+    "line4": "DETTAGLIO ORDINE",
+    "line5": "Grazie per averci scelto,"
+}

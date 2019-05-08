@@ -1,0 +1,18 @@
+{
+    "default": {
+        "template": {
+            "name": "frmcheckbox.php"
+        },
+        "data": {
+            "loginRememberMe": {
+                "placeholders": {
+                    "name": "rememberme",
+                    "type": "checkbox",
+                    "id": "gino",
+                    "label": "Ricordati di me",
+                    "value": "0"
+                }
+            }
+        }
+    }
+}

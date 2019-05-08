@@ -1,0 +1,45 @@
+{
+    "user": {
+        "template": {
+            "name": "usersubmenu.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "menu": [
+                        {
+                            "menuItem": "Home",
+                            "menuItemHref": "mypickyshop\/dashboard",
+                            "fontAwesome": "fa-home"
+                        },
+                        {
+                            "menuItem": "I miei dati",
+                            "menuItemHref": "mypickyshop\/mydata",
+                            "fontAwesome": "fa-user"
+                        },
+                        {
+                            "menuItem": "Indirizzi",
+                            "menuItemHref": "mypickyshop\/myaddresses",
+                            "fontAwesome": "fa-road"
+                        },
+                        {
+                            "menuItem": "Ordini e resi",
+                            "menuItemHref": "mypickyshop\/myorders",
+                            "fontAwesome": "fa-truck"
+                        },
+                        {
+                            "menuItem": "lista dei desideri",
+                            "menuItemHref": "mypickyshop\/mywishlist",
+                            "fontAwesome": "fa-heart"
+                        },
+                        {
+                            "menuItem": "Supporto",
+                            "menuItemHref": "mypickyshop\/support",
+                            "fontAwesome": "fa-support"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

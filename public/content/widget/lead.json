@@ -1,0 +1,117 @@
+{
+    "home": {
+        "template": {
+            "name": "overlaylead.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/modal.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                },
+                {
+                    "src": "\/js\/overlaylead.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "showAll": {
+                "placeholders": {
+                    "typeModal": "showAll",
+                    "title": "Un codice Sconto per te!",
+                    "content": "Utilizza questo coupon per avere uno sconto ",
+                    "newsletterTitle": "Benvenuto in Pickyshop.com!",
+                    "newsletterSubtitle": "Iscriviti alla Newsletter e ottieni un coupon del 9990%",
+                    "newsletterContent": "Ricevi in anteprima tutte le novit\u00e0 <\/br> e le promozioni di Pickyshop!",
+                    "newsletterContent2": "",
+                    "newsletterPlaceHolder": "Scrivi qui la tua e-mail",
+                    "newsletterPlaceHolderName": "Nome",
+                    "newsletterPlaceHolderSurname": "Cognome",
+                    "success": "Complimenti! Sei iscritto alla nostra newsletter!",
+                    "fail": "Ops, qualcosa \u00e8 andato storto, riprova piu tardi!",
+                    "search": "Cerca in Pickyshop",
+                    "searchTips": "Scrivi qui cosa cercare",
+                    "searchButtonLabel": "Cerca"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "FixedPagePopup",
+                    "type": "entity",
+                    "method": "Popup",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            },
+            "onlySubscription": {
+                "placeholders": {
+                    "typeModal": "onlySubscription",
+                    "title": "Un codice Sconto per te!",
+                    "content": "Utilizza questo coupon per avere uno sconto ",
+                    "newsletterTitle": "Benvenuto in Pickyshop.com!",
+                    "newsletterSubtitle": "Iscriviti alla Newsletter e ottieni un coupon del 9990%",
+                    "newsletterContent": "Ricevi in anteprima tutte le novit\u00e0 <\/br> e le promozioni di Pickyshop!",
+                    "newsletterContent2": "",
+                    "newsletterPlaceHolder": "Scrivi qui la tua e-mail",
+                    "newsletterPlaceHolderName": "Nome",
+                    "newsletterPlaceHolderSurname": "Cognome",
+                    "success": "Complimenti! Sei iscritto alla nostra newsletter!",
+                    "fail": "Ops, qualcosa \u00e8 andato storto, riprova piu tardi!",
+                    "search": "Cerca in Pickyshop",
+                    "searchTips": "Scrivi qui cosa cercare",
+                    "searchButtonLabel": "Cerca"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "FixedPagePopup",
+                    "type": "entity",
+                    "method": "Popup",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            },
+            "onlyCode": {
+                "placeholders": {
+                    "typeModal": "onlyCode",
+                    "title": "Un codice Sconto per te!",
+                    "content": "Utilizza questo coupon per avere uno sconto ",
+                    "newsletterTitle": "Benvenuto in Pickyshop.com!",
+                    "newsletterSubtitle": "Iscriviti alla Newsletter e ottieni un coupon del 9990%",
+                    "newsletterContent": "Ricevi in anteprima tutte le novit\u00e0 <\/br> e le promozioni di Pickyshop!",
+                    "newsletterContent2": "",
+                    "newsletterPlaceHolder": "Scrivi qui la tua e-mail",
+                    "newsletterPlaceHolderName": "Nome",
+                    "newsletterPlaceHolderSurname": "Cognome",
+                    "success": "Complimenti! Sei iscritto alla nostra newsletter!",
+                    "fail": "Ops, qualcosa \u00e8 andato storto, riprova piu tardi!",
+                    "search": "Cerca in Pickyshop",
+                    "searchTips": "Scrivi qui cosa cercare",
+                    "searchButtonLabel": "Cerca"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "FixedPagePopup",
+                    "type": "entity",
+                    "method": "Popup",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    }
+}

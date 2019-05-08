@@ -1,0 +1,44 @@
+{
+    "detail": {
+        "template": {
+            "name": "productphotopreview.php"
+        },
+        "cacheable": {
+            "timetolive": 86400,
+            "level": "routedata"
+        },
+        "data": {
+            "default": {
+                "placeholders": {},
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Product",
+                    "type": "entity",
+                    "method": "Id",
+                    "params": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "/js/jquery.elevateZoom-3.0.8.min.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                },
+                {
+                    "src": "/js/productPhotoPreview.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        }
+    }
+}

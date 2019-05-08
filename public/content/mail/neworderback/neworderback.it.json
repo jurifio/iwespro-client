@@ -1,0 +1,12 @@
+{
+    "subject": "Nuovo Ordine {orderId}",
+    "content": [
+        "<p>Se non ti sei registrato a Pickyshop.com e hai ricevuto questa e-mail per errore, contattaci al servizio clienti, provvederemo alla cancellazione dell'account dai nostri database.</p>",
+        "<p>Servizio clienti: support@pickyshop.com</p>",
+        "<p>Grazie,</p>",
+        "<p>Pickyshop.com</p>"
+    ],
+    "newOrder": "Nuovo Ordine",
+    "fromUser": "Utente: ",
+    "orderLines": "Linee dell'ordine: "
+}

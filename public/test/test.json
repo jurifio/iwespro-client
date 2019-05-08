@@ -1,0 +1,12 @@
+{
+    "Errors": [
+        {
+            "Code": 1,
+            "Description": "sample string 2"
+        },
+        {
+            "Code": 1,
+            "Description": "sample string 2"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "masonry": {
+        "template": {
+            "name": "blogmasonry.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "buttonLabel": "ALTRO"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Post",
+                    "type": "collection",
+                    "method": "Latest",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "9"
+                }
+            }
+        }
+    }
+}

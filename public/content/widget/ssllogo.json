@@ -1,0 +1,14 @@
+{
+    "footer": {
+        "template": {
+            "name": "footerssllogo.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "columnWidthCss": "col-xs-4"
+                }
+            }
+        }
+    }
+}

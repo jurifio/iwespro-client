@@ -1,0 +1,33 @@
+{
+    "default": {
+        "template": {
+            "name": "frmradio.php"
+        },
+        "data": {
+            "registerGender": {
+                "placeholders": {
+                    "name": "gender",
+                    "label": "Sesso",
+                    "css": "checkbox",
+                    "required": "required",
+                    "requiredMessage": "Non hai specificato il sesso",
+                    "autocomplete": "off",
+                    "dataCollection": [
+                        {
+                            "id": "gender",
+                            "name": "userDetails.gender",
+                            "value": "F",
+                            "label": "Femminile"
+                        },
+                        {
+                            "id": "gender",
+                            "name": "userDetails.gender",
+                            "value": "M",
+                            "label": "Maschile"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

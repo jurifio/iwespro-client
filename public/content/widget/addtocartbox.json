@@ -1,0 +1,43 @@
+{
+    "detail": {
+        "template": {
+            "name": "addtocartbox.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/addtocartbox.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "image": "blueseal_logo_symbol_black.png",
+                    "title": "Pagina aggiunta carrello",
+                    "sizeSelector": "Seleziona la taglia",
+                    "cartButton": "Aggiungi al carrello",
+                    "wishListButton": "Aggiungi alla Lista dei Desideri",
+                    "mailtoLabel": "Contattaci",
+                    "calltoLabel": "Ordine telefonico",
+                    "notPresent": "Prodotto esaurito",
+                    "productCode": "Codice Articolo"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Product",
+                    "type": "entity",
+                    "method": "Id",
+                    "params": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    }
+}

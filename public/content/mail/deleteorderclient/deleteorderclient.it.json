@@ -1,0 +1,15 @@
+{
+    "subject": "Ordine Pickyshop.com # {orderId}!",
+    "newArrivals": "NUOVI ARRIVI",
+    "woman": "DONNA",
+    "man": "UOMO",
+    "hallo": "Ciao %s,",
+    "line1": "Siamo spiacenti di informarti che il prodotto acquistato non è al momento disponibile.",
+    "line2": "Per farci perdonare del disguido puoi selezionare qualunque altro prodotto a cui applicheremo uno <span style=\"font-weight:600\">sconto extra del %s%%.</span>",
+    "line3": "Inserisci il seguente COUPON nel carrello per usufruire del tuo sconto!",
+    "line4": "Cogliamo inoltre l'occasione per indicarti possibili alternative:",
+    "line5": "Qualora non troverai alcuna altra alternativa valida, non preoccuparti, procederemo all'immediato rimborso!",
+    "line6": "Mandaci pure una tua email ed eseguiremo, immediatamente, quanto da te deciso!",
+    "line7": "Grazie per averci scelto,<br><span style=\"font-weight: 600\">Arrivederci a presto nel nostro e-shop!</span>",
+    "discover": "SCOPRI"
+}

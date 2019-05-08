@@ -1,0 +1,13 @@
+{
+    "default": {
+        "template": {
+            "name": "catalogtitle.php"
+        },
+        "assets": [],
+        "data": {
+            "default": {
+                "placeholders": []
+            }
+        }
+    }
+}

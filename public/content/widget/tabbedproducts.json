@@ -1,0 +1,51 @@
+{
+    "default": {
+        "template": {
+            "name": "tabbedproducts.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/tabbedproducts.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ]
+        },
+        "data": {
+            "latestByCategory": {
+                "placeholders": {
+                    "title": "Novit\u00e0",
+                    "dataCollection": [
+                        {
+                            "handle": "donna",
+                            "label": "Donna",
+                            "defaulttab": "tab-default",
+                            "address": "default.donna"
+                        },
+                        {
+                            "handle": "uomo",
+                            "label": "Uomo",
+                            "defaulttab": "",
+                            "address": "default.uomo"
+                        },
+                        {
+                            "handle": "bambino",
+                            "label": "Bambino",
+                            "defaulttab": "",
+                            "address": "default.bambino"
+                        },
+                        {
+                            "handle": "bambina",
+                            "label": "bambina",
+                            "defaulttab": "",
+                            "address": "default.bambina"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

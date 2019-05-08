@@ -1,0 +1,41 @@
+{
+    "checkout": {
+        "template": {
+            "name": "addressdisplay.php"
+        },
+        "data": {
+            "shipping": {
+                "placeholders": {
+                    "title": "Indirizzo di Spedizione"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "UserAddress",
+                    "type": "entity",
+                    "method": "CurrentShipping",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            },
+            "billing": {
+                "placeholders": {
+                    "title": "Indirizzo di Fatturazione"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "UserAddress",
+                    "type": "entity",
+                    "method": "CurrentBilling",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    }
+}

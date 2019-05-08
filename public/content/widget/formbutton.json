@@ -1,0 +1,42 @@
+{
+    "default": {
+        "template": {
+            "name": "frmbutton.php"
+        },
+        "data": {
+            "registerSubmit": {
+                "placeholders": {
+                    "id": "regbtn",
+                    "title": "Registrati",
+                    "introduction": "Inserisci nome utente e password per accedere a Pickyshop.com.",
+                    "type": "submit",
+                    "label": "Registrati",
+                    "css": "btn btn-primary",
+                    "loading": "Attendi..."
+                }
+            },
+            "addressSubmit": {
+                "placeholders": {
+                    "id": "svaddrbtn",
+                    "title": "Salva",
+                    "introduction": "Il tuo indirizzo",
+                    "type": "submit",
+                    "label": "Salva",
+                    "css": "btn btn-primary",
+                    "loading": "Attendi..."
+                }
+            },
+            "editAccountData": {
+                "placeholders": {
+                    "id": "edtaccbtn",
+                    "title": "Modifica",
+                    "introduction": "Il tuo indirizzo",
+                    "type": "submit",
+                    "label": "Modifica",
+                    "css": "btn btn-primary",
+                    "loading": "Attendi..."
+                }
+            }
+        }
+    }
+}

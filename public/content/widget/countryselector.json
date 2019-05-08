@@ -1,0 +1,26 @@
+{
+    "default": {
+        "template": {
+            "name": "countryselector.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "selectCountry": "Seleziona il paese",
+                    "country": "Paese"
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Country",
+                    "type": "collection",
+                    "method": "All",
+                    "params": [],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "999"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,1 @@
+<p class="<?php echo $data->align; ?> text-note" style="<?php echo $data->style ?? "" ?>"><?php tpe($data->note); ?></p>

@@ -1,0 +1,36 @@
+{
+    "footer": {
+        "template": {
+            "name": "footersocial.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "columnWidthCss": "col-xs-4",
+                    "dataCollection": [
+                        {
+                            "href": "https:\/\/www.facebook.com\/pickyshoppky",
+                            "name": "Facebook",
+                            "icon": "fa-facebook"
+                        },
+                        {
+                            "href": "https:\/\/twitter.com\/PKYshop",
+                            "name": "Twitter",
+                            "icon": "fa-twitter"
+                        },
+                        {
+                            "href": "https:\/\/instagram.com\/PKYshop",
+                            "name": "Instagram",
+                            "icon": "fa-instagram"
+                        },
+                        {
+                            "href": "https:\/\/it.pinterest.com\/pickyshop\/",
+                            "name": "Pinterest",
+                            "icon": "fa-pinterest"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

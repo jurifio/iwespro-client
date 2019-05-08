@@ -1,0 +1,46 @@
+{
+    "user": {
+        "template": {
+            "name": "userorderdetail.php"
+        },
+        "assets": {
+            "js": [
+                {
+                    "src": "\/js\/cartEdit.js",
+                    "options": {
+                        "defer": true,
+                        "async": true
+                    }
+                }
+            ],
+            "css": [
+                {
+                    "href": "\/css\/order-detail.css",
+                    "options": {
+                        "remote": false
+                    }
+                }
+            ]
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "Order",
+                    "type": "entity",
+                    "method": "OrderParam",
+                    "params": [
+                        "order"
+                    ],
+                    "args": [],
+                    "sorting": [],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    }
+}

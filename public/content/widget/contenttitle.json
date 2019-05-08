@@ -1,0 +1,180 @@
+{
+    "default": {
+        "template": {
+            "name": "contenttitle.php"
+        },
+        "data": {
+            "blogHome": {
+                "placeholders": {
+                    "title": "BLOG",
+                    "text": ""
+                }
+            },
+            "cart": {
+                "placeholders": {
+                    "title": "Il tuo carrello",
+                    "text": "Visualizza il tuo carrello"
+                }
+            },
+            "login": {
+                "placeholders": {
+                    "title": "Accedi",
+                    "text": "Inserisci nome utente e password per accedere a Pickyshop.com."
+                }
+            },
+            "register": {
+                "placeholders": {
+                    "title": "Registrazione",
+                    "text": "Entra a far parte di Pickyshop.com e scopri i vantaggi riservati ai soci"
+                }
+            },
+            "checkout": {
+                "placeholders": {
+                    "title": "Riepilogo dell'ordine",
+                    "text": "Controlla tutte le informazioni del tuo ordine e conferma"
+                }
+            },
+            "payment": {
+                "placeholders": {
+                    "title": "Metodo di pagamento",
+                    "text": "Seleziona un metodo di pagamento per questo ordine"
+                }
+            },
+            "shipping": {
+                "placeholders": {
+                    "title": "Indirizzi di spedizione",
+                    "text": "Inserisci gli indirizzi di spedizione e fatturazione per questo ordine"
+                }
+            },
+            "thankYou": {
+                "placeholders": {
+                    "title": "Grazie!",
+                    "text": "Hai completato con successo l'acquisto"
+                }
+            },
+            "ordererror": {
+                "placeholders": {
+                    "title": "Whoops!",
+                    "text": "C'\u00e8 stato un errore nel processamento dell'ordine"
+                }
+            },
+            "regThankYou": {
+                "placeholders": {
+                    "title": "Sei registrat|o\/a|!",
+                    "text": "Controlla la tua email per attivare il tuo account"
+                }
+            },
+            "activationThankYou": {
+                "placeholders": {
+                    "title": "Account attivato",
+                    "text": "Grazie per aver attivato il tuo account"
+                }
+            },
+            "activationRequired": {
+                "placeholders": {
+                    "title": "Attivazione richiesta",
+                    "text": "E' necessario attivare l'account per proseguire"
+                }
+            },
+            "recoverPasswordFromEmail": {
+                "placeholders": {
+                    "title": "Recupera la tua password",
+                    "text": "Puoi recuperare la tua password inserendo dalla email di registrazionie"
+                }
+            },
+            "newPasswordFromToken": {
+                "placeholders": {
+                    "title": "Recupero Password",
+                    "text": "Inserisci la nuova password"
+                }
+            },
+            "contacts": {
+                "placeholders": {
+                    "title": "Contattaci",
+                    "text": ""
+                }
+            },
+            "brandList": {
+                "placeholders": {
+                    "title": "La Nostra selezione di Brand",
+                    "text": "Esplora la nostra ricca selezione di brand per trovare ci\u00f2 che ti piace"
+                }
+            },
+            "searchPage": {
+                "placeholders": {
+                    "title": "Risultati ricerca",
+                    "text": ""
+                }
+            }
+        }
+    },
+    "fixedPage": {
+        "template": {
+            "name": "contenttitlefixedpage.php"
+        },
+        "data": {
+            "fixedPage": {
+                "placeholders": {
+                    "title": "",
+                    "text": ""
+                },
+                "remote": {
+                    "src": "PandaORM",
+                    "repository": "FixedPage",
+                    "type": "entity",
+                    "method": "PageId",
+                    "params": [
+                        "params"
+                    ],
+                    "args": [
+                        "args"
+                    ],
+                    "sorting": [
+                        "sorting"
+                    ],
+                    "offset": "0",
+                    "limit": "1"
+                }
+            }
+        }
+    },
+    "focusPage": {
+        "template": {
+            "name": "contenttitlefocuspage.php"
+        },
+        "helper": "CWidgetFocusPageHelper",
+        "data": {
+            "focusPage": {
+                "placeholders": {
+                    "title": "[getPageTitle]",
+                    "subtitle": "[getPageTitleText]",
+                    "background": "[getPageBackground]"
+                }
+            }
+        }
+    },
+    "user": {
+        "template": {
+            "name": "usercontenttitle.php"
+        },
+        "assets": {
+            "css": [
+                {
+                    "href": "\/css\/myarea.css",
+                    "options": {
+                        "media": "all"
+                    }
+                }
+            ]
+        },
+        "data": {
+            "userDashboard": {
+                "placeholders": {
+                    "title": "[getUserFullName]",
+                    "text": "Il mio account Pickyshop",
+                    "img": "|male\/female|-trait.png"
+                }
+            }
+        }
+    }
+}

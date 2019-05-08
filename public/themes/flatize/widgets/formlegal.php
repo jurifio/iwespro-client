@@ -1,0 +1,1 @@
+<p class="legal-notice"><?php echo $data->text; ?></p>

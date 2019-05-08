@@ -1,0 +1,1 @@
+<p class="legal-notice"><?php tpe($data->text); ?></p>

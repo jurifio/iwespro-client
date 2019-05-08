@@ -1,0 +1,14 @@
+{
+    "default": {
+        "template": {
+            "name": "productslide.php"
+        },
+        "data": {
+            "default": {
+                "placeholders": {
+                    "title": "Potrebbe piacerti anche"
+                }
+            }
+        }
+    }
+}

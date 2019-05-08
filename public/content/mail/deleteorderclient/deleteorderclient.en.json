@@ -1,0 +1,15 @@
+{
+    "subject": "Pickyshop.com Order # {orderId}!",
+    "newArrivals": "NEW ARRIVALS",
+    "woman": "WOMAN",
+    "man": "MAN",
+    "hallo": "Hi %s,",
+    "line1": "We are sorry to inform you that item you have purchased is not currently available.",
+    "line2": "Here is a gift, so you will forgive us! You can choose any other item and we will apply an<span style=\"font-weight:600\">extra %s%% discount.</span>",
+    "line3": "Enter the folloqing COUPON in your cart to take advantage of your discount!",
+    "line4": "We would also take the opportunity to get you possible alternatives:",
+    "line5": "If you will not find any other valid alternative, do not worry, we will proceed to an immediate refund!",
+    "line6": "Send us your email and we will immediately execute your decision!",
+    "line7": "Thanks for choosing us,<br><span style=\"font-weight: 600\">See you soon on our e-shop!</span>",
+    "discover": "DISCOVER"
+}
