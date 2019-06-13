@@ -33,3 +33,14 @@ $monkey->mailService;
 $time = microtime(true);
 
 var_dump("ttime:  \t\t\t\t\t" . ($time - $ttime));
+$file="1557394027.json";
+
+$rawData = json_decode(file_get_contents($file),true);
+foreach ($rawData as $one) {
+    $image=[];
+ foreach($one['img'] as $value){
+     echo $value."<br>";
+    }
+}
+
+

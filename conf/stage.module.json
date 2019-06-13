@@ -13,7 +13,7 @@
         "default-lang": "it"
     },
     "paths": {
-        "domain": "stage.pickyshop.com",
+        "domain": "stage.iwes.pro",
         "subfolder": "",
         "config": "/conf",
         "maintenanceTemplate": "/client/public/maintenance.php",
@@ -45,7 +45,7 @@
     },
     "cookies": {
         "session": {
-            "domain": "stage.pickyshop.com",
+            "domain": "stage.iwes.pro",
             "expire": 2591999,
             "path": "/",
             "httpOnly": true,
@@ -60,8 +60,8 @@
         },
         "cacheEntityExpiration": 84600,
         "orderGateways": {
-            "thankYou": "http://stage.pickyshop.com/:loc/thank-you/:ord",
-            "error": "http://stage.pickyshop.com/:loc/error/:ord",
+            "thankYou": "http://stage.iwes.pro/:loc/thank-you/:ord",
+            "error": "http://stage.iwes.pro/:loc/error/:ord",
             "creditCard": {
                 "secret": "nY39ECW86g6x323Si78u1Zn7671hV6RR2DEVq32R",
                 "alias": "payment_756234",
