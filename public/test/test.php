@@ -31,7 +31,7 @@ $time = microtime(true);
 $monkey->mailService;
 
 $time = microtime(true);
-
+/*
 var_dump("ttime:  \t\t\t\t\t" . ($time - $ttime));
 $file="1557394027.json";
 
@@ -41,6 +41,17 @@ foreach ($rawData as $one) {
  foreach($one['img'] as $value){
      echo $value."<br>";
     }
-}
+}*/
+$idProducts='14-9';
+$idProduct= explode("-", $idProducts);
+$id=$idProduct[0];
+$marketPlaceId=$idProduct[1];
+echo $id;
+echo $marketPlaceId;
+
+
+
+
+
 
 
