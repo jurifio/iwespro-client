@@ -62,24 +62,24 @@ $productUrl = $app->productUrl($product);
 
     <h6><?php echo $data->entity->productVariant->name. (!empty($data->entity->productVariant->description) ? ' - '.$data->entity->productVariant->description : "").' - '.$data->entity->productColorGroup->getLocalizedName() ?></h6>
     <div id="priceBox">
-    <?php if ($pricesAreOnARange == true): ?>
-        <?php if ($sale > 0): ?>
-            <span class="fullprice oldprice"><?php echo $salePrices[0]; ?> &euro;
+        <?php if ($pricesAreOnARange == true): ?>
+            <?php if ($sale > 0): ?>
+                <span class="fullprice oldprice"><?php echo $salePrices[0]; ?> &euro;
                 - <?php echo $salePrices[count($salePrices) - 1]; ?> &euro;</span>&ensp;
-            <span class="screensale actualprice saleprice"><?php echo $salePrices[0]; ?> &euro;
+                <span class="screensale actualprice saleprice"><?php echo $salePrices[0]; ?> &euro;
                 - <?php echo $salePrices[count($salePrices) - 1]; ?> &euro;</span>
-        <?php else: ?>
-            <span class="fullprice actualprice price"><?php echo $prices[0]; ?> &euro;
+            <?php else: ?>
+                <span class="fullprice actualprice price"><?php echo $prices[0]; ?> &euro;
                 - <?php echo $prices[count($prices) - 1]; ?> &euro;</span>
-        <?php endif; ?>
-    <?php else: ?>
-        <?php if ($sale > 0): ?>
-            <span style="display:inline" class="fullprice oldprice"><?php echo $prices[0]; ?> &euro;</span>&ensp;
-            <span style="display:inline" class="screenprice actualprice saleprice"><?php echo $salePrices[0]; ?> &euro;</span>
+            <?php endif; ?>
         <?php else: ?>
-            <span class="fullprice actualprice price"><?php echo $prices[0]; ?> &euro;</span>
+            <?php if ($sale > 0): ?>
+                <span style="display:inline" class="fullprice oldprice"><?php echo $prices[0]; ?> &euro;</span>&ensp;
+                <span style="display:inline" class="screenprice actualprice saleprice"><?php echo $salePrices[0]; ?> &euro;</span>
+            <?php else: ?>
+                <span class="fullprice actualprice price"><?php echo $prices[0]; ?> &euro;</span>
+            <?php endif; ?>
         <?php endif; ?>
-    <?php endif; ?>
     </div>
 
     <h5 class="product-code">
@@ -132,9 +132,9 @@ $productUrl = $app->productUrl($product);
                         $isLabel = (strpos($detail->productDetailLabel->slug, $data->dividerLabel) !== false ? true : false);
                         /** @var \bamboo\domain\entities\CProductSheetActual $detail */
                         if(!empty($detail->productDetail->slug)): ?>
-                        <li itemprop="additionalProperty" itemscope itemtype="http://schema.org/PropertyValue" <?php if($isLabel) echo "class='removeLiStyle'" ?>>
-                            <meta itemprop="name" content="<?php echo $detail->productDetailLabel->getLocalizedName() ?>"/>
-                            <span itemprop="value">
+                            <li itemprop="additionalProperty" itemscope itemtype="http://schema.org/PropertyValue" <?php if($isLabel) echo "class='removeLiStyle'" ?>>
+                                <meta itemprop="name" content="<?php echo $detail->productDetailLabel->getLocalizedName() ?>"/>
+                                <span itemprop="value">
                                 <?php
                                 if($isLabel){
                                     echo '<strong>'.$detail->productDetail->getLocalizedDetail().'</strong>';
@@ -143,8 +143,8 @@ $productUrl = $app->productUrl($product);
                                 }
                                 ?>
                             </span>
-                        </li>
-                    <?php
+                            </li>
+                        <?php
                         endif;
                     endforeach; ?>
                     <br>
@@ -163,29 +163,29 @@ $productUrl = $app->productUrl($product);
             <div id="collapseFive" class="panel-collapse collapse">
                 <div class="panel-body">
                     <?php foreach($data->tables as $table): ?>
-                    <span style="font-weight: bold;font-size:1.0em;"><?php tpe($table->name) ?></span>
-                    <table class="table table-hover table-responsive">
-                        <thead>
-                        <tr>
-                            <?php foreach($table->head as $col): ?>
-                            <th><?php tpe($col) ?></th>
+                        <span style="font-weight: bold;font-size:1.0em;"><?php tpe($table->name) ?></span>
+                        <table class="table table-hover table-responsive">
+                            <thead>
+                            <tr>
+                                <?php foreach($table->head as $col): ?>
+                                    <th><?php tpe($col) ?></th>
+                                <?php endforeach; ?>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach ($table->rows as $row): ?>
+                                <tr>
+                                    <?php foreach ($row as $col): ?>
+                                        <td><?php tpe($col) ?></td>
+                                    <?php endforeach; ?>
+                                </tr>
                             <?php endforeach; ?>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php foreach ($table->rows as $row): ?>
-                        <tr>
-                            <?php foreach ($row as $col): ?>
-                            <td><?php tpe($col) ?></td>
-                            <?php endforeach; ?>
-                        </tr>
-                        <?php endforeach; ?>
-                        <tfoot>
+                            <tfoot>
                             <tr>
                                 <td colspan="3"></td>
                             </tr>
-                        </tfoot>
-                    </table>
+                            </tfoot>
+                        </table>
                     <?php endforeach; ?>
                 </div>
             </div>
