@@ -46,27 +46,26 @@ require_once('/media/sf_sites/vendor/PrestaShop-webservice-lib-master/PSWebServi
 // Define the resource
 
 // creating web service access
-    $webService = new PrestaShopWebservice(
-        'https://iwes.shop/',
-        '6SS993LXNX84RQN9XZ4XSTZRNZCBJLQV',
-        true);
-    $xmlResponse = $webService->get(['resource' => 'products', 'id' => 12]);
-        $productsXML = $xmlResponse->products[0];
-       unset($xmlResponse->product[0]->manufacturer_name);
-        unset($xmlResponse->product[0]->quantity);
+$webService = new PrestaShopWebservice(
+    'https://iwes.shop/',
+    '6SS993LXNX84RQN9XZ4XSTZRNZCBJLQV',
+    true);
+$xmlResponse = $webService->get(['resource' => 'products', 'id' => 13]);
+$productsXML = $xmlResponse->products[0];
+unset($xmlResponse->product[0]->manufacturer_name);
 
-        $xmlResponse->product->active=1;
+$xmlResponse->product->active=0;
 
 try {
     $opt['resource'] = 'products';
     $opt['putXml'] = $xmlResponse->asXML();
-    $opt['id'] = 12;
-    $opt['id_shop']=2;
+    $opt['id'] = 13;
+    $opt['id_shop']= 2;
     $xmlResponse = $webService->edit($opt);
-        //echo sprintf("Successfully updated products with ID: %s", (string) $productsXML->id);
-    } catch (PrestaShopWebserviceException $e) {
-        echo $e->getMessage();
-    }
+    //echo sprintf("Successfully updated products with ID: %s", (string) $productsXML->id);
+} catch (PrestaShopWebserviceException $e) {
+    echo $e->getMessage();
+}
 
 
 
