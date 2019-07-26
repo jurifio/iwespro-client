@@ -32,40 +32,36 @@ $monkey->mailService;
 
 $time = microtime(true);
 /*
-var_dump("ttime:  \t\t\t\t\t" . ($time - $ttime));
-$file="1557394027.json";
+ *
+ *
+ */
+$url = "http://atelier-hub.com/test/SeasonList";
 
-$rawData = json_decode(file_get_contents($file),true);
-foreach ($rawData as $one) {
-    $image=[];
- foreach($one['img'] as $value){
-     echo $value."<br>";
+$username = "test";
+$password = "Imagine#";
+
+$url = "http://atelier-hub.com/test/BrandList";
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
+curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+$output = curl_exec($ch);
+$info = curl_getinfo($ch);
+curl_close($ch);
+
+$json = json_decode($output, true);
+
+foreach ($json as $key => $jsons) { // This will search in the 2 jsons
+    foreach ($jsons as $keys => $value) {
+            foreach ($value as $val) {
+                echo $val['ID']."<br>";
+            }
     }
-}*/
-require_once('/media/sf_sites/vendor/PrestaShop-webservice-lib-master/PSWebServiceLibrary.php');
-// Define the resource
-
-// creating web service access
-$webService = new PrestaShopWebservice(
-    'https://iwes.shop/',
-    '6SS993LXNX84RQN9XZ4XSTZRNZCBJLQV',
-    true);
-$xmlResponse = $webService->get(['resource' => 'products', 'id' => 13]);
-$productsXML = $xmlResponse->products[0];
-unset($xmlResponse->product[0]->manufacturer_name);
-
-$xmlResponse->product->active=0;
-
-try {
-    $opt['resource'] = 'products';
-    $opt['putXml'] = $xmlResponse->asXML();
-    $opt['id'] = 13;
-    $opt['id_shop']= 2;
-    $xmlResponse = $webService->edit($opt);
-    //echo sprintf("Successfully updated products with ID: %s", (string) $productsXML->id);
-} catch (PrestaShopWebserviceException $e) {
-    echo $e->getMessage();
 }
+
+
+
 
 
 
