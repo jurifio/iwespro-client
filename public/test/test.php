@@ -54,11 +54,55 @@ $json = json_decode($output, true);
 
 foreach ($json as $key => $jsons) { // This will search in the 2 jsons
     foreach ($jsons as $keys => $value) {
-            foreach ($value as $val) {
-                echo $val['ID']."<br>";
-            }
+        foreach ($value as $val) {
+         //   echo $val['ID'] . "<br>";
+        }
     }
 }
+$url = "http://atelier-hub.com/test/SeasonList";
+
+$username = "test";
+$password = "Imagine#";
+
+$url = "http://atelier-hub.com/test/CategoryList";
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
+curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+$output = curl_exec($ch);
+$info = curl_getinfo($ch);
+curl_close($ch);
+
+$json = json_decode($output, true);
+$menu_array=[];
+$category='';
+$parentID='';
+$categoryOutput=[];
+foreach ($json as $key => $jsons) { // This will search in the 2 jsons
+    foreach ($jsons as $keys => $value) {
+        foreach ($value as $val) {
+          //  echo $val['ID'] . "<br>";
+            $menu_array[$val['ID']] = array('Name'=>
+            $val['Name'],'ParentID'=>$val['ParentID']);
+        }
+    }
+}
+function makeList($array) {
+
+    //Base case: an empty array produces no list
+    if (empty($array)) return '';
+
+    //Recursive Step: make a list with child lists
+    $output = '<ul>';
+    foreach ($array as $key => $subArray) {
+        $output .= '<li>' . $key . makeList($subArray) . '</li>';
+    }
+    $output .= '</ul>';
+
+    return $output;
+}
+makeList($menu_array);
 
 
 
