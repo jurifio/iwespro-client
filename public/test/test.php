@@ -35,82 +35,116 @@ $time = microtime(true);
  *
  *
  */
-$url = "http://atelier-hub.com/test/SeasonList";
 
-$username = "test";
-$password = "Imagine#";
+/* function populate tmp Table*/
+$urlSeasonList = "http://atelier-hub.com/test/SeasonList";
+$callSeasonList = apiCall($urlSeasonList);
+$arraySel = "season";
+$seasons = tmpTable($callSeasonList);
+$isFindIdSeason = isFind($seasons);
 
-$url = "http://atelier-hub.com/test/BrandList";
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-$output = curl_exec($ch);
-$info = curl_getinfo($ch);
-curl_close($ch);
+$urlGenderList = "http://atelier-hub.com/test/GenderList";
+$callGenderList = apiCall($urlGenderList);
+$arraySel = "gender";
+$genders = tmpTable($callGenderList);
+$ifFindGenderId = isFind($genders);
 
-$json = json_decode($output, true);
+$urlBrandList = "http://atelier-hub.com/test/BrandList";
+$callBrandList = apiCall($urlBrandList);
+$arraySel = "brand";
+$brands = tmpTable($callBrandList);
+$isFindIdBrand = isFind($brands);
 
-foreach ($json as $key => $jsons) { // This will search in the 2 jsons
-    foreach ($jsons as $keys => $value) {
-        foreach ($value as $val) {
-         //   echo $val['ID'] . "<br>";
+$urlCategoryList = "http://atelier-hub.com/test/CategoryList";
+$callCategoryList = apiCall($urlCategoryList);
+$arraySel = "category";
+$categories = tmpTable($callCategoryList);
+$isFindIdCategory = isFind($categories);
+
+$urlColorList = "http://atelier-hub.com/test/ColorList";
+$callColorList = apiCall($urlColorList);
+$arraySel = "colors";
+$colors = tmpTable($callColorList);
+$isFindIdCategory = isFind($colors);
+
+$urlGoodsList = "http://atelier-hub.com/test/GoodsList";
+$callGoodsList = apiCall($urlGoodsList);
+$arraySel = "goods";
+$goods = tmpTable($callGoodsList);
+$isFindIdGood = isFind($goods);
+
+$urlGoodsDetailList = "http://atelier-hub.com/test/GoodsDetailList";
+$callGoodsDetailList = apiCall($urlGoodsDetailList);
+$arraySel = "goodsDetail";
+$goodsDetails = tmpTable($callGoodsDetailList);
+$isFindIdGoodDetails = isFind($goodsDetails);
+
+
+function apiCall($url = null)
+{
+    $username = "test";
+    $password = "Imagine#";
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
+    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    $output = curl_exec($ch);
+    $info = curl_getinfo($ch);
+    curl_close($ch);
+    $json = json_decode($output, true);
+    return $json;
+}
+
+function tmpTable($json = null, $arraySel = null)
+{
+    $tmpTable = [];
+    foreach ($json as $key => $jsons) { // This will search in the 2 jsons
+        foreach ($jsons as $keys => $value) {
+
+            foreach ($value as $put => $val) {
+                switch ($arraySel) {
+                    case "season":
+                        $a[] = array_merge($tmpTable, array('ID' => $val['ID'], 'Name' => $val['Name']));
+                        break;
+                    case "gender":
+                        $a[] = array_merge($tmpTable, array('ID' => $val['ID'], 'Name' => $val['Name']));
+                        break;
+                    case "brand":
+                        $a[] = array_merge($tmpTable, array('ID' => $val['ID'], 'Name' => $val['Name']));
+                        break;
+                    case "category":
+                        $a[] = array_merge($tmpTable, array('ID' => $val['ID'], 'Name' => $val['Name'], 'ParentID' => $val['ParentID'], 'ParentName' => $val['ParentName'], 'GenderID' => $val['GenderID']));
+                        break;
+                    case "colors":
+                        $a[] = array_merge($tmpTable, array('ColorName' => $val['ColorName'], 'SuperColor' => $val['SuperColor']));
+                        break;
+                    case "goods":
+                        $a[] = array_merge($tmpTable, array('ID' => $val['ID'], 'Name' => $val['Name'], 'ParentID' => $val['ParentID'], 'ParentName' => $val['ParentName'], 'GenderID' => $val['GenderID']));
+                        break;
+                    case "goodsDetail":
+                        $a[] = array_merge($tmpTable, array('ID' => $val['ID'], 'Name' => $val['Name'], 'ParentID' => $val['ParentID'], 'ParentName' => $val['ParentName'], 'GenderID' => $val['GenderID']));
+                        break;
+                }
+
+            }
+
+        }
+    }
+    return $a;
+
+}
+
+function isFind($a = null)
+{
+    foreach ($a as $k => $ks) {
+        foreach ($ks as $kss => $c) {
+            if ($kss == 'ID') {
+                echo $c . "<br>";
+            }
         }
     }
 }
-$url = "http://atelier-hub.com/test/SeasonList";
-
-$username = "test";
-$password = "Imagine#";
-
-$url = "http://atelier-hub.com/test/CategoryList";
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-$output = curl_exec($ch);
-$info = curl_getinfo($ch);
-curl_close($ch);
-
-$json = json_decode($output, true);
-$menu_array=[];
-$category='';
-$parentID='';
-$categoryOutput=[];
-foreach ($json as $key => $jsons) { // This will search in the 2 jsons
-    foreach ($jsons as $keys => $value) {
-        foreach ($value as $val) {
-          //  echo $val['ID'] . "<br>";
-            $menu_array[$val['ID']] = array('Name'=>
-            $val['Name'],'ParentID'=>$val['ParentID']);
-        }
-    }
-}
-function makeList($array) {
-
-    //Base case: an empty array produces no list
-    if (empty($array)) return '';
-
-    //Recursive Step: make a list with child lists
-    $output = '<ul>';
-    foreach ($array as $key => $subArray) {
-        $output .= '<li>' . $key . makeList($subArray) . '</li>';
-    }
-    $output .= '</ul>';
-
-    return $output;
-}
-makeList($menu_array);
-
-
-
-
-
-
-
-
 
 
 
