@@ -132,6 +132,8 @@ function populateJson()
        // $isFindIdGoodPrice = isFind($goodsPrice);
         $arrayPopulate = [];
     */
+    $brands=[];
+    $brands[]=array('ID'=>'10000002','Name'=>'Blumarine');
     $goods = [];
     $goods[] = array('ID' => '538163',
         'Model' => 'HM349562',
@@ -174,12 +176,22 @@ function populateJson()
             $shopId = 55;
             if ($kk == 'ID') {
                 $ID = $val;
-                $Model = isFindReturn($goods, $val, 'ID', 'Model');
-                $Variant = isFindReturn($goods, $ID, 'ID', 'Variant');
-                $stagione = isFindReturn($goods, $ID, 'ID', 'Season');
-                $prListino = isDeepFindReturn($goodsPrice, $ID, 'Retailers', 'BrandReferencePrice');
-
             }
+            if($kk=='Color'){
+                $var=$val;
+                $generalColor=$val;
+            }
+            $Model = isFindReturn($goods, $ID, 'ID', 'Model');
+            $Variant = isFindReturn($goods, $ID, 'ID', 'Variant');
+            $stagione = isFindReturn($goods, $ID, 'ID', 'Season');
+            $marchioId = isFindReturn($goods, $ID, 'ID', 'BrandID');
+            $marchio = isFindReturn($brands, $ID, 'ID', 'Name');
+            $prListino = isDeepFindReturn($goodsPrice, $ID, 'Retailers', 'BrandReferencePrice');
+            $prAcquisto= isDeepFindReturn($goodsPrice, $ID, 'Retailers', 'netPrice');
+
+
+
+
 
 
         }
