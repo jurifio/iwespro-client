@@ -84,7 +84,7 @@ echo $arrayPopulate;
 
 function populateJson()
 {
-    /* $urlSeasonList = "http://atelier-hub.com/test/SeasonList";
+     $urlSeasonList = "http://atelier-hub.com/test/SeasonList";
      $callSeasonList = apiCall($urlSeasonList);
      $arraySel = "season";
      $seasons = tmpTable($callSeasonList, $arraySel);
@@ -113,74 +113,41 @@ function populateJson()
      $arraySel = "colors";
      $colors = tmpTable($callColorList, $arraySel);
     // $isFindIdCategory = isFind($colors);*/
-    /*
+
         $urlGoodsList = "http://atelier-hub.com/test/GoodsList";
         $callGoodsList = apiCall($urlGoodsList);
         $arraySel = "goods";
         $goods = tmpTable($callGoodsList, $arraySel);
-     //   $isFindIdGood = isFind($goods);
+     //   $isFindIdGood = isFind($goods);*/
 
         $urlGoodsDetailList = "http://atelier-hub.com/test/GoodsDetailList";
         $callGoodsDetailList = apiCall($urlGoodsDetailList);
         $arraySel = "goodsDetail";
         $goodsDetails = tmpTable($callGoodsDetailList, $arraySel);
        // $isFindIdGoodDetails = isFind($goodsDetails);
+
      $urlGoodsPriceList = "http://atelier-hub.com/test/GoodsPriceList";
         $callGoodsPriceList = apiCall($urlGoodsPriceList);
         $arraySel = "goodsPrice";
         $goodsPrice = tmpTable($callGoodsPriceList, $arraySel);
        // $isFindIdGoodPrice = isFind($goodsPrice);
-        $arrayPopulate = [];
-    */
-    $brands=[];
-    $brands[]=array('ID'=>'10000002','Name'=>'Blumarine');
-    $goods = [];
-    $goods[] = array('ID' => '538163',
-        'Model' => 'HM349562',
-        'Variant' => '02',
-        'Season' => 'P19',
-        'Collection' => '',
-        'BrandID' => '10000697',
-        'ParentCategoryID' => '10000001',
-        'CategoryID' => '10000008',
-        'GenderID' => '10000002',
-        'Code' => 'HM34956202',
-        'GoodsName' => 'Philipp Plein T-shirts and Polos Black',
-        'InStock' => '0',
-        'MainPicture' => 'https://www.atelieronweb.com/foto/P16---Philipp Plein---538163.JPG',
-        'CreatedTime' => '2019-05-07T14:55:36',
-        'ModifiedTime' => '2019-07-22T17:08:06'
-    );
-    $goodsDetails = [];
-    $goodsDetails[] = array('ID' => '538163',
-        'SuperColor' => 'Blacks and greys',
-        'Color' => 'Black',
-        'Fabric' => '',
-        'Composition' => '100% cotton',
-        'SizeAndFit' => 'M',
-        'MadeIn' => 'Italy');
-    $goodsPrice = [];
-    $goodsPrice[] = array('ID' => '538163',
-        'Retailers' => array(
-            'Retailer' => 'Retailer1',
-            'BrandReferencePrice' => '500,00',
-            'BrandReferencePriceExVAT' => '409,83',
-            'Discount' => '25',
-            'NetPrice' => '307,38',
-            'Currency' => 'EUR',
-            'PercentTax' => '22',
-            'Country' => 'IT'));
 
+
+
+    $arrayPopulate=[];
     foreach ($goodsDetails as $k => $ks) {
         foreach ($ks as $kk => $val) {
+
             $shopId = 55;
+            $PictureUrl=[];
             if ($kk == 'ID') {
                 $ID = $val;
             }
             if($kk=='Color'){
-                $var=$val;
+                $colore=$val;
                 $generalColor=$val;
             }
+
             $Model = isFindReturn($goods, $ID, 'ID', 'Model');
             $Variant = isFindReturn($goods, $ID, 'ID', 'Variant');
             $stagione = isFindReturn($goods, $ID, 'ID', 'Season');
@@ -188,13 +155,50 @@ function populateJson()
             $marchio = isFindReturn($brands, $ID, 'ID', 'Name');
             $prListino = isDeepFindReturn($goodsPrice, $ID, 'Retailers', 'BrandReferencePrice');
             $prAcquisto= isDeepFindReturn($goodsPrice, $ID, 'Retailers', 'netPrice');
+            $repartoId   = isFindReturn($goods, $ID, 'ID', 'GenderID');
+            $reparto =  isFindReturn($genders, $ID, 'ID', 'Name');
+            $cat1Id = isFindReturn($goods, $ID, 'ID', 'ParentCategoryID');
+            $cat1= isFindReturn($categories, $ID, 'ID', 'Name');
+            $cat2Id = isFindReturn($goods, $ID, 'ID', 'CategoryID');
+            $cat2= isFindReturn($categories, $ID, 'ID', 'Name');
+           $articolo=$Model."-".$Variant;
 
+            if($kk=='Stock') {
+                foreach ($val as  $row) {
 
+                    $barcode=$row['Barcode'];
+                    $Size=$row['Size'];
+                    $qty=$row['Qty'];
+                }
+            }
+            if($kk=='Pictures'){
+                foreach($val as $rowPic){
+                    $PictureUrl[] = $rowPic['PictureUrl'];
 
+                }
 
-
+            }
+            if ($Size!=null){
+                $arrayPopulate[]=array(
+                  'shopId' =>$shopId,
+                  'marchio'=>$marchio,
+                  'articolo'=>$articolo,
+                    'PrAcquisto'=>$prAcquisto,
+                   'prListino'=>$prListino,
+                    'colore'=>$colore,
+                    'stagione'=>$stagione,
+                    'reparto'=>$reparto,
+                    'categoria1'=>$cat1,
+                    'categoria2'=>$cat2,
+                    'taglia'=>$Size,
+                    'esistenza'=>$qty,
+                    'barcode'=>$barcode,
+                    'img'=>$PictureUrl
+                );
+            }
 
         }
+
     }
     return $arrayPopulate;
 }
@@ -220,12 +224,35 @@ function tmpTable($json = null, $arraySel = null)
     $tmpTable = [];
     foreach ($json as $key => $jsons) { // This will search in the 2 jsons
         foreach ($jsons as $keys => $value) {
-
             foreach ($value as $put => $val) {
-
                 $b = [];
                 $c = [];
                 switch ($arraySel) {
+                    case "goodsPrice";
+                        $price = [];
+                        foreach ($val['Retailers'] as $v => $prices) {
+
+                                $Retailer = $prices['Retailer'];
+                                $BrandReferencePrice = $prices['BrandReferencePrice'];
+                                $BrandReferencePriceExVAT = $prices['BrandReferencePriceExVAT'];
+                                $Discount = $prices['Discount'];
+                                $NetPrice = $prices['NetPrice'];
+                                $Currency = $prices['Currency'];
+                                $PercentTax = $prices['PercentTax'];
+                                $Country = $prices['Country'];
+                                $price[] = array('Retailer' => $Retailer,
+                                    'BrandReferencePrice' => $BrandReferencePrice,
+                                    'BrandReferencePriceExVAT' => $BrandReferencePriceExVAT,
+                                    'Discount' => $Discount,
+                                    'NetPrice' => $NetPrice,
+                                    'Currency' => $Currency,
+                                    'PercentTax' => $PercentTax,
+                                    'Country' => $Country);
+
+                        }
+                        $tmpTable[] = array(
+                            'ID' => $val['ID'], 'Retailers' => $price);
+                        break;
                     case "season":
                         $tmpTable[] = array('ID' => $val['ID'], 'Name' => $val['Name']);
                         break;
@@ -262,31 +289,6 @@ function tmpTable($json = null, $arraySel = null)
                         );
                         break;
 
-                    case "goodsPrice";
-                        $price = [];
-                        foreach ($val['Retailers'] as $v => $it) {
-                            foreach ($it as $prices) {
-                                $Retailer = $prices['Retailer'];
-                                $BrandReferencePrice = $prices['BrandReferencePrice'];
-                                $BrandReferencePriceExVAT = $prices['BrandReferencePriceExVAT'];
-                                $Discount = $prices['Discount'];
-                                $NetPrice = $prices['NetPrice'];
-                                $Currency = $prices['Currency'];
-                                $PercentTax = $prices['PercentTax'];
-                                $Country = $prices['Country'];
-                                $price[] = array('Retailer' => $Retailer,
-                                    'BrandReferencePrice' => $BrandReferencePrice,
-                                    'BrandReferencePriceExVAT' => $BrandReferencePriceExVAT,
-                                    'Discount' => $Discount,
-                                    'NetPrice' => $NetPrice,
-                                    'Currency' => $Currency,
-                                    'PercentTax' => $PercentTax,
-                                    'Country' => $Country);
-                            }
-                        }
-                        $tmpTable[] = array(
-                            'ID' => $val['ID'], 'Retailers' => $price);
-                        break;
                     case "goodsDetail":
                         $item = [];
                         foreach ($val['Stock'] as $v => $it) {
@@ -315,7 +317,7 @@ function tmpTable($json = null, $arraySel = null)
                             'SizeAndFit' => $val['SizeAndFit'],
                             'MadeIn' => $val['MadeIn'],
                             'Stock' => $item,
-                            'Picture' => $Pictures,
+                            'Pictures' => $Pictures,
                             'CreatedTime' => $val['CreatedTime'],
                             'ModifiedTime' => $val['ModifiedTime']);
                         break;
