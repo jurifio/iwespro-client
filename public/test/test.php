@@ -36,51 +36,8 @@ $time = microtime(true);
  *
  */
 
-/* function populate tmp Table*/
-/*
-$urlSeasonList = "http://atelier-hub.com/test/SeasonList";
-$callSeasonList = apiCall($urlSeasonList);
-$arraySel = "season";
-$seasons = tmpTable($callSeasonList, $arraySel);
-$isFindIdSeason = isFind($seasons);
 
-$urlGenderList = "http://atelier-hub.com/test/GenderList";
-$callGenderList = apiCall($urlGenderList);
-$arraySel = "gender";
-$genders = tmpTable($callGenderList, $arraySel);
-$ifFindGenderId = isFind($genders);
-
-$urlBrandList = "http://atelier-hub.com/test/BrandList";
-$callBrandList = apiCall($urlBrandList);
-$arraySel = "brand";
-$brands = tmpTable($callBrandList, $arraySel);
-$isFindIdBrand = isFind($brands);
-
-$urlCategoryList = "http://atelier-hub.com/test/CategoryList";
-$callCategoryList = apiCall($urlCategoryList);
-$arraySel = "category";
-$categories = tmpTable($callCategoryList, $arraySel);
-$isFindIdCategory = isFind($categories);
-
-$urlColorList = "http://atelier-hub.com/test/ColorList";
-$callColorList = apiCall($urlColorList);
-$arraySel = "colors";
-$colors = tmpTable($callColorList, $arraySel);
-$isFindIdCategory = isFind($colors);
-
-$urlGoodsList = "http://atelier-hub.com/test/GoodsList";
-$callGoodsList = apiCall($urlGoodsList);
-$arraySel = "goods";
-$goods = tmpTable($callGoodsList, $arraySel);
-$isFindIdGood = isFind($goods);
-
-$urlGoodsDetailList = "http://atelier-hub.com/test/GoodsDetailList";
-$callGoodsDetailList = apiCall($urlGoodsDetailList);
-$arraySel = "goodsDetail";
-$goodsDetails = tmpTable($callGoodsDetailList, $arraySel);
-$isFindIdGoodDetails = isFind($goodsDetails);*/
 $arrayPopulate = populateJson();
-echo $arrayPopulate;
 
 function populateJson()
 {
@@ -137,10 +94,10 @@ function populateJson()
     $arrayPopulate=[];
     foreach ($goodsDetails as $k => $ks) {
         foreach ($ks as $kk => $val) {
-
+            $Size = null;
             $shopId = 55;
-            $PictureUrl=[];
-            if ($kk == 'ID') {
+            $PictureUrl='';
+                if ($kk == 'ID') {
                 $ID = $val;
             }
             if($kk=='Color'){
@@ -172,13 +129,16 @@ function populateJson()
                 }
             }
             if($kk=='Pictures'){
+                $string='';
                 foreach($val as $rowPic){
-                    $PictureUrl[] = $rowPic['PictureUrl'];
+                    $string .= $rowPic['PictureUrl'] . ',';
 
                 }
+                $stringDef=substr($string, 0, -1);
+                $PictureUrl=explode(',',$stringDef);
 
             }
-            if ($Size!=null){
+            if ($Size!=null && $PictureUrl!=null){
                 $arrayPopulate[]=array(
                   'shopId' =>$shopId,
                   'marchio'=>$marchio,
@@ -200,7 +160,7 @@ function populateJson()
         }
 
     }
-    return $arrayPopulate;
+   var_dump($arrayPopulate);
 }
 
 function apiCall($url = null)
@@ -359,10 +319,13 @@ function isDeepFindReturn($array = null, $filterByValue = null, $filterByColumn 
     $key = array_search($filterByValue, array_column($array, 'ID'));
     $val = $array[$key][$filterByColumn];
     foreach ($val as $k => $value) {
-        if ($k == $valueToReturn) {
-            return $res = $value;
+        foreach($value as $vals => $z) {
+            if ($vals == $valueToReturn){
+                return $z;
+            }
+            }
         }
-    }
+
 
 }
 
