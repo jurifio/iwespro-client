@@ -37,7 +37,7 @@ $time = microtime(true);
  */
 
 
-$arrayPopulate = populateJson();
+$one = populateJson();
 
 function populateJson()
 {
@@ -93,74 +93,88 @@ function populateJson()
 
     $arrayPopulate=[];
     foreach ($goodsDetails as $k => $ks) {
+        $Size = null;
+        $shopId = 55;
+        $PictureUrl = '';
         foreach ($ks as $kk => $val) {
-            $Size = null;
-            $shopId = 55;
-            $PictureUrl='';
-                if ($kk == 'ID') {
+
+            if ($kk == 'ID') {
                 $ID = $val;
+                $Model = isFindReturn($goods, $ID, 'ID', 'Model');
+                $Variant = isFindReturn($goods, $ID, 'ID', 'Variant');
+                $stagione = isFindReturn($goods, $ID, 'ID', 'Season');
+                $marchioId = isFindReturn($goods, $ID, 'ID', 'BrandID');
+                $marchio = isFindReturn($brands, $marchioId, 'ID', 'Name');
+                $prListino = isDeepFindReturn($goodsPrice, $ID, 'Retailers', 'BrandReferencePrice');
+                $PrAcquisto = isDeepFindReturn($goodsPrice, $ID, 'Retailers', 'netPrice');
+                $repartoId = isFindReturn($goods, $ID, 'ID', 'GenderID');
+                $reparto = isFindReturn($genders, $repartoId, 'ID', 'Name');
+                $cat1Id = isFindReturn($goods, $ID, 'ID', 'ParentCategoryID');
+                $cat1 = isFindReturn($categories, $cat1Id, 'ID', 'Name');
+                $cat2Id = isFindReturn($goods, $ID, 'ID', 'CategoryID');
+                $cat2 = isFindReturn($categories, $cat2Id, 'ID', 'Name');
+                $articolo = $Model . "-" . $Variant;
             }
-            if($kk=='Color'){
-                $colore=$val;
-                $generalColor=$val;
+            if ($kk == 'Color') {
+                $colore = $val;
+                $generalColor = $val;
             }
 
-            $Model = isFindReturn($goods, $ID, 'ID', 'Model');
-            $Variant = isFindReturn($goods, $ID, 'ID', 'Variant');
-            $stagione = isFindReturn($goods, $ID, 'ID', 'Season');
-            $marchioId = isFindReturn($goods, $ID, 'ID', 'BrandID');
-            $marchio = isFindReturn($brands, $ID, 'ID', 'Name');
-            $prListino = isDeepFindReturn($goodsPrice, $ID, 'Retailers', 'BrandReferencePrice');
-            $prAcquisto= isDeepFindReturn($goodsPrice, $ID, 'Retailers', 'netPrice');
-            $repartoId   = isFindReturn($goods, $ID, 'ID', 'GenderID');
-            $reparto =  isFindReturn($genders, $ID, 'ID', 'Name');
-            $cat1Id = isFindReturn($goods, $ID, 'ID', 'ParentCategoryID');
-            $cat1= isFindReturn($categories, $ID, 'ID', 'Name');
-            $cat2Id = isFindReturn($goods, $ID, 'ID', 'CategoryID');
-            $cat2= isFindReturn($categories, $ID, 'ID', 'Name');
-           $articolo=$Model."-".$Variant;
 
-            if($kk=='Stock') {
-                foreach ($val as  $row) {
 
-                    $barcode=$row['Barcode'];
-                    $Size=$row['Size'];
-                    $qty=$row['Qty'];
+            if ($kk == 'Stock') {
+                $sizesQty = [];
+                foreach ($val as $row) {
+
+
+                    $sizesQty[] = array('Barcode' => $row['Barcode'], 'Size' => $row['Size'], 'Qty' => $row['Qty']);
                 }
             }
-            if($kk=='Pictures'){
-                $string='';
-                foreach($val as $rowPic){
+            $string = '';
+            if ($kk == 'Pictures') {
+
+                foreach ($val as $rowPic) {
                     $string .= $rowPic['PictureUrl'] . ',';
 
                 }
-                $stringDef=substr($string, 0, -1);
-                $PictureUrl=explode(',',$stringDef);
+
 
             }
-            if ($Size!=null && $PictureUrl!=null){
-                $arrayPopulate[]=array(
-                  'shopId' =>$shopId,
-                  'marchio'=>$marchio,
-                  'articolo'=>$articolo,
-                    'PrAcquisto'=>$prAcquisto,
-                   'prListino'=>$prListino,
-                    'colore'=>$colore,
-                    'stagione'=>$stagione,
-                    'reparto'=>$reparto,
-                    'categoria1'=>$cat1,
-                    'categoria2'=>$cat2,
-                    'taglia'=>$Size,
-                    'esistenza'=>$qty,
-                    'barcode'=>$barcode,
-                    'img'=>$PictureUrl
-                );
+            if ($string != '') {
+                $stringDef = substr($string, 0, -1);
+                $PictureUrl = explode(',', $stringDef);
+                foreach ($sizesQty as $rows) {
+
+
+                    $barcode = $rows['Barcode'];
+                    $Size = $rows['Size'];
+                    $qty = $row['Qty'];
+
+
+                    $arrayPopulate[] = array(
+                        'shopId' => $shopId,
+                        'marchio' => $marchio,
+                        'articolo' => $articolo,
+                        'PrAcquisto' => $PrAcquisto,
+                        'prListino' => $prListino,
+                        'colore' => $colore,
+                        'stagione' => $stagione,
+                        'reparto' => $reparto,
+                        'categoria1' => $cat1,
+                        'categoria2' => $cat2,
+                        'taglia' => $Size,
+                        'esistenza' => $qty,
+                        'barcode' => $barcode,
+                        'img' => $PictureUrl
+                    );
+                }
+
+
             }
 
         }
-
     }
-   var_dump($arrayPopulate);
+  return  var_dump($arrayPopulate);
 }
 
 function apiCall($url = null)
@@ -308,7 +322,7 @@ function isFind($a = null)
 function isFindReturn($array = null, $filterByValue = null, $filterByColumn = null, $valueToReturn)
 {
 
-    $key = array_search($filterByValue, array_column($array, '$filterByColumn'));
+    $key = array_search($filterByValue, array_column($array, $filterByColumn));
     $val = $array[$key][$valueToReturn];
     return $val;
 }
