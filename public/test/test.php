@@ -1,5 +1,5 @@
 <?php
-ini_set("memory_limit", "2000M");
+ini_set("memory_limit", "4000M");
 $ttime = microtime(true);
 $time = microtime(true);
 require "../../iwesStatic.php";
@@ -31,156 +31,60 @@ $time = microtime(true);
 $monkey->mailService;
 
 $time = microtime(true);
-/*
- *
- *
- */
 
+ $urlSeasonList = 'http://atelier-hub.com/test/SeasonList';
+    $callSeasonList = apiCall($urlSeasonList);
+    $arraySel = 'season';
+    $seasons = tmpTable($callSeasonList, $arraySel);
+    // $isFindIdSeason = isFind($seasons);*/
 
-$one = populateJson();
+$urlGenderList = 'http://atelier-hub.com/test/GenderList';
+$callGenderList = apiCall($urlGenderList);
+$arraySel = 'gender';
+$genders = tmpTable($callGenderList, $arraySel);
+//  $ifFindGenderId = isFind($genders);
 
-function populateJson()
-{
-     $urlSeasonList = "http://atelier-hub.com/test/SeasonList";
-     $callSeasonList = apiCall($urlSeasonList);
-     $arraySel = "season";
-     $seasons = tmpTable($callSeasonList, $arraySel);
-    // $isFindIdSeason = isFind($seasons);
+$urlBrandList = 'http://atelier-hub.com/test/BrandList';
+$callBrandList = apiCall($urlBrandList);
+$arraySel = 'brand';
+$brands = tmpTable($callBrandList, $arraySel);
+//  $isFindIdBrand = isFind($brands);
 
-     $urlGenderList = "http://atelier-hub.com/test/GenderList";
-     $callGenderList = apiCall($urlGenderList);
-     $arraySel = "gender";
-     $genders = tmpTable($callGenderList, $arraySel);
-   //  $ifFindGenderId = isFind($genders);
+$urlCategoryList = 'http://atelier-hub.com/test/CategoryList';
+$callCategoryList = apiCall($urlCategoryList);
+$arraySel = 'category';
+$categories = tmpTable($callCategoryList, $arraySel);
+//$isFindIdCategory = isFind($categories);
 
-     $urlBrandList = "http://atelier-hub.com/test/BrandList";
-     $callBrandList = apiCall($urlBrandList);
-     $arraySel = "brand";
-     $brands = tmpTable($callBrandList, $arraySel);
-   //  $isFindIdBrand = isFind($brands);
+  $urlColorList = 'http://atelier-hub.com/test/ColorList';
+  $callColorList = apiCall($urlColorList);
+  $arraySel = 'colors';
+  $colours = tmpTable($callColorList, $arraySel);
+  // $isFindIdCategory = isFind($colors);*/
 
-     $urlCategoryList = "http://atelier-hub.com/test/CategoryList";
-     $callCategoryList = apiCall($urlCategoryList);
-     $arraySel = "category";
-     $categories = tmpTable($callCategoryList, $arraySel);
-     //$isFindIdCategory = isFind($categories);
+$urlGoodsList = 'http://atelier-hub.com/test/GoodsList';
+$callGoodsList = apiCall($urlGoodsList);
+$arraySel = 'goods';
+$goods = tmpTable($callGoodsList, $arraySel);
+//   $isFindIdGood = isFind($goods);*/
 
-     $urlColorList = "http://atelier-hub.com/test/ColorList";
-     $callColorList = apiCall($urlColorList);
-     $arraySel = "colors";
-     $colors = tmpTable($callColorList, $arraySel);
-    // $isFindIdCategory = isFind($colors);*/
+$urlGoodsDetailList = 'http://atelier-hub.com/test/GoodsDetailList';
+$callGoodsDetailList = apiCall($urlGoodsDetailList);
+$arraySel = 'goodsDetail';
+$goodsDetails = tmpTable($callGoodsDetailList, $arraySel);
+// $isFindIdGoodDetails = isFind($goodsDetails);
 
-        $urlGoodsList = "http://atelier-hub.com/test/GoodsList";
-        $callGoodsList = apiCall($urlGoodsList);
-        $arraySel = "goods";
-        $goods = tmpTable($callGoodsList, $arraySel);
-     //   $isFindIdGood = isFind($goods);*/
+$urlGoodsPriceList = 'http://atelier-hub.com/test/GoodsPriceList';
+$callGoodsPriceList = apiCall($urlGoodsPriceList);
+$arraySel = 'goodsPrice';
+$goodsPrice = tmpTable($callGoodsPriceList, $arraySel);
+// $isFindIdGoodPrice = isFind($goodsPrice);
 
-        $urlGoodsDetailList = "http://atelier-hub.com/test/GoodsDetailList";
-        $callGoodsDetailList = apiCall($urlGoodsDetailList);
-        $arraySel = "goodsDetail";
-        $goodsDetails = tmpTable($callGoodsDetailList, $arraySel);
-       // $isFindIdGoodDetails = isFind($goodsDetails);
-
-     $urlGoodsPriceList = "http://atelier-hub.com/test/GoodsPriceList";
-        $callGoodsPriceList = apiCall($urlGoodsPriceList);
-        $arraySel = "goodsPrice";
-        $goodsPrice = tmpTable($callGoodsPriceList, $arraySel);
-       // $isFindIdGoodPrice = isFind($goodsPrice);
-
-
-
-    $arrayPopulate=[];
-    foreach ($goodsDetails as $k => $ks) {
-        $Size = null;
-        $shopId = 55;
-        $PictureUrl = '';
-        foreach ($ks as $kk => $val) {
-
-            if ($kk == 'ID') {
-                $ID = $val;
-                $Model = isFindReturn($goods, $ID, 'ID', 'Model');
-                $Variant = isFindReturn($goods, $ID, 'ID', 'Variant');
-                $stagione = isFindReturn($goods, $ID, 'ID', 'Season');
-                $marchioId = isFindReturn($goods, $ID, 'ID', 'BrandID');
-                $marchio = isFindReturn($brands, $marchioId, 'ID', 'Name');
-                $prListino = isDeepFindReturn($goodsPrice, $ID, 'Retailers', 'BrandReferencePrice');
-                $PrAcquisto = isDeepFindReturn($goodsPrice, $ID, 'Retailers', 'netPrice');
-                $repartoId = isFindReturn($goods, $ID, 'ID', 'GenderID');
-                $reparto = isFindReturn($genders, $repartoId, 'ID', 'Name');
-                $cat1Id = isFindReturn($goods, $ID, 'ID', 'ParentCategoryID');
-                $cat1 = isFindReturn($categories, $cat1Id, 'ID', 'Name');
-                $cat2Id = isFindReturn($goods, $ID, 'ID', 'CategoryID');
-                $cat2 = isFindReturn($categories, $cat2Id, 'ID', 'Name');
-                $articolo = $Model . "-" . $Variant;
-            }
-            if ($kk == 'Color') {
-                $colore = $val;
-                $generalColor = $val;
-            }
-
-
-
-            if ($kk == 'Stock') {
-                $sizesQty = [];
-                foreach ($val as $row) {
-
-
-                    $sizesQty[] = array('Barcode' => $row['Barcode'], 'Size' => $row['Size'], 'Qty' => $row['Qty']);
-                }
-            }
-            $string = '';
-            if ($kk == 'Pictures') {
-
-                foreach ($val as $rowPic) {
-                    $string .= $rowPic['PictureUrl'] . ',';
-
-                }
-
-
-            }
-            if ($string != '') {
-                $stringDef = substr($string, 0, -1);
-                $PictureUrl = explode(',', $stringDef);
-                foreach ($sizesQty as $rows) {
-
-
-                    $barcode = $rows['Barcode'];
-                    $Size = $rows['Size'];
-                    $qty = $row['Qty'];
-
-
-                    $arrayPopulate[] = array(
-                        'shopId' => $shopId,
-                        'marchio' => $marchio,
-                        'articolo' => $articolo,
-                        'PrAcquisto' => $PrAcquisto,
-                        'prListino' => $prListino,
-                        'colore' => $colore,
-                        'stagione' => $stagione,
-                        'reparto' => $reparto,
-                        'categoria1' => $cat1,
-                        'categoria2' => $cat2,
-                        'taglia' => $Size,
-                        'esistenza' => $qty,
-                        'barcode' => $barcode,
-                        'img' => $PictureUrl
-                    );
-                }
-
-
-            }
-
-        }
-    }
-  return  var_dump($arrayPopulate);
-}
 
 function apiCall($url = null)
 {
-    $username = "test";
-    $password = "Imagine#";
+    $username = 'test';
+    $password = 'Imagine#';
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -202,47 +106,47 @@ function tmpTable($json = null, $arraySel = null)
                 $b = [];
                 $c = [];
                 switch ($arraySel) {
-                    case "goodsPrice";
+                    case 'goodsPrice';
                         $price = [];
                         foreach ($val['Retailers'] as $v => $prices) {
 
-                                $Retailer = $prices['Retailer'];
-                                $BrandReferencePrice = $prices['BrandReferencePrice'];
-                                $BrandReferencePriceExVAT = $prices['BrandReferencePriceExVAT'];
-                                $Discount = $prices['Discount'];
-                                $NetPrice = $prices['NetPrice'];
-                                $Currency = $prices['Currency'];
-                                $PercentTax = $prices['PercentTax'];
-                                $Country = $prices['Country'];
-                                $price[] = array('Retailer' => $Retailer,
-                                    'BrandReferencePrice' => $BrandReferencePrice,
-                                    'BrandReferencePriceExVAT' => $BrandReferencePriceExVAT,
-                                    'Discount' => $Discount,
-                                    'NetPrice' => $NetPrice,
-                                    'Currency' => $Currency,
-                                    'PercentTax' => $PercentTax,
-                                    'Country' => $Country);
+                            $Retailer = $prices['Retailer'];
+                            $BrandReferencePrice = $prices['BrandReferencePrice'];
+                            $BrandReferencePriceExVAT = $prices['BrandReferencePriceExVAT'];
+                            $Discount = $prices['Discount'];
+                            $NetPrice = $prices['NetPrice'];
+                            $Currency = $prices['Currency'];
+                            $PercentTax = $prices['PercentTax'];
+                            $Country = $prices['Country'];
+                            $price[] = array('Retailer' => $Retailer,
+                                'BrandReferencePrice' => $BrandReferencePrice,
+                                'BrandReferencePriceExVAT' => $BrandReferencePriceExVAT,
+                                'Discount' => $Discount,
+                                'NetPrice' => $NetPrice,
+                                'Currency' => $Currency,
+                                'PercentTax' => $PercentTax,
+                                'Country' => $Country);
 
                         }
                         $tmpTable[] = array(
                             'ID' => $val['ID'], 'Retailers' => $price);
                         break;
-                    case "season":
+                    case 'season':
                         $tmpTable[] = array('ID' => $val['ID'], 'Name' => $val['Name']);
                         break;
-                    case "gender":
+                    case 'gender':
                         $tmpTable[] = array('ID' => $val['ID'], 'Name' => $val['Name']);
                         break;
-                    case "brand":
+                    case 'brand':
                         $tmpTable[] = array('ID' => $val['ID'], 'Name' => $val['Name']);
                         break;
-                    case "category":
+                    case 'category':
                         $tmpTable[] = array('ID' => $val['ID'], 'Name' => $val['Name'], 'ParentID' => $val['ParentID'], 'ParentName' => $val['ParentName'], 'GenderID' => $val['GenderID']);
                         break;
-                    case "colors":
+                    case 'colors':
                         $tmpTable[] = array('ColorName' => $val['ColorName'], 'SuperColor' => $val['SuperColor']);
                         break;
-                    case "goods":
+                    case 'goods':
 
                         $tmpTable[] = array(
                             'ID' => $val['ID'],
@@ -263,7 +167,7 @@ function tmpTable($json = null, $arraySel = null)
                         );
                         break;
 
-                    case "goodsDetail":
+                    case 'goodsDetail':
                         $item = [];
                         foreach ($val['Stock'] as $v => $it) {
                             foreach ($it as $items) {
@@ -308,6 +212,91 @@ function tmpTable($json = null, $arraySel = null)
 
 }
 
+
+ $rawData = populateJson($genders,   $goods ,  $goodsDetails, $brands,  $goodsPrice ,$categories );
+
+function populateJson($genders = null,  $goods =null,  $goodsDetails =null, $brands =null, $goodsPrice =null,$categories =null  )
+{
+
+
+    $arrayPopulate=[];
+    foreach ($goodsDetails as $k => $ks) {
+        $Size = null;
+        $shopId = 55;
+
+        foreach ($ks as $kk => $val) {
+            if ($kk == 'ID') {
+                $ID = $val;
+                $Model = isFindReturn($goods, $ID, 'ID', 'Model');
+                $Variant = isFindReturn($goods, $ID, 'ID', 'Variant');
+                $stagione = isFindReturn($goods, $ID, 'ID', 'Season');
+                $marchioId = isFindReturn($goods, $ID, 'ID', 'BrandID');
+                $marchio = isFindReturn($brands, $marchioId, 'ID', 'Name');
+                $prListino = isDeepFindReturn($goodsPrice, $ID, 'Retailers', 'BrandReferencePrice');
+                $PrAcquisto = isDeepFindReturn($goodsPrice, $ID, 'Retailers', 'netPrice');
+                $repartoId = isFindReturn($goods, $ID, 'ID', 'GenderID');
+                $reparto = isFindReturn($genders, $repartoId, 'ID', 'Name');
+                $cat1Id = isFindReturn($goods, $ID, 'ID', 'ParentCategoryID');
+                $cat1 = isFindReturn($categories, $cat1Id, 'ID', 'Name');
+                $cat2Id = isFindReturn($goods, $ID, 'ID', 'CategoryID');
+                $cat2 = isFindReturn($categories, $cat2Id, 'ID', 'Name');
+                $articolo = $Model . "-" . $Variant;
+            }
+            if ($kk == 'Color') {
+                $colore = $val;
+
+            }
+
+
+
+            if ($kk == 'Stock') {
+                $sizesQty = [];
+                foreach ($val as $row) {
+                    $sizesQty[] = array('Barcode' => $row['Barcode'], 'Size' => $row['Size'], 'Qty' => $row['Qty']);
+                }
+            }
+            $string = '';
+            if ($kk == 'Pictures') {
+
+                foreach ($val as $rowPic) {
+                    $string .= $rowPic['PictureUrl'] . ',';
+                }
+            }
+            if ($string != '') {
+                $stringDef = substr($string, 0, -1);
+                $PictureUrl = explode(',', $stringDef);
+                foreach ($sizesQty as $rows) {
+                    $barcode = $rows['Barcode'];
+                    $Size = $rows['Size'];
+                    $qty = $row['Qty'];
+                    $arrayPopulate[] = array(
+                        'shopId' => $shopId,
+                        'marchio' => $marchio,
+                        'articolo' => $articolo,
+                        'PrAcquisto' => $PrAcquisto,
+                        'prListino' => $prListino,
+                        'colore' => $colore,
+                        'stagione' => $stagione,
+                        'reparto' => $reparto,
+                        'categoria1' => $cat1,
+                        'categoria2' => $cat2,
+                        'taglia' => $Size,
+                        'esistenza' => $qty,
+                        'barcode' => $barcode,
+                        'img' => $PictureUrl
+                    );
+                }
+            }
+
+
+       }
+    }
+    return $arrayPopulate;
+}
+function parameterCall(){
+
+}
+
 function isFind($a = null)
 {
     foreach ($a as $k => $ks) {
@@ -329,21 +318,17 @@ function isFindReturn($array = null, $filterByValue = null, $filterByColumn = nu
 
 function isDeepFindReturn($array = null, $filterByValue = null, $filterByColumn = null, $valueToReturn)
 {
-
-    $key = array_search($filterByValue, array_column($array, 'ID'));
+$res=null;
+    $key = array_search($filterByValue, array_column($array, $filterByColumn));
     $val = $array[$key][$filterByColumn];
     foreach ($val as $k => $value) {
         foreach($value as $vals => $z) {
             if ($vals == $valueToReturn){
-                return $z;
-            }
+                $res =  $z;
+                break;
             }
         }
-
-
+    }
+    return $res;
 }
-
-
-
-
 
