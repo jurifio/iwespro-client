@@ -28,60 +28,44 @@ $time = microtime(true);
 $monkey->eventManager;
 var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
-$monkey->mailService;
+
 
 $time = microtime(true);
-
- $urlSeasonList = 'http://atelier-hub.com/test/SeasonList';
-    $callSeasonList = apiCall($urlSeasonList);
-    $arraySel = 'season';
-    $seasons = tmpTable($callSeasonList, $arraySel);
-    // $isFindIdSeason = isFind($seasons);*/
-
-$urlGenderList = 'http://atelier-hub.com/test/GenderList';
-$callGenderList = apiCall($urlGenderList);
+$arraySel = 'season';
+$urlSeasonList = 'http://atelier-hub.com/test/SeasonList';
+$callSeasonList = apiCall($urlSeasonList,$arraySel);
+$seasons = tmpTable($callSeasonList, $arraySel);
 $arraySel = 'gender';
+$urlGenderList = 'http://atelier-hub.com/test/GenderList';
+$callGenderList = apiCall($urlGenderList,$arraySel);
 $genders = tmpTable($callGenderList, $arraySel);
-//  $ifFindGenderId = isFind($genders);
-
-$urlBrandList = 'http://atelier-hub.com/test/BrandList';
-$callBrandList = apiCall($urlBrandList);
 $arraySel = 'brand';
+$urlBrandList = 'http://atelier-hub.com/test/BrandList';
+$callBrandList = apiCall($urlBrandList,$arraySel);
 $brands = tmpTable($callBrandList, $arraySel);
-//  $isFindIdBrand = isFind($brands);
-
-$urlCategoryList = 'http://atelier-hub.com/test/CategoryList';
-$callCategoryList = apiCall($urlCategoryList);
 $arraySel = 'category';
+$urlCategoryList = 'http://atelier-hub.com/test/CategoryList';
+$callCategoryList = apiCall($urlCategoryList,$arraySel);
 $categories = tmpTable($callCategoryList, $arraySel);
-//$isFindIdCategory = isFind($categories);
+$arraySel = 'colors';
+$urlColorList = 'http://atelier-hub.com/test/ColorList';
+$callColorList = apiCall($urlColorList,$arraySel);
 
-  $urlColorList = 'http://atelier-hub.com/test/ColorList';
-  $callColorList = apiCall($urlColorList);
-  $arraySel = 'colors';
-  $colours = tmpTable($callColorList, $arraySel);
-  // $isFindIdCategory = isFind($colors);*/
-
-$urlGoodsList = 'http://atelier-hub.com/test/GoodsList';
-$callGoodsList = apiCall($urlGoodsList);
+$colours = tmpTable($callColorList, $arraySel);
 $arraySel = 'goods';
+$urlGoodsList = 'http://atelier-hub.com/test/GoodsList';
+$callGoodsList = apiCall($urlGoodsList,$arraySel);
 $goods = tmpTable($callGoodsList, $arraySel);
-//   $isFindIdGood = isFind($goods);*/
-
-$urlGoodsDetailList = 'http://atelier-hub.com/test/GoodsDetailList';
-$callGoodsDetailList = apiCall($urlGoodsDetailList);
 $arraySel = 'goodsDetail';
+$urlGoodsDetailList = 'http://atelier-hub.com/test/GoodsDetailList';
+$callGoodsDetailList = apiCall($urlGoodsDetailList,$arraySel);
 $goodsDetails = tmpTable($callGoodsDetailList, $arraySel);
-// $isFindIdGoodDetails = isFind($goodsDetails);
-
-$urlGoodsPriceList = 'http://atelier-hub.com/test/GoodsPriceList';
-$callGoodsPriceList = apiCall($urlGoodsPriceList);
 $arraySel = 'goodsPrice';
+$urlGoodsPriceList = 'http://atelier-hub.com/test/GoodsPriceList';
+$callGoodsPriceList = apiCall($urlGoodsPriceList,$arraySel);
 $goodsPrice = tmpTable($callGoodsPriceList, $arraySel);
-// $isFindIdGoodPrice = isFind($goodsPrice);
 
-
-function apiCall($url = null)
+function apiCall($url = null, $arraySel = null)
 {
     $username = 'test';
     $password = 'Imagine#';
@@ -93,6 +77,9 @@ function apiCall($url = null)
     $output = curl_exec($ch);
     $info = curl_getinfo($ch);
     curl_close($ch);
+    $fp = fopen($arraySel.'json', 'w');
+    fwrite($fp, $output);
+    fclose($fp);
     $json = json_decode($output, true);
     return $json;
 }
@@ -213,13 +200,13 @@ function tmpTable($json = null, $arraySel = null)
 }
 
 
- $rawData = populateJson($genders,   $goods ,  $goodsDetails, $brands,  $goodsPrice ,$categories );
+$rawData = populateJson($genders, $goods, $goodsDetails, $brands, $goodsPrice, $categories);
 
-function populateJson($genders = null,  $goods =null,  $goodsDetails =null, $brands =null, $goodsPrice =null,$categories =null  )
+function populateJson($genders = null, $goods = null, $goodsDetails = null, $brands = null, $goodsPrice = null, $categories = null)
 {
 
 
-    $arrayPopulate=[];
+    $arrayPopulate = [];
     foreach ($goodsDetails as $k => $ks) {
         $Size = null;
         $shopId = 55;
@@ -246,7 +233,6 @@ function populateJson($genders = null,  $goods =null,  $goodsDetails =null, $bra
                 $colore = $val;
 
             }
-
 
 
             if ($kk == 'Stock') {
@@ -289,11 +275,13 @@ function populateJson($genders = null,  $goods =null,  $goodsDetails =null, $bra
             }
 
 
-       }
+        }
     }
     return $arrayPopulate;
 }
-function parameterCall(){
+
+function parameterCall()
+{
 
 }
 
@@ -318,13 +306,13 @@ function isFindReturn($array = null, $filterByValue = null, $filterByColumn = nu
 
 function isDeepFindReturn($array = null, $filterByValue = null, $filterByColumn = null, $valueToReturn)
 {
-$res=null;
+    $res = null;
     $key = array_search($filterByValue, array_column($array, $filterByColumn));
     $val = $array[$key][$filterByColumn];
     foreach ($val as $k => $value) {
-        foreach($value as $vals => $z) {
-            if ($vals == $valueToReturn){
-                $res =  $z;
+        foreach ($value as $vals => $z) {
+            if ($vals == $valueToReturn) {
+                $res = $z;
                 break;
             }
         }
