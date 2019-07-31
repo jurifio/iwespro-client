@@ -35,22 +35,22 @@
             "entities": {
                 "type": "Redis",
                 "host": "127.0.0.1",
-                "db": 2
+                "db": 5
             },
             "widgets": {
                 "type": "Redis",
                 "host": "127.0.0.1",
-                "db": 2
+                "db": 5
             },
             "misc": {
                 "type": "Redis",
                 "host": "127.0.0.1",
-                "db": 2
+                "db": 5
             },
             "index": {
                 "type": "Redis",
                 "host": "127.0.0.1",
-                "db": 2
+                "db": 5
             }
         }
     }
