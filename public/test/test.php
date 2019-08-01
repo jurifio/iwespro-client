@@ -28,44 +28,23 @@ $time = microtime(true);
 $monkey->eventManager;
 var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
+if (ENV == 'dev') {
+    $pathlocal = '/media/sf_sites/iwespro/temp-json/';
+    $save_to = '/media/sf_sites/iwespro/temp-json/';
+    $save_to_dir = '/media/sf_sites/iwespro/temp-json';
+
+} else {
+    $pathlocal = '/home/iwespro/public_html/temp-json/';
+    $save_to = '/home/iwespro/public_html/temp-json/';
+    $save_to_dir = '/home/iwespro/public_html/temp-json';
+
+}
 
 
 $time = microtime(true);
-$arraySel = 'season';
-$urlSeasonList = 'http://atelier-hub.com/test/SeasonList';
-$callSeasonList = apiCall($urlSeasonList,$arraySel);
-$seasons = tmpTable($callSeasonList, $arraySel);
-$arraySel = 'gender';
-$urlGenderList = 'http://atelier-hub.com/test/GenderList';
-$callGenderList = apiCall($urlGenderList,$arraySel);
-$genders = tmpTable($callGenderList, $arraySel);
-$arraySel = 'brand';
-$urlBrandList = 'http://atelier-hub.com/test/BrandList';
-$callBrandList = apiCall($urlBrandList,$arraySel);
-$brands = tmpTable($callBrandList, $arraySel);
-$arraySel = 'category';
-$urlCategoryList = 'http://atelier-hub.com/test/CategoryList';
-$callCategoryList = apiCall($urlCategoryList,$arraySel);
-$categories = tmpTable($callCategoryList, $arraySel);
-$arraySel = 'colors';
-$urlColorList = 'http://atelier-hub.com/test/ColorList';
-$callColorList = apiCall($urlColorList,$arraySel);
 
-$colours = tmpTable($callColorList, $arraySel);
-$arraySel = 'goods';
-$urlGoodsList = 'http://atelier-hub.com/test/GoodsList';
-$callGoodsList = apiCall($urlGoodsList,$arraySel);
-$goods = tmpTable($callGoodsList, $arraySel);
-$arraySel = 'goodsDetail';
-$urlGoodsDetailList = 'http://atelier-hub.com/test/GoodsDetailList';
-$callGoodsDetailList = apiCall($urlGoodsDetailList,$arraySel);
-$goodsDetails = tmpTable($callGoodsDetailList, $arraySel);
-$arraySel = 'goodsPrice';
-$urlGoodsPriceList = 'http://atelier-hub.com/test/GoodsPriceList';
-$callGoodsPriceList = apiCall($urlGoodsPriceList,$arraySel);
-$goodsPrice = tmpTable($callGoodsPriceList, $arraySel);
 
-function apiCall($url = null, $arraySel = null)
+function apiCall($url = null, $arraySel = null, $savedir = null)
 {
     $username = 'test';
     $password = 'Imagine#';
@@ -77,15 +56,16 @@ function apiCall($url = null, $arraySel = null)
     $output = curl_exec($ch);
     $info = curl_getinfo($ch);
     curl_close($ch);
-    $fp = fopen($arraySel.'json', 'w');
+    $fp = fopen($savedir.$arraySel.'.json', 'w');
     fwrite($fp, $output);
     fclose($fp);
-    $json = json_decode($output, true);
-    return $json;
+    
 }
 
-function tmpTable($json = null, $arraySel = null)
+ function tmpTable( $savetodir = null, $arraySel = null)
 {
+    $file= $savetodir .$arraySel.".json";
+    $json = json_decode(file_get_contents($file),true);
     $tmpTable = [];
     foreach ($json as $key => $jsons) { // This will search in the 2 jsons
         foreach ($jsons as $keys => $value) {
@@ -199,12 +179,8 @@ function tmpTable($json = null, $arraySel = null)
 
 }
 
-
-$rawData = populateJson($genders, $goods, $goodsDetails, $brands, $goodsPrice, $categories);
-
-function populateJson($genders = null, $goods = null, $goodsDetails = null, $brands = null, $goodsPrice = null, $categories = null)
+ function populateJson($genders = null, $goods = null, $goodsDetails = null, $brands = null, $goodsPrice = null, $categories = null)
 {
-
 
     $arrayPopulate = [];
     foreach ($goodsDetails as $k => $ks) {
@@ -272,7 +248,10 @@ function populateJson($genders = null, $goods = null, $goodsDetails = null, $bra
                         'img' => $PictureUrl
                     );
                 }
+                $sizesQty = null;
+
             }
+
 
 
         }
@@ -319,4 +298,39 @@ function isDeepFindReturn($array = null, $filterByValue = null, $filterByColumn 
     }
     return $res;
 }
+
+$arraySel = 'season';
+$urlSeasonList = 'http://atelier-hub.com/test/SeasonList';
+$callSeasonList = apiCall($urlSeasonList,$arraySel, $save_to);
+$seasons = tmpTable($save_to, $arraySel);
+$arraySel = 'gender';
+$urlGenderList = 'http://atelier-hub.com/test/GenderList';
+$callGenderList = apiCall($urlGenderList,$arraySel, $save_to);
+$genders = tmpTable($save_to, $arraySel);
+$arraySel = 'brand';
+$urlBrandList = 'http://atelier-hub.com/test/BrandList';
+$callBrandList = apiCall($urlBrandList,$arraySel, $save_to);
+$brands = tmpTable($save_to, $arraySel);
+$arraySel = 'category';
+$urlCategoryList = 'http://atelier-hub.com/test/CategoryList';
+$callCategoryList = apiCall($urlCategoryList,$arraySel, $save_to);
+$categories = tmpTable($save_to, $arraySel);
+$arraySel = 'colors';
+$urlColorList = 'http://atelier-hub.com/test/ColorList';
+$callColorList = apiCall($urlColorList, $arraySel, $save_to);
+
+$colours = tmpTable($save_to, $arraySel, $save_to);
+$arraySel = 'goods';
+$urlGoodsList = 'http://atelier-hub.com/test/GoodsList';
+$callGoodsList = apiCall($urlGoodsList,$arraySel, $save_to);
+$goods = tmpTable($save_to, $arraySel);
+$arraySel = 'goodsDetail';
+$urlGoodsDetailList = 'http://atelier-hub.com/test/GoodsDetailList';
+$callGoodsDetailList = apiCall($urlGoodsDetailList,$arraySel, $save_to);
+$goodsDetails = tmpTable($save_to, $arraySel);
+$arraySel = 'goodsPrice';
+$urlGoodsPriceList = 'http://atelier-hub.com/test/GoodsPriceList';
+$callGoodsPriceList = apiCall($urlGoodsPriceList,$arraySel, $save_to);
+$goodsPrice = tmpTable($save_to, $arraySel);
+$rawData = populateJson($genders, $goods, $goodsDetails, $brands, $goodsPrice, $categories);
 
