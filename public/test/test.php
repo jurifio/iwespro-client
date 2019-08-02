@@ -40,8 +40,8 @@ if (ENV == 'dev') {
     $save_to_dir = '/home/iwespro/public_html/temp-json';
 
 }
-$time = microtime(true);
-/*function apiCall($url = null, $arraySel = null, $savedir = null)
+
+ function apiCall($url = null, $arraySel = null, $savedir = null)
 {
     $username = 'test';
     $password = 'Imagine#';
@@ -53,25 +53,30 @@ $time = microtime(true);
     $output = curl_exec($ch);
     $info = curl_getinfo($ch);
     curl_close($ch);
-    $fp = fopen($savedir.$arraySel.'.json', 'w');
+    $fp = fopen($savedir.$arraySel.'.json', 'wb');
     fwrite($fp, $output);
     fclose($fp);
     
-}*/
+}
 
+/**
+ * @param null $savetodir
+ * @param null $arraySel
+ * @return array|null
+ */
 function tmpTable($savetodir = null, $arraySel = null)
 {
-    $file = $savetodir . $arraySel . ".json";
+    $file = $savetodir . $arraySel . '.json';
     $json = json_decode(file_get_contents($file), true);
     $tmpTable = [];
     $a=null;
                 switch ($arraySel) {
-                    case 'goodsPrice';
+                    case 'goodsPrice':
                         foreach ($json as $key => $jsons) { // This will search in the 2 jsons
-                            foreach ($jsons as $keys => $value) {
-                                foreach ($value as $put => $val) {
+                            foreach ($jsons as $keys => $valuem) {
+                                foreach ($valuem as $put => $vall) {
                                     $price = [];
-                                    foreach ($val['Retailers'] as $v => $prices) {
+                                    foreach ($vall['Retailers'] as $v => $prices) {
                                         $Retailer = $prices['Retailer'];
                                         $BrandReferencePrice = $prices['BrandReferencePrice'];
                                         $BrandReferencePriceExVAT = $prices['BrandReferencePriceExVAT'];
@@ -90,7 +95,7 @@ function tmpTable($savetodir = null, $arraySel = null)
                                             'Country' => $Country);
                                     }
                                     $tmpTable[] = array(
-                                        'ID' => $val['ID'], 'Retailers' => $price);
+                                        'ID' => $vall['ID'], 'Retailers' => $price);
                                 }
                             }
                         }
@@ -98,9 +103,9 @@ function tmpTable($savetodir = null, $arraySel = null)
                         break;
                     case 'season':
                         foreach ($json as $key => $jsons) { // This will search in the 2 jsons
-                            foreach ($jsons as $keys => $value) {
-                                foreach ($value as $put => $val) {
-                        $tmpTable[] = array('ID' => $val['ID'], 'Name' => $val['Name']);
+                            foreach ($jsons as $keys => $valuem) {
+                                foreach ($valuem as $put => $vall) {
+                        $tmpTable[] = array('ID' => $vall['ID'], 'Name' => $vall['Name']);
                                 }
                             }
                         }
@@ -108,9 +113,9 @@ function tmpTable($savetodir = null, $arraySel = null)
                         break;
                     case 'gender':
                         foreach ($json as $key => $jsons) {
-                            foreach ($jsons as $keys => $value) {
-                                foreach ($value as $put => $val) {
-                        $tmpTable[] = array('ID' => $val['ID'], 'Name' => $val['Name']);
+                            foreach ($jsons as $keys => $valuem) {
+                                foreach ($valuem as $put => $vall) {
+                        $tmpTable[] = array('ID' => $vall['ID'], 'Name' => $vall['Name']);
                                 }
                             }
                         }
@@ -118,9 +123,9 @@ function tmpTable($savetodir = null, $arraySel = null)
                         break;
                     case 'brand':
                         foreach ($json as $key => $jsons) {
-                            foreach ($jsons as $keys => $value) {
-                                foreach ($value as $put => $val) {
-                        $tmpTable[] = array('ID' => $val['ID'], 'Name' => $val['Name']);
+                            foreach ($jsons as $keys => $valuem) {
+                                foreach ($valuem as $put => $vall) {
+                        $tmpTable[] = array('ID' => $vall['ID'], 'Name' => $vall['Name']);
                                 }
                             }
                         }
@@ -128,9 +133,9 @@ function tmpTable($savetodir = null, $arraySel = null)
                         break;
                     case 'category':
                         foreach ($json as $key => $jsons) {
-                            foreach ($jsons as $keys => $value) {
-                                foreach ($value as $put => $val) {
-                        $tmpTable[] = array('ID' => $val['ID'], 'Name' => $val['Name'], 'ParentID' => $val['ParentID'], 'ParentName' => $val['ParentName'], 'GenderID' => $val['GenderID']);
+                            foreach ($jsons as $keys => $valuem) {
+                                foreach ($valuem as $put => $vall) {
+                        $tmpTable[] = array('ID' => $vall['ID'], 'Name' => $vall['Name'], 'ParentID' => $vall['ParentID'], 'ParentName' => $vall['ParentName'], 'GenderID' => $vall['GenderID']);
                                 }
                             }
                         }
@@ -138,9 +143,9 @@ function tmpTable($savetodir = null, $arraySel = null)
                         break;
                     case 'colors':
                         foreach ($json as $key => $jsons) {
-                            foreach ($jsons as $keys => $value) {
-                                foreach ($value as $put => $val) {
-                        $tmpTable[] = array('ColorName' => $val['ColorName'], 'SuperColor' => $val['SuperColor']);
+                            foreach ($jsons as $keys => $valuem) {
+                                foreach ($valuem as $put => $vall) {
+                        $tmpTable[] = array('ColorName' => $vall['ColorName'], 'SuperColor' => $vall['SuperColor']);
                                 }
                             }
                         }
@@ -148,24 +153,24 @@ function tmpTable($savetodir = null, $arraySel = null)
                         break;
                     case 'goods':
                         foreach ($json as $key => $jsons) {
-                            foreach ($jsons as $keys => $value) {
-                                foreach ($value as $put => $val) {
+                            foreach ($jsons as $keys => $valuem) {
+                                foreach ($valuem as $put => $vall) {
                         $tmpTable[] = array(
-                            'ID' => $val['ID'],
-                            'Model' => $val['Model'],
-                            'Variant' => $val['Variant'],
-                            'Season' => $val['Season'],
-                            'Collection' => $val['Collection'],
-                            'BrandID' => $val['BrandID'],
-                            'ParentCategoryID' => $val['ParentCategoryID'],
-                            'CategoryID' => $val['CategoryID'],
-                            'GenderID' => $val['GenderID'],
-                            'Code' => $val['Code'],
-                            'GoodsName' => $val['GoodsName'],
-                            'InStock' => $val['InStock'],
-                            'MainPicture' => $val['MainPicture'],
-                            'CreatedTime' => $val['CreatedTime'],
-                            'ModifiedTime' => $val['ModifiedTime']
+                            'ID' => $vall['ID'],
+                            'Model' => $vall['Model'],
+                            'Variant' => $vall['Variant'],
+                            'Season' => $vall['Season'],
+                            'Collection' => $vall['Collection'],
+                            'BrandID' => $vall['BrandID'],
+                            'ParentCategoryID' => $vall['ParentCategoryID'],
+                            'CategoryID' => $vall['CategoryID'],
+                            'GenderID' => $vall['GenderID'],
+                            'Code' => $vall['Code'],
+                            'GoodsName' => $vall['GoodsName'],
+                            'InStock' => $vall['InStock'],
+                            'MainPicture' => $vall['MainPicture'],
+                            'CreatedTime' => $vall['CreatedTime'],
+                            'ModifiedTime' => $vall['ModifiedTime']
                         );
                                 }
                             }
@@ -174,19 +179,21 @@ function tmpTable($savetodir = null, $arraySel = null)
                         break;
                     case 'goodsDetail':
                         foreach ($json as $key => $jsons) {
-                            foreach ($jsons as $keys => $value) {
-                                foreach ($value as $put => $val) {
+                            foreach ($jsons as $keys => $valuem) {
+                                foreach ($valuem as $put  => $vall) {
                                     $item = [];
-                        foreach ($val['Stock'] as $v => $it) {
+                        foreach ($vall['Stock'] as $v => $it) {
                             foreach ($it as $items) {
                                 $Barcode = $items['Barcode'];
                                 $Size = $items['Size'];
                                 $Qty = $items['Qty'];
-                                $item[] = array('Barcode' => $Barcode, 'Size' => $Size, 'Qty' => $Qty);
+                                if ($Qty !=='0') {
+                                    $item[] = array('Barcode' => $Barcode, 'Size' => $Size, 'Qty' => $Qty);
+                                }
                             }
                         }
                         $Pictures = [];
-                        foreach ($val['Pictures'] as $k => $tu) {
+                        foreach ($vall['Pictures'] as $kp => $tu) {
                             foreach ($tu as $pic) {
                                 $No = $pic['No'];
                                 $PictureUrl = $pic['PictureUrl'];
@@ -195,17 +202,17 @@ function tmpTable($savetodir = null, $arraySel = null)
                             }
                         }
                         $tmpTable[] = array(
-                            'ID' => $val['ID'],
-                            'SuperColor' => $val['SuperColor'],
-                            'Color' => $val['Color'],
-                            'Fabric' => $val['Fabric'],
-                            'Composition' => $val['Composition'],
-                            'SizeAndFit' => $val['SizeAndFit'],
-                            'MadeIn' => $val['MadeIn'],
+                            'ID' => $vall['ID'],
+                            'SuperColor' => $vall['SuperColor'],
+                            'Color' => $vall['Color'],
+                            'Fabric' => $vall['Fabric'],
+                            'Composition' => $vall['Composition'],
+                            'SizeAndFit' => $vall['SizeAndFit'],
+                            'MadeIn' => $vall['MadeIn'],
                             'Stock' => $item,
                             'Pictures' => $Pictures,
-                            'CreatedTime' => $val['CreatedTime'],
-                            'ModifiedTime' => $val['ModifiedTime']);
+                            'CreatedTime' => $vall['CreatedTime'],
+                            'ModifiedTime' => $vall['ModifiedTime']);
                                 }
                             }
                         }
@@ -218,14 +225,48 @@ function tmpTable($savetodir = null, $arraySel = null)
 
 }
 
-function populateJson($genders = null, $goods = null, $goodsDetails = null, $brands = null, $goodsPrice = null, $categories = null)
-{
+$arraySeason = 'season';
+$urlSeasonList = 'http://atelier-hub.com/test/SeasonList';
+/** @var  $callSeasonList */
+ apiCall($urlSeasonList,$arraySeason, $save_to);
+$seasons = tmpTable($save_to, $arraySeason);
+$arrayGender = 'gender';
+$urlGenderList = 'http://atelier-hub.com/test/GenderList';
+ apiCall($urlGenderList,$arrayGender, $save_to);
+$genders = tmpTable($save_to, $arrayGender);
+$arrayBrand = 'brand';
+$urlBrandList = 'http://atelier-hub.com/test/BrandList';
+ apiCall($urlBrandList,$arrayBrand, $save_to);
+$brands = tmpTable($save_to, $arrayBrand);
+$arrayCategory = 'category';
+$urlCategoryList = 'http://atelier-hub.com/test/CategoryList';
+ apiCall($urlCategoryList,$arrayCategory, $save_to);
+$categories = tmpTable($save_to, $arrayCategory);
+$arrayColors = 'colors';
+$urlColorList = 'http://atelier-hub.com/test/ColorList';
+ apiCall($urlColorList, $arrayColors, $save_to);
+
+$colours = tmpTable($save_to, $arrayColors);
+$arrayGoods = 'goods';
+$urlGoodsList = 'http://atelier-hub.com/test/GoodsList';
+ apiCall($urlGoodsList,$arrayGoods, $save_to);
+$goods = tmpTable($save_to, $arrayGoods);
+$arrayGoodsDetail = 'goodsDetail';
+$urlGoodsDetailList = 'http://atelier-hub.com/test/GoodsDetailList';
+ apiCall($urlGoodsDetailList,$arrayGoodsDetail, $save_to);
+$goodsDetails = tmpTable($save_to, $arrayGoodsDetail);
+$arrayGoodsPrice = 'goodsPrice';
+$urlGoodsPriceList = 'http://atelier-hub.com/test/GoodsPriceList';
+ apiCall($urlGoodsPriceList,$arrayGoodsPrice, $save_to);
+$goodsPrice = tmpTable($save_to, $arrayGoodsPrice);
+
+
     $arrayPopulate = [];
     foreach ($goodsDetails as $k => $ks) {
-        $Size = null;
+        $SizeUnique = null;
         $shopId = 55;
         foreach ($ks as $kk => $val) {
-            if ($kk == 'ID') {
+            if ($kk === 'ID') {
                 $ID = $val;
                 $prListino=null;
                 $prAcquisto=null;
@@ -242,113 +283,80 @@ function populateJson($genders = null, $goods = null, $goodsDetails = null, $bra
                 $cat1 = isFindReturn($categories, $cat1Id, 'ID', 'Name');
                 $cat2Id = isFindReturn($goods, $ID, 'ID', 'CategoryID');
                 $cat2 = isFindReturn($categories, $cat2Id, 'ID', 'Name');
-                $articolo = $Model . "-" . $Variant;
+                $articolo = $Model . '-' . $Variant;
             }
-            if ($kk == 'Color') {
+            if ($kk === 'Color') {
                 $colore = $val;
 
             }
-            if ($kk == 'Stock') {
+            if ($kk === 'Stock') {
                 $sizesQty = [];
-                foreach ($val as $row) {
-                    $sizesQty[] = array('Barcode' => $row['Barcode'], 'Size' => $row['Size'], 'Qty' => $row['Qty']);
+                foreach ($val as $robt) {
+                    if($robt['Size']!==0) {
+                        $sizesQty[] = array('Barcode' => $robt['Barcode'], 'Size' => $robt['Size'], 'Qty' => $robt['Qty']);
+                    }
                 }
             }
             $string = '';
-            if ($kk == 'Pictures') {
+            if ($kk === 'Pictures') {
                 foreach ($val as $rowPic) {
                     $string .= $rowPic['PictureUrl'] . ',';
                 }
             }
-            if ($string != '') {
+            if ($string !== '') {
                 $stringDef = substr($string, 0, -1);
                 $PictureUrl = explode(',', $stringDef);
-                foreach ($sizesQty as $rows) {
-                    $barcode = $rows['Barcode'];
-                    $Size = $rows['Size'];
-                    $qty = $row['Qty'];
-                    $arrayPopulate[] = array(
-                        'shopId' => $shopId,
-                        'marchio' => $marchio,
-                        'articolo' => $articolo,
-                        'PrAcquisto'=> $PrAcquisto,
-                        'prListino' =>  $prListino,
-                        'colore' => $colore,
-                        'stagione' => $stagione,
-                        'reparto' => $reparto,
-                        'categoria1' => $cat1,
-                        'categoria2' => $cat2,
-                        'taglia' => $Size,
-                        'esistenza' => $qty,
-                        'barcode' => $barcode,
-                        'img' => $PictureUrl
-                    );
+                foreach ($sizesQty as $roast) {
+                    $barcode = $roast['Barcode'];
+                    $SizeUnique = $roast['Size'];
+                    $qty = $roast['Qty'];
+                    if($SizeUnique!=='0') {
+                        $arrayPopulate[] = [
+                            'shopId' => $shopId,
+                            'marchio' => $marchio,
+                            'articolo' => $articolo,
+                            'PrAcquisto' => $PrAcquisto,
+                            'prListino' => $prListino,
+                            'colore' => $colore,
+                            'stagione' => $stagione,
+                            'reparto' => $reparto,
+                            'categoria1' => $cat1,
+                            'categoria2' => $cat2,
+                            'taglia' => $SizeUnique,
+                            'esistenza' => $qty,
+                            'barcode' => $barcode,
+                            'img' => $PictureUrl
+                        ];
+                    }
                 }
-                $sizesQty = null;
+                $sizesQty=null;
 
             }
 
         }
     }
-    return $arrayPopulate;
+ $c=json_encode($arrayPopulate);
+$fp = fopen($savedir.'output.json', 'wb');
+fwrite($fp, $c);
+fclose($fp);
+
+function isFindReturn($array , $filterByValue , $filterByColumn , $valueToReturn)
+{
+    $key = array_search($filterByValue, array_column($array, $filterByColumn), true);
+    return $array[$key][$valueToReturn];
 }
 
-
-
-function isFindReturn($array = null, $filterByValue = null, $filterByColumn = null, $valueToReturn)
+function isDeepFindReturn($array , $filterByValue, $filterByColumn, $valueToReturn)
 {
-    $key = array_search($filterByValue, array_column($array, $filterByColumn));
-    $val = $array[$key][$valueToReturn];
-    return $val;
-}
-
-function isDeepFindReturn($array = null, $filterByValue = null, $filterByColumn = null, $valueToReturn)
-{
-    $res = null;
-    $key = array_search($filterByValue, array_column($array, 'ID'));
+    $key = array_search($filterByValue, array_column($array, 'ID'), true);
     $val = $array[$key][$filterByColumn];
     foreach ($val as $kzu => $value) {
-        foreach ($value as $zzu=> $vals ) {
-            if ($zzu == $valueToReturn) {
-                $res = $vals;
+        foreach ($value as $zzu=> $vale ) {
+            if ($zzu === $valueToReturn) {
+                $res = $vale;
             }
         }
     }
     return $res;
 }
-
-$arraySeason = 'season';
-$urlSeasonList = 'http://atelier-hub.com/test/SeasonList';
-//$callSeasonList = apiCall($urlSeasonList,$arraySel, $save_to);
-$seasons = tmpTable($save_to, $arraySeason);
-$arrayGender = 'gender';
-$urlGenderList = 'http://atelier-hub.com/test/GenderList';
-//$callGenderList = apiCall($urlGenderList,$arraySel, $save_to);
-$genders = tmpTable($save_to, $arrayGender);
-$arrayBrand = 'brand';
-$urlBrandList = 'http://atelier-hub.com/test/BrandList';
-//$callBrandList = apiCall($urlBrandList,$arraySel, $save_to);
-$brands = tmpTable($save_to, $arrayBrand);
-$arrayCategory = 'category';
-$urlCategoryList = 'http://atelier-hub.com/test/CategoryList';
-//$callCategoryList = apiCall($urlCategoryList,$arraySel, $save_to);
-$categories = tmpTable($save_to, $arrayCategory);
-$arrayColors = 'colors';
-$urlColorList = 'http://atelier-hub.com/test/ColorList';
-//$callColorList = apiCall($urlColorList, $arraySel, $save_to);
-
-$colours = tmpTable($save_to, $arrayColors);
-$arrayGoods = 'goods';
-$urlGoodsList = 'http://atelier-hub.com/test/GoodsList';
-//$callGoodsList = apiCall($urlGoodsList,$arraySel, $save_to);
-$goods = tmpTable($save_to, $arrayGoods);
-$arrayGoodsDetail = 'goodsDetail';
-$urlGoodsDetailList = 'http://atelier-hub.com/test/GoodsDetailList';
-//$callGoodsDetailList = apiCall($urlGoodsDetailList,$arraySel, $save_to);
-$goodsDetails = tmpTable($save_to, $arrayGoodsDetail);
-$arrayGoodsPrice = 'goodsPrice';
-$urlGoodsPriceList = 'http://atelier-hub.com/test/GoodsPriceList';
-//$callGoodsPriceList = apiCall($urlGoodsPriceList,$arraySel, $save_to);
-$goodsPrice = tmpTable($save_to, $arrayGoodsPrice);
-populateJson($genders, $goods, $goodsDetails, $brands, $goodsPrice, $categories);
 
