@@ -1,12 +1,35 @@
 <?php
 $skus = [];
 $prices = [];
+
+// <img src="https://stats.ps.stylight.net/track/c51360d/sl?skus=0000|1111&oi=o1001&ta=123&c=EUR&ic=2" style="position:absolute; visibility:hidden">
+$linkSkuStylight="";
+$totalPrice=0;
+$propertyIdIT='a2830242c5bd5ce453bc90b125d8a08b';
+$propertyIdGB='acbbc6c18465a880b8699bfd4af9ef36';
+$propertyIdDE='f8cc26efd85160afaf9c6708c771460a';
+$propertyIdAU='4c5f0fac33204a43ff77b45597d06214';
+$orderId='';
+
+
 //TODO TRANSFER TO GOOGLE TAG MANAGER
 try {
     foreach($data->entity->orderLine as $orderline){
         $skus[] = "'".$orderline->productId.'-'.$orderline->productVariantId."'";
         $prices[] = $orderline->netPrice;
-    } ?>
+        $totalPrice+= $orderline->netPrice;
+        $linkSkuStylight=$orderline->productId.'-'.$orderline->productVariantId.'|';
+        $orderId=$orderline->orderId;
+
+
+    }
+
+    $countItem=count($skus);
+    $skuStylight = substr($linkSkuStylight, 0, strlen($linkSkuStylight)-1);
+    echo '<img src="https://stats.ps.stylight.net/track/'.$propertyIdIT.'/sl?skus='.$skuStylight.'&oi='.$orderId.'&ta='.$totalPrice.'&c=EUR&ic='.$countItem.'" style="position:absolute; visibility:hidden">';
+    ?>
+
+
     <!-- trade tracker -->
     <script type="text/javascript">
         var ttConversionOptions = ttConversionOptions || [];
