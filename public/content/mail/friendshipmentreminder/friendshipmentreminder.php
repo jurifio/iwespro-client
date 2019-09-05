@@ -10,9 +10,9 @@ use bamboo\core\theming\CMailerHelper;
 <body>
 Ciao,<br>
     ti ricordiamo che devi segnalare l'avvenuta spedizione prevista per oggi,<br />
-    puoi farlo accedendo al pannello <a href="https://www.pickyshop.com/blueseal/spedizioni">Spedizioni</a>
-    e cliccando <img src="https://www.pickyshop.com/assets/frecciainsu.jpg">,<br />
-    nel caso la spedizione non fosse partita ti invitiamo a cliccare <img src="https://www.pickyshop.com/assets/tastoX.jpg"> <br />
+    puoi farlo accedendo al pannello <a href="https://www.iwes.pro/blueseal/spedizioni">Spedizioni</a>
+    e cliccando <img src="https://www.iwes.pro/assets/frecciainsu.jpg">,<br />
+    nel caso la spedizione non fosse partita ti invitiamo a cliccare <img src="https://www.iwes.pro/assets/tastoX.jpg"> <br />
 
     Saluti<br />
 

@@ -31,7 +31,7 @@ Ciao,<br>
 
     </table>
     puoi confermare gli ordini seguendo il seguente link: <br />
-    <a href="https://www.pickyshop.com/blueseal/friend/ordini">https://www.pickyshop.com/blueseal/friend/ordini</a><br />
+    <a href="https://www.iwes.pro/blueseal/friend/ordini">https://www.iwes.pro/blueseal/friend/ordini</a><br />
     la mancata conferma tempestiva comporterà il ritardo di un giorno<br />
     Saluti<br />
 
