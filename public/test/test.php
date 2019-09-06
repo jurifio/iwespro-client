@@ -43,6 +43,7 @@ if (ENV == 'dev') {
 
  function apiCall($url = null, $arraySel = null, $savedir = null)
 {
+
     $username = 'test';
     $password = 'Imagine#';
     $ch = curl_init();
