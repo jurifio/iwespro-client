@@ -1,3 +1,4 @@
+<meta http-equiv="refresh" content="0;url=/blueseal">
 <header <?php echo $data->headerAttrs; ?>>
     <div id="top">
         <div class="container">
