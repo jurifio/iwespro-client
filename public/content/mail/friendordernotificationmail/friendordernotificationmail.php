@@ -55,7 +55,7 @@ Ciao,<br>
             }
         $checkOrigin=[];
         foreach($checkParallal as $check){
-            if ($check==$order->remoteShopId) {
+            if ($check==$order->remoteShopSellerId) {
                 array_push($checkOrigin, '1');
             }else{
                 array_push($checkOrigin, '0');
