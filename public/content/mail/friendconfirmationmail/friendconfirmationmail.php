@@ -29,6 +29,8 @@ Ciao,<br>
         echo '<th>Taglia</th>';
         echo '<th>Prezzo Friend</th>';
         echo '<th>Anteprima</th>';
+        echo '<th>Indirizzo di Spedizione</th>';
+        echo '<th>Tipologia di Nastro</th>';
         $checkParallal=[];
         $orderRepo=\Monkey::app()->repoFactory->create('Order');
         foreach($lines as $line){
@@ -44,19 +46,18 @@ Ciao,<br>
             echo '<td>'; echo $line['size']; echo '</td>';
             echo '<td>'; echo $line['friendRevenue']; echo '</td>';
             echo '<td><img height="70" src="'.$app->image($line['photo'],'amazon').'"></td>';
-            echo '</tr>';
             array_push($checkParallal,$line['shopId']);
             $order=$orderRepo->findOneBy(['id'=>$line['orderId']]);
-            }
-        $checkOrigin=[];
-        foreach($checkParallal as $check){
-            if ($check==$order->remoteShopSellerId) {
-                array_push($checkOrigin, '1');
-            }else{
-                array_push($checkOrigin, '0');
-            }
+            $checkOrigin=[];
+            foreach($checkParallal as $check){
+                if ($check==$order->remoteShopSellerId) {
+                    array_push($checkOrigin, '1');
+                }else{
+                    array_push($checkOrigin, '0');
+                }
 
-        }
+            }
+            echo '<td>';
         $address=json_decode($order->frozenShippingAddress,true);
         $findCountry=\Monkey::app()->repoFactory->create('Country')->findOneBy(['id'=>$address['countryId']]);
         if($findCountry!=null){
@@ -65,26 +66,33 @@ Ciao,<br>
             $country='';
         }
         ?>
+            <br>
+            <p style="font-weight:bold"><?php echo $address['name'].' '.$address['surname'];?><br>
+                <?php if (isset ($address['Company'])){
+                    echo $address['Company'].'<br>';
+                }
+                ?>
+            </p>
+            <?php echo $address['address'];?><br>
+            <?php echo $address['postcode'].' ' .$address['city'].' '.$address['province']?><br>
+            <?php echo $country;?><br>
+            <br>
+        <?php echo '</td>';
+               echo '<td>';
+            if (in_array('0', $checkOrigin, true)) {
+                "<p style='font-weight:bold'>Prego utilizzare un nastro neutro per il confezionamento del pacco<br></p>";
+            }
+            echo '</td>';
+            echo '</tr>';
+            }
+        ?>
+
+
     </table>
     <br>
     <a href="https://www.iwes.pro/blueseal/friend/ordini" target="_blank">Affrettati a confermare</a> e riceverai notifica del pagamento del prodotto e la prenotazione del corriere per il ritiro.<br>
-    <br>
-    Indirizzo di spedizione del prodotto:<br>
-    <br>
-    <p style="font-weight:bold"><?php echo $address['name'].' '.$address['surname'];?><br>
-        <?php if (isset ($address['Company'])){
-            echo $address['Company'].'<br>';
-        }
-        ?>
-    </p>
-   <?php echo $address['address'];?><br>
-    <?php echo $address['postcode'].' ' .$address['city'].' '.$address['province']?><br>
-    <?php echo $country;?><br>
-<br>
-<?php   if (in_array('0', $checkOrigin, true)){
-    "<p style='font-weight:bold'>Prego utilizzare un nastro neutro per il confezionamento del pacco<br></p>";
-}
-?>
+
+
 
 <p style="font-weight:bold"><br></p>
     <p style="font-weight:bold">In caso di domande, richieste o suggerimenti, non esitate a contattarci tramite telefono al seguente numero 0733-471365 o via e-mail all'indirizzo friends@iwes.it<br></p>
