@@ -79,9 +79,9 @@ Ciao,<br>
 <br>
 <p style="font-weight:bold"><?php echo $address['name'].' '.$address['surname'];?><br>
     <?php if (isset ($address['Company'])){
-        echo $address['Company'].'<br>';
-    }
-    ?>
+    echo $address['Company'].'<br>';
+}
+?>
 </p>
 <?php echo $address['address'];?><br>
 <?php echo $address['postcode'].' ' .$address['city'].' '.$address['province']?><br>
