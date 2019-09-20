@@ -15,6 +15,7 @@ Ciao,<br>
 <br />
 <table>
     <?php
+    $orderRepo=\Monkey::app()->repoFactory->create('Order');
     $extId = isset($lines[0]['extId']);
     ?>
     <thead>
