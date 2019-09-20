@@ -13,47 +13,41 @@ Ciao,<br>
     Ti prego di preparare i prodotti per la spedizione <br />
 
     <br />
-    <table>
-        <?php
-        $orderRepo=\Monkey::app()->repoFactory->create('Order');
-        $extId = isset($lines[0]['extId']);
-        ?>
-        <thead>
-            <tr>
-                <th>Ordine-Riga</th>
-                <th>Nome Prodotto</th>
-                <?php
-                if($extId) {
-                    echo '<th>Codice Friend</th>';
-                } ?>
-                <th>Codice Prodotto Fornitore</th>
-                <th>Colore</th>
-                <th>Brand</th>
-                <th>Taglia</th>
-                <th>Prezzo Friend</th>
-                <th>Anteprima</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php
-        $checkParallal=[];
-        foreach($lines as $line){
-            echo '<tr>';
-            echo '<td>'.$line['orderId'].'-'.$line['orderLineId'].'</td>';
-            echo '<td>'.$line['productNameTranslation'].'</td>';
-            if($extId) {
-                echo '<td>'; echo $line['extId']; echo '</td>';
-            }
-            echo '<td>'; echo $line['itemno']; echo '</td>';
-            echo '<td>'; echo $line['var']; echo '</td>';
-            echo '<td>'; echo $line['brand']; echo '</td>';
-            echo '<td>'; echo $line['size']; echo '</td>';
-            echo '<td>'; echo $line['friendRevenue']; echo '</td>';
-            echo '<td><img height="70" src="'.$app->image($line['photo'],'amazon').'"></td>';
-            echo '</tr>';
-            array_push($checkParallal,$line['shopId']);
-            $order=$orderRepo->findOneBy(['id'=>$line['orderId']]);
-            }
+<table>
+    <?php
+    $extId = isset($lines[0]['extId']);
+
+    echo '<head>';
+    echo '<th>Ordine-Riga</th>';
+    echo '<th>Nome Prodotto</th>';
+    if($extId) {
+        echo '<th>Codice Friend</th>';
+    }
+    echo '<th>Codice Prodotto Fornitore</th>';
+    echo '<th>Colore</th>';
+    echo '<th>Brand</th>';
+    echo '<th>Taglia</th>';
+    echo '<th>Prezzo Friend</th>';
+    echo '<th>Anteprima</th>';
+    echo '<th>Indirizzo di Spedizione</th>';
+    echo '<th>Tipologia di Nastro</th>';
+    $checkParallal=[];
+    $orderRepo=\Monkey::app()->repoFactory->create('Order');
+    foreach($lines as $line){
+        echo '<tr>';
+        echo '<td>'.$line['orderId'].'-'.$line['orderLineId'].'</td>';
+        echo '<td>'.$line['productNameTranslation'].'</td>';
+        if($extId) {
+            echo '<td>'; echo $line['extId']; echo '</td>';
+        }
+        echo '<td>'; echo $line['itemno']; echo '</td>';
+        echo '<td>'; echo $line['var']; echo '</td>';
+        echo '<td>'; echo $line['brand']; echo '</td>';
+        echo '<td>'; echo $line['size']; echo '</td>';
+        echo '<td>'; echo $line['friendRevenue']; echo '</td>';
+        echo '<td><img height="70" src="'.$app->image($line['photo'],'amazon').'"></td>';
+        array_push($checkParallal,$line['shopId']);
+        $order=$orderRepo->findOneBy(['id'=>$line['orderId']]);
         $checkOrigin=[];
         foreach($checkParallal as $check){
             if ($check==$order->remoteShopSellerId) {
@@ -63,6 +57,7 @@ Ciao,<br>
             }
 
         }
+        echo '<td>';
         $address=json_decode($order->frozenShippingAddress,true);
         $findCountry=\Monkey::app()->repoFactory->create('Country')->findOneBy(['id'=>$address['countryId']]);
         if($findCountry!=null){
@@ -71,26 +66,31 @@ Ciao,<br>
             $country='';
         }
         ?>
-        </tbody>
-    </table>
-    <br>
-    <br>
-    Indirizzo di spedizione del prodotto:<br>
+        <br>
+        <p style="font-weight:bold"><?php echo $address['name'].' '.$address['surname'];?><br>
+            <?php if (isset ($address['Company'])){
+                echo $address['Company'].'<br>';
+            }
+            ?>
+        </p>
+        <?php echo $address['address'];?><br>
+        <?php echo $address['postcode'].' ' .$address['city'].' '.$address['province']?><br>
+        <?php echo $country;?><br>
+        <br>
+        <?php echo '</td>';
+        echo '<td>';
+        if (in_array('0', $checkOrigin, true)) {
+            "<p style='font-weight:bold'>Prego utilizzare un nastro neutro per il confezionamento del pacco<br></p>";
+        }
+        echo '</td>';
+        echo '</tr>';
+    }
+    ?>
+
+
+</table>
+
 <br>
-<p style="font-weight:bold"><?php echo $address['name'].' '.$address['surname'];?><br>
-    <?php if (isset ($address['Company'])){
-    echo $address['Company'].'<br>';
-}
-?>
-</p>
-<?php echo $address['address'];?><br>
-<?php echo $address['postcode'].' ' .$address['city'].' '.$address['province']?><br>
-<?php echo $country;?><br>
-<br>
-<?php   if (in_array('0', $checkOrigin, true)){
-"<p style='font-weight:bold'>Prego utilizzare un nastro neutro per il confezionamento del pacco<br></p>";
-}
-?>
     <p style="font-weight:bold">In caso di domande, richieste o suggerimenti, non esitate a contattarci tramite telefono al seguente numero 0733-471365 o via e-mail all'indirizzo friends@iwes.it<br></p>
 
     Saluti<br>
