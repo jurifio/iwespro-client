@@ -65,19 +65,30 @@ Ciao,<br>
         }else{
             $country='';
         }
-        ?>
-            <br>
-            <p style="font-weight:bold"><?php echo $address['name'].' '.$address['surname'];?><br>
-                <?php if (isset ($address['Company'])){
-                    echo $address['Company'].'<br>';
-                }
-                ?>
-            </p>
-            <?php echo $address['address'];?><br>
-            <?php echo $address['postcode'].' ' .$address['city'].' '.$address['province']?><br>
-            <?php echo $country;?><br>
-            <br>
-        <?php echo '</td>';
+            ?>
+            <?php if($order->isShippingToIwes==null) { ?>
+                <br>
+                <p style="font-weight:bold"><?php echo $address['name'] . ' ' . $address['surname']; ?><br>
+                    <?php if (isset ($address['Company'])) {
+                        echo $address['Company'] . '<br>';
+                    }
+                    ?>
+                </p>
+                <?php echo $address['address']; ?><br>
+                <?php echo $address['postcode'] . ' ' . $address['city'] . ' ' . $address['province'] ?><br>
+                <?php echo $country; ?><br>
+                <br>
+                <?php echo '</td>';
+            }else{?>
+                <br>
+                <p style="font-weight:bold">Iwes  International Web Ecommerce Services snc<br>
+                </p>
+                via Cesare Pavese , 1 <br>
+                62012 Civitanova Marche (MC)<br>
+                ITALIA<br>
+                <br>
+                </td>
+            <? }
                echo '<td>';
             if (in_array('0', $checkOrigin, true)) {
                 "<p style='font-weight:bold'>Prego utilizzare un nastro neutro per il confezionamento del pacco<br></p>";
