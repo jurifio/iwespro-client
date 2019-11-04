@@ -31,6 +31,7 @@ Ciao,<br>
         echo '<th>Anteprima</th>';
         echo '<th>Indirizzo di Spedizione</th>';
         echo '<th>Tipologia di Nastro</th>';
+        echo '<th>Azione</th>';
         $checkParallal=[];
         $orderRepo=\Monkey::app()->repoFactory->create('Order');
         foreach($lines as $line){
@@ -92,6 +93,19 @@ Ciao,<br>
                echo '<td>';
             if (in_array('0', $checkOrigin, true)) {
                 "<p style='font-weight:bold'>Prego utilizzare un nastro neutro per il confezionamento del pacco<br></p>";
+            }
+            echo '</td>';
+            echo '<td>';
+            $findShopParallel=\Monkey::app()->repoFactory->create('Shop')->findOneBy(['id'=>$line['shopId']]);
+
+            if($findShopParallel->hasEcommerce==1 && in_array('0', $checkOrigin, true)){
+                echo '<a href="'.$findShopParallel->urlSite.'/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
+
+
+            }else if($findShopParallel->hasEcommerce==1 && in_array('1', $checkOrigin, true)){
+                echo'<a href="https://www.iwes.pro/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
+            }else{
+                echo'<a href="https://www.iwes.pro/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
             }
             echo '</td>';
             echo '</tr>';
