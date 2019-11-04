@@ -96,20 +96,20 @@ Ciao,<br>
             }
             echo '</td>';
             echo '<td>';
-            $findShopParallel=\Monkey::app()->repoFactory->create('Shop')->findOneBy(['id'=>$line['shopId']]);
-
-            if($findShopParallel->hasEcommerce==1 && in_array('0', $checkOrigin, true)){
-                echo '<a href="'.$findShopParallel->urlSite.'/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
-
-
-            }else if($findShopParallel->hasEcommerce==1 && in_array('1', $checkOrigin, true)){
-                echo'<a href="https://www.iwes.pro/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
+            if($line['remoteShopSellerId']!=44) {
+                $findShopParallel = \Monkey::app()->repoFactory->create('Shop')->findOneBy(['id' => $line['shopId']]);
+                if ($findShopParallel->hasEcommerce == 1 && in_array('0',$checkOrigin,true)) {
+                    echo '<a href="' . $findShopParallel->urlSite . '/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
+                } else {
+                    echo '<a href="https://www.iwes.pro/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
+                }
             }else{
-                echo'<a href="https://www.iwes.pro/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
+                echo '<a href="https://www.iwes.pro/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
             }
             echo '</td>';
             echo '</tr>';
-            }
+        }
+
         ?>
 
 
