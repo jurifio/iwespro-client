@@ -132,7 +132,7 @@ Saluti<br>
 
 <?php
 
-echo '<img src="https://www.iwes.pro/it/assets/logoiwes.png"><br>';?>
+echo '<img width="130" height="30" src="https://www.iwes.pro/it/assets/logoiwes.png"><br>';?>
 Friends Support
 </body>
 </html>

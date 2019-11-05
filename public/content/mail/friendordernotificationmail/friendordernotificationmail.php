@@ -104,7 +104,7 @@ Ciao,<br>
     <p style="font-weight:bold">In caso di domande, richieste o suggerimenti, non esitate a contattarci tramite telefono al seguente numero 0733-471365 o via e-mail all'indirizzo friends@iwes.it<br></p>
 
     Saluti<br>
-    <img src="https://www.pickyshop.com/it/assets/logoiwes.png"><br>
+<img width="130" height="30" src="https://www.pickyshop.com/it/assets/logoiwes.png"><br />
     Friends Support
 </body>
 </html>
