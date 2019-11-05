@@ -10,7 +10,7 @@ use bamboo\core\theming\CMailerHelper;
 
 Ciao,<br>
 Ho il piacere di comunicarTi che il Tuo oggetto è stato venduto.<br>
-Ti prego di <a href="https://www.iwes.pro/blueseal/friend/ordini" target="_blank">confermare le righe dell'ordine</a> (previo login) e preparare il pacco per la spedizione.<br>
+Ti prego di confermare le righe dell'ordine (previo login) e preparare il pacco per la spedizione.<br>
 
 <br>
 <table>
@@ -125,7 +125,7 @@ Affrettati a confermare le richieste  e riceverai notifica del pagamento dei pro
 
 Saluti<br>
 
-<img src="https://www.pickyshop.com/it/assets/logowide.png"><br>
+<img src="https://www.iwes.pro/it/assets/logoiwes.png"><br>
 Friends Support
 </body>
 </html>
