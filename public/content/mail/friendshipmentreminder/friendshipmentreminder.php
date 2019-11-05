@@ -16,7 +16,7 @@ Ciao,<br>
 
     Saluti<br />
 
-    <img src="https://www.pickyshop.com/it/assets/logowide.png"><br />
+    <img src="https://www.pickyshop.com/it/assets/logoiwes.png"><br />
     Friends Support
 
 </body>

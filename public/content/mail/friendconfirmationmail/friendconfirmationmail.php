@@ -32,6 +32,7 @@ Ti prego di confermare le righe dell'ordine (previo login) e preparare il pacco 
     echo '<th>Indirizzo di Spedizione</th>';
     echo '<th>Tipologia di Nastro</th>';
     echo '<th>Azione</th>';
+    echo '<th>Sito</th>';
     $checkParallal=[];
     $orderRepo=\Monkey::app()->repoFactory->create('Order');
     foreach($lines as $line){
@@ -96,21 +97,25 @@ Ti prego di confermare le righe dell'ordine (previo login) e preparare il pacco 
         }
         echo '</td>';
         echo '<td>';
+        $logoSite='logoiwes.png';
         if($line['remoteShopSellerId']!=44) {
             $findShopParallel = \Monkey::app()->repoFactory->create('Shop')->findOneBy(['id' => $line['shopId']]);
             if ($findShopParallel->hasEcommerce == 1) {
                 echo '<a href="' . $findShopParallel->urlSite . '/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
+                $logoSite=$findShopParallel->logoSite;
             } else {
                 echo '<a href="https://www.iwes.pro/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
             }
         }else{
             echo '<a href="https://www.iwes.pro/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
+            $logoSite='logowidePickyshop.png';
         }
+        echo '</td>';
+        echo '<td>';
+        echo '<img width="135" height="30" src="https://www.iwes.pro/it/assets/'.$logoSite.'"><br>';
         echo '</td>';
         echo '</tr>';
     }
-
-
     ?>
 
 
@@ -125,7 +130,9 @@ Affrettati a confermare le richieste  e riceverai notifica del pagamento dei pro
 
 Saluti<br>
 
-<img src="https://www.iwes.pro/it/assets/logoiwes.png"><br>
+<?php
+
+echo '<img src="https://www.iwes.pro/it/assets/logoiwes.png"><br>';?>
 Friends Support
 </body>
 </html>

@@ -7,7 +7,6 @@ use bamboo\core\theming\CMailerHelper;
     <style type="text/css"><?php echo $css; ?></style>
 </head>
 <body>
-<img src="https://www.pickyshop.com/it/assets/logowide.png"><br>
 Ciao,<br>
     grazie per aver confermati gli ordini per un totale di <?php echo $total ?>.<br />
     Ti prego di preparare i prodotti per la spedizione <br />
@@ -105,7 +104,7 @@ Ciao,<br>
     <p style="font-weight:bold">In caso di domande, richieste o suggerimenti, non esitate a contattarci tramite telefono al seguente numero 0733-471365 o via e-mail all'indirizzo friends@iwes.it<br></p>
 
     Saluti<br>
-    <img src="https://www.pickyshop.com/it/assets/logowide.png"><br>
+    <img src="https://www.pickyshop.com/it/assets/logoiwes.png"><br>
     Friends Support
 </body>
 </html>

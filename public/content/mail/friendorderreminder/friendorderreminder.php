@@ -31,6 +31,8 @@ Ciao,<br>
     echo '<th>Anteprima</th>';
     echo '<th>Indirizzo di Spedizione</th>';
     echo '<th>Tipologia di Nastro</th>';
+    echo '<th>Azione</th>';
+    echo '<th>Sito</th>';
     $checkParallal=[];
     $orderRepo=\Monkey::app()->repoFactory->create('Order');
     foreach($lines as $line){
@@ -83,16 +85,34 @@ Ciao,<br>
             "<p style='font-weight:bold'>Prego utilizzare un nastro neutro per il confezionamento del pacco<br></p>";
         }
         echo '</td>';
+        echo '<td>';
+        if($line['remoteShopSellerId']!=44) {
+            $findShopParallel = \Monkey::app()->repoFactory->create('Shop')->findOneBy(['id' => $line['shopId']]);
+            if ($findShopParallel->hasEcommerce == 1) {
+                echo '<a href="' . $findShopParallel->urlSite . '/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
+                $logoSite=$findShopParallel->logoSite;
+            } else {
+                echo '<a href="https://www.iwes.pro/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
+            }
+        }else{
+            echo '<a href="https://www.iwes.pro/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
+            $logoSite='logowidePickyshop.png';
+        }
+        echo '</td>';
+        echo '<td>';
+        echo '<img width="135" height="30" src="https://www.iwes.pro/it/assets/'.$logoSite.'"><br>';
+        echo '</td>';
         echo '</tr>';
     }
     ?>
+
 
 
 </table>
 <p style="font-weight:bold">In caso di domande, richieste o suggerimenti, non esitate a contattarci tramite telefono al seguente numero 0733-471365 o via e-mail all'indirizzo friends@iwes.it<br></p>
 
 Saluti<br>
-<img src="https://www.pickyshop.com/it/assets/logowide.png"><br>
+<img src="https://www.pickyshop.com/it/assets/logoiwes.png"><br>
 Friends Support
 </body>
 </html>

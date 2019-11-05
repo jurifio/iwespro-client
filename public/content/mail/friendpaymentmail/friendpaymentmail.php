@@ -47,7 +47,7 @@ Di seguito la lista delle fatture saldate con questo pagamento:
 <br />
 Cordialmente,<br />
 <br />
-<img height="25" src="https://www.pickyshop.com/it/assets/logowide.png">
+<img height="25" src="https://www.pickyshop.com/it/assets/logoiwes.png">
 <br />
 Iwes International Web Ecommerce Services
 <br />
