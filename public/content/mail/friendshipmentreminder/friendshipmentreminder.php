@@ -8,6 +8,7 @@ use bamboo\core\theming\CMailerHelper;
     </style>
 </head>
 <body>
+<img width="600"  src="https://www.iwes.pro/it/assets/logoiwes.png"><br>
 Ciao,<br>
     ti ricordiamo che devi segnalare l'avvenuta spedizione prevista per oggi,<br />
     puoi farlo accedendo al pannello <a href="https://www.iwes.pro/blueseal/spedizioni">Spedizioni</a>

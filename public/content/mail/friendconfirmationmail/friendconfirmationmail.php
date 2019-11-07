@@ -7,7 +7,7 @@ use bamboo\core\theming\CMailerHelper;
     <style type="text/css"><?php echo $css; ?></style>
 </head>
 <body>
-
+<img width="600"  src="https://www.iwes.pro/it/assets/logoiwes.png"><br>
 Ciao,<br>
 Ho il piacere di comunicarTi che il Tuo oggetto è stato venduto.<br>
 Ti prego di confermare le righe dell'ordine (previo login) e preparare il pacco per la spedizione.<br>

@@ -7,6 +7,7 @@ use bamboo\core\theming\CMailerHelper;
     <style type="text/css"><?php echo $css; ?></style>
 </head>
 <body>
+<img width="600"  src="https://www.iwes.pro/it/assets/logoiwes.png"><br>
 Ciao,<br>
     grazie per aver confermati gli ordini per un totale di <?php echo $total ?>.<br />
     Ti prego di preparare i prodotti per la spedizione <br />

@@ -7,6 +7,10 @@ use bamboo\core\theming\CMailerHelper;
     <style type="text/css"><?php echo $css; ?></style>
 </head>
 <body>
+<?php $findShopSeller=\Monkey::app()->repoFactory->create('Shop')->findOneBy(['id'=>$row['remoteShopSellerId']]);
+$logoSite=$findShopSeller->logoSite;
+echo  '<img  width="600" src="https://www.pickyshop.com/it/assets/'.$logoSite.'"><br>';?>
+
 Ciao,<br>
     Ho il piacere di comunicarti che il Tuo oggetto è in  spedizione.<br>
 
@@ -39,11 +43,9 @@ Ciao,<br>
     <br>
 
     <p style="font-weight:bold">In caso di domande, richieste o suggerimenti, non esitate a contattarci tramite telefono al seguente numero 0733-471365 o via e-mail all'indirizzo support@cartechinishop.com.<br></p>
-<?php $findShopSeller=\Monkey::app()->repoFactory->create('Shop')->findOneBy(['id'=>$row['remoteShopSellerId']]);
-$logoSite=$findShopSeller->logoSite;
-?>
+
     Saluti<br>
 <?php
-   echo  '<img src="https://www.pickyshop.com/it/assets/'.$logoSite.'"><br>';?>
+   echo  '<img  width="130" height="30" src="https://www.pickyshop.com/it/assets/'.$logoSite.'"><br>';?>
 </body>
 </html>
