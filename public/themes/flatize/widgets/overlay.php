@@ -126,7 +126,7 @@
                 $couponTypeText = 'di ' . $amount . ' %';
             }
         } else {
-            $findCampaign = \Monkey::app()->repoFactory->create('Campaign')->findOneBy(['marketplaceAccountId' => $marketplaceAccountId,'marketplaceplaceId' => $marketplaceId]);
+            $findCampaign = \Monkey::app()->repoFactory->create('Campaign')->findOneBy(['marketplaceAccountId' => $marketplaceAccountId,'marketplaceId' => $marketplaceId]);
             if ($findCampaign != null) {
                 $findCouponType = \Monkey::app()->repoFactory->create('CouponType')->findOneBy(['campaignId' => $findCampaign->id]);
                 $nameCoupon = $findCouponType->name;
