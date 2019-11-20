@@ -108,7 +108,7 @@
     </div>
 <?php } else {
     $url_components = parse_url($_SERVER['REQUEST_URI']);
-    if ($_SERVER['QUERY_STRING'] != null) {
+    if (strpos($_SERVER['REQUEST_URI'],'utm_marketing_data[]')) {
         $filterCampaign = str_replace('utm_marketing_data[]=marketplaceAccount','',$_SERVER['QUERY_STRING']);
         $filter = explode('-',$filterCampaign);
         $marketplaceAccountId = $filter[0];
