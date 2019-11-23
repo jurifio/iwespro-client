@@ -19,7 +19,8 @@ Ciao,<br>
     $extId = isset($lines[0]['extId']);
 
     echo '<head>';
-    echo '<th>Ordine-Riga</th>';
+    echo '<th>Ordine-Riga Iwes</th>';
+    echo '<th>Ordine-Riga Shop</th>';
     echo '<th>Nome Prodotto</th>';
     if($extId) {
         echo '<th>Codice Friend</th>';
@@ -37,8 +38,21 @@ Ciao,<br>
     $checkParallal=[];
     $orderRepo=\Monkey::app()->repoFactory->create('Order');
     foreach($lines as $line){
+        array_push($checkParallal,$line['shopId']);
+        $order=$orderRepo->findOneBy(['id'=>$line['orderId']]);
+        $checkOrigin=[];
+        foreach($checkParallal as $check){
+            if ($check==$order->remoteShopSellerId) {
+                array_push($checkOrigin, '1');
+
+            }else{
+                array_push($checkOrigin, '0');
+            }
+
+        }
         echo '<tr>';
         echo '<td>'.$line['orderId'].'-'.$line['orderLineId'].'</td>';
+        echo '<td>'.$line['remoteOrderSellerId'].'-'.$line['remoteOrderLineSellerId'].'</td>';
         echo '<td>'.$line['productNameTranslation'].'</td>';
         if($extId) {
             echo '<td>'; echo $line['extId']; echo '</td>';
@@ -49,17 +63,7 @@ Ciao,<br>
         echo '<td>'; echo $line['size']; echo '</td>';
         echo '<td>'; echo $line['friendRevenue']; echo '</td>';
         echo '<td><img height="70" src="'.$app->image($line['photo'],'amazon').'"></td>';
-        array_push($checkParallal,$line['shopId']);
-        $order=$orderRepo->findOneBy(['id'=>$line['orderId']]);
-        $checkOrigin=[];
-        foreach($checkParallal as $check){
-            if ($check==$order->remoteShopSellerId) {
-                array_push($checkOrigin, '1');
-            }else{
-                array_push($checkOrigin, '0');
-            }
 
-        }
         echo '<td>';
         $address=json_decode($order->frozenShippingAddress,true);
         $findCountry=\Monkey::app()->repoFactory->create('Country')->findOneBy(['id'=>$address['countryId']]);
