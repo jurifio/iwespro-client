@@ -37,9 +37,8 @@ $domain = 'iwes.pro';
 $queryString = array(
     'begin'        => 'Fri, 23 November 2019 09:00:00 -0000',
     'ascending'    => 'yes',
-    'limit'        =>  25,
-    'pretty'       => 'yes'
-
+    'pretty'       => 'yes',
+    'recipient'    => 'juri@iwes.it'
 );
 
 # Make the call to the client.
