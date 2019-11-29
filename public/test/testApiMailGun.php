@@ -34,8 +34,12 @@ var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
 $mgClient = new Mailgun('key-1d5fe7e72fab58615be0d245d90e9e56');
 $domain = 'iwes.pro';
+$dateformat=strtotime('2019-10-22 00:03:26');
+$beginDate=date("D,d M Y H:i:s -0000",$dateformat);
+$endDate=date("D,d M Y H:i:s -0000");
 $queryString = array(
     'begin'        => 'Fri, 23 November 2019 09:00:00 -0000',
+    'end'          => $endDate,
     'ascending'    => 'yes',
     'pretty'       => 'yes',
     'recipient'    => 'juri@iwes.it'
@@ -44,9 +48,11 @@ $queryString = array(
 # Make the call to the client.
 $result = $mgClient->get("$domain/events", $queryString);
 var_dump($result);
+$messageId='message-id';
+$bodyplain='body-plain';
 
 foreach ($result->http_response_body->items as $list ) {
-    echo 'oraInvio:'.$list->timestamp.'<br>';
+    echo 'oraInvio:'.date('d-m-Y H:s:i',$list->timestamp).'<br>';
      if (!empty($list->envelope->sender)) {
          echo 'sender:'.$list->envelope->sender . '<br>';
      }
@@ -62,7 +68,13 @@ foreach ($result->http_response_body->items as $list ) {
     if (!empty($list->message->headers->subject)) {
         echo 'oggetto:'.$list->message->headers->subject . '<br>';
     }
-
+    if (!empty($list->message->headers->$messageId)) {
+        echo 'oggetto:'.$list->message->headers->$messageId . '<br>';
+    }
+    if (!empty($list->message->headers->$bodyplain)) {
+        echo 'oggetto:'.$list->message->headers->$bodyplain . '<br>';
+    }
+  //  echo "testo:".$list->message->headers->subject->body-html;
 }
 
 
