@@ -42,7 +42,8 @@ $queryString = array(
     'end'          => $endDate,
     'ascending'    => 'yes',
     'pretty'       => 'yes',
-    'recipient'    => 'juri@iwes.it'
+    'recipient'    => 'gianluca@iwes.it',
+    'event'        => 'delivered'
 );
 
 # Make the call to the client.
@@ -52,29 +53,30 @@ $messageId='message-id';
 $bodyplain='body-plain';
 
 foreach ($result->http_response_body->items as $list ) {
-    echo 'oraInvio:'.date('d-m-Y H:s:i',$list->timestamp).'<br>';
-     if (!empty($list->envelope->sender)) {
-         echo 'sender:'.$list->envelope->sender . '<br>';
-     }
-    if (!empty($list->envelope->targets)) {
-        echo 'targets:'.$list->envelope->targets . '<br>';
-    }
-    if (!empty($list->message->headers->to)) {
-        echo 'to:'.$list->message->headers->to . '<br>';
-    }
-    if (!empty($list->message->headers->from)) {
-        echo 'from:'.$list->message->headers->from . '<br>';
-    }
-    if (!empty($list->message->headers->subject)) {
-        echo 'oggetto:'.$list->message->headers->subject . '<br>';
-    }
-    if (!empty($list->message->headers->$messageId)) {
-        echo 'oggetto:'.$list->message->headers->$messageId . '<br>';
-    }
-    if (!empty($list->message->headers->$bodyplain)) {
-        echo 'oggetto:'.$list->message->headers->$bodyplain . '<br>';
-    }
-  //  echo "testo:".$list->message->headers->subject->body-html;
+        echo 'oraInvio:' . date('d-m-Y H:s:i',$list->timestamp) . '<br>';
+        if (!empty($list->envelope->sender)) {
+            echo 'sender:' . $list->envelope->sender . '<br>';
+        }
+        if (!empty($list->envelope->targets)) {
+            echo 'targets:' . $list->envelope->targets . '<br>';
+        }
+        if (!empty($list->message->headers->to)) {
+            echo 'to:' . $list->message->headers->to . '<br>';
+        }
+        if (!empty($list->message->headers->from)) {
+            echo 'from:' . $list->message->headers->from . '<br>';
+        }
+        if (!empty($list->message->headers->subject)) {
+            echo 'oggetto:' . $list->message->headers->subject . '<br>';
+        }
+        if (!empty($list->message->headers->$messageId)) {
+            echo 'oggetto:' . $list->message->headers->$messageId . '<br>';
+        }
+        if (!empty($list->message->headers->$bodyplain)) {
+            echo 'oggetto:' . $list->message->headers->$bodyplain . '<br>';
+        }
+        //  echo "testo:".$list->message->headers->subject->body-html;
+
 }
 
 
