@@ -31,12 +31,29 @@ $time = microtime(true);
 $monkey->eventManager;
 var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
+$api_uid = '34021';
+$api_key = '443884d05056b5f0831446538c6e840f';
+$insertJson = '{
+  "api_uid": "34021",
+  "api_key": "443884d05056b5f0831446538c6e840f",
+  "filtro": "",
+  "id": "",
+  "nome": "",
+  "cf": "",
+  "piva": "",
+  "pagina": 1
+}';
+$urlInsert = "https://api.fattureincloud.it:443/v1/clienti/lista";
+$options = array(
+    "http" => array(
+        "header" => "Content-type: text/json\r\n",
+        "method" => "POST",
+        "content" => $insertJson
+    ),
+);
+$context = stream_context_create($options);
+$result = json_decode(file_get_contents($urlInsert, false, $context));
+var_dump($result);
 
-$currentYear=date('Y');
-$prova=strtotime('2019-11-28 20:19:31');
-$date=date('Y',$prova);
-if($date==$currentYear){
-    echo 'uguale';
-}
 
 
