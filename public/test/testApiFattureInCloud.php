@@ -33,17 +33,25 @@ var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
 $api_uid = '34021';
 $api_key = '443884d05056b5f0831446538c6e840f';
+$yearNow=date('Y');
 $insertJson = '{
   "api_uid": "34021",
   "api_key": "443884d05056b5f0831446538c6e840f",
-  "filtro": "",
-  "id": "",
-  "nome": "",
-  "cf": "",
-  "piva": "",
+  "anno": 2019,
+   "data_inizio": "01/01/'.$yearNow.'",
+  "data_fine": "31/12/'.$yearNow.'",
+  "cliente": "",
+  "fornitore": "",
+  "id_cliente": "",
+  "id_fornitore": "",
+  "saldato": "",
+  "oggetto": "",
+  "ogni_ddt": "",
+  "PA": false,
+  "PA_tipo_cliente": "",
   "pagina": 1
 }';
-$urlInsert = "https://api.fattureincloud.it:443/v1/clienti/lista";
+$urlInsert = "https://api.fattureincloud.it:443/v1/fatture/lista";
 $options = array(
     "http" => array(
         "header" => "Content-type: text/json\r\n",
@@ -54,6 +62,19 @@ $options = array(
 $context = stream_context_create($options);
 $result = json_decode(file_get_contents($urlInsert, false, $context));
 var_dump($result);
+foreach($result->lista_documenti as $val){
+    if($val->tipo=='fatture') {
+        echo $val->nome . '<br>';
+        $date = strtotime($val->data);
+        echo date('Y-m-d H:i:s',$date) . '<br>';
+        echo $val->importo_netto . '<br>';
+        echo $val->numero . '<br>';
+        echo $val->id;
+    }
+
+
+}
+
 
 
 
