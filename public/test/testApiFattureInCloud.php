@@ -76,5 +76,24 @@ foreach($result->lista_documenti as $val){
 }
 
 
+$insertJsonDet = '{
+  "api_uid": "34021",
+  "api_key": "443884d05056b5f0831446538c6e840f",
+  "id": "44323912"
+ 
+}';
+$urlInsertDet = "https://api.fattureincloud.it:443/v1/acquisti/dettagli";
+$optionsDet = array(
+    "http" => array(
+        "header" => "Content-type: text/json\r\n",
+        "method" => "POST",
+        "content" => $insertJsonDet
+    ),
+);
+$contextDet = stream_context_create($optionsDet);
+$resultDet = json_decode(file_get_contents($urlInsertDet,false,$contextDet));
+$invoice=$resultDet->dettagli_documento->numero_fattura.'del '.$resultDet->dettagli_documento->data;
+echo $invoice;
+
 
 
