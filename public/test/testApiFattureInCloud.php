@@ -65,8 +65,9 @@ var_dump($result);
 foreach($result->lista_documenti as $val){
     if($val->tipo=='fatture') {
         echo $val->nome . '<br>';
-        $date = strtotime($val->data);
-        echo date('Y-m-d H:i:s',$date) . '<br>';
+        $newdate=str_replace('/','-',$val->data);
+        $date = new \DateTime($newdate);
+        echo $date->format('Y-m-d H:i:s').'<br>';
         echo $val->importo_netto . '<br>';
         echo $val->numero . '<br>';
         echo $val->id;
@@ -93,7 +94,6 @@ $optionsDet = array(
 $contextDet = stream_context_create($optionsDet);
 $resultDet = json_decode(file_get_contents($urlInsertDet,false,$contextDet));
 $invoice=$resultDet->dettagli_documento->numero_fattura.'del '.$resultDet->dettagli_documento->data;
-echo $invoice;
 
 
 
