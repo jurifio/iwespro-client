@@ -1,6 +1,6 @@
 <?php
-
-
+$config = rootPath().$this->app->cfg()->fetch('paths', 'blueseal');
+echo $config;
 ini_set("memory_limit", "2000M");
 ini_set('max_execution_time', 0);
 $ttime = microtime(true);
