@@ -45,7 +45,7 @@ $queryString = array(
     'recipient'    => 'gianluca@iwes.it',
     'event'        => 'delivered'
 );
-
+/*
 # Make the call to the client.
 $result = $mgClient->get("$domain/events", $queryString);
 var_dump($result);
@@ -77,6 +77,35 @@ foreach ($result->http_response_body->items as $list ) {
         }
         //  echo "testo:".$list->message->headers->subject->body-html;
 
+}
+*/
+$cartDate = new \DateTime('2017-12-16 23:34:24');
+$defDate = $cartDate->format('Y-m-d H:i:s');
+$firsTimeEmailSendDay='7';
+$firstTimeEmailSendHour='18';
+$firstEmailSendDate=date('Y-m-d',strtotime('+'.$firsTimeEmailSendDay.' day ',strtotime($defDate)));
+$firstEmailSendDate=date('Y-m-d '.$firstTimeEmailSendHour.':i:s',strtotime(($firstEmailSendDate)));
+//echo $firstEmailSendDate;
+$validity='P3D';
+$issueDate = new \DateTime();
+echo $issueDate->format('Y-m-d H:i:s').'<br>';
+$validUntil = new \DateInterval($validity);
+$validThru = $issueDate->add($validUntil);
+$validThru = date_format($validThru,'Y-m-d H:i:s');
+echo $validThru;
+
+echo '<br>';
+$paymentDate = new DateTime('2019-12-11 17:59:49'); // Today
+echo $paymentDate->format('d/m/Y'); // echos today!
+$contractDateBegin = new DateTime();
+$contractDateEnd  = new DateTime('+1 day');
+
+if (
+    $paymentDate->getTimestamp() > $contractDateBegin->getTimestamp() &&
+    $paymentDate->getTimestamp() < $contractDateEnd->getTimestamp()){
+    echo "is between";
+}else{
+    echo "NO GO!";
 }
 
 
