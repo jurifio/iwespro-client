@@ -79,6 +79,7 @@ foreach ($result->http_response_body->items as $list ) {
 
 }
 */
+/*
 $cartDate = new \DateTime('2017-12-16 23:34:24');
 $defDate = $cartDate->format('Y-m-d H:i:s');
 $firsTimeEmailSendDay='7';
@@ -107,7 +108,148 @@ if (
 }else{
     echo "NO GO!";
 }
+*/
+$valuePrice=35;
+if($valuePrice==5){
+    $shipmentServiceOptions=[
+        'COD'=>[
+            'CODAmount'=>[
+                'MonetaryValue'=>$valuePrice,
+                'CurrencyCode'=>'EUR'
+            ]
+        ]
+    ];
 
+}else{
+    $shipmentServiceOptions='';
+}
+echo '<br>spedizione<br>';
+$delivery = [
+    'UPSSecurity' => [
+        'UsernameToken' => [
+            'Username' => 'iwes123',
+            'Password' => 'Spedizioni123',
+        ],
+        "ServiceAccessToken" => [
+            'AccessLicenseNumber' =>
+                'ED3442CCB18DBE8C'
+        ]
+    ],
+    'ShipmentRequest' => [
+        'Request' => [
+            'RequestOption' => 'validate',
+            'TransactionReference' => [
+                'CustomerContext' => 'CustomerContext.' //???
+            ]
+        ],
+        'Shipment' => [
+            'Description' => 'spedizionetest',
+            'Shipper' => [
+                'Name' => 'iwesnc',
+                'AttentionName' => '',
+                'ShipperNumber' => '463V1V',
+                'Address' => [
+                    'AddressLine' => 'via cesare Pavese 1',
+                    'City' => 'Civitanova Marche',
+                    'PostalCode' => '62012',
+                    'CountryCode' => 'IT'
+                ],
+                'Phone' => [
+                    'Number' => '+390733471365' //$shipment->fromAddress->phone ?? $shipment->fromAddress->cellphone
+                ]
+            ],
+            'ShipFrom' => [
+                'Name' => 'Cellone',
+                'Address' => [
+                    'AddressLine' => 'via cesare Pavese ',
+                    'City' => 'Civitanova Marche',
+                    'PostalCode' => '62012',
+                    'CountryCode' => 'IT'
+                ]
+            ],
+            'ShipTo' => [
+                'AttentionName' => 'Bruna Fraticelli',
+                'Name' => 'Bruna Fraticelli',
+                'Address' => [
+                    'AddressLine' => 'via emilia 45',
+                    'City' => 'Sant\'Elpidio a Mare',
+                    'PostalCode' => '63811',
+                    'CountryCode' => 'IT'
+                ],
+                'Phone' => [
+                    'Number' => '+390734858273'
+                ]
+            ],
+            'PaymentInformation' => [
+                'ShipmentCharge' => [
+                    'Type' => '01',
+                    'BillShipper' => [
+                        'AccountNumber' => '463V1V'
+                    ]
+                ]
+            ],
+            'Service' =>[
+                'Code' => '11',
+                'Description' => 'UPS Saver'
+            ],
+            'ShipMentServiceOptions'=>$shipmentServiceOptions,
+
+            'Package' => [
+                'Description' => 'Scatola di Cartone',
+                'Packaging' => [
+                    'Code' => '02',
+                    'Description' => 'Customer Supplied'
+                ],
+                'Dimensions' => [
+                    'UnitOfMeasurement' => [
+                        'Code' => 'CM'
+
+                    ],
+                    'Length' => '45',
+                    'Width' => '35',
+                    'Height' => '15'
+                ],
+                'PackageWeight' => [
+                    'UnitOfMeasurement' => [
+                        'Code' => 'KGS',
+                        'Description' => 'Kilograms'
+                    ],
+                    'Weight' => '2.5'
+                ]
+            ]
+        ]
+    ]
+];
+
+
+$ch = curl_init();
+
+//set the url, number of POST vars, POST data
+curl_setopt($ch,CURLOPT_URL,'https://wwwcie.ups.com/rest/Ship');
+curl_setopt($ch,CURLOPT_POSTFIELDS,json_encode($delivery));
+curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+curl_setopt($ch,CURLOPT_HTTPHEADER,[
+    'Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept',
+    'Access-Control-Allow-Methods: POST',
+    'Access-Control-Allow-Origin: *',
+    'Content-type: application/json'
+]);
+\Monkey::app()->applicationReport(
+    'UpsHandler',
+    'addDelivery',
+    'Called addDelivery to https://wwwcie.ups.com/rest/Ship ' ,
+    json_encode($delivery));
+$result = curl_exec($ch);
+$e = curl_error($ch);
+curl_close($ch);
+
+$rs=json_decode($result);
+$data=base64_decode($rs->ShipmentResponse->ShipmentResults->PackageResults->ShippingLabel->GraphicImage);
+file_put_contents("imgshipping.gif",$data);
+echo '<img src="imgshipping.gif"/>';
+
+echo '<br>find test<br>';
+echo '<br>spedizione<br>';
 
 
 
