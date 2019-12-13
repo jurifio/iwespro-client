@@ -109,15 +109,17 @@ if (
     echo "NO GO!";
 }
 */
-$valuePrice=35;
+$valuePrice=5;
 if($valuePrice==5){
     $shipmentServiceOptions=[
         'COD'=>[
             'CODAmount'=>[
                 'MonetaryValue'=>$valuePrice,
                 'CurrencyCode'=>'EUR'
-            ]
-        ]
+            ],
+            'CODFundsCode '=>'0',
+            'CODCode'=>'3',
+        ],
     ];
 
 }else{
@@ -190,7 +192,7 @@ $delivery = [
             ],
             'Service' =>[
                 'Code' => '11',
-                'Description' => 'UPS Saver'
+                'Description' => 'UPS STANDARD'
             ],
             'ShipMentServiceOptions'=>$shipmentServiceOptions,
 
@@ -220,7 +222,7 @@ $delivery = [
         ]
     ]
 ];
-
+echo var_dump($delivery);
 
 $ch = curl_init();
 
