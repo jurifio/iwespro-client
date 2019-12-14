@@ -109,6 +109,7 @@ if (
     echo "NO GO!";
 }
 */
+/*
 $valuePrice=5;
 if($valuePrice==5){
     $shipmentServiceOptions=[
@@ -252,6 +253,15 @@ echo '<img src="imgshipping.gif"/>';
 
 echo '<br>find test<br>';
 echo '<br>spedizione<br>';
+*/
+$countStatusCancel = 1;
+$countStatusShipped = 0;
+$countStatusWorking = 0;
+$orderLineWorking = ['ORD_WAIT','ORD_PENDING','ORD_LAB','ORD_FRND_OK','ORD_FRND_SENT','ORD_CHK_IN','ORD_PCK_CLI','ORD_FRND_SNDING','ORD_MAIL_PREP_C','ORD_FRND_ORDSNT'];
+
+if(in_array('ORD_FRND_SNDING',$orderLineWorking)) {
+    echo 'perlamadonna';
+    }
 
 
 
