@@ -1,9 +1,11 @@
 <?php
 
 require '/media/sf_sites/vendor/mailgun/vendor/autoload.php';
+
 use Mailgun\Mailgun;
-ini_set("memory_limit", "2000M");
-ini_set('max_execution_time', 0);
+
+ini_set("memory_limit","2000M");
+ini_set('max_execution_time',0);
 $ttime = microtime(true);
 $time = microtime(true);
 require '../../iwesStatic.php';
@@ -32,7 +34,7 @@ $time = microtime(true);
 $monkey->eventManager;
 var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
-$mgClient = new Mailgun('key-1d5fe7e72fab58615be0d245d90e9e56');
+/*$mgClient = new Mailgun('key-1d5fe7e72fab58615be0d245d90e9e56');
 $domain = 'iwes.pro';
 $dateformat=strtotime('2019-10-22 00:03:26');
 $beginDate=date("D,d M Y H:i:s -0000",$dateformat);
@@ -109,22 +111,22 @@ if (
     echo "NO GO!";
 }
 */
-/*
-$valuePrice=5;
-if($valuePrice==5){
-    $shipmentServiceOptions=[
-        'COD'=>[
-            'CODAmount'=>[
-                'MonetaryValue'=>$valuePrice,
-                'CurrencyCode'=>'EUR'
+
+$valuePrice = 5;
+if ($valuePrice == 5) {
+    $shipmentServiceOptions = [
+        'COD' => [
+            'CODAmount' => [
+                'MonetaryValue' => $valuePrice,
+                'CurrencyCode' => 'EUR'
             ],
-            'CODFundsCode '=>'0',
-            'CODCode'=>'3',
+            'CODFundsCode ' => '0',
+            'CODCode' => 'CASH',
         ],
     ];
 
-}else{
-    $shipmentServiceOptions='';
+} else {
+    $shipmentServiceOptions = '';
 }
 echo '<br>spedizione<br>';
 $delivery = [
@@ -191,12 +193,20 @@ $delivery = [
                     ]
                 ]
             ],
-            'Service' =>[
+            'Service' => [
                 'Code' => '11',
                 'Description' => 'UPS STANDARD'
             ],
-            'ShipMentServiceOptions'=>$shipmentServiceOptions,
-
+            'ShipMentServiceOptions' => [
+                'COD' => [
+                    'CODAmount' => [
+                        'MonetaryValue' => '182,55',
+                        'CurrencyCode' => 'EUR'
+                    ],
+                    'CODFundsCode ' => 'COD'
+                ],
+                'DeliverToAddresseeOnlyIndicator '=> '1'
+            ],
             'Package' => [
                 'Description' => 'Scatola di Cartone',
                 'Packaging' => [
@@ -240,28 +250,21 @@ curl_setopt($ch,CURLOPT_HTTPHEADER,[
 \Monkey::app()->applicationReport(
     'UpsHandler',
     'addDelivery',
-    'Called addDelivery to https://wwwcie.ups.com/rest/Ship ' ,
+    'Called addDelivery to https://wwwcie.ups.com/rest/Ship ',
     json_encode($delivery));
 $result = curl_exec($ch);
 $e = curl_error($ch);
 curl_close($ch);
 
-$rs=json_decode($result);
-$data=base64_decode($rs->ShipmentResponse->ShipmentResults->PackageResults->ShippingLabel->GraphicImage);
+$rs = json_decode($result);
+$data = base64_decode($rs->ShipmentResponse->ShipmentResults->PackageResults->ShippingLabel->GraphicImage);
 file_put_contents("imgshipping.gif",$data);
 echo '<img src="imgshipping.gif"/>';
 
 echo '<br>find test<br>';
 echo '<br>spedizione<br>';
-*/
-$countStatusCancel = 1;
-$countStatusShipped = 0;
-$countStatusWorking = 0;
-$orderLineWorking = ['ORD_WAIT','ORD_PENDING','ORD_LAB','ORD_FRND_OK','ORD_FRND_SENT','ORD_CHK_IN','ORD_PCK_CLI','ORD_FRND_SNDING','ORD_MAIL_PREP_C','ORD_FRND_ORDSNT'];
 
-if(in_array('ORD_FRND_SNDING',$orderLineWorking)) {
-    echo 'perlamadonna';
-    }
+
 
 
 
