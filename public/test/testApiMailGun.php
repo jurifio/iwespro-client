@@ -120,8 +120,8 @@ if ($valuePrice == 5) {
                 'MonetaryValue' => $valuePrice,
                 'CurrencyCode' => 'EUR'
             ],
-            'CODFundsCode ' => '0',
-            'CODCode' => 'CASH',
+            'CODFundsCode ' => '1',
+            'CODCode' => '3',
         ],
     ];
 
@@ -197,15 +197,15 @@ $delivery = [
                 'Code' => '11',
                 'Description' => 'UPS STANDARD'
             ],
-            'ShipMentServiceOptions' => [
-                'COD' => [
-                    'CODAmount' => [
-                        'MonetaryValue' => '182,55',
-                        'CurrencyCode' => 'EUR'
+            'ShipmentServiceOptions' => [
+                'COD'=>[
+                    'CODAmount'=>[
+                        'MonetaryValue'=>'182.55',
+                        'CurrencyCode'=>'EUR'
                     ],
-                    'CODFundsCode ' => 'COD'
-                ],
-                'DeliverToAddresseeOnlyIndicator '=> '1'
+                    'CODFundsCode ' => '1',
+                    'CODCode'=>'3'
+                ]
             ],
             'Package' => [
                 'Description' => 'Scatola di Cartone',
