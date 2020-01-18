@@ -7,14 +7,78 @@ use bamboo\domain\repositories\CMarketplaceAccountHasProductRepo;
 $ttime = microtime(true);
 $time = microtime(true);
 require '../../iwesStatic.php';
+
+$activityLogRepo=\Monkey::app()->repoFactory->create('ActivityLog');
 $marketplaceAccountRepo = \Monkey::app()->repoFactory->create('MarketplaceAccount');
 $productBrandRepo = \Monkey::app()->repoFactory->create('ProductBrand');
 $productRepo = \Monkey::app()->repoFactory->create('Product');
 $productSkuRepo = \Monkey::app()->repoFactory->create('ProductSku');
 $marketplaceRepo = \Monkey::app()->repoFactory->create('Marketplace');
+$year = (new DateTime())->format('Y');
+$currentMonth = (new DateTime())->format('m');
+echo $currentMonth;
+switch($currentMonth){
+    case "01":
+        $lastDay='31';
+        break;
+    case "02":
+        ;
+        $lastDay='28';
+        break;
+    case "03":
 
+        $lastDay='31';
+        break;
+    case "04":
+
+        $lastDay='30';
+        break;
+    case "05":
+
+        $lastDay='31';
+        break;
+    case "06":
+
+        $lastDay='30';
+        break;
+    case "07":
+
+        $lastDay='31';
+        break;
+    case "08":
+
+        $lastDay='31';
+        break;
+    case "09":
+
+        $lastDay='30';
+        break;
+    case "10":
+
+        $lastDay='31';
+        break;
+    case "11":
+
+        $lastDay='30';
+        break;
+    case "12":
+
+        $lastDay='31';
+        break;
+}
+$sql = "select sum(cost) as cost FROM CampaignVisit WHERE campaignId=7 AND timestamp between '".$year."-".$currentMonth."-01 00:00:00' and  '".$year."-".$currentMonth."-".$lastDay." 00:00:00'";
+$cost = \Monkey::app()->dbAdapter->query($sql, [])->fetchAll()[0]['cost'];
+echo $cost;
 $marketplaceAccounts = $marketplaceAccountRepo->findBy(['id' => 32,'marketplaceId' => 9]);
+$activityLog=$activityLogRepo->findBy(['sid'=>'5d26ecaa4f1f6b2716ed4e037c62e324db067aec753f51ac1e0abdccf9b47309']);
+foreach ($activityLog as $log){
+    if(preg_match("/\bMobile\b/i", $log->userAgent)){
+        echo 'mobile';
+        }
 
+}
+
+/*
 foreach ($marketplaceAccounts as $marketplaceAccount) {
     $markeplaceId = $marketplaceAccount->marketplaceId;
     $marketplaceAccountId = $marketplaceAccount->id;
@@ -109,6 +173,8 @@ foreach ($marketplaceAccounts as $marketplaceAccount) {
     $bodyMail.='</table></body></html>';
     $bodyMail.='numero Prodotti Totali in Coda di Pubblicazione '.$countProduct;
     /** @var CEmailRepo $mailRepo */
+
+/*
     $mailRepo = \Monkey::app()->repoFactory->create('Email');
     $mailRepo->newMail('it@iwes.it', ["gianluca@iwes.it","juri@iwes.it"],[],[],"coda Pubblicazione su ".$marketplaceAccount->name, $bodyMail);
 }
