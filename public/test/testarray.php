@@ -29,9 +29,14 @@ $time = microtime(true);
 $monkey->eventManager;
 var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
-$test='5,4,3,2,1';
+$test='5';
 
 $array=explode(',',$test);
 foreach ($array as $values){
     echo $values;
 }
+
+
+$numberDocument=\Monkey::app()-> dbAdapter -> query( "SELECT ifnull(MAX(id),0)+1 as new
+            FROM PaymentBill", [])->fetchAll()[0]['new'];
+echo $numberDocument;
