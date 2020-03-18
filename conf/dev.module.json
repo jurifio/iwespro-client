@@ -27,6 +27,7 @@
         "store-theme": "/client/public/themes/flatize",
         "admin-theme": "/back",
         "image-temp-folder": "/client/public/media/tempPhotos",
+        "tempMail": "/client/public/content/mail/attachment",
         "local-images": "/client/public/themes/flatize/assets/img",
         "local-fonts": "/client/public/themes/flatize/assets/fonts",
         "blueseal": "/back",
