@@ -53,7 +53,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-
+                                       Vi preghiamo cortesemente voler provvedere al pagamento indicando il numero di distinta.
                                     </span>
                                 </td>
                             </tr>
@@ -61,7 +61,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 20px 10px 0; margin: 0px; line-height: 1.5; font-size: 18px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:800;color:#3A3A3A; line-height:1.2;">
-
+                                    DATI BANCARI
                                     </span>
                                 </td>
                             </tr>
@@ -69,7 +69,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-
+                                    Beneficiary: <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2; font-weight: 600">International Web Ecommerce Sevices snc</span>
                                     </span>
                                 </td>
                             </tr>
@@ -77,7 +77,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-
+                                        Iban: <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2; font-weight: 600">IT 48L 05216 1340 0000 00000 2334</span>
                                     </span>
                                 </td>
                             </tr>
@@ -85,7 +85,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-
+                                    Bank: CREDITO VALTELLINESE
                                     </span>
                                 </td>
                             </tr>
@@ -93,9 +93,8 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 10px; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-
+                                    BIC/SWIFT: BPCVT2S
                                     </span>
-                                </td>
                             </tr>
                             </tbody>
                         </table>
