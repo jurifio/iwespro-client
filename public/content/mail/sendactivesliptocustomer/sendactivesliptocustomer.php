@@ -45,7 +45,7 @@ use bamboo\core\theming\CMailerHelper;
                                     style="padding: 30px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
                                         Inviamo di seguito Estratto conto della distinta n. <?php echo $numberSlip ?> per € <?php echo number_format($slipTotalAmount,2,',','.') ?>
-                                   con Scadenza <?php echo \bamboo\utils\time\STimeToolbox::EurFormattedDate($bri->invoiceDate);?>.
+                                   con Scadenza <?php echo \bamboo\utils\time\STimeToolbox::EurFormattedDate($slipFinalDate);?>.
                                     </span>
                                 </td>
                             </tr>
@@ -121,7 +121,21 @@ use bamboo\core\theming\CMailerHelper;
                                 <th valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:800;color:#3A3A3A; line-height:1.2;">
-                                Importo scadenza
+                               data scadenze
+                                        </span>
+                                </th>
+                                <th valign="top" align="left" class="lh-3"
+                                    style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
+                                    <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:800;color:#3A3A3A; line-height:1.2;">
+                                         Importo Fattura
+
+                                        </span>
+                                </th>
+                                <th valign="top" align="left" class="lh-3"
+                                    style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
+                                    <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:800;color:#3A3A3A; line-height:1.2;">
+                                         Importo Scadenza
+
                                         </span>
                                 </th>
                             </tr>
@@ -143,14 +157,39 @@ use bamboo\core\theming\CMailerHelper;
                                         <?php echo \bamboo\utils\time\STimeToolbox::EurFormattedDate($bri->invoiceDate); ?>
                                     </span>
                                     </td>
+
                                     <td valign="top" align="left" class="lh-3"
                                         style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
                                         <?php
 
-                                            echo number_format($bri->grossTotal,2,',','.')
+                                      $btt=\Monkey::app()->repoFactory->create('BillRegistryTimeTable')->findBy(['billRegistryActivePaymentSlipId'=>$slipArray]);
+                                      $amountPayment=0;
+                                      foreach($btt as $brtt){
+                                          echo \bamboo\utils\time\STimeToolbox::EurFormattedDate($brtt->dateEstimated);
+                                        $amountPayment+=$brtt->amountPayment;
+                                      }
 
                                         ?>
+                                    </span>
+                                    </td>
+                                    <td valign="top" align="left" class="lh-3"
+                                        style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
+                                    <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
+                                        <?php
+
+                                        echo number_format($bri->grossTotal,2,',','.');
+
+                                        ?>
+                                    </span>
+                                    </td>
+                                    <td valign="top" align="left" class="lh-3"
+                                        style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
+                                    <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
+                                        <?php
+
+                                         echo number_format($amountPayment,2,',','.'); ?>
+
                                     </span>
                                     </td>
                                 </tr>
@@ -158,10 +197,14 @@ use bamboo\core\theming\CMailerHelper;
                             <tr>
                                 <td></td>
                                 <td></td>
+                                <td></td>
+                                <td></td>
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:bold;color:#3A3A3A; line-height:1.2;">
-                                        <?php echo number_format($slipTotalAmount,2,',','.'); ?>
+  <?php
+
+  echo number_format($amountPayment,2,',','.'); ?>
                                     </span>
                                 </td>
                             </tr>
