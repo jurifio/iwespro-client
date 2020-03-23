@@ -12,8 +12,8 @@ use bamboo\core\theming\CMailerHelper;
     <tbody>
     <tr>
         <td align="center" valign="top" style="margin:0;padding:42px 0;">
-            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" bgcolor="white"
-                   style="background-position: center top; background-repeat: no-repeat; background-size: cover; width: 660px;"
+            <table align="center" border="" cellspacing="0" cellpadding="0" width="600" bgcolor="white"
+                   style="background-position: center top; background-repeat: no-repeat; background-size: cover; width: 660px; border:15px solid #B3B3B3;"
                    class="wrapper">
                 <tbody>
                 <tr>
@@ -25,7 +25,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="center"
                                     style="display: inline-block; padding: 20px 0px 10px; margin: 0px;" class="tdBlock">
                                     <a href="https:www.pickyshop.com" target="_blank">
-                                        <img src="https://cdn.iwes.it/assets/logoIwes.png" alt="" height="80"
+                                        <img src="http://iwes-newsletter.s3.amazonaws.com/Newsletter_Iwes/LogoDef.png" alt="" height="80"
                                              border="0"
                                              style="border-width: 0px; border-style: none; border-color: transparent; font-size: 12px; display: block;"/>
                                     </a>
@@ -44,7 +44,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 30px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-                                        Inviamo di seguito Estratto conto della distinta n. <?php echo $numberSlip ?> per € <?php echo number_format($slipTotalAmount,2,',','.') ?>
+                                        Inviamo di seguito Estratto conto della distinta n. <?php echo $numberSlip ;?> per € <?php echo number_format($slipTotalAmount,2,',','.') ?>
                                    con Scadenza <?php echo \bamboo\utils\time\STimeToolbox::EurFormattedDate($slipFinalDate);?>.
                                     </span>
                                 </td>
@@ -121,7 +121,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <th valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:800;color:#3A3A3A; line-height:1.2;">
-                               data scadenze
+                               Data Scadenza
                                         </span>
                                 </th>
                                 <th valign="top" align="left" class="lh-3"

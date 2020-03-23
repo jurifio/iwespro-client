@@ -12,8 +12,8 @@ use bamboo\core\theming\CMailerHelper;
     <tbody>
     <tr>
         <td align="center" valign="top" style="margin:0;padding:42px 0;">
-            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" bgcolor="white"
-                   style="background-position: center top; background-repeat: no-repeat; background-size: cover; width: 660px;"
+            <table align="center" border="" cellspacing="0" cellpadding="0" width="600" bgcolor="white"
+                   style="background-position: center top; background-repeat: no-repeat; background-size: cover; width: 660px; border:15px solid #B3B3B3;"
                    class="wrapper">
                 <tbody>
                 <tr>
@@ -25,7 +25,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="center"
                                     style="display: inline-block; padding: 20px 0px 10px; margin: 0px;" class="tdBlock">
                                     <a href="https:www.pickyshop.com" target="_blank">
-                                        <img src="https://cdn.iwes.it/assets/logoIwes.png" alt="" height="80"
+                                        <img src="http://iwes-newsletter.s3.amazonaws.com/Newsletter_Iwes/LogoDef.png" alt="" height="80"
                                              border="0"
                                              style="border-width: 0px; border-style: none; border-color: transparent; font-size: 12px; display: block;"/>
                                     </a>

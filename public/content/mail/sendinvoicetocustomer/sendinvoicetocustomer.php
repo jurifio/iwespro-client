@@ -12,8 +12,8 @@ use bamboo\core\theming\CMailerHelper;
     <tbody>
     <tr>
         <td align="center" valign="top" style="margin:0;padding:42px 0;">
-            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" bgcolor="white"
-                   style="background-position: center top; background-repeat: no-repeat; background-size: cover; width: 660px;"
+            <table align="center" border="" cellspacing="0" cellpadding="0" width="600" bgcolor="white"
+                   style="background-position: center top; background-repeat: no-repeat; background-size: cover; width: 660px; border:15px solid #B3B3B3;"
                    class="wrapper">
                 <tbody>
                 <tr>
@@ -25,7 +25,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="center"
                                     style="display: inline-block; padding: 20px 0px 10px; margin: 0px;" class="tdBlock">
                                     <a href="https:www.pickyshop.com" target="_blank">
-                                        <img src="https://cdn.iwes.it/assets/logoIwes.png" alt="" height="80"
+                                        <img src="http://iwes-newsletter.s3.amazonaws.com/Newsletter_Iwes/LogoDef.png" alt="" height="80"
                                              border="0"
                                              style="border-width: 0px; border-style: none; border-color: transparent; font-size: 12px; display: block;"/>
                                     </a>
@@ -44,7 +44,8 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 30px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-                                        Inviamo di seguito la fattura di cortesia n. <?php echo $numberInvoice ?> del <?php echo $invoiceDate;?>.
+                                        Inviamo di seguito la fattura proforma n. <?php echo $numberInvoice ?> per  € <?php echo number_format($slipTotalAmount,2,',','.') ?>
+                                   con Scadenza <?php echo $invoiceDate;?>.
                                     </span>
                                 </td>
                             </tr>
@@ -52,7 +53,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-                                In  allegato troverà la fattura ed  i relativi dettagli.
+                                In  allegato Troverà la fattura e tutto il relativo dettaglio.
                                     </span>
                                 </td>
                             </tr>
@@ -60,7 +61,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-
+                                Di Seguito comunichiamo i nostri dati bancari e l'elenco delle scadenze generate per la fattura allegata
                                     </span>
                                 </td>
                             </tr>
@@ -68,7 +69,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 20px 10px 0; margin: 0px; line-height: 1.5; font-size: 18px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:800;color:#3A3A3A; line-height:1.2;">
-
+                                    DATI BANCARI
                                     </span>
                                 </td>
                             </tr>
@@ -76,7 +77,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-
+                                    Beneficiary: <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2; font-weight: 600">International Web Ecommerce Sevices snc</span>
                                     </span>
                                 </td>
                             </tr>
@@ -84,7 +85,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-
+                                        Iban: <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2; font-weight: 600">IT 48L 05216 1340 0000 00000 2334</span>
                                     </span>
                                 </td>
                             </tr>
@@ -92,7 +93,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-
+                                    Bank: CREDITO VALTELLINESE
                                     </span>
                                 </td>
                             </tr>
@@ -100,7 +101,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 10px; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-
+                                    BIC/SWIFT: BPCVT2S
                                     </span>
                             </tr>
                             </tbody>
@@ -116,46 +117,87 @@ use bamboo\core\theming\CMailerHelper;
                                 <th valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:800;color:#3A3A3A; line-height:1.2;">
-                                tipo Scadenza
+                                Numero Fattura
                                 </span>
                                 </th>
                                 <th valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:800;color:#3A3A3A; line-height:1.2;">
-                                data Scadenza
+                                Data Fattura
                                         </span>
                                 </th>
                                 <th valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:800;color:#3A3A3A; line-height:1.2;">
-                               Importo Scadenza
+                               Data Scadenza
+                                        </span>
+                                </th>
+                                <th valign="top" align="left" class="lh-3"
+                                    style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
+                                    <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:800;color:#3A3A3A; line-height:1.2;">
+                                         Importo Fattura
+
+                                        </span>
+                                </th>
+                                <th valign="top" align="left" class="lh-3"
+                                    style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
+                                    <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:800;color:#3A3A3A; line-height:1.2;">
+                                         Importo Scadenza
+
                                         </span>
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
-                          <?php  foreach ($btt as $payment){
-                                $brp=\Monkey::app()->repoFactory->create('BillRegistryTypePayment')->findOneBy(['id'=>$payment->billRegistryTypePaymentId]);
+                          <?php  foreach ($invoiceIds as $invoiceId){
+                                $bri=\Monkey::app()->repoFactory->create('BillRegistryInvoice')->findOneBy(['id'=>$invoiceId]);
                                 ?>
                                 <tr>
                                     <td valign="top" align="left" class="lh-3"
                                         style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-                                        <?php echo $brp->name; ?>
+                                        <?php echo $bri->invoiceNumber.'/'.$bri->invoiceType; ?>
                                     </span>
                                     </td>
                                     <td valign="top" align="left" class="lh-3"
                                         style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-                                        <?php echo \bamboo\utils\time\STimeToolbox::EurFormattedDate($payment->dateEstimated); ?>
+                                        <?php echo \bamboo\utils\time\STimeToolbox::EurFormattedDate($bri->invoiceDate); ?>
                                     </span>
                                     </td>
 
                                     <td valign="top" align="left" class="lh-3"
                                         style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-                                         <?php
-                                         echo number_format($payment->amountPayment,2,',','.'); ?>
+                                        <?php
+
+                                      $btt=\Monkey::app()->repoFactory->create('BillRegistryTimeTable')->findBy(['billRegistryActivePaymentSlipId'=>$slipArray]);
+                                      $amountPayment=0;
+                                      foreach($btt as $brtt){
+                                          echo \bamboo\utils\time\STimeToolbox::EurFormattedDate($brtt->dateEstimated);
+                                        $amountPayment+=$brtt->amountPayment;
+                                      }
+
+                                        ?>
+                                    </span>
+                                    </td>
+                                    <td valign="top" align="left" class="lh-3"
+                                        style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
+                                    <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
+                                        <?php
+
+                                        echo number_format($bri->grossTotal,2,',','.');
+
+                                        ?>
+                                    </span>
+                                    </td>
+                                    <td valign="top" align="left" class="lh-3"
+                                        style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
+                                    <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
+                                        <?php
+
+                                         echo number_format($amountPayment,2,',','.'); ?>
+
                                     </span>
                                     </td>
                                 </tr>
@@ -163,12 +205,14 @@ use bamboo\core\theming\CMailerHelper;
                             <tr>
                                 <td></td>
                                 <td></td>
+                                <td></td>
+                                <td></td>
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:bold;color:#3A3A3A; line-height:1.2;">
   <?php
 
-  echo number_format($amountTotal,2,',','.'); ?> &euro;
+  echo number_format($amountPayment,2,',','.'); ?>
                                     </span>
                                 </td>
                             </tr>
