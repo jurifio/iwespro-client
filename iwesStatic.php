@@ -29,7 +29,7 @@ function iwesMail($to,$subject,$message, $headers = "") {
     if(!is_array($to)) {
         $to = [$to];
     }
-    return $emailRepo->newMail('Iwes IT Department <it@iwes.it>',$to,[],[],$subject,$message);
+    return $emailRepo->newMail('Iwes IT Department <it@iwes.it>',$to,[],[],$subject,$message,'',null,null,'MailGun',false,null);
 }
 
 function logDestructError(\Throwable $e) {
