@@ -34,7 +34,7 @@ $request='<?xml version="1.0" encoding="utf-8"?>
   <ErrorLanguage>it_IT</ErrorLanguage>
   <WarningLevel>High</WarningLevel>
   <Item>
-    <ItemID>333579792940</ItemID>
+    <ItemID>233571951927</ItemID>
     <Country>IT</Country>
     <Currency>EUR</Currency>
     <PostalCode>62012</PostalCode>
@@ -177,10 +177,10 @@ $request='<?xml version="1.0" encoding="utf-8"?>
         </VariationSpecifics>
       </Variation>
     </Variations>
-<PictureDetails>      <PictureURL>https://dev.iwes.shop/9594/ebay.jpg</PictureURL>
-      <PictureURL>https://dev.iwes.shop/9595/ebay.jpg</PictureURL>
-      <PictureURL>https://dev.iwes.shop/9596/ebay.jpg</PictureURL>
-      <PictureURL>https://dev.iwes.shop/9597/ebay.jpg</PictureURL>
+<PictureDetails>      
+      <PictureURL>https://iwes.shop/9595/ebay.jpg</PictureURL>
+      <PictureURL>https://iwes.shop/9596/ebay.jpg</PictureURL>
+      <PictureURL>https://iwes.shop/9597/ebay.jpg</PictureURL>
 </PictureDetails>    <ItemSpecifics>
       <NameValueList>
         <Name><![CDATA[MPN]]></Name>
