@@ -33,6 +33,9 @@ $monkey->eventManager;
 var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
 
+$today=((new \DateTime())->format('Y-m-d H:i:s'));
+echo $today;
+
 
 
 echo "inizio chiamata ordine<br>----------------------------------------------------------------<br><br>";
@@ -101,9 +104,62 @@ $ebayOrders = new \SimpleXMLElement($response);
             $ordersArray = $ebayOrders->OrderArray;
             foreach ($ordersArray as $orders) {
                 foreach ($orders as $order) {
-                    $orderId = $order->OrderID;
+                    $shippingServiceCost=number_format((float)$order->ShippingDetails->ShippingServiceSelected->ShippingServiceCost,2,'.','');
+                    $UserFirstName=$order->TransactionArray->Transaction->Buyer->UserFirstName;
+                    $UserLastName=$order->TransactionArray->Transaction->Buyer->UserLastName;
+                    $BuyerUserID=$order->TransactionArray->Transaction->BuyerUserID;
+                    $NameCustomer = $order->ShippingAddress->Name;
+                    $surname=null;
+                    $street1=$order->ShippingAddress->Street1;
+                    $street2=$order->ShippingAddress->Street2;
+                    $cityName=$order->ShippingAddress->CityName;
+                    $StateOrProvince=$order->ShippingAddress->StateOrProvince;
+                    $Country=$order->ShippingAddress->Country;
+                    $CountryName=$order->ShippingAddress->CountryName;
+                    $Phone=$order->ShippingAddress->Phone;
+                    $PostalCode=$order->ShippingAddress->PostalCode;
+                    $AddressId=$orders->ShippingAddress->AddressId;
+                    $AddressOwner=$order->ShippingAddress->AddressOwner;
+                    $email=$order->TransactionArray->Transaction->Buyer->Email;
+                    $orderIDMarketplace = $order->OrderID;
                     $orderStatus = $order->OrderStatus;
-                    $amountPaid = $order->AmountPaid;
+                    $amountPaid = number_format((float)$order->AmountPaid,2,'.','');
+                    $SubTotal=number_format((float)$order->SubTotal,2,'.','');
+                    $frozenBillingAddress=[
+                        'id'=> 1,
+                        'userId'=> 1,
+                        'isBilling'=>1,
+                        'name'=>$NameCustomer,
+                        'surname'=>$surname,
+                        'company'=>null,
+                        'address'=>$street1,
+                        'extra'=>$street2,
+                        'province'=>$StateOrProvince,
+                        'city'=>$cityName,
+                        'postCode'=>$PostalCode,
+                        'countryId'=>110,
+                        'phone'=>null,
+                        'lastUsed'=>0,
+                        'fiscalCode'=>null];
+                    $frozenShippingAddress=[
+                        'id'=> 1,
+                        'userid'=> 1,
+                        'isBilling'=>1,
+                        'name'=>$NameCustomer,
+                        'surname'=>$surname,
+                        'company'=>null,
+                        'address'=>$street1,
+                        'extra'=>$street2,
+                        'province'=>$StateOrProvince,
+                        'city'=>$cityName,
+                        'postCode'=>$PostalCode,
+                        'countryId'=>110,
+                        'phone'=>null,
+                        'lastUsed'=>0,
+                        'fiscalCode'=>null];
+                    $frozenBillingAddress=json_encode($frozenBillingAddress);
+                    $frozenShippingAddress=json_encode($frozenShippingAddress);
+
                     $orderPaymentMethodId = 0;
                     switch (true) {
                         case $order->CheckoutStatus->PaymentMethod = 'PayPal':
@@ -115,27 +171,37 @@ $ebayOrders = new \SimpleXMLElement($response);
                         case $order->CheckoutStatus->PaymentMethod = 'CreditCard':
                             $orderPaymentMethodId = 2;
                             break;
+                        case $order->CheckoutStatus->PaymentMethod = 'CreditCard':
+                            $orderPaymentMethodId = 2;
+                            break;
                         case $order->CheckoutStatus->PaymentMethod = 'COD':
                             $orderPaymentMethodId = 5;
                             break;
                     }
                     $carrierId = 0;
                     switch (true) {
-                        case $order->ShippingDetails->ShippingServiceOptions->ShippingService = 'IT_ExpressCourier':
+                        case $order->ShippingDetails->ShippingServiceSelected->ShippingService = 'IT_ExpressCourier':
                             $carrierId = 1;
                             break;
-                        case $order->ShippingDetails->ShippingServiceOptions->ShippingService = 'MoneyXferAccepted':
-                            $carrierId = 3;
+                        case $order->ShippingDetails->ShippingServiceSelected->ShippingService = 'IT_StandarInternational':
+                            $carrierId = 6;
                             break;
-                        case $order->ShippingDetails->ShippingServiceOptions->ShippingService = 'CreditCard':
-                            $carrierId = 2;
-                            break;
-                        case $order->ShippingDetails->ShippingServiceOptions->ShippingService = 'COD':
-                            $carrierId = 5;
-                            break;
+
                     }
-                    echo $orderId . '-' . $orderStatus . '-EUR' . $amountPaid . '<br>';
-                    echo 'tipo pagamento ' . $orderPaymentMethodId . 'stato pagamento ' . $order->CheckoutStatus->Status;
+
+                    echo $orderIDMarketplace . '-' . $orderStatus . '-EUR pagati' . $amountPaid . ' '. '-EUR importo' . $SubTotal . '<br>'. '';
+                    echo 'tipo pagamento ' . $orderPaymentMethodId . 'stato pagamento ' . $order->CheckoutStatus->Status.'<br>';
+                    echo 'tipo Spedizione ' .$order->ShippingDetails->ShippingServiceSelected->ShippingService. 'costo EUR'. $shippingServiceCost;
+
+                    $arrayitems=$order->TransactionArray->Transaction;
+                    foreach($arrayitems as $item){
+                        echo $item->item->ItemId.' ';
+                        echo $item->Variation->SKU.' ';
+                        echo number_format((float)$item->item->TransactionPrice,2,'.','');
+                        echo $item->item->QuantityPurchased.'<br>';
+
+                    }
+
                 }
             }
 
