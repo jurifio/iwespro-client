@@ -44,8 +44,8 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 30px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-                                        Inviamo di seguito Estratto conto della distinta n. <?php echo $numberSlip ;?> per € <?php echo number_format($slipTotalAmount,2,',','.') ?>
-                                   con Scadenza <?php echo \bamboo\utils\time\STimeToolbox::EurFormattedDate($slipFinalDate);?>.
+                                        Egregio Cliente,<br> inviamo di seguito la fattura di cortesia  n. <?php echo $numberInvoice ;?> per € <?php echo number_format($grossTotal,2,',','.') ?>
+                                   con Data <?php echo \bamboo\utils\time\STimeToolbox::EurFormattedDate($invoiceDate);?>.
                                     </span>
                                 </td>
                             </tr>
@@ -53,7 +53,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-                                       Vi preghiamo cortesemente voler provvedere al pagamento indicando il numero di distinta.
+                                       Comunichiamo le nostre coordinate bancarie .
                                     </span>
                                 </td>
                             </tr>
@@ -121,12 +121,6 @@ use bamboo\core\theming\CMailerHelper;
                                 <th valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:800;color:#3A3A3A; line-height:1.2;">
-                               Data Scadenza
-                                        </span>
-                                </th>
-                                <th valign="top" align="left" class="lh-3"
-                                    style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
-                                    <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:800;color:#3A3A3A; line-height:1.2;">
                                          Importo Fattura
 
                                         </span>
@@ -134,14 +128,14 @@ use bamboo\core\theming\CMailerHelper;
                                 <th valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:800;color:#3A3A3A; line-height:1.2;">
-                                         Importo Scadenza
+                                         data e Importo Scadenze
 
                                         </span>
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php  foreach ($invoiceIds as $invoiceId){
+                                <?php
                                 $bri=\Monkey::app()->repoFactory->create('BillRegistryInvoice')->findOneBy(['id'=>$invoiceId]);
                                 ?>
                                 <tr>
@@ -155,22 +149,6 @@ use bamboo\core\theming\CMailerHelper;
                                         style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
                                         <?php echo \bamboo\utils\time\STimeToolbox::EurFormattedDate($bri->invoiceDate); ?>
-                                    </span>
-                                    </td>
-
-                                    <td valign="top" align="left" class="lh-3"
-                                        style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
-                                    <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-                                        <?php
-
-                                        $btt=\Monkey::app()->repoFactory->create('BillRegistryTimeTable')->findBy(['billRegistryActivePaymentSlipId'=>$slipArray]);
-                                        $amountPayment=0;
-                                        foreach($btt as $brtt){
-                                            echo \bamboo\utils\time\STimeToolbox::EurFormattedDate($brtt->dateEstimated);
-                                            $amountPayment+=$brtt->amountPayment;
-                                        }
-
-                                        ?>
                                     </span>
                                     </td>
                                     <td valign="top" align="left" class="lh-3"
@@ -188,14 +166,18 @@ use bamboo\core\theming\CMailerHelper;
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
                                         <?php
 
-                                        echo number_format($amountPayment,2,',','.'); ?>
+                                        $btt=\Monkey::app()->repoFactory->create('BillRegistryTimeTable')->findBy(['billRegistryInvoiceId'=>$invoiceId]);
+                                        $amountPayment=0;
+                                        foreach($btt as $brtt){
+                                            echo '&eur; ' . number_format($brtt->amountPayment,2,',','.'). ' il: '.\bamboo\utils\time\STimeToolbox::EurFormattedDate($brtt->dateEstimated). '<br>';
+                                        }
 
+                                        ?>
                                     </span>
                                     </td>
                                 </tr>
-                            <?php } ?>
+
                             <tr>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -204,7 +186,7 @@ use bamboo\core\theming\CMailerHelper;
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:bold;color:#3A3A3A; line-height:1.2;">
   <?php
 
-  echo number_format($amountPayment,2,',','.'); ?>
+  echo number_format($grossTotal,2,',','.'); ?>
                                     </span>
                                 </td>
                             </tr>
@@ -221,7 +203,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 20px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-                                        In attesa di ricevere contabile di pagamento al seguente indirizzo mail: <a style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#909090; line-height:1.2" href="mailto:billing@iwes.it">billing@iwes.it</a>.
+                                      Per qualsiasi delucidazione può scrivere al seguente indirizzo mail: <a style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#909090; line-height:1.2" href="mailto:billing@iwes.it">billing@iwes.it</a>.
                                     </span>
                                 </td>
                             </tr>
