@@ -169,7 +169,7 @@ use bamboo\core\theming\CMailerHelper;
                                         $btt=\Monkey::app()->repoFactory->create('BillRegistryTimeTable')->findBy(['billRegistryInvoiceId'=>$invoiceId]);
                                         $amountPayment=0;
                                         foreach($btt as $brtt){
-                                            echo '&eur; ' . number_format($brtt->amountPayment,2,',','.'). ' il: '.\bamboo\utils\time\STimeToolbox::EurFormattedDate($brtt->dateEstimated). '<br>';
+                                            echo 'EURO; ' . number_format($brtt->amountPayment,2,',','.'). ' il: '.\bamboo\utils\time\STimeToolbox::EurFormattedDate($brtt->dateEstimated). '<br>';
                                         }
 
                                         ?>
