@@ -44,8 +44,9 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 30px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-                                        Egregio Cliente,<br> inviamo di seguito la fattura di cortesia  n. <?php echo $numberInvoice ;?> per € <?php echo number_format($grossTotal,2,',','.') ?>
-                                   con Data <?php echo \bamboo\utils\time\STimeToolbox::EurFormattedDate($invoiceDate);?>.
+                                        Egregio Cliente,<br> Inviamo di seguito la fattura di cortesia  n. <?php echo $numberInvoice ;?>  del Data <?php echo \bamboo\utils\time\STimeToolbox::EurFormattedDate($invoiceDate);?>  € <?php echo number_format($grossTotal,2,',','.') ?>.
+                                        <br>Riceverà successivamente Fattura in formato elettronico.
+
                                     </span>
                                 </td>
                             </tr>
@@ -169,7 +170,7 @@ use bamboo\core\theming\CMailerHelper;
                                         $btt=\Monkey::app()->repoFactory->create('BillRegistryTimeTable')->findBy(['billRegistryInvoiceId'=>$invoiceId]);
                                         $amountPayment=0;
                                         foreach($btt as $brtt){
-                                            echo 'EURO; ' . number_format($brtt->amountPayment,2,',','.'). ' il: '.\bamboo\utils\time\STimeToolbox::EurFormattedDate($brtt->dateEstimated). '<br>';
+                                            echo '€ ' . number_format($brtt->amountPayment,2,',','.'). ' '.\bamboo\utils\time\STimeToolbox::EurFormattedDate($brtt->dateEstimated). '<br>';
                                         }
 
                                         ?>
