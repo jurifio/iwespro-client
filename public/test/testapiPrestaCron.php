@@ -222,7 +222,7 @@ $request='<?xml version="1.0" encoding="utf-8"?>
       </NameValueList>
     </ItemSpecifics>
     <ConditionID>1000</ConditionID>
-    <Title><![CDATA[Pluto Basse P448 JHON WHITE BLACK nero]]></Title>
+    <Title><![CDATA[Pluto Rita Basse P448 JHON WHITE BLACK nero]]></Title>
     <Description>
       <![CDATA[<!DOCTYPE html>
 <html>
@@ -971,5 +971,10 @@ curl_setopt($connection, CURLOPT_RETURNTRANSFER, 1);
 
 // Send the Request
 $response = curl_exec($connection);
-var_dump($response);
+var_dump($response);$ebayOrders = new \SimpleXMLElement($response);
+
+$reponseNewProduct = new \SimpleXMLElement($response);
+
+$id_product_ref = $reponseNewProduct->ItemID;
+echo $id_product_ref;
 
