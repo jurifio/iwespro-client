@@ -192,34 +192,7 @@ $request='<?xml version="1.0" encoding="utf-8"?>
         <Name><![CDATA[Marca]]></Name>
         <Value><![CDATA[P448]]></Value>
       </NameValueList>
-       <NameValueList>
-        <Name><![CDATA[Stile]]></Name>
-        <Value><![CDATA[Made In Italy]]></Value>
-      </NameValueList>
-      <NameValueList>
-        <Name><![CDATA[Materiale Tomaia]]></Name>
-        <Value><![CDATA[non applicabile]]></Value>
-      </NameValueList>
-      <NameValueList>
-        <Name><![CDATA[Larghezza della scarpa]]></Name>
-        <Value><![CDATA[non applicabile]]></Value>
-      </NameValueList>
-      <NameValueList>
-        <Name><![CDATA[Tipo]]></Name>
-        <Value><![CDATA[non applicabile]]></Value>
-      </NameValueList>
-       <NameValueList>
-        <Name><![CDATA[Modello]]></Name>
-        <Value><![CDATA[non applicabile]]></Value>
-      </NameValueList>
-        <NameValueList>
-        <Name><![CDATA[Reparto]]></Name>
-        <Value><![CDATA[non applicabile]]></Value>
-      </NameValueList>
-      <NameValueList>
-        <Name><![CDATA[Vintage]]></Name>
-        <Value><![CDATA[non applicabile]]></Value>
-      </NameValueList>
+    
     </ItemSpecifics>
     <ConditionID>1000</ConditionID>
     <Title><![CDATA[Pluto Rita Basse P448 JHON WHITE BLACK nero]]></Title>
@@ -977,4 +950,7 @@ $reponseNewProduct = new \SimpleXMLElement($response);
 
 $id_product_ref = $reponseNewProduct->ItemID;
 echo $id_product_ref;
+if(strlen($id_product_ref)>8) {
+    echo 'si';
+}
 
