@@ -2,11 +2,11 @@
     "dbAdapter": {
         "options": {
             "engine": "mysql",
-            "host": "5.189.159.187",
+            "host": "localhost",
             "port": "3306",
-            "name": "pickyshopfront",
-            "user": "pickyshop4",
-            "pass": "rrtYvg6W!",
+            "name": "pickyshop_dev",
+            "user": "root",
+            "pass": "geh44fed",
             "options": {}
         }
     },
