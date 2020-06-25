@@ -1,6 +1,6 @@
 <?php
  if($_SERVER['REMOTE_ADDR']!=='93.43.116.170'){ ?>
-<!--<meta http-equiv="refresh" content="0;url=/blueseal">-->
+<meta http-equiv="refresh" content="0;url=/blueseal">
 <?php }?>
 <header <?php echo $data->headerAttrs; ?>>
     <div id="top">
