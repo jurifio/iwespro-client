@@ -7827,6 +7827,10 @@ address.box-content.featured-box.featured-box-secondary.floating-gray-box {
     color: #c0c0c0;
     text-decoration: line-through;
 }
+.startprice {
+    color: #c0c0c0;
+    text-decoration: line-through;
+}
 
 .price-notice {
     font-size: .7em;
@@ -9081,3 +9085,4 @@ a.leadbutton:hover {
     border: 1px solid #ccc;
     border-top: none;
 }
+
