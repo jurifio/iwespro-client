@@ -229,6 +229,43 @@
         "headTags": [
             {
                 "tag": "meta",
+                "name": "og:description",
+                "attrs": {
+                    "content": "Negozio online di moda, calzature, borse, accessori gioielli e molto altro  ",
+                    "property": "og:description"
+                },
+                "content": ""
+            },
+            {
+                "tag": "meta",
+                "name": "og:type",
+                "attrs": {
+                    "content": "article",
+                    "property": "og:type"
+                },
+                "content": ""
+            },
+            {
+                "tag": "meta",
+                "name": "og:image",
+                "attrs": {
+                    "content": "https://www.cartechinishop.com/it/cartechini-collections/cpf/621018/p/169405/v/5267957",
+                    "property": "og:image"
+                },
+                "content": ""
+            },
+            {
+                "tag": "meta",
+                "name": "og:url",
+                "attrs": {
+                    "content": "https://www.cartechinishop.com/it/",
+                    "property": "og:url"
+                },
+                "content": ""
+            },
+
+            {
+                "tag": "meta",
                 "name": "",
                 "attrs": {
                     "charset": "utf-8"
@@ -318,7 +355,10 @@
                     "author": "BambooShoot (http:\/\/iwes.it)",
                     "title": "Pickyshop.com",
                     "description": "Negozio online di moda, calzature, borse, accessori gioielli e molto altro.",
-                    "keywords": "calzature, borse, accessori, gioielli, bigiotteria, moda uomo, moda donna, moda bambino"
+                    "keywords": "calzature, borse, accessori, gioielli, bigiotteria, moda uomo, moda donna, moda bambino",
+                    "og:type": "article",
+                    "og:url": "https://www.cartechinishop.com/it/",
+                    "og:image": "https://www.cartechinishop.com/it/cartechini-collections/cpf/621018/p/169405/v/5267957"
                 }
             }
         }
