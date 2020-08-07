@@ -105,7 +105,7 @@ $filename = 'https://iwes-editorial.s3-eu-west-1.amazonaws.com/plandetail-images
 $caption = 'Are You Ready for Red';
 
 // Define the user agent
-$agent = GenerateUserAgent();
+$agent = 'Instagram 6.21.2 Android (19/4.4.2; 480dpi; 1152x1920; Meizu; MX4; mx4; mt6595; en_US)';
 
 // Define the GuID
 $guid = GenerateGuid();

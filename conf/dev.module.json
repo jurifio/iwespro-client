@@ -70,7 +70,7 @@
         "facebook": {
             "app_id": "828468470598455",
             "app_secret": "1b1b2fe1f918e4608f4fbecdab9bb4b6",
-            "default_graph_version":"v2.5"
+            "default_graph_version":"v2.8"
         },
         "cacheEntityExpiration": 84600,
         "orderGateways": {
