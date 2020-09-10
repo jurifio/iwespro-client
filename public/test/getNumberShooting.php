@@ -1,7 +1,10 @@
 <?php
+require '../../iwesStatic.php';
 $shootingBookingRepo=\Monkey::app()->repoFactory->create('ShootingBooking');
 $shootingRepo=\Monkey::app()->repoFactory->create('Shooting');
 $shootingDocumentRepo=\Monkey::app()->repoFactory->create('Document');
+$userRepo=\Monkey::app()->repoFactory->create('User');
+
 if($_POST['shopId']){
     $shopId=$_POST['shopId'];
 }
@@ -57,10 +60,11 @@ foreach($resultDocument as $res) {
 }
 $currentYear=(new DateTime())->format('Y');
 $totPieces=$Calzature+$Borse+$Accessori+$AbbD+$AbbU+$AbbB+$AbbB2+$CurvD+$CurvU;
-$userHasShop=\Monkey::app()->repoFactory->create('userHasShop')->findOneBy(['shopId'=>$shopId]);
+$user=$userRepo->findOneBy(['email'=>'jurif@hotmail.com']);
+
 $shop=\Monkey::app()->repoFactory->create('Shop')->findOneBy(['id'=>$shopId]);
 $document=$shootingDocumentRepo->getEmptyEntity();
-$document->userId=$userHasShop->UserId;
+$document->userId=$user->id;
 $document->shopRecipientId=$shop->billingAddressBookId;
 $document->number=$numberDocument;
 $document->invoiceTypeId=11;
@@ -81,9 +85,9 @@ $shooting->note='DDT Inserito da App';
 $shooting->year=$currentYear;
 $shooting->pieces=$totPieces;
 $shooting->insert();
-$resShooting=\Monkey::app()->dbAdapter->query('select max(id) as lastId from Shooting',[])->fetchAll();
-foreach($resultDocument as $resu) {
-    $resShooting=$resu['lastId'];
+$resShooting=\Monkey::app()->dbAdapter->query('select max(id) as lastShootingId from Shooting',[])->fetchAll();
+foreach($resShooting as $resu) {
+    $resShooting=$resu['lastShootingId'];
 }
 
 
@@ -97,6 +101,6 @@ $shootingBooking->shootingId=$resShooting;
 $shootingBooking->lastSelection=$dateNow;
 $shootingBooking->lastSelection=$dateNow;
 $shootingBooking->insert();
-return json_encode($resShooting);
+echo json_encode($resShooting);
 
 
