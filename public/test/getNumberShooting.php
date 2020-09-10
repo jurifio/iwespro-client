@@ -5,51 +5,51 @@ $shootingRepo=\Monkey::app()->repoFactory->create('Shooting');
 $shootingDocumentRepo=\Monkey::app()->repoFactory->create('Document');
 $userRepo=\Monkey::app()->repoFactory->create('User');
 
-if($_POST['shopId']){
-    $shopId=$_POST['shopId'];
+if($_GET['shopId']){
+    $shopId=$_GET['shopId'];
 }
-if($_POST['Calzature']){
-    $Calzature=$_POST['Calzature'];
+if($_GET['Calzature']){
+    $Calzature=$_GET['Calzature'];
 }else{
     $Calzature=0;
 }
-if($_POST['Borse']){
-    $Borse=$_POST['Borse'];
+if($_GET['Borse']){
+    $Borse=$_GET['Borse'];
 }else{
     $Borse=0;
 }
-if($_POST['Accessori']){
-    $Accessori=$_POST['Accessori'];
+if($_GET['Accessori']){
+    $Accessori=$_GET['Accessori'];
 }else{
     $Accessori=0;
 }
-if($_POST['AbbD']){
-    $AbbD=$_POST['AbbD'];
+if($_GET['AbbD']){
+    $AbbD=$_GET['AbbD'];
 }else{
     $AbbD=0;
 }
-if($_POST['AbbU']){
-    $AbbU=$_POST['AbbU'];
+if($_GET['AbbU']){
+    $AbbU=$_GET['AbbU'];
 }else{
     $AbbU=0;
 }
-if($_POST['AbbB2']){
-    $AbbB2=$_POST['AbbB2'];
+if($_GET['AbbB2']){
+    $AbbB2=$_GET['AbbB2'];
 }else{
     $AbbB2=0;
 }
-if($_POST['AbbB']){
-    $AbbB=$_POST['AbbB'];
+if($_GET['AbbB']){
+    $AbbB=$_GET['AbbB'];
 }else{
     $AbbB=0;
 }
-if($_POST['CurvD']){
-    $CurvD=$_POST['CurvD'];
+if($_GET['CurvD']){
+    $CurvD=$_GET['CurvD'];
 }else{
     $CurvD=0;
 }
-if($_POST['CurvU']){
-    $CurvU=$_POST['CurvU'];
+if($_GET['CurvU']){
+    $CurvU=$_GET['CurvU'];
 }else{
     $CurvU=0;
 }
