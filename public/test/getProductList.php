@@ -39,8 +39,8 @@ ORDER BY `p`.`creationDate` DESC
                ";
 
 
-if($_GET['shopId']){
-    $shopId=$_GET['shopId'];
+if($_POST['shopId']){
+    $shopId=$_POST['shopId'];
 }
 $sql = "SELECT
   `p`.`id`                                             AS `id`,
