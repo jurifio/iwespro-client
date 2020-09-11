@@ -41,7 +41,7 @@ FROM `Product` `p`
       JOIN Shooting shoot ON phs.shootingId = shoot.id
       LEFT JOIN Document doc ON shoot.friendDdt = doc.id)
     ON p.productVariantId = phs.productVariantId AND p.id = phs.productId where 1=1 and s.id=".$shopId." and `PS.id` in (32,33,34)
-ORDER BY `p`.`creationDate` DESC
+ORDER BY `p`.`creationDate` DESC LIMIT 10
                ";
 $data=[];
 $i=0;
