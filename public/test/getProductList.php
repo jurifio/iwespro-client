@@ -4,6 +4,8 @@ $shootingBookingRepo=\Monkey::app()->repoFactory->create('ShootingBooking');
 $shootingRepo=\Monkey::app()->repoFactory->create('Shooting');
 $shootingDocumentRepo=\Monkey::app()->repoFactory->create('Document');
 $userRepo=\Monkey::app()->repoFactory->create('User');
+$productSkuRepo=\Monkey::app()->repoFactory->create('ProductSku');
+$productSizeRepo=\Monkey::app()->repoFactory->create('ProductSize');
 if($_GET['shopId']){
     $shopId=$_GET['shopId'];
 }
