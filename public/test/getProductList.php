@@ -6,8 +6,13 @@ $shootingDocumentRepo=\Monkey::app()->repoFactory->create('Document');
 $userRepo=\Monkey::app()->repoFactory->create('User');
 $productSkuRepo=\Monkey::app()->repoFactory->create('ProductSku');
 $productSizeRepo=\Monkey::app()->repoFactory->create('ProductSize');
-if($_GET['shopId']){
-    $shopId=$_GET['shopId'];
+if($_GET['email']){
+    $email=$_GET['email'];
+}
+$user=$userRepo->findOneBy(['email'=>$email]);
+$resShop=\Monkey::app()->dbAdapter->query('select shopId as shopId from UserHasShop where userId='.$user->id,[])->fetchAll();
+foreach($resShop as $shopResult) {
+    $shopId=$shopResult['shopId'];
 }
 
 
