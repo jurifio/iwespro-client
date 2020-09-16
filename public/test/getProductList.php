@@ -9,6 +9,10 @@ $productSizeRepo=\Monkey::app()->repoFactory->create('ProductSize');
 if($_GET['email']){
     $email=$_GET['email'];
 }
+$sqlEan='';
+if($_GET['ean']!="0"){
+    $sqlEan="and barcode like '%".$_GET['ean']."%'";
+}
 $user=$userRepo->findOneBy(['email'=>$email]);
 $resShop=\Monkey::app()->dbAdapter->query('select shopId as shopId from UserHasShop where userId='.$user->id,[])->fetchAll();
 foreach($resShop as $shopResult) {
@@ -25,6 +29,7 @@ $sql = "SELECT
   concat(`p`.`itemno`, ' # ', `pv`.`name`)             AS `cpf`,
   `s`.`id`                                             AS `shopId`,
   `s`.`title`                                          AS `shop`,
+   (select group_concat(barcode) FROM ProductSku sku2 WHERE sku2.productId=p.id AND sku2.productVariantId=p.productVariantId  )                           as barcode,  
   concat(phs.shootingId)                               AS shooting,
   concat(doc.number)                                   AS doc_number,
   `p`.`creationDate`                                   AS `creationDate`,
@@ -33,6 +38,7 @@ $sql = "SELECT
    `PS`.`name` as season,
     `p`.id as qty  
 FROM `Product` `p`
+    join ProductSku sku ON (`p`.`id`, `p`.`productVariantId`) = (`sku`.`productId`, `sku`.`productVariantId`)
   JOIN `ShopHasProduct` `shp` ON (`p`.`id`, `p`.`productVariantId`) = (`shp`.`productId`, `shp`.`productVariantId`)
      JOIN `ProductSeason` `PS` on p.productSeasonId = `PS`.`id`
   LEFT JOIN (DirtyProduct dp
@@ -47,7 +53,7 @@ FROM `Product` `p`
       ProductHasShooting phs
       JOIN Shooting shoot ON phs.shootingId = shoot.id
       LEFT JOIN Document doc ON shoot.friendDdt = doc.id)
-    ON p.productVariantId = phs.productVariantId AND p.id = phs.productId where 1=1 and s.id=".$shopId." and `p`.`productSeasonId` in (32,33,34) GROUP BY p.id,p.productVariantId,p.externalId
+    ON p.productVariantId = phs.productVariantId AND p.id = phs.productId where 1=1 and s.id=".$shopId." and `p`.`productSeasonId` in (32,33,34) ".$sqlEan."  GROUP BY p.id,p.productVariantId,p.externalId
 ORDER BY `p`.`creationDate` DESC LIMIT 10
                ";
 $data=[];
