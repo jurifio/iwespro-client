@@ -13,53 +13,15 @@ if($_POST['Calzature']){
 }else{
     $Calzature=0;
 }
-if($_POST['Borse']){
-    $Borse=$_POST['Borse'];
-}else{
-    $Borse=0;
-}
-if($_POST['Accessori']){
-    $Accessori=$_POST['Accessori'];
-}else{
-    $Accessori=0;
-}
-if($_POST['AbbD']){
-    $AbbD=$_POST['AbbD'];
-}else{
-    $AbbD=0;
-}
-if($_POST['AbbU']){
-    $AbbU=$_POST['AbbU'];
-}else{
-    $AbbU=0;
-}
-if($_POST['AbbB2']){
-    $AbbB2=$_POST['AbbB2'];
-}else{
-    $AbbB2=0;
-}
-if($_POST['AbbB']){
-    $AbbB=$_POST['AbbB'];
-}else{
-    $AbbB=0;
-}
-if($_POST['CurvD']){
-    $CurvD=$_POST['CurvD'];
-}else{
-    $CurvD=0;
-}
-if($_POST['CurvU']){
-    $CurvU=$_POST['CurvU'];
-}else{
-    $CurvU=0;
-}
+
+
 $resultDocument=\Monkey::app()->dbAdapter->query('select max(id)+1 as newId,  concat("sa",max(id)+1) as lastId from Document',[])->fetchAll();
 foreach($resultDocument as $res) {
     $numberDocument=$res['lastId'];
     $lastId=$res['newId'];
 }
 $currentYear=(new DateTime())->format('Y');
-$totPieces=$Calzature+$Borse+$Accessori+$AbbD+$AbbU+$AbbB+$AbbB2+$CurvD+$CurvU;
+$totPieces=$Calzature;
 $user=$userRepo->findOneBy(['email'=>$email]);
 $resShop=\Monkey::app()->dbAdapter->query('select shopId as shopId from UserHasShop where userId='.$user->id,[])->fetchAll();
 foreach($resShop as $shopResult) {
