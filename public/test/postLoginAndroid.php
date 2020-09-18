@@ -3,7 +3,7 @@
 
 require '../../iwesStatic.php';
 
-if($_POST['Email']){
+if($_POST['email']){
     $email=$_POST['email'];
 }
 $data='';
