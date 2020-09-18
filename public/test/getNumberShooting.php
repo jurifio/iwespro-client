@@ -18,7 +18,7 @@ $resShop=\Monkey::app()->dbAdapter->query('select shopId as shopId from UserHasS
 foreach($resShop as $shopResult) {
     $shopId=$shopResult['shopId'];
 }
-$resultOpenShooting=\Monkey::app()->dbAdapter->query('select max(shootingId)  as lastShootingId from Shooting where shopId='.$shopId.' and status=\'a\'',[])->fetchAll();
+$resultOpenShooting=\Monkey::app()->dbAdapter->query('select max(shootingId)  as lastShootingId from ShootingBooking where shopId='.$shopId.' and status=\'a\'',[])->fetchAll();
 if(count($resultOpenShooting)!=0) {
     foreach ($resultOpenShooting as $resu) {
         $resShooting = $resu['lastShootingId'];
