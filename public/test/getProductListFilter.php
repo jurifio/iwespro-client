@@ -15,7 +15,7 @@ $sqlBrand="";
 $sqlSeason="";
 
 if($_GET['codeProduct']!="0"){
-    $sqlCodeProduct=" and concat(p.id,'-',p.productVariantId)=".$_GET['codeProduct'];
+    $sqlCodeProduct=" and concat(p.id,'-',p.productVariantId) like '%".$_GET['codeProduct']."%' ";
 
 }
 if($_GET['brand']!="0"){
