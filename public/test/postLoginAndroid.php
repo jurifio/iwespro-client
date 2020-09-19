@@ -6,7 +6,7 @@ require '../../iwesStatic.php';
 if($_POST['email']){
     $email=$_POST['email'];
 }
-$data=[];
+$data='';
 $user=\Monkey::app()->repoFactory->create('User')->findOneBy(['email'=>$email]);
 if($user!=null){
     $userDetails=\Monkey::app()->repoFactory->create('UserDetails')->findOneBy(['userId'=>$user->id]);
@@ -22,9 +22,9 @@ if($user!=null){
     }else{
         $editorialPlanId ='no';
     }
-    $data[0]=['name'=>'Ciao '. $userDetails->name,'shopId'=>$shopId,'editorialPlanId'=>$editorialPlanId];
+    $data='Ciao '. $userDetails->name.','.$shopId.','.$editorialPlanId;
 }else{
-    $data[0]=['name'=>'Attenzione Email utente non Riconosciuta','shopId'=>'no','editorialPlanId'=>'no'];
+    $data='Attenzione Email utente non Riconosciuta,no,no';
 }
 
 
