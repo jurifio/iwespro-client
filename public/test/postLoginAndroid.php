@@ -22,9 +22,9 @@ if($user!=null){
     }else{
         $editorialPlanId ='no';
     }
-    $data='Ciao '. $userDetails->name.','.$shopId.','.$editorialPlanId;
+    $data='Ciao '. $userDetails->name.'-'.$shopId.'-'.$editorialPlanId;
 }else{
-    $data='Attenzione Email utente non Riconosciuta,no,no';
+    $data='Attenzione Email utente non Riconosciuta-no-no';
 }
 
 
