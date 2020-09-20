@@ -21,7 +21,7 @@ $productsIds[]=[$productId.'-'.$productVariantId];
 /** @var CProductHasShootingRepo $pHsRepo */
 $pHsRepo = \Monkey::app()->repoFactory->create('ProductHasShooting');
 
-$association = $pHsRepo->associateNewProductsToShooting($productsIds, $shooting->id, $productsInformation);
+$association = $pHsRepo->associateNewProductsToShooting($productsIds, $shootingId, $productsInformation);
 
 
 echo json_encode($data);
