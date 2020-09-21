@@ -134,7 +134,7 @@ $title='Richiesta post  per  ' . $editorialPlanName . ' da app su scatto Social 
         }
     }
     $toBoss[]=['gianluca@iwes.it'];
-
+    /** @var \bamboo\domain\repositories\CEmailRepo $emailRepo */
     $emailRepo->newMail('Iwes IT Department <it@iwes.it>',$toBoss,[],[],$subject,$message,null,null,null,'mailGun',false,null);
 }else{
     $data='2';
