@@ -104,7 +104,6 @@ $title='Richiesta post  per  ' . $editorialPlanName . ' da app su scatto Social 
     $editorialPlanDetail->status = 'Draft';
     $editorialPlanDetail->insert();
 
-    if (ENV == 'dev') return false;
     /** @var aRepo $ePlanSocialRepo */
     $ePlanSocialRepo = \Monkey::app()->repoFactory->create('EditorialPlanSocial');
     /** @var CEditorialPlanSocial $editorialPlanSocial */
@@ -129,12 +128,13 @@ $title='Richiesta post  per  ' . $editorialPlanName . ' da app su scatto Social 
 
                 $to = [$to];
             }
-            $to =['gianluca@iwes.it'];
+            $to[] =['gianluca@iwes.it'];
             $userEditor=['jurif@iwes.it'];
             $emailRepo->newMail('Iwes IT Department <it@iwes.it>',$to,$userEditor,[],$subject,$message,null,null,null,'mailGun',false,null);
         }
     }
     $toBoss[]=['gianluca@iwes.it'];
+
     $emailRepo->newMail('Iwes IT Department <it@iwes.it>',$toBoss,[],[],$subject,$message,null,null,null,'mailGun',false,null);
 }else{
     $data='2';
