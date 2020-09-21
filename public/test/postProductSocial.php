@@ -1,10 +1,12 @@
 <?php
 
+use bamboo\core\db\pandaorm\repositories\ARepo;
 use bamboo\core\exceptions\RedPandaAssetException;
 use bamboo\core\exceptions\RedPandaException;
 use bamboo\core\utils\amazonPhotoManager\ImageEditor;
 use bamboo\core\utils\amazonPhotoManager\ImageManager;
 use bamboo\core\utils\amazonPhotoManager\S3Manager;
+use bamboo\domain\entities\CEditorialPlanSocial;
 use bamboo\domain\repositories\CProductHasShootingRepo;
 
 require '../../iwesStatic.php';
@@ -101,6 +103,34 @@ $title='Richiesta post  per  ' . $editorialPlanName . ' da app su scatto Social 
     $editorialPlanDetail->photoUrl = $remoteLinkS3;
     $editorialPlanDetail->status = 'Draft';
     $editorialPlanDetail->insert();
+
+    if (ENV == 'dev') return false;
+    /** @var aRepo $ePlanSocialRepo */
+    $ePlanSocialRepo = \Monkey::app()->repoFactory->create('EditorialPlanSocial');
+    /** @var CEditorialPlanSocial $editorialPlanSocial */
+    $editorialPlanSocial=$ePlanSocialRepo->findAll();
+    $shopId = $editorialPlan->shop->id;
+    $shopEmail = $editorialPlan->shop->referrerEmails;
+    $to = $shopEmail;
+    $contractId=$editorialPlan->contractId;
+    $contractsRepo=\Monkey::app()->repoFactory->create('Contracts');
+    $contracts=$contractsRepo->findOneBy(['id'=>$editorialPlan->contractId]);
+    $subject = "Creazione Nuovo Dettaglio Piano Editoriale";
+    $message = "Creazione Nuovo dettaglio Piano Editoriale<p>";
+    if(count($contracts)>0) {
+
+        $foisonId = $contracts->foisonId;
+        $foison = \Monkey::app()->repoFactory->create('Foison')->findOneBy(['id' => $foisonId]);
+        if ($foison != null) {
+        $userEditor=[$foison->email];
+            /** @var \bamboo\domain\repositories\CEmailRepo $emailRepo */
+            $emailRepo = \Monkey::app()->repoFactory->create('Email');
+            if (!is_array($to)) {
+                $to = [$to];
+            }
+            $emailRepo->newMail('Iwes IT Department <it@iwes.it>',$to,$userEditor,[],$subject,$message,null,null,null,'mailGun',false,null);
+        }
+    }
 }else{
     $data='2';
 }
