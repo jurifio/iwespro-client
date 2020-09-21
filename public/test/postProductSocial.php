@@ -130,11 +130,13 @@ $title='Richiesta post  per  ' . $editorialPlanName . ' da app su scatto Social 
             }
             $to[] =['gianluca@iwes.it'];
             $userEditor=['jurif@iwes.it'];
+            $emailRepo = \Monkey::app()->repoFactory->create('Email');
             $emailRepo->newMail('Iwes IT Department <it@iwes.it>',$to,$userEditor,[],$subject,$message,null,null,null,'mailGun',false,null);
         }
     }
     $toBoss=['gianluca@iwes.it'];
     /** @var \bamboo\domain\repositories\CEmailRepo $emailRepo */
+    $emailRepo = \Monkey::app()->repoFactory->create('Email');
     $emailRepo->newMail('Iwes IT Department <it@iwes.it>',$toBoss,[],[],$subject,$message,null,null,null,'mailGun',false,null);
 }else{
     $data='2';
