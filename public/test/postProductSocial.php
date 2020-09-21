@@ -134,6 +134,8 @@ $title='Richiesta post  per  ' . $editorialPlanName . ' da app su scatto Social 
             $emailRepo->newMail('Iwes IT Department <it@iwes.it>',$to,$userEditor,[],$subject,$message,null,null,null,'mailGun',false,null);
         }
     }
+    $toBoss[]=['gianluca@iwes.it'];
+    $emailRepo->newMail('Iwes IT Department <it@iwes.it>',$toBoss,[],[],$subject,$message,null,null,null,'mailGun',false,null);
 }else{
     $data='2';
 }
