@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="it-IT">
 <head>
     <?php
     if (ENV == 'dev') {
