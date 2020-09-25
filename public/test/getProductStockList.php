@@ -1,25 +1,28 @@
 <?php
-require '../../iwesStatic.php';
-$shootingBookingRepo=\Monkey::app()->repoFactory->create('ShootingBooking');
-$shootingRepo=\Monkey::app()->repoFactory->create('Shooting');
-$shootingDocumentRepo=\Monkey::app()->repoFactory->create('Document');
-$userRepo=\Monkey::app()->repoFactory->create('User');
-$productSkuRepo=\Monkey::app()->repoFactory->create('ProductSku');
-$productSizeRepo=\Monkey::app()->repoFactory->create('ProductSize');
-$productRepo=\Monkey::app()->repoFactory->create('Product');
-if($_GET['email']){
-    $email=$_GET['email'];
-}
-$sqlEan='';
-if($_GET['ean']!="0"){
-    $sqlEan= " and ds.barcode= '".$_GET['ean']."'";
-}
-$user=$userRepo->findOneBy(['email'=>$email]);
-$resShop=\Monkey::app()->dbAdapter->query('select shopId as shopId from UserHasShop where userId='.$user->id,[])->fetchAll();
-foreach($resShop as $shopResult) {
-    $shopId=$shopResult['shopId'];
-}
 
+use bamboo\domain\entities\CProduct;
+
+require '../../iwesStatic.php';
+$shootingBookingRepo = \Monkey::app()->repoFactory->create('ShootingBooking');
+$shootingRepo = \Monkey::app()->repoFactory->create('Shooting');
+$shootingDocumentRepo = \Monkey::app()->repoFactory->create('Document');
+$userRepo = \Monkey::app()->repoFactory->create('User');
+$productSkuRepo = \Monkey::app()->repoFactory->create('ProductSku');
+$productSizeRepo = \Monkey::app()->repoFactory->create('ProductSize');
+$productRepo = \Monkey::app()->repoFactory->create('Product');
+$productBrandRepo=\Monkey::app()->repoFactory->create('ProductBrand');
+if ($_GET['email']) {
+    $email = $_GET['email'];
+}
+$sqlEan = '';
+if ($_GET['ean'] != "0") {
+    $sqlEan = " and ds.barcode= '" . $_GET['ean'] . "'";
+}
+$user = $userRepo->findOneBy(['email' => $email]);
+$resShop = \Monkey::app()->dbAdapter->query('select shopId as shopId from UserHasShop where userId=' . $user->id,[])->fetchAll();
+foreach ($resShop as $shopResult) {
+    $shopId = $shopResult['shopId'];
+}
 
 
 $sql = "SELECT
@@ -54,19 +57,25 @@ FROM `Product` `p`
       ProductHasShooting phs
       JOIN Shooting shoot ON phs.shootingId = shoot.id
       LEFT JOIN Document doc ON shoot.friendDdt = doc.id)
-    ON p.productVariantId = phs.productVariantId AND p.id = phs.productId where 1=1 and s.id=".$shopId." and `p`.`productSeasonId` in (32,33,34) ".$sqlEan."  GROUP BY p.id,p.productVariantId,p.externalId
-ORDER BY `p`.`creationDate` DESC 
-               ";
-$data=[];
-$i=0;
-$resultProduct=\Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
-foreach($resultProduct as $res) {
-    $product=$productRepo->findOneBy(['id'=>$res['id'],'productVariantId'=>$res['productVariantId']]);
-    $imagePhoto=$app->image($product->getPhoto(1,281),"amazon");
+    ON p.productVariantId = phs.productVariantId AND p.id = phs.productId where 1=1 and s.id=" . $shopId . "  " . $sqlEan . "  GROUP BY p.id, p.productVariantId, p.externalId
+    ORDER BY `p`.`creationDate` DESC ";
+$data = [];
+$i = 0;
+$resultProduct = \Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
+foreach ($resultProduct as $res) {
+    $product = $productRepo->findOneBy(['id' => $res['id'],'productVariantId' => $res['productVariantId']]);
 
-   $data[$i]=['productId'=>$res['id'],'productVariantId'=>$res['productVariantId'],'cpf'=>$res['cpf'],'brand'=>$res['brand'],'season'=>$res['season'],'imagePhoto'=>$imagePhoto];
-   $i++;
+    $imagePhoto = 'https://cdn.iwes.it/'.$product->productBrand->slug.'/'.$res['id'].'-'.$res['productVariantId'].'-001-281.jpg';
+
+
+    $data[$i] = ['productId' => $res['id'],'productVariantId' => $res['productVariantId'],'cpf' => $res['cpf'],'brand' => $res['brand'],'season' => $res['season'],'imagePhoto' => $imagePhoto];
+    $i++;
 }
-echo json_encode($data);
 
+
+
+
+
+
+echo json_encode($data);
 
