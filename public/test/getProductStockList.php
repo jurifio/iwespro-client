@@ -55,8 +55,8 @@ FROM `Product` `p`
       ProductHasShooting phs
       JOIN Shooting shoot ON phs.shootingId = shoot.id
       LEFT JOIN Document doc ON shoot.friendDdt = doc.id)
-    ON p.productVariantId = phs.productVariantId AND p.id = phs.productId where 1=1    " . $sqlEan . "  GROUP BY p.id, p.productVariantId, p.externalId
-    ORDER BY `p`.`creationDate` DESC ";
+    ON p.productVariantId = phs.productVariantId AND p.id = phs.productId where 1=1 and s.id=".$shopId . $sqlEan . "  GROUP BY p.id, p.productVariantId, p.externalId
+    ORDER BY `p`.`creationDate` DESC  limit 1";
 $data = [];
 $i = 0;
 $resultProduct = \Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
