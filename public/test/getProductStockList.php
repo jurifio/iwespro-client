@@ -66,7 +66,7 @@ foreach ($resultProduct as $res) {
     $imagePhoto = 'https://cdn.iwes.it/'.$product->productBrand->slug.'/'.$res['id'].'-'.$res['productVariantId'].'-001-281.jpg';
 
 
-    $data[$i] = ['productId' => $res['id'],'productVariantId' => $res['productVariantId'],'cpf' => $res['cpf'],'brand' => $res['brand'],'season' => $res['season'],'imagePhoto' => $imagePhoto];
+    $data[$i] = ['productId' => $res['id'],'productVariantId' => $res['productVariantId'],'cpf' => $res['cpf'],'brand' => $res['brand'],'season' => $res['season']];
     $i++;
 }
 
