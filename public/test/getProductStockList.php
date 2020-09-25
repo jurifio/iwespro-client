@@ -12,7 +12,7 @@ if($_GET['email']){
 }
 $sqlEan='';
 if($_GET['ean']!="0"){
-    $sqlEan= " and (select group_concat(barcode) FROM ProductSku sku2 WHERE sku2.productId=p.id AND sku2.productVariantId=p.productVariantId  ) LIKE '%".$_GET['ean']."%' ";
+    $sqlEan= " and ds.barcode= '".$_GET['ean']."'";
 }
 $user=$userRepo->findOneBy(['email'=>$email]);
 $resShop=\Monkey::app()->dbAdapter->query('select shopId as shopId from UserHasShop where userId='.$user->id,[])->fetchAll();
