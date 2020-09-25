@@ -1,7 +1,5 @@
 <?php
 
-use bamboo\domain\entities\CProduct;
-
 require '../../iwesStatic.php';
 $shootingBookingRepo = \Monkey::app()->repoFactory->create('ShootingBooking');
 $shootingRepo = \Monkey::app()->repoFactory->create('Shooting');
