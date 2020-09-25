@@ -54,7 +54,7 @@ FROM `Product` `p`
       JOIN Shooting shoot ON phs.shootingId = shoot.id
       LEFT JOIN Document doc ON shoot.friendDdt = doc.id)
     ON p.productVariantId = phs.productVariantId AND p.id = phs.productId where 1=1 and s.id=".$shopId." and `p`.`productSeasonId` in (32,33,34) ".$sqlEan."  GROUP BY p.id,p.productVariantId,p.externalId
-ORDER BY `p`.`creationDate` DESC LIMIT 10
+ORDER BY `p`.`creationDate` DESC 
                ";
 $data=[];
 $i=0;

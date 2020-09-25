@@ -50,44 +50,44 @@ $image = new ImageManager(new S3Manager($config['credential']),\Monkey::app(), $
 
 
 
-    //$fileName['name'] = explode('_',$_FILES['file']['name'][$i])[0];
-    // $fileName['extension'] = pathinfo($_FILES['file']['name'][$i], PATHINFO_EXTENSION);
+//$fileName['name'] = explode('_',$_FILES['file']['name'][$i])[0];
+// $fileName['extension'] = pathinfo($_FILES['file']['name'][$i], PATHINFO_EXTENSION);
 
 
-    try {
-        $bucket=$config['bucket'] . '-editorial';
-        $folder='plandetail-images';
-        $file1 = fopen($fileNome,'r');
-        if ($file1) {
-            $image1 = new ImageEditor();
-            $jpg = $image1->load($fileNome);
+try {
+    $bucket=$config['bucket'] . '-editorial';
+    $folder='plandetail-images';
+    $file1 = fopen($fileNome,'r');
+    if ($file1) {
+        $image1 = new ImageEditor();
+        $jpg = $image1->load($fileNome);
 
-            if ($jpg!==false) {
+        if ($jpg!==false) {
 
 
-                $files =$fileNomePart;
-                $image1->resizeToWidth('600');
-                $image1->save($fileNome);
-                $image->s3Upload($bucket,$files,$folder);
-                sleep(2);
-            }
-            fclose($file1);
-                 unlink($fileNome);
+            $files =$fileNomePart;
+            $image1->resizeToWidth('600');
+            $image1->save($fileNome);
+            $image->s3Upload($bucket,$files,$folder);
+            sleep(2);
+        }
+        fclose($file1);
+        unlink($fileNome);
 
-            }
-        $res=true;
-    } catch (RedPandaAssetException $e) {
-        $this->app->router->response()->raiseProcessingError();
-        return 'Dimensioni della foto errate: il rapporto deve esser 9:16';
-        $res=false;
     }
+    $res=true;
+} catch (RedPandaAssetException $e) {
+    $this->app->router->response()->raiseProcessingError();
+    return 'Dimensioni della foto errate: il rapporto deve esser 9:16';
+    $res=false;
+}
 
 
 if($res) {
     $editorialPlan = \Monkey::app()->repoFactory->create('EditorialPlan')->findOneBy(['id' => $editorialPlanId]);
     $editorialPlanName = $editorialPlan->name;
 
-$title='Richiesta post  per  ' . $editorialPlanName . ' da app su scatto Social ' . $fileNomePart;
+    $title='Richiesta post  per  ' . $editorialPlanName . ' da app su scatto Social ' . $fileNomePart;
 
     $today = (new DateTime())->format('Y-m-d H:i:s');
     $finalDay = (new \DateTime("+2 week"))->format('Y-m-d H:i:s');
@@ -121,7 +121,7 @@ $title='Richiesta post  per  ' . $editorialPlanName . ' da app su scatto Social 
         $foisonId = $contracts->foisonId;
         $foison = \Monkey::app()->repoFactory->create('Foison')->findOneBy(['id' => $foisonId]);
         if ($foison != null) {
-        $userEditor=[$foison->email];
+            $userEditor=[$foison->email];
             /** @var \bamboo\domain\repositories\CEmailRepo $emailRepo */
             $emailRepo = \Monkey::app()->repoFactory->create('Email');
             if (!is_array($to)) {
