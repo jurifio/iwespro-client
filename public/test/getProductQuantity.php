@@ -48,14 +48,14 @@ $sql = "SELECT dp.id as dirtyProductId,
 
                
   ";
-$data = [];
+$datone = [];
 $i = 0;
 $resultProduct = \Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
 foreach ($resultProduct as $res) {
 
 
 
-    $data[$i] = ['store' => $res['storeHouse'],'color' => $res['color'],'size' => $res['productSizeId'],'qty' => $res['qty']];
+    $datone[$i] = ['store' => $res['storeHouse'],'color' => $res['color'],'size' => $res['productSizeId'],'qty' => $res['qty']];
     $i++;
 }
 
@@ -64,5 +64,5 @@ foreach ($resultProduct as $res) {
 
 
 
-echo json_encode($data);
+echo json_encode($datone);
 
