@@ -52,7 +52,7 @@ $resultProduct = \Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
 foreach ($resultProduct as $res) {
     $product = $productRepo->findOneBy(['id' => $res['productId'],'productVariantId' => $res['productVariantId']]);
 
-    $imagePhoto = 'https://cdn.iwes.it/'.$product->productBrand->slug.'/'.$res['id'].'-'.$res['productVariantId'].'-001-281.jpg';
+    $imagePhoto = 'https://cdn.iwes.it/'.$product->productBrand->slug.'/'.$res['productId'].'-'.$res['productVariantId'].'-001-281.jpg';
 
 
 
