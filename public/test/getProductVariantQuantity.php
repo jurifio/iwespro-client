@@ -52,8 +52,8 @@ $resultProduct = \Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
 foreach ($resultProduct as $res) {
     $product = $productRepo->findOneBy(['id' => $res['productId'],'productVariantId' => $res['productVariantId']]);
 
-    $imagePhoto = 'https://cdn.iwes.it/'.$product->productBrand->slug.'/'.$res['productId'].'-'.$res['productVariantId'].'-001-281.jpg';
-
+    //$imagePhoto = 'https://cdn.iwes.it/'.$product->productBrand->slug.'/'.$res['productId'].'-'.$res['productVariantId'].'-001-281.jpg';
+    $imagePhoto = 'https://cdn.iwes.it/'.$product->productBrand->slug.'/187718-6154305-015-281.jpg';
 
 
     array_push($datone , ['store' => $res['storeHouse'],'color' => $res['color'],'size' => $res['productSizeId'],'qty' => $res['qty'],'imagePhoto'=>$imagePhoto]);
