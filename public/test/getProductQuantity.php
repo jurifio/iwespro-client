@@ -16,13 +16,10 @@ if ($_GET['productId']) {
     $productId = $_GET['productId'];
 }
 if ($_GET['productVariantId']) {
-    $productId = $_GET['productVariantId'];
+    $productVariantId = $_GET['productVariantId'];
 }
 
-$sqlEan = '';
-if ($_GET['ean'] != "0") {
-    $sqlEan = " and ds.barcode= '" . $_GET['ean'] . "'";
-}
+
 $user = $userRepo->findOneBy(['email' => $email]);
 $resShop = \Monkey::app()->dbAdapter->query('select shopId as shopId from UserHasShop where userId=' . $user->id,[])->fetchAll();
 foreach ($resShop as $shopResult) {
@@ -44,7 +41,8 @@ $sql = "SELECT dp.id as dirtyProductId,
                join DirtySku  ds on dp.id = ds.dirtyProductId 
                 join DirtySkuHasStoreHouse dst on dp.id=dst.dirtyProductId
                 join Storehouse st on dst.storeHouseId=st.id  
-                join ProductSize ps on dst.productSizeId=ps.id where dp.shopId=1 group by st.`name`,dp.productId,dp.productVariantId,ps.name 
+                join ProductSize ps on dst.productSizeId=ps.id where dp.shopId=1
+                and dp.productId=".$productId." and dp.productVariantId=".$productVariantId."  group by st.`name`,dp.productId,dp.productVariantId,ps.name 
 
                
   ";
