@@ -61,5 +61,5 @@ foreach ($resultProduct as $res) {
 
 
 
-return json_encode($datone);
+echo  json_encode($datone);
 
