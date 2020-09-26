@@ -35,14 +35,14 @@ $sql = "SELECT dp.id as dirtyProductId,
                ps.name as productSizeId, 
                `st`.`name` as storeHouse,
                dst.qty as qty,
-              concat( ifnull(dp.extId, ''), '-', ifnull(ds.extSkuId, '')) AS externalId,
+              concat( ifnull(dp.extId, ''), '-', ifnull(ds.extSkuId, '')) AS externalId
                from DirtyProduct dp 
               
                join DirtyProductExtend dpe on dp.id =dpe.dirtyProductId
                join DirtySku  ds on dp.id = ds.dirtyProductId 
-                join DirtySkuHasStoreHouse dst on dp.id=dst.dirtyProductId AND dst.shopId=1
+                join DirtySkuHasStoreHouse dst on dp.id=dst.dirtyProductId AND dst.shopId=".$shopId."
                 join Storehouse st on dst.storeHouseId=st.id  
-                join ProductSize ps on dst.productSizeId=ps.id where dst.shopId=1 AND dp.productId=".$productId."  and dp.productVariantId!=".$productVariantId." 
+                join ProductSize ps on dst.productSizeId=ps.id where dst.shopId=".$shopId." AND dp.productId=".$productId."  and dp.productVariantId!=".$productVariantId." 
              
                  group BY dst.shopId,dp.productId,dp.productVariantId Order BY concat(dp.productId,'-',dp.productVariantId,st.name) asc     
   ";

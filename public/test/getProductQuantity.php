@@ -41,7 +41,7 @@ $sql = "SELECT dp.id as dirtyProductId,
                join DirtySku  ds on dp.id = ds.dirtyProductId 
                 join DirtySkuHasStoreHouse dst on dp.id=dst.dirtyProductId
                 join Storehouse st on dst.storeHouseId=st.id  
-                join ProductSize ps on dst.productSizeId=ps.id where dp.shopId=1
+                join ProductSize ps on dst.productSizeId=ps.id where dst.shopId=".$shopId."
                 and dp.productId=".$productId." and dp.productVariantId=".$productVariantId." 
                  group BY dst.shopId,dst.qty        
   ";
