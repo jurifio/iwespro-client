@@ -42,9 +42,8 @@ $sql = "SELECT dp.id as dirtyProductId,
                 join DirtySkuHasStoreHouse dst on dp.id=dst.dirtyProductId
                 join Storehouse st on dst.storeHouseId=st.id  
                 join ProductSize ps on dst.productSizeId=ps.id where dp.shopId=1
-                and dp.productId=".$productId." and dp.productVariantId=".$productVariantId."  group by st.`name`,dp.productId,dp.productVariantId,ps.name 
-
-               
+                and dp.productId=".$productId." and dp.productVariantId=".$productVariantId." 
+                 group by st.`name`,dp.productId,dp.productVariantId,ps.name           
   ";
 $datone = [];
 $i = 0;
