@@ -34,7 +34,8 @@ $sql = "SELECT dp.id as dirtyProductId,
                dp.shopId as shopId, 
                ps.name as productSizeId, 
                `st`.`name` as storeHouse,
-               dst.qty as qty
+               dst.qty as qty,
+              concat( ifnull(dp.extId, ''), '-', ifnull(ds.extSkuId, '')) AS externalId,
                from DirtyProduct dp 
               
                join DirtyProductExtend dpe on dp.id =dpe.dirtyProductId
