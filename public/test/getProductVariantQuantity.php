@@ -41,7 +41,7 @@ $sql = "SELECT dp.id as dirtyProductId,
                join DirtySku  ds on dp.id = ds.dirtyProductId 
                 join DirtySkuHasStoreHouse dst on dp.id=dst.dirtyProductId AND dst.shopId=1
                 join Storehouse st on dst.storeHouseId=st.id  
-                join ProductSize ps on dst.productSizeId=ps.id where dst.shopId=1 AND dp.productId=".$productId."
+                join ProductSize ps on dst.productSizeId=ps.id where dst.shopId=1 AND dp.productId=".$productId."  and dp.productVariantId!=".$productVariantId." 
              
                  group BY dst.shopId,dp.productId,dp.productVariantId Order BY concat(dp.productId,'-',dp.productVariantId,st.name) asc     
   ";
