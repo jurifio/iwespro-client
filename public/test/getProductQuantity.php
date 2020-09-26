@@ -36,7 +36,6 @@ $sql = "SELECT dp.id as dirtyProductId,
                dpe.generalColor as color,
                dp.shopId as shopId, 
                ps.name as productSizeId, 
-               ds.barcode as barcode, 
                `st`.`name` as storeHouse,
                dst.qty as qty
                from DirtyProduct dp 
