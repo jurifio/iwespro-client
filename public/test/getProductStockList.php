@@ -56,15 +56,23 @@ FROM `Product` `p`
       JOIN Shooting shoot ON phs.shootingId = shoot.id
       LEFT JOIN Document doc ON shoot.friendDdt = doc.id)
     ON p.productVariantId = phs.productVariantId AND p.id = phs.productId where 1=1 and s.id=".$shopId . $sqlEan . "  GROUP BY p.id, p.productVariantId, p.externalId
-    ORDER BY `p`.`creationDate` DESC  limit 1";
+    ORDER BY `p`.`creationDate` DESC  ";
 $data = [];
 $i = 0;
 $resultProduct = \Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
 foreach ($resultProduct as $res) {
     $product = $productRepo->findOneBy(['id' => $res['id'],'productVariantId' => $res['productVariantId']]);
+    $ch = curl_init($imagePhoto);
+    curl_setopt($ch, CURLOPT_NOBODY, true);
+    curl_exec($ch);
+    $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-    $imagePhoto = 'https://cdn.iwes.it/'.$product->productBrand->slug.'/'.$res['id'].'-'.$res['productVariantId'].'-001-281.jpg';
-
+    if ($code == 200) {
+        $imagePhoto = 'https://cdn.iwes.it/'.$product->productBrand->slug.'/'.$res['id'].'-'.$res['productVariantId'].'-001-281.jpg';
+    } else {
+        $imagePhoto = 'https://cdn.iwes.it/dummy/bs-dummy-16-9-281.png';
+    }
+    curl_close($ch);
 
     $data[$i] = ['productId' => $res['id'],'productVariantId' => $res['productVariantId'],'cpf' => $res['cpf'],'brand' => $res['brand'],'season' => $res['season'],'imagePhoto' => $imagePhoto];
     $i++;
