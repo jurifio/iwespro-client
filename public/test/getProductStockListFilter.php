@@ -47,6 +47,7 @@ $sql = "SELECT
   concat(`p`.`id`, '-', `p`.`productVariantId`)        AS `code`,
   `pb`.`name`                                          AS `brand`,
   concat(`p`.`itemno`, ' # ', `pv`.`name`)             AS `cpf`,
+   dp.extId                                            AS `extId`,    
   `s`.`id`                                             AS `shopId`,
   `s`.`title`                                          AS `shop`,
    (select group_concat(barcode) FROM ProductSku sku2 WHERE sku2.productId=p.id AND sku2.productVariantId=p.productVariantId  )                           as barcode,  
@@ -82,7 +83,7 @@ $resultProduct=\Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
 foreach($resultProduct as $res) {
     $product = $productRepo->findOneBy(['id' => $res['id'],'productVariantId' => $res['productVariantId']]);
     $imagePhoto = 'https://cdn.iwes.it/'.$product->productBrand->slug.'/'.$res['id'].'-'.$res['productVariantId'].'-001-281.jpg';
-    $data[$i] = ['productId' => $res['id'],'productVariantId' => $res['productVariantId'],'cpf' => $res['cpf'],'brand' => $res['brand'],'season' => $res['season'],'imagePhoto' => $imagePhoto];
+    $data[$i] = ['productId' => $res['id'],'productVariantId' => $res['productVariantId'],'extId'=>$res['extId'],'cpf' => $res['cpf'],'brand' => $res['brand'],'season' => $res['season'],'imagePhoto' => $imagePhoto];
    $i++;
 }
 echo json_encode($data);

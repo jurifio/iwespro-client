@@ -31,6 +31,7 @@ $sql = "SELECT
   concat(`p`.`itemno`, ' # ', `pv`.`name`)             AS `cpf`,
   `s`.`id`                                             AS `shopId`,
   `s`.`title`                                          AS `shop`,
+   dp.extId                                            as extId,    
    (select group_concat(barcode) FROM ProductSku sku2 WHERE sku2.productId=p.id AND sku2.productVariantId=p.productVariantId  )                           as barcode,  
   concat(phs.shootingId)                               AS shooting,
   concat(doc.number)                                   AS doc_number,
@@ -74,7 +75,7 @@ foreach ($resultProduct as $res) {
     }
     curl_close($ch);
 
-    $data[$i] = ['productId' => $res['id'],'productVariantId' => $res['productVariantId'],'cpf' => $res['cpf'],'brand' => $res['brand'],'season' => $res['season'],'imagePhoto' => $imagePhoto];
+    $data[$i] = ['productId' => $res['id'],'productVariantId' => $res['productVariantId'], 'extId'=>$res['extId'],'cpf' => $res['cpf'],'brand' => $res['brand'],'season' => $res['season'],'imagePhoto' => $imagePhoto];
     $i++;
 }
 
