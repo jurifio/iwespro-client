@@ -73,7 +73,7 @@ FROM `Product` `p`
       ProductHasShooting phs
       JOIN Shooting shoot ON phs.shootingId = shoot.id
       LEFT JOIN Document doc ON shoot.friendDdt = doc.id)
-    ON p.productVariantId = phs.productVariantId AND p.id = phs.productId where 1=1 and s.id=".$shopId."  ".$slqExtId.$sqlCodeProduct.$sqlBrand.$sqlCpf."  GROUP BY p.id,p.productVariantId,p.externalId
+    ON p.productVariantId = phs.productVariantId AND p.id = phs.productId where 1=1 and s.id=".$shopId."  ".$sqlExtId.$sqlCodeProduct.$sqlBrand.$sqlCpf."  GROUP BY p.id,p.productVariantId,p.externalId
 ORDER BY `p`.`creationDate` 
                ";
 $data=[];
