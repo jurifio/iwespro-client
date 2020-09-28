@@ -20,7 +20,7 @@ if ($_GET['productVariantId']) {
 }
 $findProduct=\Monkey::app()->repoFactory->create('Product')->findOneBy(['id'=>$productId,'productVariantId'=>$productVariantId]);
 $productBrand=\Monkey::app()->repoFactory->create('ProductBrand')->findOneBy(['id'=>$findProduct->productBrandId]);
-$brand=$productBrand->id;
+$productBrandId=$productBrand->id;
 
 $user = $userRepo->findOneBy(['email' => $email]);
 $resShop = \Monkey::app()->dbAdapter->query('select shopId as shopId from UserHasShop where userId=' . $user->id,[])->fetchAll();
