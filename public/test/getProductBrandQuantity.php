@@ -18,7 +18,7 @@ if ($_GET['productId']) {
 if ($_GET['productVariantId']) {
     $productVariantId = $_GET['productVariantId'];
 }
-$findProduct=\Monkey::app()->repoFactory->create('Product')->findOneBy(['id'=>$productId,'productVariant'=>$productVariantId]);
+$findProduct=\Monkey::app()->repoFactory->create('Product')->findOneBy(['id'=>$productId,'productVariantId'=>$productVariantId]);
 $productBrand=\Monkey::app()->repoFactory->create('ProductBrand')->findOneBy(['id'=>$findProduct->productBrandId]);
 $brand=$productBrand->id;
 
