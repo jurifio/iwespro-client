@@ -31,10 +31,7 @@ if($_GET['cpf']!="0"){
     $sqlCpf=" and  concat(`p`.`itemno`, ' # ', `pv`.`name`) like '%".$_GET['cpf']."%' ";
 
 }
-if($_GET['season']!="0"){
-    $sqlSeason=" and  `PS`.`name` like '%".$_GET['season']."%' ";
 
-}
 
 $user=$userRepo->findOneBy(['email'=>$email]);
 $resShop=\Monkey::app()->dbAdapter->query('select shopId as shopId from UserHasShop where userId='.$user->id,[])->fetchAll();
@@ -76,7 +73,7 @@ FROM `Product` `p`
       ProductHasShooting phs
       JOIN Shooting shoot ON phs.shootingId = shoot.id
       LEFT JOIN Document doc ON shoot.friendDdt = doc.id)
-    ON p.productVariantId = phs.productVariantId AND p.id = phs.productId where 1=1 and s.id=".$shopId."  ".$slqExtId.$sqlCodeProduct.$sqlBrand.$sqlCpf.$sqlSeason."  GROUP BY p.id,p.productVariantId,p.externalId
+    ON p.productVariantId = phs.productVariantId AND p.id = phs.productId where 1=1 and s.id=".$shopId."  ".$slqExtId.$sqlCodeProduct.$sqlBrand.$sqlCpf."  GROUP BY p.id,p.productVariantId,p.externalId
 ORDER BY `p`.`creationDate` 
                ";
 $data=[];
