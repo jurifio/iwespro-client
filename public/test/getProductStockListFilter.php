@@ -16,6 +16,7 @@ $sqlCpf="";
 $sqlBrand="";
 $sqlSeason="";
 $sqlExtId="";
+$sqlSizeId="";
 if($_GET['product']!="0"){
     $sqlCodeProduct=" and concat(p.id,'-',p.productVariantId) like '%".$_GET['product']."%' ";
 
@@ -29,6 +30,10 @@ if($_GET['brand']!="0"){
 }
 if($_GET['cpf']!="0"){
     $sqlCpf=" and  concat(`p`.`itemno`, ' # ', `pv`.`name`) like '%".$_GET['cpf']."%' ";
+
+}
+if($_GET['sizeId']!="0"){
+    $sqlSizeId=" and  ds.size like '%".$_GET['sizeId']."%' ";
 
 }
 
@@ -74,7 +79,7 @@ FROM `Product` `p`
       ProductHasShooting phs
       JOIN Shooting shoot ON phs.shootingId = shoot.id
       LEFT JOIN Document doc ON shoot.friendDdt = doc.id)
-    ON p.productVariantId = phs.productVariantId AND p.id = phs.productId where 1=1 and s.id=".$shopId."  ".$sqlExtId.$sqlCodeProduct.$sqlBrand.$sqlCpf."  GROUP BY p.id,p.productVariantId,p.externalId
+    ON p.productVariantId = phs.productVariantId AND p.id = phs.productId where 1=1 and s.id=".$shopId."  ".$sqlExtId.$sqlCodeProduct.$sqlBrand.$sqlCpf.$sqlSizeId."  GROUP BY p.id,p.productVariantId,p.externalId
 ORDER BY `p`.`creationDate` 
                ";
 $data=[];
