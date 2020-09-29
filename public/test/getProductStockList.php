@@ -13,15 +13,22 @@ if ($_GET['email']) {
     $email = $_GET['email'];
 }
 $sqlEan = '';
-if ($_GET['ean'] != "0") {
-    $sqlEan = " and ds.barcode= '" . substr($_GET['ean'],0,-1) . "'";
-}
+
 $user = $userRepo->findOneBy(['email' => $email]);
 $resShop = \Monkey::app()->dbAdapter->query('select shopId as shopId from UserHasShop where userId=' . $user->id,[])->fetchAll();
 foreach ($resShop as $shopResult) {
     $shopId = $shopResult['shopId'];
 }
+if ($shopId==1) {
+    if ($_GET['ean'] != "0") {
+        $sqlEan = " and ds.barcode= '" . substr($_GET['ean'],0,-1) . "'";
+    }
+}else{
+    if ($_GET['ean'] != "0") {
+        $sqlEan = " and ds.barcode= '" . $_GET['ean']. "'";
+    }
 
+}
 
 $sql = "SELECT
   `p`.`id`                                             AS `id`,
