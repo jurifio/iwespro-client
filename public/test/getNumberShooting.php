@@ -1,39 +1,40 @@
 <?php
 require '../../iwesStatic.php';
-$shootingBookingRepo=\Monkey::app()->repoFactory->create('ShootingBooking');
-$shootingRepo=\Monkey::app()->repoFactory->create('Shooting');
-$shootingDocumentRepo=\Monkey::app()->repoFactory->create('Document');
-$userRepo=\Monkey::app()->repoFactory->create('User');
+$shootingBookingRepo = \Monkey::app()->repoFactory->create('ShootingBooking');
+$shootingRepo = \Monkey::app()->repoFactory->create('Shooting');
+$shootingDocumentRepo = \Monkey::app()->repoFactory->create('Document');
+$userRepo = \Monkey::app()->repoFactory->create('User');
 
-if($_POST['email']){
-    $email=$_POST['email'];
+if ($_POST['email']) {
+    $email = $_POST['email'];
 }
-if($_POST['Calzature']){
-    $Calzature=$_POST['Calzature'];
-}else{
-    $Calzature=0;
+if ($_POST['Calzature']) {
+    $Calzature = $_POST['Calzature'];
+} else {
+    $Calzature = 0;
 }
-$user=$userRepo->findOneBy(['email'=>$email]);
-$resShop=\Monkey::app()->dbAdapter->query('select shopId as shopId from UserHasShop where userId='.$user->id,[])->fetchAll();
-foreach($resShop as $shopResult) {
-    $shopId=$shopResult['shopId'];
+$user = $userRepo->findOneBy(['email' => $email]);
+$resShop = \Monkey::app()->dbAdapter->query('select shopId as shopId from UserHasShop where userId=' . $user->id,[])->fetchAll();
+foreach ($resShop as $shopResult) {
+    $shopId = $shopResult['shopId'];
 }
-$resultOpenShooting=\Monkey::app()->dbAdapter->query('select max(shootingId)  as lastShootingId from ShootingBooking where shopId='.$shopId.' and status=\'a\'',[])->fetchAll();
-if(count($resultOpenShooting)!=0) {
+$resultOpenShooting = \Monkey::app()->dbAdapter->query('select max(shootingId)  as lastShootingId from ShootingBooking where shopId=' . $shopId . ' and status=\'a\'',[])->fetchAll();
+
     foreach ($resultOpenShooting as $resu) {
         $resShooting = $resu['lastShootingId'];
     }
-}else {
+if($resShooting==null){
     $resultDocument = \Monkey::app()->dbAdapter->query('select max(id)+1 as newId,  concat("sa",max(id)+1) as lastId from Document',[])->fetchAll();
     foreach ($resultDocument as $res) {
-        $numberDocument = $res['lastId'];
-        $lastId = $res['newId'];
+        $numberDocument = $res['newId'];
+        $lastId = $res['lastId'];
     }
     $currentYear = (new DateTime())->format('Y');
     $totPieces = $Calzature;
 
 
     $shop = \Monkey::app()->repoFactory->create('Shop')->findOneBy(['id' => $shopId]);
+
     $document = $shootingDocumentRepo->getEmptyEntity();
     $document->userId = $user->id;
     $document->shopRecipientId = $shop->billingAddressBookId;
@@ -49,7 +50,7 @@ if(count($resultOpenShooting)!=0) {
     $dateNow = (new DateTime())->format('Y-m-d H:i:s');
     $shooting = $shootingRepo->getEmptyEntity();
     $shooting->date = $dateNow;
-    $shooting->friendDdt = $lastId;
+    $shooting->friendDdt = $numberDocument;
     $shooting->note = 'DDT Inserito da App';
     $shooting->year = $currentYear;
     $shooting->pieces = $totPieces;
@@ -70,6 +71,8 @@ if(count($resultOpenShooting)!=0) {
     $shootingBooking->lastSelection = $dateNow;
     $shootingBooking->lastSelection = $dateNow;
     $shootingBooking->insert();
+
+
 }
 
 echo json_encode($resShooting);
