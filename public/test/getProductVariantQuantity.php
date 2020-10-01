@@ -69,7 +69,7 @@ foreach ($resultProduct as $res) {
 
 
 
-    array_push($datone , ['store' => $res['storeHouse'],'color' => $res['color'],'size' => $res['productSizeId'],'qty' => $res['qty'],'imagePhoto'=>$imagePhoto]);
+    $datone[] = ['store' => $res['storeHouse'],'color' => $res['color'],'size' => $res['productSizeId'],'qty' => $res['qty'],'imagePhoto' => $imagePhoto];
     $i++;
 }
 

@@ -75,14 +75,14 @@ foreach ($resultProduct as $res) {
 
 
 
-    array_push($datone , ['store' => $res['storeHouse'],
-                                 'productSite'=>$res['productId'].'-'.$res['productVariantId'],
-                                 'extId'=>$res['extId'],
-                                 'cpf'=>$res['cpf'],
-                                 'color' => $res['color'],
-                                 'size' => $res['productSizeId'],
-                                 'qty' => $res['qty'],
-                                 'imagePhoto'=>$imagePhoto]);
+    $datone[] = ['store' => $res['storeHouse'],
+        'productSite' => $res['productId'] . '-' . $res['productVariantId'],
+        'extId' => $res['extId'],
+        'cpf' => preg_replace("/[\/\&%#\$]/","_",$res['cpf']),
+        'color' => $res['color'],
+        'size' => $res['productSizeId'],
+        'qty' => $res['qty'],
+        'imagePhoto' => $imagePhoto];
     $i++;
 }
 

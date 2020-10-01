@@ -87,7 +87,7 @@ foreach ($resultProduct as $res) {
     }
     curl_close($ch);
 
-    $data[$i] = ['productId' => $res['id'],'productVariantId' => $res['productVariantId'],'extId' => $res['extId'],'cpf' => $res['cpf'],'brand' => $res['brand'],'season' => $res['season'],'imagePhoto' => $imagePhoto];
+    $data[$i] = ['productId' => $res['id'],'productVariantId' => $res['productVariantId'],'extId' => $res['extId'],'cpf' => preg_replace("/[\/\&%#\$]/", "_",$res['cpf']),'brand' => $res['brand'],'season' => $res['season'],'imagePhoto' => $imagePhoto];
     $i++;
 }
 
