@@ -39,8 +39,8 @@ header('Content-Type: bitmap; charset=utf-8');
 \Monkey::app()->vendorLibraries->load("amazon2723");
 $config=\Monkey::app()->cfg()->fetch('miscellaneous','amazonConfiguration');
 $tempFolder = \Monkey::app()->rootPath() . \Monkey::app()->cfg()->fetch('paths','tempFolder') . '-plandetail' . "/";
-$fileNomePart=$productId.'-'.$productVariantId.'_fb_'.$position.'.mp4';
-$fileNome=$tempFolder.$productId.'-'.$productVariantId.'_fb_'.$position.'.mp4';
+$fileNomePart=$productId.'-'.$productVariantId.'_s'.$position.'.jpg';
+$fileNome=$tempFolder.$productId.'-'.$productVariantId.'_s'.$position.'.jpg';
 $file=fopen($fileNome,'wb');
 fwrite($file,$binary);
 fclose($file);
@@ -58,21 +58,31 @@ try {
     $bucket=$config['bucket'] . '-editorial';
     $folder='plandetail-images';
     $file1 = fopen($fileNome,'r');
+    if ($file1) {
+        $image1 = new ImageEditor();
+        $jpg = $image1->load($fileNome);
+
+        if ($jpg!==false) {
 
 
-    $image->s3Upload($bucket,$fileNome,$folder);
-    sleep(2);
+            $files =$fileNomePart;
+            $image1->resizeToWidth('600');
+            $image1->save($fileNome);
+            $image->s3Upload($bucket,$files,$folder);
+            sleep(2);
+        }
+        fclose($file1);
+        unlink($fileNome);
 
-    fclose($file1);
-    unlink($fileNome);
-
-
+    }
     $res=true;
 } catch (RedPandaAssetException $e) {
     $this->app->router->response()->raiseProcessingError();
-    return 'Impossibile Caricare il File Video';
+    return 'Dimensioni della foto errate: il rapporto deve esser 9:16';
     $res=false;
 }
+
+
 if($res) {
     $editorialPlan = \Monkey::app()->repoFactory->create('EditorialPlan')->findOneBy(['id' => $editorialPlanId]);
     $editorialPlanName = $editorialPlan->name;
@@ -89,7 +99,7 @@ if($res) {
     $editorialPlanDetail->socialId = 1;
     $editorialPlanDetail->editorialPlanArgumentId = 8;
     $editorialPlanDetail->title = $title;
-    $editorialPlanDetail->description = 'Richiesta post  per  ' . $editorialPlanName . ' da app su Video Facebook ' . $fileNomePart;
+    $editorialPlanDetail->description = 'Richiesta post  per  ' . $editorialPlanName . ' da app su scatto Social ' . $fileNomePart;
     $editorialPlanDetail->photoUrl = $remoteLinkS3;
     $editorialPlanDetail->status = 'Draft';
     $editorialPlanDetail->insert();
@@ -131,8 +141,6 @@ if($res) {
 }else{
     $data='2';
 }
-
-
 
 
 
