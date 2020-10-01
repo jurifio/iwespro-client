@@ -8,7 +8,7 @@ use bamboo\core\utils\amazonPhotoManager\ImageManager;
 use bamboo\core\utils\amazonPhotoManager\S3Manager;
 use bamboo\domain\entities\CEditorialPlanSocial;
 use bamboo\domain\repositories\CProductHasShootingRepo;
-
+use FFMpeg;
 require '../../iwesStatic.php';
 
 if($_POST['productId']){
@@ -36,11 +36,15 @@ if($_POST['image']){
 $binary=base64_decode($imagePost);
 $data='1';
 header('Content-Type: bitmap; charset=utf-8');
+\Monkey::app()->vendorLibraries->load("videoEditing");
+\Monkey::app()->vendorLibraries->load("amazon2723");
 \Monkey::app()->vendorLibraries->load("amazon2723");
 $config=\Monkey::app()->cfg()->fetch('miscellaneous','amazonConfiguration');
 $tempFolder = \Monkey::app()->rootPath() . \Monkey::app()->cfg()->fetch('paths','tempFolder') . '-plandetail' . "/";
-$fileNomePart=$productId.'-'.$productVariantId.'_s'.$position.'.jpg';
-$fileNome=$tempFolder.$productId.'-'.$productVariantId.'_s'.$position.'.jpg';
+$fileNomePart=$productId.'-'.$productVariantId.'_in_'.$position.'.mp4';
+$fileNomePartThumb=$productId.'-'.$productVariantId.'_in_thumb'.$position.'.jpg';
+
+$fileNome=$tempFolder.$productId.'-'.$productVariantId.'_in_'.$position.'.mp4';
 $file=fopen($fileNome,'wb');
 fwrite($file,$binary);
 fclose($file);
@@ -58,36 +62,36 @@ try {
     $bucket=$config['bucket'] . '-editorial';
     $folder='plandetail-images';
     $file1 = fopen($fileNome,'r');
-    if ($file1) {
-        $image1 = new ImageEditor();
-        $jpg = $image1->load($fileNome);
-
-        if ($jpg!==false) {
 
 
-            $files =$fileNomePart;
-            $image1->resizeToWidth('600');
-            $image1->save($fileNome);
-            $image->s3Upload($bucket,$files,$folder);
-            sleep(2);
-        }
-        fclose($file1);
-        unlink($fileNome);
+    $image->s3Upload($bucket,$fileNome,$folder);
+    sleep(2);
 
-    }
+    fclose($file1);
+    $namePath = $tempFolder . $fileNomePartThumb;
+    $ffmpeg = FFMpeg\FFMpeg::create();
+    $video = $ffmpeg->open($fileNome);
+    $video
+        ->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(1))
+        ->save($namePath);
+    $image2 = new ImageManager(new S3Manager($config['credential']),\Monkey::app(),$tempFolder);
+    //$fileName=$tempFolder.$title.'1.jpg';
+    $fileName['name'] = $fileNomePartThumb;
+    $res = $image2->processImageEditorialUploadPhoto($fileNomePartThumb,$fileName,$config['bucket'] . '-editorial','plandetail-images');
+    $imageThumbVideo1 = "https://iwes-editorial.s3-eu-west-1.amazonaws.com/plandetail-images/" . $fileName['name'];
+
+
     $res=true;
 } catch (RedPandaAssetException $e) {
     $this->app->router->response()->raiseProcessingError();
-    return 'Dimensioni della foto errate: il rapporto deve esser 9:16';
+    return 'Impossibile Caricare il File Video';
     $res=false;
 }
-
-
 if($res) {
     $editorialPlan = \Monkey::app()->repoFactory->create('EditorialPlan')->findOneBy(['id' => $editorialPlanId]);
     $editorialPlanName = $editorialPlan->name;
 
-    $title='Richiesta post  per  ' . $editorialPlanName . ' da app su scatto Social ' . $fileNomePart;
+    $title='Richiesta post  per  ' . $editorialPlanName . ' da app su Video Social Instagram ' . $fileNomePart;
 
     $today = (new DateTime())->format('Y-m-d H:i:s');
     $finalDay = (new \DateTime("+2 week"))->format('Y-m-d H:i:s');
@@ -97,10 +101,10 @@ if($res) {
     $editorialPlanDetail->startEventDate = $today;
     $editorialPlanDetail->endEventDate = $finalDay;
     $editorialPlanDetail->socialId = 1;
-    $editorialPlanDetail->editorialPlanArgumentId = 8;
+    $editorialPlanDetail->editorialPlanArgumentId = 10;
     $editorialPlanDetail->title = $title;
-    $editorialPlanDetail->description = 'Richiesta post  per  ' . $editorialPlanName . ' da app su scatto Social ' . $fileNomePart;
-    $editorialPlanDetail->photoUrl = $remoteLinkS3;
+    $editorialPlanDetail->description = 'Richiesta post  per  ' . $editorialPlanName . ' da app su Video Instagram ' . $fileNomePart;
+    $editorialPlanDetail->photoUrl = $imageThumbVideo1;
     $editorialPlanDetail->status = 'Draft';
     $editorialPlanDetail->insert();
 
@@ -141,6 +145,8 @@ if($res) {
 }else{
     $data='2';
 }
+unlink($fileNome);
+
 
 
 

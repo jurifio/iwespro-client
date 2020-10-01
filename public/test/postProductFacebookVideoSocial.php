@@ -8,7 +8,7 @@ use bamboo\core\utils\amazonPhotoManager\ImageManager;
 use bamboo\core\utils\amazonPhotoManager\S3Manager;
 use bamboo\domain\entities\CEditorialPlanSocial;
 use bamboo\domain\repositories\CProductHasShootingRepo;
-
+use FFMpeg;
 require '../../iwesStatic.php';
 
 if($_POST['productId']){
@@ -36,10 +36,14 @@ if($_POST['image']){
 $binary=base64_decode($imagePost);
 $data='1';
 header('Content-Type: bitmap; charset=utf-8');
+\Monkey::app()->vendorLibraries->load("videoEditing");
+\Monkey::app()->vendorLibraries->load("amazon2723");
 \Monkey::app()->vendorLibraries->load("amazon2723");
 $config=\Monkey::app()->cfg()->fetch('miscellaneous','amazonConfiguration');
 $tempFolder = \Monkey::app()->rootPath() . \Monkey::app()->cfg()->fetch('paths','tempFolder') . '-plandetail' . "/";
 $fileNomePart=$productId.'-'.$productVariantId.'_fb_'.$position.'.mp4';
+$fileNomePartThumb=$productId.'-'.$productVariantId.'_fb_thumb'.$position.'.jpg';
+
 $fileNome=$tempFolder.$productId.'-'.$productVariantId.'_fb_'.$position.'.mp4';
 $file=fopen($fileNome,'wb');
 fwrite($file,$binary);
@@ -64,7 +68,17 @@ try {
     sleep(2);
 
     fclose($file1);
-    unlink($fileNome);
+    $namePath = $tempFolder . $fileNomePartThumb;
+    $ffmpeg = FFMpeg\FFMpeg::create();
+    $video = $ffmpeg->open($fileNome);
+    $video
+        ->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(1))
+        ->save($namePath);
+    $image2 = new ImageManager(new S3Manager($config['credential']),\Monkey::app(),$tempFolder);
+    //$fileName=$tempFolder.$title.'1.jpg';
+    $fileName['name'] = $fileNomePartThumb;
+    $res = $image2->processImageEditorialUploadPhoto($fileNomePartThumb,$fileName,$config['bucket'] . '-editorial','plandetail-images');
+    $imageThumbVideo1 = "https://iwes-editorial.s3-eu-west-1.amazonaws.com/plandetail-images/" . $fileName['name'];
 
 
     $res=true;
@@ -77,7 +91,7 @@ if($res) {
     $editorialPlan = \Monkey::app()->repoFactory->create('EditorialPlan')->findOneBy(['id' => $editorialPlanId]);
     $editorialPlanName = $editorialPlan->name;
 
-    $title='Richiesta post  per  ' . $editorialPlanName . ' da app su scatto Social ' . $fileNomePart;
+    $title='Richiesta post  per  ' . $editorialPlanName . ' da app su Video Facebook ' . $fileNomePart;
 
     $today = (new DateTime())->format('Y-m-d H:i:s');
     $finalDay = (new \DateTime("+2 week"))->format('Y-m-d H:i:s');
@@ -87,10 +101,10 @@ if($res) {
     $editorialPlanDetail->startEventDate = $today;
     $editorialPlanDetail->endEventDate = $finalDay;
     $editorialPlanDetail->socialId = 1;
-    $editorialPlanDetail->editorialPlanArgumentId = 8;
+    $editorialPlanDetail->editorialPlanArgumentId = 10;
     $editorialPlanDetail->title = $title;
     $editorialPlanDetail->description = 'Richiesta post  per  ' . $editorialPlanName . ' da app su Video Facebook ' . $fileNomePart;
-    $editorialPlanDetail->photoUrl = $remoteLinkS3;
+    $editorialPlanDetail->photoUrl = $imageThumbVideo1;
     $editorialPlanDetail->status = 'Draft';
     $editorialPlanDetail->insert();
 
@@ -131,7 +145,7 @@ if($res) {
 }else{
     $data='2';
 }
-
+unlink($fileNome);
 
 
 
