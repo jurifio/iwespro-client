@@ -41,7 +41,6 @@ $sql = "SELECT
   concat(`p`.`itemno`, ' # ', `pv`.`name`)             AS `cpf`,
   `s`.`id`                                             AS `shopId`,
   `s`.`title`                                          AS `shop`,
-   (select group_concat(barcode) FROM ProductSku sku2 WHERE sku2.productId=p.id AND sku2.productVariantId=p.productVariantId  )                           as barcode,  
   concat(phs.shootingId)                               AS shooting,
   concat(doc.number)                                   AS doc_number,
   `p`.`creationDate`                                   AS `creationDate`,
@@ -50,7 +49,6 @@ $sql = "SELECT
    `PS`.`name` as season,
     `p`.id as qty  
 FROM `Product` `p`
-    join ProductSku sku ON (`p`.`id`, `p`.`productVariantId`) = (`sku`.`productId`, `sku`.`productVariantId`)
   JOIN `ShopHasProduct` `shp` ON (`p`.`id`, `p`.`productVariantId`) = (`shp`.`productId`, `shp`.`productVariantId`)
      JOIN `ProductSeason` `PS` on p.productSeasonId = `PS`.`id`
   LEFT JOIN (DirtyProduct dp
