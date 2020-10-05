@@ -38,7 +38,7 @@ if($resShooting==null){
     $document = $shootingDocumentRepo->getEmptyEntity();
     $document->userId = $user->id;
     $document->shopRecipientId = $shop->billingAddressBookId;
-    $document->number = $numberDocument;
+    $document->number = 'sa'.$numberDocument;
     $document->invoiceTypeId = 11;
     $document->paymentDate = '0000-00-00 00:00:00';
     $document->paydAmount = '0.00';
