@@ -93,6 +93,7 @@ if($res) {
     $finalDay = (new \DateTime("+2 week"))->format('Y-m-d H:i:s');
 
     $editorialPlanDetail = \Monkey::app()->repoFactory->create('EditorialPlanDetail')->getEmptyEntity();
+    $editorialPlanDetail->isEventVisible=0;
     $editorialPlanDetail->editorialPlanId = $editorialPlanId;
     $editorialPlanDetail->startEventDate = $today;
     $editorialPlanDetail->endEventDate = $finalDay;
@@ -102,6 +103,7 @@ if($res) {
     $editorialPlanDetail->description = 'Richiesta post  per  ' . $editorialPlanName . ' da app su scatto Social ' . $fileNomePart;
     $editorialPlanDetail->photoUrl = $remoteLinkS3;
     $editorialPlanDetail->status = 'Draft';
+    $editorialPlanDetail->shootingId=$shootingId;
     $editorialPlanDetail->insert();
 
     /** @var aRepo $ePlanSocialRepo */
@@ -122,22 +124,29 @@ if($res) {
         $foison = \Monkey::app()->repoFactory->create('Foison')->findOneBy(['id' => $foisonId]);
         if ($foison != null) {
             $userEditor=[$foison->email];
+
             /** @var \bamboo\domain\repositories\CEmailRepo $emailRepo */
+            /*
             $emailRepo = \Monkey::app()->repoFactory->create('Email');
             if (!is_array($to)) {
 
                 $to = [$to];
             }
+
             $to[] =['gianluca@iwes.it'];
             $userEditor=['jurif@iwes.it'];
             $emailRepo = \Monkey::app()->repoFactory->create('Email');
             $emailRepo->newMail('Iwes IT Department <it@iwes.it>',$to,$userEditor,[],$subject,$message,null,null,null,'mailGun',false,null);
+            */
         }
     }
+
     $toBoss=['gianluca@iwes.it'];
     /** @var \bamboo\domain\repositories\CEmailRepo $emailRepo */
+
     $emailRepo = \Monkey::app()->repoFactory->create('Email');
     $emailRepo->newMail('Iwes IT Department <it@iwes.it>',$toBoss,[],[],$subject,$message,null,null,null,'mailGun',false,null);
+
 }else{
     $data='2';
 }

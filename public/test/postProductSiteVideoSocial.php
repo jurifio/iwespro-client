@@ -39,12 +39,13 @@ header('Content-Type: bitmap; charset=utf-8');
 \Monkey::app()->vendorLibraries->load("amazon2723");
 $config=\Monkey::app()->cfg()->fetch('miscellaneous','amazonConfiguration');
 $tempFolder = \Monkey::app()->rootPath() . \Monkey::app()->cfg()->fetch('paths','tempFolder') . '-plandetail' . "/";
-$fileNomePart=$productId.'-'.$productVariantId.'_s'.$position.'.mp4';
-$fileNome=$tempFolder.$productId.'-'.$productVariantId.'_s'.$position.'.mp4';
+$fileNomePart=$productId.'-'.$productVariantId.'thumnb_video_s'.$position.'. jpg';
+$fileNome=$tempFolder.$productId.'-'.$productVariantId.'thumnb_video_s'.$position.'.jpg';
 $file=fopen($fileNome,'wb');
 fwrite($file,$binary);
 fclose($file);
 $remoteLinkS3="https://iwes-editorial.s3-eu-west-1.amazonaws.com/plandetail-images/".$fileNomePart;
+$remoteLinkS3Video=
 $image = new ImageManager(new S3Manager($config['credential']),\Monkey::app(), $tempFolder);
 
 
@@ -58,43 +59,35 @@ try {
     $bucket=$config['bucket'] . '-editorial';
     $folder='plandetail-images';
     $file1 = fopen($fileNome,'r');
+    if ($file1) {
+        $image1 = new ImageEditor();
+        $jpg = $image1->load($fileNome);
+
+        if ($jpg!==false) {
 
 
-            $image->s3Upload($bucket,$fileNome,$folder);
+            $files =$fileNomePart;
+            $image1->resizeToWidth('600');
+            $image1->save($fileNome);
+            $image->s3Upload($bucket,$files,$folder);
             sleep(2);
-
+        }
         fclose($file1);
         unlink($fileNome);
 
-
+    }
     $res=true;
 } catch (RedPandaAssetException $e) {
     $this->app->router->response()->raiseProcessingError();
-    return 'Impossibile Caricare il File Video';
+    return 'Dimensioni della foto errate: il rapporto deve esser 9:16';
     $res=false;
 }
 
 
 if($res) {
-    $product=\Monkey::app()->repoFactory->create('Product')->findOneBy(['id'=>$productId,'productVariantId'=>$productVariantId]);
-    switch($position) {
-        case "1":
-            $product->dummyVideo = $remoteLinkS3;
-            break;
-        case "2":
-            $product->dummyVideo2 = $remoteLinkS3;
-            break;
-        case "3":
-            $product->dummyVideo3 = $remoteLinkS3;
-            break;
-        case "4":
-            $product->dummyVideo4 = $remoteLinkS3;
-            break;
-    }
 
-    $product->update();
-
-    $title='Pubblicazione sul  Sito del prodotto  ' . $productId .'-'.$productVariantId. ' da app con link ' . $remoteLinkS3;
+    $title='Pubblicazione sul  Sito dei video per il sito relativi il   prodotto : ' . $productId .'-'.$productVariantId. ' da app con link ' . $remoteLinkS3.'</br>';
+    $title.='è Possibile scaricare il video contenente il video una volta che sarà chiuso lo shooting';
 
     $subject = "Inserimento Video Su Sito ";
     $message = $title;

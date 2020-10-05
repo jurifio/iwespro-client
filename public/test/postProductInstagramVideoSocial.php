@@ -41,10 +41,8 @@ header('Content-Type: bitmap; charset=utf-8');
 \Monkey::app()->vendorLibraries->load("amazon2723");
 $config=\Monkey::app()->cfg()->fetch('miscellaneous','amazonConfiguration');
 $tempFolder = \Monkey::app()->rootPath() . \Monkey::app()->cfg()->fetch('paths','tempFolder') . '-plandetail' . "/";
-$fileNomePart=$productId.'-'.$productVariantId.'_in_'.$position.'.mp4';
-$fileNomePartThumb=$productId.'-'.$productVariantId.'_in_thumb'.$position.'.jpg';
-
-$fileNome=$tempFolder.$productId.'-'.$productVariantId.'_in_'.$position.'.mp4';
+$fileNomePart=$productId.'-'.$productVariantId.'_in_'.$position.'.jpg';
+$fileNome=$tempFolder.$productId.'-'.$productVariantId.'_in_'.$position.'.jpg';
 $file=fopen($fileNome,'wb');
 fwrite($file,$binary);
 fclose($file);
@@ -62,45 +60,44 @@ try {
     $bucket=$config['bucket'] . '-editorial';
     $folder='plandetail-images';
     $file1 = fopen($fileNome,'r');
+    if ($file1) {
+        $image1 = new ImageEditor();
+        $jpg = $image1->load($fileNome);
+
+        if ($jpg!==false) {
 
 
-    $image->s3Upload($bucket,$fileNome,$folder);
-    sleep(2);
+            $files =$fileNomePart;
+            $image1->resizeToWidth('600');
+            $image1->save($fileNome);
+            $image->s3Upload($bucket,$files,$folder);
+            sleep(2);
+        }
+        fclose($file1);
+        unlink($fileNome);
 
-    fclose($file1);
-    $namePath = $tempFolder . $fileNomePartThumb;
-    $ffmpeg = FFMpeg\FFMpeg::create();
-    $video = $ffmpeg->open($fileNome);
-    $video
-        ->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(1))
-        ->save($namePath);
-    $image2 = new ImageManager(new S3Manager($config['credential']),\Monkey::app(),$tempFolder);
-    //$fileName=$tempFolder.$title.'1.jpg';
-    $fileName['name'] = $fileNomePartThumb;
-    $res = $image2->processImageEditorialUploadPhoto($fileNomePartThumb,$fileName,$config['bucket'] . '-editorial','plandetail-images');
-    $imageThumbVideo1 = "https://iwes-editorial.s3-eu-west-1.amazonaws.com/plandetail-images/" . $fileName['name'];
-
-
+    }
     $res=true;
 } catch (RedPandaAssetException $e) {
     $this->app->router->response()->raiseProcessingError();
-    return 'Impossibile Caricare il File Video';
+    return 'Dimensioni della foto errate: il rapporto deve esser 9:16';
     $res=false;
 }
 if($res) {
     $editorialPlan = \Monkey::app()->repoFactory->create('EditorialPlan')->findOneBy(['id' => $editorialPlanId]);
     $editorialPlanName = $editorialPlan->name;
 
-    $title='Richiesta post  per  ' . $editorialPlanName . ' da app su Video Social Instagram ' . $fileNomePart;
+    $title='Richiesta post  per  ' . $editorialPlanName . ' da app su Video Instagram ' . $fileNomePart;
 
     $today = (new DateTime())->format('Y-m-d H:i:s');
     $finalDay = (new \DateTime("+2 week"))->format('Y-m-d H:i:s');
 
     $editorialPlanDetail = \Monkey::app()->repoFactory->create('EditorialPlanDetail')->getEmptyEntity();
     $editorialPlanDetail->editorialPlanId = $editorialPlanId;
+    $editorialPlanDetail->isEventVisible = 0;
     $editorialPlanDetail->startEventDate = $today;
     $editorialPlanDetail->endEventDate = $finalDay;
-    $editorialPlanDetail->socialId = 1;
+    $editorialPlanDetail->socialId = 8;
     $editorialPlanDetail->editorialPlanArgumentId = 10;
     $editorialPlanDetail->title = $title;
     $editorialPlanDetail->description = 'Richiesta post  per  ' . $editorialPlanName . ' da app su Video Instagram ' . $fileNomePart;
@@ -125,8 +122,9 @@ if($res) {
         $foisonId = $contracts->foisonId;
         $foison = \Monkey::app()->repoFactory->create('Foison')->findOneBy(['id' => $foisonId]);
         if ($foison != null) {
-            $userEditor=[$foison->email];
-            /** @var \bamboo\domain\repositories\CEmailRepo $emailRepo */
+            /* $userEditor=[$foison->email];
+             /** @var \bamboo\domain\repositories\CEmailRepo $emailRepo */
+            /*
             $emailRepo = \Monkey::app()->repoFactory->create('Email');
             if (!is_array($to)) {
 
@@ -135,7 +133,7 @@ if($res) {
             $to[] =['gianluca@iwes.it'];
             $userEditor=['jurif@iwes.it'];
             $emailRepo = \Monkey::app()->repoFactory->create('Email');
-            $emailRepo->newMail('Iwes IT Department <it@iwes.it>',$to,$userEditor,[],$subject,$message,null,null,null,'mailGun',false,null);
+            $emailRepo->newMail('Iwes IT Department <it@iwes.it>',$to,$userEditor,[],$subject,$message,null,null,null,'mailGun',false,null);*/
         }
     }
     $toBoss=['gianluca@iwes.it'];
