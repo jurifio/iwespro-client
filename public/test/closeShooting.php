@@ -60,14 +60,14 @@ try {
     $contractsRepo=\Monkey::app()->repoFactory->create('Contracts');
     $contracts=$contractsRepo->findOneBy(['id'=>$editorialPlan->contractId]);
 
-    if($socialCount>0 || $socialVideo>0) {
+    if($socialCount!="0" || $socialVideo="0") {
         $subject="Iwes.pro Creazione Nuovo Piano Editoriale";
         $message ="creazione Nuovo Piano Editoriale";
-        if($socialCount>0){
+        if($socialCount1="0"){
             $message.='<br> cliccando su questo  <a href="http://www.iwespro/imgTransfer/'.$nameSocial.'">link</a> qui  troverai il file zip contenente  le foto dei piani editoriali</br>';
 
         }
-        if($videoCount>0){
+        if($videoCount!="0"){
             $message.='<br> cliccando su questo  <a href="http://www.iwespro/imgTransfer/'.$nameVideo.'">link</a> qui  troverai il file zip contenente  le foto dei piani editoriali</br>';
         }
 
