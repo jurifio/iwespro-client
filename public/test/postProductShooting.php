@@ -17,7 +17,8 @@ $productsInformation[]=[$productId.'-'.$productVariantId,'noSize'.'-'.$productId
 
 $data='1';
 $i=0;
-$productsIds[]=[$productId.'-'.$productVariantId];
+$string=$productId.'-'.$productVariantId;
+$productsIds=explode("-",$string);
 /** @var CProductHasShootingRepo $pHsRepo */
 $pHsRepo = \Monkey::app()->repoFactory->create('ProductHasShooting');
 
