@@ -13,7 +13,7 @@ if($_POST['productVariantId']){
 if($_POST['shootingId']){
     $shootingId=$_POST['shootingId'];
 }
-$productsInformation[]=[$productId.'-'.$productVariantId,'noSize'.'-'.$productId.'-'.$productVariantId,'noQty'.'-'.$productId.'-'.$productVariantId];
+$productsInformation=[$productId.'-'.$productVariantId,'noSize'.'-'.$productId.'-'.$productVariantId,'noQty'.'-'.$productId.'-'.$productVariantId];
 
 $data='1';
 $i=0;
