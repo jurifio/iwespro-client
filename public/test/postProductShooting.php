@@ -4,21 +4,21 @@ use bamboo\domain\repositories\CProductHasShootingRepo;
 
 require '../../iwesStatic.php';
 
-if($_POST['productId']){
-    $productId=$_POST['productId'];
+if($_GET['productId']){
+    $productId=$_GET['productId'];
 }
-if($_POST['productVariantId']){
-    $productVariantId=$_POST['productVariantId'];
+if($_GET['productVariantId']){
+    $productVariantId=$_GET['productVariantId'];
 }
-if($_POST['shootingId']){
-    $shootingId=$_POST['shootingId'];
+if($_GET['shootingId']){
+    $shootingId=$_GET['shootingId'];
 }
 $productsInformation[]=[$productId.'-'.$productVariantId,'noSize'.'-'.$productId.'-'.$productVariantId,'noQty'.'-'.$productId.'-'.$productVariantId];
 
 $data='1';
 $i=0;
 $string=$productId.'-'.$productVariantId;
-$productsIds[]=[$string];
+$productsIds=[$productId.'-'.$productVariantId];
 /** @var CProductHasShootingRepo $pHsRepo */
 $pHsRepo = \Monkey::app()->repoFactory->create('ProductHasShooting');
 
