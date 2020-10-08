@@ -4,14 +4,14 @@ use bamboo\domain\repositories\CProductHasShootingRepo;
 
 require '../../iwesStatic.php';
 
-if($_GET['productId']){
-    $productId=$_GET['productId'];
+if($_POST['productId']){
+    $productId=$_POST['productId'];
 }
-if($_GET['productVariantId']){
-    $productVariantId=$_GET['productVariantId'];
+if($_POST['productVariantId']){
+    $productVariantId=$_POST['productVariantId'];
 }
-if($_GET['shootingId']){
-    $shootingId=$_GET['shootingId'];
+if($_POST['shootingId']){
+    $shootingId=$_POST['shootingId'];
 }
 $productsInformation[]=[$productId.'-'.$productVariantId,'noSize'.'-'.$productId.'-'.$productVariantId,'noQty'.'-'.$productId.'-'.$productVariantId];
 
