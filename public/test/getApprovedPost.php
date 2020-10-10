@@ -20,11 +20,12 @@ header('Content-Type: bitmap; charset=utf-8');
 \Monkey::app()->vendorLibraries->load("amazon2723");
 $config=\Monkey::app()->cfg()->fetch('miscellaneous','amazonConfiguration');
 $data=[];
+$i=0;
 
     $user=\Monkey::app()->repoFactory->create('User')->findOneBy(['email'=>$email]);
     if($user!=null) {
         $operator = $user->id;
-$i=0;
+
 
         $editorialPlanDetails = \Monkey::app()->repoFactory->create('EditorialPlanDetail')->findBy(['socialId' => 7,'status' => 'Approved','userId' => $operator]);
         foreach ($editorialPlanDetails as $editorialPlanDetail) {
