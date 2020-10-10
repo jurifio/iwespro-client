@@ -18,12 +18,11 @@ if($_GET['email']){
 header('Content-Type: bitmap; charset=utf-8');
 \Monkey::app()->vendorLibraries->load("videoEditing");
 \Monkey::app()->vendorLibraries->load("amazon2723");
-\Monkey::app()->vendorLibraries->load("amazon2723");
 $config=\Monkey::app()->cfg()->fetch('miscellaneous','amazonConfiguration');
 $data=[];
 
     $user=\Monkey::app()->repoFactory->create('User')->findOneBy(['email'=>$email]);
-    if(count($user)>0) {
+    if($user!=null) {
         $operator = $user->id;
 $i=0;
 
@@ -57,7 +56,7 @@ $i=0;
         }
 
     }else{
-        $data=['result'=>'0',
+        $data[$i]=['result'=>'0',
             'editorialPlanDetailId'=>'Non ci sono post da pubblicare',
             'editorialPlanName'=>'',
             'startEventDate'=>'',
