@@ -8,7 +8,6 @@ use bamboo\core\utils\amazonPhotoManager\ImageManager;
 use bamboo\core\utils\amazonPhotoManager\S3Manager;
 use bamboo\domain\entities\CEditorialPlanSocial;
 use bamboo\domain\repositories\CProductHasShootingRepo;
-use FFMpeg;
 require '../../iwesStatic.php';
 
 if($_GET['email']){
