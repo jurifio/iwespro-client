@@ -35,17 +35,18 @@ $i=0;
             $isEventVisible = $editorialPlanDetail->isEventVisible;
             $startEventDate=(new \DateTime($editorialPlanDetail->startEventDate))->format('d-m-Y H:i');
             $endEventDate=(new \DateTime($editorialPlanDetail->endEventDate))->format('d-m-Y H:i');
-            $editorialPlanArgumentId=$editorialPlanDetail->editorialPlanArgumentId;
+            $editorialPlanArgumentId=$editorialPlanDetail->editorialPlanArgument->titleArgument;
             $title=$editorialPlanDetail->title;
             $description=$editorialPlanDetail->description;
             $photoUrl=$editorialPlanDetail->photoUrl;
             $linkDestination=$editorialPlanDetail->linkDestination;
             $video=$editorialPlanDetail->video1;
             $data[$i]=['result'=>'1',
+                        'editorialPlanDetailId'=>$editorialPlanDetailId,
                        'editorialPlanName'=>$editorialPlanName,
                         'startEventDate'=>$startEventDate,
                         'endEventDate'=>$endEventDate,
-                        'editorialPlanArgumentId'=>$editorialPlanArgumentId,
+                        'editorialPlanArgument'=>$editorialPlanArgumentId,
                         'title'=>$title,
                         'description'=>$description,
                         'photoUrl'=>$photoUrl,
@@ -57,7 +58,18 @@ $i=0;
         }
 
     }else{
-        $data=['result'=>'0'];
+        $data=['result'=>'0',
+            'editorialPlanDetailId'=>'Non ci sono post da pubblicare',
+            'editorialPlanName'=>'',
+            'startEventDate'=>'',
+            'endEventDate'=>'',
+            'editorialPlanArgument'=>'',
+            'title'=>'',
+            'description'=>'',
+            'photoUrl'=>'',
+            'linkDestination'=>'',
+            'video'=>''
+        ];
     }
 
 
