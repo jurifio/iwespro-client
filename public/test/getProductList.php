@@ -58,7 +58,9 @@ FROM `Product` `p`
   JOIN `ProductBrand` `pb` ON `p`.`productBrandId` = `pb`.`id`
   JOIN `Shop` `s` ON `s`.`id` = `dp`.`shopId` where 1=1 and s.id=".$shopId."  ".$sqlEan."  GROUP BY p.id,p.productVariantId,p.externalId
 ORDER BY `p`.`creationDate` DESC 
+
                ";
+echo $sql;
 $data=[];
 $i=0;
 $resultProduct=\Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
