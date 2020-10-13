@@ -4,7 +4,7 @@
 
 require '../../iwesStatic.php';
 //load the image
-$img = imagecreatefromjpeg("/media/sf_sites/iwespro/temp/188811-6207151__what-for-wf102-black__210000234168-0001.jpg");
+$img = imagecreatefromjpeg("/media/sf_sites/iwespro/temp/188514-6174969__cartechini-collections-840022-preto-0002.jpg");
 
 //find the size of the borders
 $b_top = 0;
