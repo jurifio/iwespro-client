@@ -4,7 +4,7 @@
 
 require '../../iwesStatic.php';
 //load the image
-$img = imagecreatefromjpeg("/media/sf_sites/iwespro/temp/188815-6207155__what-for-wf166-black__210000234236-0003.jpg");
+$img = imagecreatefromjpeg("/media/sf_sites/iwespro/temp/188811-6207151__what-for-wf102-black__210000234168-0001.jpg");
 
 //find the size of the borders
 $b_top = 0;
@@ -67,40 +67,46 @@ if($height>($width+($height/100*21.5))){
 
 
     if($type=='v'){
-        $newwidth=(1300*$width)/$height;
-        $finalImage=imagecreatetruecolor( $newwidth, 1300);
-        imagecopyresized($finalImage,$targetImage,0,0,0,0,$newwidth,1300,imagesx($targetImage), imagesy($targetImage));
+        $targetImage = imagecreatetruecolor( imagesx($img)-($b_lft+$b_rt), imagesy($img)-($b_top+$b_btm));
+        $width=imagesx($img)-($b_lft+$b_rt);
+        $height=imagesy($img)-($b_top+$b_btm);
+
+        imagecopy($targetImage, $img, 0, 0, $b_lft, $b_top, imagesx($targetImage), imagesy($targetImage));
+        /*header("Content-Type: image/jpeg");
+        imagejpeg($targetImage);*/
+
         $destination1 = imagecreatetruecolor(1125, 1500);
-        $dest_y=1500-1300-122;
-        $dest_x=1125-$newwidth-20;
+        /*
+        $dst_x=(1125-imagesx($targetImage))/2;
+        $dst_y=1500-imagesy($targetImage)-173;*/
+        $dst_x=80;
+        $dst_x=130;
 
-
-
-        $color = imagecolorallocate($finalImage, 255, 255, 255);
+        $color = imagecolorallocate($targetImage, 255, 255, 255);
 // fill entire image
         imagefill($destination1, 0, 0, $color);
-        imagecopyresized($destination1, $finalImage, 0,0,0, 0,1125, 1500, imagesx($finalImage), imagesy($finalImage));
-
-
-//finally, output the image
+        imagecopyresized($destination1, $targetImage, $dst_x, $dst_y, 0, 0,$width, $height, imagesx($targetImage), imagesy($targetImage));
         header("Content-Type: image/jpeg");
         imagejpeg($destination1);
 
 
     }else{
-        $newheight=(1025*$height)/$width;
+        $ratio=imagesx($targetImage)/1025;
+
+        $newheight=imagesy($targetImage)*$ratio;
+
         $finalImage=imagecreatetruecolor( 1025, $newheight);
         imagecopyresized($finalImage,$targetImage,0,0,0,0,1025,$newheight,imagesx($targetImage), imagesy($targetImage));
         $destination1 = imagecreatetruecolor(1125, 1500);
         $dest_y=1500-$newheight-122;
-        $dest_x=1125-1025-20;
+        $dest_x=1125-imagesx($finalImage)-20;
 
 
 
         $color = imagecolorallocate($finalImage, 255, 255, 255);
 // fill entire image
         imagefill($destination1, 0, 0, $color);
-        imagecopyresized($destination1, $finalImage, 0,0,0, 0,1125, 1500, imagesx($finalImage), imagesy($finalImage));
+        imagecopyresized($destination1, $finalImage, $dest_x,$dest_y,0, 0,imagesx($finalImage), $newheight, imagesx($finalImage), $newheight);
 
 
 //finally, output the image
