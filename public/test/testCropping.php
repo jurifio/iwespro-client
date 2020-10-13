@@ -74,18 +74,23 @@ if($height>($width+($height/100*21.5))){
         imagecopy($targetImage, $img, 0, 0, $b_lft, $b_top, imagesx($targetImage), imagesy($targetImage));
         /*header("Content-Type: image/jpeg");
         imagejpeg($targetImage);*/
+        $ratioHeight=$height/1300;
+        $newHeight=$height/$ratioHeight;
+        $newWidth=$width/$ratioHeight;
+        $newImage=imagescale($targetImage,$newWidth,$newHeight);
+
 
         $destination1 = imagecreatetruecolor(1125, 1500);
         /*
         $dst_x=(1125-imagesx($targetImage))/2;
         $dst_y=1500-imagesy($targetImage)-173;*/
-        $dst_x=80;
-        $dst_x=130;
+        $dst_x=(1125-$newWidth)/2;
+        $dst_y=(1500-$newHeight)-130;
 
         $color = imagecolorallocate($targetImage, 255, 255, 255);
 // fill entire image
         imagefill($destination1, 0, 0, $color);
-        imagecopyresized($destination1, $targetImage, $dst_x, $dst_y, 0, 0,$width, $height, imagesx($targetImage), imagesy($targetImage));
+        imagecopy($destination1, $newImage, $dst_x, $dst_y, 0, 0,$newWidth, $newHeight);
         header("Content-Type: image/jpeg");
         imagejpeg($destination1);
 
