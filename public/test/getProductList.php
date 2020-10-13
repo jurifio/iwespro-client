@@ -22,7 +22,7 @@ if ($shopId == 1) {
     }
 } elseif ($shopId == 58) {
     if ($_GET['ean'] != "0") {
-        $sqlEan = " and ds.barcode like '%" . substr($_GET['ean'],0,8) . "%'";
+        $sqlEan = " and ds.barcode like '%" . substr($_GET['ean'],0,7) . "%'";
     }
 } else {
     if ($_GET['ean'] != "0") {
@@ -60,7 +60,6 @@ FROM `Product` `p`
 ORDER BY `p`.`creationDate` DESC 
 
                ";
-echo $sql;
 $data=[];
 $i=0;
 $resultProduct=\Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
