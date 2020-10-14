@@ -26,7 +26,7 @@ if ($shopId == 1) {
     }
 } else {
     if ($_GET['ean'] != "0") {
-        $sqlEan = " and ds.barcode= '" . $_GET['ean'] . "'";
+        $sqlEan = " and ds.barcode= '".$_GET['ean']."'";
     }
 
 }
@@ -41,22 +41,29 @@ $sql = "SELECT
   concat(`p`.`itemno`, ' # ', `pv`.`name`)             AS `cpf`,
   `s`.`id`                                             AS `shopId`,
   `s`.`title`                                          AS `shop`,
-
+  concat(phs.shootingId)                               AS shooting,
+  concat(doc.number)                                   AS doc_number,
   `p`.`creationDate`                                   AS `creationDate`,
   concat(ifnull(p.externalId, ''), '-', ifnull(dp.extId, ''), '-', ifnull(ds.extSkuId, '')) AS externalId,
   `pss`.`name`                                         AS `status`,
    `PS`.`name` as season,
     `p`.id as qty  
 FROM `Product` `p`
-
+  JOIN `ShopHasProduct` `shp` ON (`p`.`id`, `p`.`productVariantId`) = (`shp`.`productId`, `shp`.`productVariantId`)
      JOIN `ProductSeason` `PS` on p.productSeasonId = `PS`.`id`
- left join DirtyProduct dp ON p.id=dp.productId AND p.productVariantId=dp.productVariantId
-    JOIN DirtySku ds ON dp.id = ds.dirtyProductId
+  LEFT JOIN (DirtyProduct dp
+    JOIN DirtySku ds ON dp.id = ds.dirtyProductId)
+    ON (shp.productId,shp.productVariantId,shp.shopId) = (dp.productId,dp.productVariantId,dp.shopId)
   JOIN `ProductStatus` `pss` ON `pss`.`id` = `p`.`productStatusId`
  
   JOIN `ProductVariant` `pv` ON `p`.`productVariantId` = `pv`.`id`
   JOIN `ProductBrand` `pb` ON `p`.`productBrandId` = `pb`.`id`
-  JOIN `Shop` `s` ON `s`.`id` = `dp`.`shopId` where 1=1 and s.id=".$shopId."  ".$sqlEan."  GROUP BY p.id,p.productVariantId,p.externalId
+  JOIN `Shop` `s` ON `s`.`id` = `shp`.`shopId`
+  LEFT JOIN (
+      ProductHasShooting phs
+      JOIN Shooting shoot ON phs.shootingId = shoot.id
+      LEFT JOIN Document doc ON shoot.friendDdt = doc.id)
+    ON p.productVariantId = phs.productVariantId AND p.id = phs.productId where 1=1 and s.id=".$shopId."  ".$sqlEan."  GROUP BY p.id,p.productVariantId,p.externalId
 ORDER BY `p`.`creationDate` DESC 
 
                ";

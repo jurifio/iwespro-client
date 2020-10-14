@@ -4,7 +4,7 @@
 
 require '../../iwesStatic.php';
 //load the image
-$img = imagecreatefromjpeg("/media/sf_sites/iwespro/temp/188514-6174969__cartechini-collections-840022-preto-0002.jpg");
+$img = imagecreatefromjpeg("/media/sf_sites/iwespro/temp/188522-6175000__copenhagen-cph505-taupe-0004.jpg");
 
 //find the size of the borders
 $b_top = 0;
@@ -95,47 +95,32 @@ if($height>($width+($height/100*21.5))){
         imagejpeg($destination1);
 
 
-    }else{
-        $ratio=imagesx($targetImage)/1025;
+    }else {
 
-        $newheight=imagesy($targetImage)*$ratio;
+        $targetImage = imagecreatetruecolor(imagesx($img) - ($b_lft + $b_rt),imagesy($img) - ($b_top + $b_btm));
+        $width = imagesx($img) - ($b_lft + $b_rt);
+        $height = imagesy($img) - ($b_top + $b_btm);
 
-        $finalImage=imagecreatetruecolor( 1025, $newheight);
-        imagecopyresized($finalImage,$targetImage,0,0,0,0,1025,$newheight,imagesx($targetImage), imagesy($targetImage));
-        $destination1 = imagecreatetruecolor(1125, 1500);
-        $dest_y=1500-$newheight-122;
-        $dest_x=1125-imagesx($finalImage)-20;
+        imagecopy($targetImage,$img,0,0,$b_lft,$b_top,imagesx($targetImage),imagesy($targetImage));
+        /*header("Content-Type: image/jpeg");
+        imagejpeg($targetImage);*/
+        $ratioHeight = $width / 1025;
+        $newHeight = $height / $ratioHeight;
+        $newWidth = $width / $ratioHeight;
+        $newImage = imagescale($targetImage,$newWidth,$newHeight);
 
 
+        $destination1 = imagecreatetruecolor(1125,1500);
+        /*
+        $dst_x=(1125-imagesx($targetImage))/2;
+        $dst_y=1500-imagesy($targetImage)-173;*/
+        $dst_x = (1125 - $newWidth)/2;
+        $dst_y = (1500 - $newHeight) - 130;
 
-        $color = imagecolorallocate($finalImage, 255, 255, 255);
+        $color = imagecolorallocate($targetImage,255,255,255);
 // fill entire image
-        imagefill($destination1, 0, 0, $color);
-        imagecopyresized($destination1, $finalImage, $dest_x,$dest_y,0, 0,imagesx($finalImage), $newheight, imagesx($finalImage), $newheight);
-
-
-//finally, output the image
+        imagefill($destination1,0,0,$color);
+        imagecopy($destination1,$newImage,$dst_x,$dst_y,0,0,$newWidth,$newHeight);
         header("Content-Type: image/jpeg");
         imagejpeg($destination1);
     }
-/*header("Content-Type: image/jpeg");
-imagejpeg($targetImage);
-$destination1 = imagecreatetruecolor(1125, 1500);
-
-$dst_x=(1125-imagesx($targetImage))/2;
-$dst_y=(1500-imagesy($targetImage))/2;
-
-
-$color = imagecolorallocate($targetImage, 255, 255, 255);
-// fill entire image
-imagefill($destination1, 0, 0, $color);
-imagecopyresized($destination1, $targetImage, $dst_x, $dst_y, 0, 0,$width, $height, imagesx($targetImage), imagesy($targetImage));
-
-
-//finally, output the image
-header("Content-Type: image/jpeg");
-imagejpeg($destination1);
-
-
-//dimensione foto a
-
