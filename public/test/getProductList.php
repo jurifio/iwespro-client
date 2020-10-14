@@ -40,7 +40,7 @@ $sql = "SELECT
   `pb`.`name`                                          AS `brand`,
   concat(`p`.`itemno`, ' # ', `pv`.`name`)             AS `cpf`,
   `s`.`id`                                             AS `shopId`,
-  `s`.`title`                                          AS `shop`,jkmn 
+  `s`.`title`                                          AS `shop`,
 
   `p`.`creationDate`                                   AS `creationDate`,
   concat(ifnull(p.externalId, ''), '-', ifnull(dp.extId, ''), '-', ifnull(ds.extSkuId, '')) AS externalId,
