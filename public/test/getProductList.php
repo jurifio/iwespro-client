@@ -18,7 +18,7 @@ foreach($resShop as $shopResult) {
 }
 if ($shopId == 1) {
     if ($_GET['ean'] != "0") {
-        $sqlEan = " and ds.barcode= '" . substr($_GET['ean'],0,-1) . "'";
+        $sqlEan = " and ds.barcode like'%" . substr($_GET['ean'],0,-1) . "%'";
     }
 } elseif ($shopId == 58) {
     if ($_GET['ean'] != "0") {
@@ -26,7 +26,7 @@ if ($shopId == 1) {
     }
 } else {
     if ($_GET['ean'] != "0") {
-        $sqlEan = " and ds.barcode= '" . $_GET['ean'] . "'";
+        $sqlEan = " and ds.barcode  like '%" . $_GET['ean'] . "%'";
     }
 
 }
@@ -40,7 +40,7 @@ $sql = "SELECT
   `pb`.`name`                                          AS `brand`,
   concat(`p`.`itemno`, ' # ', `pv`.`name`)             AS `cpf`,
   `s`.`id`                                             AS `shopId`,
-  `s`.`title`                                          AS `shop`,
+  `s`.`title`                                          AS `shop`,jkmn 
 
   `p`.`creationDate`                                   AS `creationDate`,
   concat(ifnull(p.externalId, ''), '-', ifnull(dp.extId, ''), '-', ifnull(ds.extSkuId, '')) AS externalId,
