@@ -6,15 +6,15 @@ $today = (new DateTime())->format('Y-m-d H:i:s');
 $finalDay = (new \DateTime("+2 week"))->format('Y-m-d H:i:s');
 
 
-if($_POST['editorialPlanDetailId']){
-    $editorialPlanDetailId=$_POST['editorialPlanDetailId'];
+if($_GET['editorialPlanDetailId']){
+    $editorialPlanDetailId=$_GET['editorialPlanDetailId'];
 }
-if($_POST['editorialPlanName']){
-    $editorialPlanName=$_POST['editorialPlanName'];
+if($_GET['editorialPlanName']){
+    $editorialPlanName=$_GET['editorialPlanName'];
 }
 
-if($_POST['title']){
-    $title=$_POST['title'];
+if($_GET['title']){
+    $title=$_GET['title'];
 }
 
 
