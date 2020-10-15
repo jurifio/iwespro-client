@@ -1,20 +1,19 @@
 <?php
 require '../../iwesStatic.php';
-$shootingBookingRepo=\Monkey::app()->repoFactory->create('ShootingBooking');
 $editorialPlanDetailRepo=\Monkey::app()->repoFactory->create('EditorialPlanDetail');
 $today = (new DateTime())->format('Y-m-d H:i:s');
 $finalDay = (new \DateTime("+2 week"))->format('Y-m-d H:i:s');
 
 
-if($_GET['editorialPlanDetailId']){
-    $editorialPlanDetailId=$_GET['editorialPlanDetailId'];
+if($_POST['editorialplanDetailId']){
+    $editorialPlanDetailId=$_POST['editorialplanDetailId'];
 }
-if($_GET['editorialPlanName']){
-    $editorialPlanName=$_GET['editorialPlanName'];
+if($_POST['editorialPlanName']){
+    $editorialPlanName=$_POST['editorialPlanName'];
 }
 
-if($_GET['title']){
-    $title=$_GET['title'];
+if($_POST['title']){
+    $title=$_POST['title'];
 }
 
 
