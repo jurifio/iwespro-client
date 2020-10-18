@@ -29,6 +29,7 @@ $time = microtime(true);
 $monkey->eventManager;
 var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
-echo  number_format(100 * (100 - 80) /100, 2);
+
+
 
 
