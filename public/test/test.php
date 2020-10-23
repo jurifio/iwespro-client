@@ -73,5 +73,5 @@ if ((!$conn_id) || (!$login_result)) {
     ftp_close($conn_id);
 }
 foreach($buff as $val){
-    echo $val;
+    echo $val.'<br>';
 }
