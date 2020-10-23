@@ -73,5 +73,7 @@ if ((!$conn_id) || (!$login_result)) {
     ftp_close($conn_id);
 }
 foreach($buff as $val){
-    echo $val.'<br>';
+    $pathArr = explode(' ',$val);
+    $filenametoextrat = end($pathArr);
+    echo $pathArr.'<br>';
 }
