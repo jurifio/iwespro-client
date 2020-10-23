@@ -75,5 +75,5 @@ if ((!$conn_id) || (!$login_result)) {
 foreach($buff as $val){
     $pathArr = explode(' ',$val);
     $filenametoextrat = end($pathArr);
-    echo $pathArr.'<br>';
+    echo $filenametoextrat.'<br>';
 }
