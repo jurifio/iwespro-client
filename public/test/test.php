@@ -72,5 +72,6 @@ if ((!$conn_id) || (!$login_result)) {
 // close the connection
     ftp_close($conn_id);
 }
-
-var_dump($buff);
+foreach($buff as $val){
+    echo $val;
+}
