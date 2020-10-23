@@ -86,8 +86,7 @@ if ((!$conn_id) || (!$login_result)) {
             return true;
 
         }
-        $result = in_array($item, ftp_nlist($conn_id, dirname($item)));
-        if ($result == true) {
+
             $pathArr = explode(DIRECTORY_SEPARATOR,$item);
             $filenametoextrat = end($pathArr);
             foreach ($shops as $shop) {
@@ -97,7 +96,7 @@ if ((!$conn_id) || (!$login_result)) {
                     break;
                 }
             }
-        }
+
 
 
         $row = [];
