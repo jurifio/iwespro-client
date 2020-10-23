@@ -21,7 +21,7 @@ foreach($resShop as $shopResult) {
         $fp=strpos($_GET['ean'],'__');
         $code=substr($_GET['ean'],0,$fp);
 
-        $sqlEan = " and concat(p.productId,'-',p.productVariantId)= '" . $code. "'";
+        $sqlEan = " and concat(p.id,'-',p.productVariantId)= '" . $code. "'";
 
     }
 
