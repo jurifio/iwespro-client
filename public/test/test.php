@@ -50,7 +50,7 @@ if (ENV == 'dev') {
     $remotepathToRename = '/shootImport/newage2/torename/';
 }
 $ftp_server_port = "21";
-$ftp_user_name = 'iwespro';
+$ftp_user_name = 'app@iwes.pro';
 $ftp_user_pass = "Cartne01!";
 $shops = \Monkey::app()->repoFactory->create('Shop')->findAll();
 
