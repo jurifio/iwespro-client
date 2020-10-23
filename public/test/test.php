@@ -29,6 +29,40 @@ $time = microtime(true);
 $monkey->eventManager;
 var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
+if (ENV == 'dev') {
+    $ftp_server = 'ftp.iwes.pro';
+
+    $path = 'public_html/imgTransfer/';
 
 
+} else {
+    $ftp_server = 'ftp.iwes.pro';
 
+    $path = './';
+
+}
+$ftp_server_port = "21";
+$ftp_user_name = 'app@iwes.pro';
+$ftp_user_pass = "Cartne01!";
+$shops = \Monkey::app()->repoFactory->create('Shop')->findAll();
+
+// setto la connessione al ftp
+$conn_id = ftp_connect($ftp_server,$ftp_server_port);
+// Eseguo il login con  username e password
+$login_result = ftp_login($conn_id,$ftp_user_name,$ftp_user_pass);
+
+// check connessione e risultato del login
+if ((!$conn_id) || (!$login_result)) {
+    echo "Fail</br>";
+} else {
+    echo "Success</br>";
+    // enabling passive mode
+    ftp_pasv($conn_id,false);
+    $buff = ftp_rawlist($conn_id, '/');
+
+// close the connection
+    ftp_close($conn_id);
+
+// output the buffer
+    var_dump($buff);
+}
