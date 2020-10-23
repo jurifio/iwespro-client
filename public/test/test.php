@@ -108,4 +108,4 @@ if ((!$conn_id) || (!$login_result)) {
     }
 }
 
-return json_encode($response);
+var_dump($response);
