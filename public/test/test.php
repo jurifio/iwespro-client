@@ -67,45 +67,10 @@ if ((!$conn_id) || (!$login_result)) {
     // enabling passive mode
     ftp_pasv($conn_id,false);
     // prendo il contenuto di tutta la directory sul server
-    $buff = ftp_rawlist($conn_id, '/');
+    $buff = ftp_rawlist($conn_id,'/');
 
 // close the connection
     ftp_close($conn_id);
-
-// output the buffer
-    // output $contents
-    $response = [];
-    $response ['data'] = [];
-    $i = 1;
-    $shopName = '';
-    foreach ($buff as $item) {
-        $item = trim($item,'/');
-        $item = '/' . $item;
-        if ($item === '/') {
-
-            return true;
-
-        }
-
-            $pathArr = explode(DIRECTORY_SEPARATOR,$item);
-            $filenametoextrat = end($pathArr);
-            foreach ($shops as $shop) {
-                $shopToFind = 'shop_' . $shop->id . '_';
-                if (strpos($filenametoextrat,$shopToFind) !== false) {
-                    $shopName = $shop->name;
-                    break;
-                }
-            }
-
-
-
-        $row = [];
-        $row["DT_RowId"] = 'row__' . $i;
-        $row["id"] = $i;
-        $row['file'] = '<i class="fa fa-file-archive-o" aria-hidden="true"></i> '. $filenametoextrat;
-        $row['shopName']=$shopName;
-        $response['data'][] = $row;
-    }
 }
 
-var_dump($response);
+var_dump($buff);
