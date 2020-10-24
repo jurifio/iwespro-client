@@ -29,51 +29,11 @@ $time = microtime(true);
 $monkey->eventManager;
 var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
-if (ENV == 'dev') {
-    $ftp_server = 'ftp.iwes.pro';
-    $pathlocal = '/media/sf_sites/iwespro/temp-remaster/';
-    $save_to = '/home/iwespro/public_html/imgTransfer';
-    $save_to_dir = '/media/sf_sites/iwespro/temp-remaster';
-    $path = '/public_html/imgTransfer/';
-    $remotepathTodo = 'shootImport/newage2/topublish_dev/';
-    $remotepathOriginal = '/shootImport/newage2/original_dev/';
-    $remotepathToRename = '/shootImport/newage2/torename_dev/';
+$filenametoextrat='._.';
+$countPoint=substr_count($filenametoextrat, '.');
+if($countPoint==2){
+    $filenametoextrat=preg_replace('(.)', '_', $filenametoextrat, 1);
 
-} else {
-    $ftp_server = 'ftp.iwes.pro';
-    $pathlocal = '/home/iwespro/public_html/temp-remaster/';
-    $save_to = '/home/iwespro/public_html/temp-remaster/';
-    $save_to_dir = '/home/iwespro/public_html/temp-remaster';
-    $path = '/public_html/imgTransfer/';
-    $remotepathTodo = 'shootImport/newage2/topublish/';
-    $remotepathOriginal = '/shootImport/newage2/original/';
-    $remotepathToRename = '/shootImport/newage2/torename/';
 }
-$ftp_server_port = "21";
-$ftp_user_name = 'app@iwes.pro';
-$ftp_user_pass = "Cartne01!";
-$shops = \Monkey::app()->repoFactory->create('Shop')->findAll();
+echo $filenametoextrat;
 
-// setto la connessione al ftp
-$conn_id = ftp_connect($ftp_server,$ftp_server_port);
-// Eseguo il login con  username e password
-$login_result = ftp_login($conn_id,$ftp_user_name,$ftp_user_pass);
-
-// check connessione e risultato del login
-if ((!$conn_id) || (!$login_result)) {
-    echo "Fail</br>";
-} else {
-    echo "Success</br>";
-    // enabling passive mode
-    ftp_pasv($conn_id,false);
-    // prendo il contenuto di tutta la directory sul server
-    $buff = ftp_rawlist($conn_id,'/');
-
-// close the connection
-    ftp_close($conn_id);
-}
-foreach($buff as $val){
-    $pathArr = explode(' ',$val);
-    $filenametoextrat = end($pathArr);
-    echo $filenametoextrat.'<br>';
-}
