@@ -100,6 +100,7 @@ try {
 
     $result='1';
 }catch(\Throwable $e){
+    \Monkey::app()->applicationReport('closeShooting','Error', $e->getMessage(),$e->getLine());
     $result='2';
 }
 echo json_encode($result);
