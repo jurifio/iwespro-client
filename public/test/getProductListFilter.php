@@ -23,7 +23,7 @@ if($_GET['brand']!="0"){
 
 }
 if($_GET['cpf']!="0"){
-    $sqlCpf=" and  concat(`p`.`itemno`, ' # ', `pv`.`name`) like '%".$_GET['cpf']."%' ";
+    $sqlCpf=" and  `p`.`itemno`  like '%".$_GET['cpf']."%' ";
 
 }
 if($_GET['season']!="0"){
