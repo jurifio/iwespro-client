@@ -22,7 +22,7 @@ if ($shopId == 1) {
     }
 } elseif ($shopId == 58) {
     if ($_GET['ean'] != "0") {
-        $sqlEan = " and ds.barcode like '%" . substr($_GET['ean'],0,7) . "%'";
+        $sqlEan = " and ds.barcode ='" . substr($_GET['ean'],0,7) . "'";
     }
 } else {
     if ($_GET['ean'] != "0") {
