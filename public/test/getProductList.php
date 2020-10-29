@@ -22,7 +22,7 @@ if ($shopId == 1) {
     }
 } elseif ($shopId == 58) {
     if ($_GET['ean'] != "0") {
-        $sqlEan = " and ds.barcode ='" . substr($_GET['ean'],0,7) . "'";
+        $sqlEan = " and ds.barcode='" . substr($_GET['ean'],0,8) . "'";
     }
 } else {
     if ($_GET['ean'] != "0") {
@@ -46,7 +46,7 @@ $sql = "SELECT
   concat(ifnull(p.externalId, ''), '-', ifnull(dp.extId, ''), '-', ifnull(ds.extSkuId, '')) AS externalId,
   `pss`.`name`                                         AS `status`,
    `PS`.`name` as season,
-    `p`.id as qty  
+   `p`.qty as qty  
 FROM `Product` `p`
 
      JOIN `ProductSeason` `PS` on p.productSeasonId = `PS`.`id`
