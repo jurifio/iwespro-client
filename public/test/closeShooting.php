@@ -9,15 +9,6 @@ $finalDay = (new \DateTime("+2 week"))->format('Y-m-d H:i:s');
 if($_POST['shootingId']){
     $shootingId=$_POST['shootingId'];
 }
-if($_POST['shootCount']){
-    $shootCount=$_POST['shootCount'];
-}
-if($_POST['socialCount']){
-    $socialCount=$_POST['socialCount'];
-}
-if($_POST['videoCount']){
-    $videoCount=$_POST['videoCount'];
-}
 
 if($_POST['nameShooting']){
     $nameShooting=$_POST['nameShooting'];
