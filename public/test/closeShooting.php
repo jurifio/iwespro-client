@@ -58,14 +58,8 @@ try {
 
         $subject="Iwes.pro Creazione Nuovo Piano Editoriale";
         $message ="creazione Nuovo Piano Editoriale";
-        if($socialCount="0"){
-            $message.='<br> cliccando su questo  <a href="http://www.iwes.pro./imgTransfer/'.$nameSocial.'">link</a> qui  troverai il file zip contenente  le foto dei piani editoriali</br>';
 
-        }
-        if($videoCount!="0"){
-            $message.='<br> cliccando su questo  <a href="http://www.iwes.pro/imgTransfer/'.$nameVideo.'">link</a> qui  troverai il file zip contenente  le foto dei piani editoriali</br>';
-        }
-
+            $message.='<br> cliccando su questo  <a href="http://www.iwes.pro./imgTransfer/'.$nameSocial.'">link</a> qui  troverai il file zip contenente  le foto e i video dei piani editoriali</br>';
 
     if (count($contracts) > 0) {
 
