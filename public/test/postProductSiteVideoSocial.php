@@ -40,7 +40,7 @@ header('Content-Type: bitmap; charset=utf-8');
 $config=\Monkey::app()->cfg()->fetch('miscellaneous','amazonConfiguration');
 $tempFolder = \Monkey::app()->rootPath() . \Monkey::app()->cfg()->fetch('paths','tempFolder') . '-plandetail' . "/";
 $fileNomePart=$productId.'-'.$productVariantId.'thumnb_video_s'.$position.'. jpg';
-$fileNome=$tempFolder.$productId.'-'.$productVariantId.'thumnb_video_s'.$position.'.jpg';
+$fileNome=$tempFolder.$productId.'-'.$productVariantId.'thumb_video_s'.$position.'.jpg';
 $file=fopen($fileNome,'wb');
 fwrite($file,$binary);
 fclose($file);
