@@ -9,25 +9,11 @@ $finalDay = (new \DateTime("+2 week"))->format('Y-m-d H:i:s');
 if($_POST['shootingId']){
     $shootingId=$_POST['shootingId'];
 }
-if($_POST['shootCount']){
-    $shootCount=$_POST['shootCount'];
-}
-if($_POST['socialCount']){
-    $socialCount=$_POST['socialCount'];
-}
-if($_POST['videoCount']){
-    $videoCount=$_POST['videoCount'];
-}
 
 if($_POST['nameShooting']){
     $nameShooting=$_POST['nameShooting'];
 }
-if($_POST['nameSocial']){
-    $nameSocial=$_POST['nameSocial'];
-}
-if($_POST['nameVideo']){
-    $nameVideo=$_POST['nameVideo'];
-}
+
 
 
 
@@ -47,7 +33,7 @@ try {
         $editorial->endEventDate=$finalDay;
         $editorial->update();
     }
-    $editorialPlan = \Monkey::app()->repoFactory->create('EditorialPlan')->findOneBy(['id' => $editorialPlanId]);
+    $editorialPlan = \Monkey::app()->repoFactory->create('EditorialPlan')->findOneBy(['id' => $plainId]);
     $editorialPlanName = $editorialPlan->name;
     /** @var aRepo $ePlanSocialRepo */
     $ePlanSocialRepo = \Monkey::app()->repoFactory->create('EditorialPlanSocial');
@@ -60,17 +46,11 @@ try {
     $contractsRepo=\Monkey::app()->repoFactory->create('Contracts');
     $contracts=$contractsRepo->findOneBy(['id'=>$editorialPlan->contractId]);
 
-    if($socialCount!="0" || $socialVideo="0") {
+
         $subject="Iwes.pro Creazione Nuovo Piano Editoriale";
         $message ="creazione Nuovo Piano Editoriale";
-        if($socialCount1="0"){
-            $message.='<br> cliccando su questo  <a href="http://www.iwespro/imgTransfer/'.$nameSocial.'">link</a> qui  troverai il file zip contenente  le foto dei piani editoriali</br>';
 
-        }
-        if($videoCount!="0"){
-            $message.='<br> cliccando su questo  <a href="http://www.iwespro/imgTransfer/'.$nameVideo.'">link</a> qui  troverai il file zip contenente  le foto dei piani editoriali</br>';
-        }
-
+            $message.='<br> cliccando su questo  <a href="http://www.iwes.pro./imgTransfer/'.$nameSocial.'">link</a> qui  troverai il file zip contenente  le foto e i video dei piani editoriali</br>';
 
     if (count($contracts) > 0) {
 
@@ -95,7 +75,7 @@ try {
     $emailRepo = \Monkey::app()->repoFactory->create('Email');
     $emailRepo->newMail('Iwes IT Department <it@iwes.it>',$toBoss,[],[],$subject,$message,null,null,null,'mailGun',false,null);
 
-}
+
 
 
     $result='1';
