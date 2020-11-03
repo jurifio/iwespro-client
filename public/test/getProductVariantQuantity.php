@@ -27,25 +27,28 @@ foreach ($resShop as $shopResult) {
 }
 
 
-$sql = "SELECT dp.id as dirtyProductId, 
-               dp.productId as productId, 
-               dp.productVariantId as productVariantId, 
+
+$sql = "SELECT dst.dirtyProduct as dirtyProductId, 
+               dst.productId as productId, 
+               dst.productVariantId as productVariantId, 
                dpe.generalColor as color,
-               dp.shopId as shopId, 
+               dst.shopId as shopId, 
                ps.name as productSizeId, 
                `st`.`name` as storeHouse,
                dst.qty as qty,
               concat( ifnull(dp.extId, ''), '-', ifnull(ds.extSkuId, '')) AS externalId
-               from DirtyProduct dp 
+               from DirtySkuHasStoreHouse dst 
               
-               join DirtyProductExtend dpe on dp.id =dpe.dirtyProductId
+               join DirtyProductExtend dpe on dst.dirtyProductId =dpe.dirtyProductId
+               join DirtyProduct dp on dst.dirtyProductId =dp.id    
                join DirtySku  ds on dp.id = ds.dirtyProductId 
-                join DirtySkuHasStoreHouse dst on dp.id=dst.dirtyProductId AND dst.shopId=".$shopId."
                 join Storehouse st on dst.storeHouseId=st.id  
-                join ProductSize ps on dst.productSizeId=ps.id where dst.shopId=".$shopId." AND dp.productId=".$productId."  and dp.productVariantId!=".$productVariantId." 
+                join ProductSize ps on dst.productSizeId=ps.id where dst.shopId=".$shopId." AND dst.productId=".$productId."  and dst.productVariantId!=".$productVariantId." 
              
-                 group BY dst.shopId,dp.productId,dp.productVariantId Order BY concat(dp.productId,'-',dp.productVariantId,st.name) asc     
+                 group BY dst.shopId,dst.productId,dst.productVariantId Order BY concat(dst.productId,'-',dst.productVariantId,st.name) asc     
   ";
+
+
 $datone = [];
 $i = 0;
 $resultProduct = \Monkey::app()->dbAdapter->query($sql,[])->fetchAll();

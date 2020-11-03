@@ -27,24 +27,25 @@ foreach ($resShop as $shopResult) {
 }
 
 
-$sql = "SELECT dp.id as dirtyProductId, 
-               dp.productId as productId, 
-               dp.productVariantId as productVariantId, 
+
+$sql=" SELECT  dst.dirtyProductId as dirtyProductId,
+               dst.productId as productId, 
+               dst.productVariantId as productVariantId, 
                dpe.generalColor as color,
-               dp.shopId as shopId, 
-               ps.name as productSizeId, 
-               `st`.`name` as storeHouse,
-               dst.qty as qty
-               from DirtyProduct dp 
-              
-               join DirtyProductExtend dpe on dp.id =dpe.dirtyProductId
-               join DirtySku  ds on dp.id = ds.dirtyProductId 
-                join DirtySkuHasStoreHouse dst on dp.id=dst.dirtyProductId
-                join Storehouse st on dst.storeHouseId=st.id  
-                join ProductSize ps on dst.productSizeId=ps.id where dst.shopId=".$shopId."
-                and dp.productId=".$productId." and dp.productVariantId=".$productVariantId." 
-                 group BY dst.shopId,dst.qty        
-  ";
+               dst.shopId as shopId, 
+               dst.size as productSizeId,
+               `st`.`name` AS `storeHouse`,
+               dst.qty as qty,
+                `s`.`name` as shopName
+               from 
+                 DirtySkuHasStoreHouse dst 
+                 join  DirtyProductExtend dpe on dst.dirtyProductId=dpe.dirtyProductId  
+                 join Storehouse st on dst.storeHouseId=st.id  
+               left join Shop s on dst.shopId=s.id
+                join ProductSize ps on dst.productSizeId=ps.id where  dst.shopId=".$shopId." and   dst.productId='.$productId.' and dst.productVariantId='.$productVariantId.'
+                 group BY dst.storeHouseId,dst.qty,dst.size   Order BY ps.name,st.name asc";
+
+
 $datone = [];
 $i = 0;
 $resultProduct = \Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
