@@ -1,6 +1,7 @@
 <?php
 
 use bamboo\core\exceptions\BambooException;
+use FFMpeg;
 
 ini_set("memory_limit", "2000M");
 ini_set('max_execution_time', 0);
@@ -35,9 +36,14 @@ $time = microtime(true);
 \Monkey::app()->vendorLibraries->load("videoEditing");
 
 $ffmpeg = FFMpeg\FFMpeg::create();
+if (ENV=="DEV") {
+    $video = $ffmpeg->open('/media/sf_sites/iwespro/temp/video.mp4');
 
-$video = $ffmpeg->open('/media/sf_sites/iwespro/temp/video.mp4');
+    $video->addFilter(new \FFMpeg\Filters\Audio\SimpleFilter(array('-i ' . '/media/sf_sites/iwespro/temp/audio.mp3','-shortest')))
+        ->save(new \FFMpeg\Format\Video\X264(),'/media/sf_sites/iwespro/temp-remaster/testoutput.mp4');
+}else{
+    $video = $ffmpeg->open('/home/iwespro/public_html/temp/video.mp4');
 
-$video->addFilter(new \FFMpeg\Filters\Audio\SimpleFilter(array('-i ' . '/media/sf_sites/iwespro/temp/audio.mp3', '-shortest')))
-       ->save(new \FFMpeg\Format\Video\X264(), '/media/sf_sites/iwespro/temp-remaster/testoutput.mp4');
-
+    $video->addFilter(new \FFMpeg\Filters\Audio\SimpleFilter(array('-i ' . '/home/iwespro/public_html/temp/audio.mp3','-shortest')))
+        ->save(new \FFMpeg\Format\Video\X264(),'/home/iwespro/public_html/temp-remaster/testoutput.mp4');
+}
