@@ -1,4 +1,7 @@
 <?php
+
+use bamboo\core\exceptions\BambooException;
+
 ini_set("memory_limit", "2000M");
 ini_set('max_execution_time', 0);
 $ttime = microtime(true);
@@ -29,11 +32,10 @@ $time = microtime(true);
 $monkey->eventManager;
 var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
-$filenametoextrat='._.';
-$countPoint=substr_count($filenametoextrat, '.');
-if($countPoint==2){
-    $filenametoextrat=preg_replace('(.)', '_', $filenametoextrat, 1);
+$productRepo=\Monkey::app()->repoFactory->create('Product');
 
-}
-echo $filenametoextrat;
+    $product=$productRepo->findOneBy(['id'=>154420,'productVariantId'=>4656715]);
+    $url=$product->getDummyPictureUrl();
+   echo $url;
+
 
