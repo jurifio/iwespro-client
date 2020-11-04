@@ -33,14 +33,13 @@ $time = microtime(true);
 $monkey->eventManager;
 var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
-\Monkey::app()->vendorLibraries->load("videoEditing");
 
 $ffmpeg = FFMpeg\FFMpeg::create();
 if (ENV=="dev") {
     $video = $ffmpeg->open('/media/sf_sites/iwespro/temp/video.mp4');
 
-    $video->addFilter(new \FFMpeg\Filters\Audio\SimpleFilter(array('-i ' . '/media/sf_sites/iwespro/temp/audio.mp3','-shortest')))
-        ->save(new \FFMpeg\Format\Video\X264(),'/media/sf_sites/iwespro/temp-remaster/testoutput.mp4');
+    $video->addFilter(new FFMpeg\Filters\Audio\SimpleFilter(array('-i ' . '/media/sf_sites/iwespro/temp/audio.mp3','-shortest')))
+        ->save(new FFMpeg\Format\Video\X264(),'/media/sf_sites/iwespro/temp-remaster/testoutput.mp4');
 }else{
     $video = $ffmpeg->open('/home/iwespro/public_html/temp/video.mp4');
 
