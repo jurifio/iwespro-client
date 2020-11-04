@@ -36,7 +36,7 @@ $time = microtime(true);
 \Monkey::app()->vendorLibraries->load("videoEditing");
 
 $ffmpeg = FFMpeg\FFMpeg::create();
-if (ENV=="DEV") {
+if (ENV=="dev") {
     $video = $ffmpeg->open('/media/sf_sites/iwespro/temp/video.mp4');
 
     $video->addFilter(new \FFMpeg\Filters\Audio\SimpleFilter(array('-i ' . '/media/sf_sites/iwespro/temp/audio.mp3','-shortest')))
