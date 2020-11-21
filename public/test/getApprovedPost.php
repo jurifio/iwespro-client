@@ -22,11 +22,9 @@ $config=\Monkey::app()->cfg()->fetch('miscellaneous','amazonConfiguration');
 $data=[];
 $i=0;
 
-    $user=\Monkey::app()->repoFactory->create('User')->findOneBy(['email'=>$email]);
+    $user=\Monkey::app()->repoFactory->create('User')->findOneBy(['email'=>$_GET['email']]);
     if($user) {
         $operator = $user->id;
-
-
         $editorialPlanDetails = \Monkey::app()->repoFactory->create('EditorialPlanDetail')->findBy(['status' => 'Approved','userId' => $operator]);
         foreach ($editorialPlanDetails as $editorialPlanDetail) {
             $editorialPlanName = $editorialPlanDetail->editorialPlan->name;
