@@ -23,7 +23,7 @@ $data=[];
 $i=0;
 
     $user=\Monkey::app()->repoFactory->create('User')->findOneBy(['email'=>$email]);
-    if($user!=null) {
+    if($user) {
         $operator = $user->id;
 
 
