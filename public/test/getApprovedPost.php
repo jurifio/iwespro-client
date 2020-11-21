@@ -27,7 +27,7 @@ $i=0;
         $operator = $user->id;
 
 
-        $editorialPlanDetails = \Monkey::app()->repoFactory->create('EditorialPlanDetail')->findBy(['socialId' => 7,'status' => 'Approved','userId' => $operator]);
+        $editorialPlanDetails = \Monkey::app()->repoFactory->create('EditorialPlanDetail')->findBy(['status' => 'Approved','userId' => $operator]);
         foreach ($editorialPlanDetails as $editorialPlanDetail) {
             $editorialPlanName = $editorialPlanDetail->editorialPlan->name;
             $editorialPlanDetailId=$editorialPlanDetail->id;
