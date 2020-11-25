@@ -1,7 +1,7 @@
 {
     "subject": "Bestellung Pickyshop.com # {orderId}: Buchhaltung Banküberweisung Anfrage",
     "start": "<p>Hallo %s,</p>",
-    "content": "<p>vielen Dank für Ihre Bestellung! :-).</p><p>Bitte senden Sie zu mir eine Kopie die Zahlung; Ich gehe mit Ihrer Bestellung noch vor Erhalt der Gutschrift der Zahlung.</p><p>Die Versendung der Buchhaltung, als Bestätigung der Zahlung, beschleunigt den Versand.<br />Unsere Bankverbindung sind:</p><p>Bank:          CREDITO VALTELLINESE S.p.A.<br />Beneficiary: IWES snc<br />Iban:           IT51 W052 1668 8700 0000 0001 056<br />Bic/Swift:    BPCVIT2S</p>",
+    "content": "<p>vielen Dank für Ihre Bestellung! :-).</p><p>Bitte senden Sie zu mir eine Kopie die Zahlung; Ich gehe mit Ihrer Bestellung noch vor Erhalt der Gutschrift der Zahlung.</p><p>Die Versendung der Buchhaltung, als Bestätigung der Zahlung, beschleunigt den Versand.<br />Unsere Bankverbindung sind:</p><p>Bank:          CREDITO VALTELLINESE S.p.A.<br />Beneficiary: IWES snc<br />Iban:           IT54 O052 1613 4000 0000 0002 345<br />Bic/Swift:    BPCVIT2S</p>",
     "end": "<p style=\"font:Arial,sans-serif\">Vielen Dank dass Sie sich für uns entschieden haben und Ich hoffe, Sie bald wieder zu treffen<br /><br />MfG<br />%s<br /><br />Pickyshop.com<br />Kundenservice</p>",
     "footer": "<p style=\"font-size:9px\">If you have received this e-mail message in error and you are not registered to Pickyshop.com, please contact our Customer Care Department by deleting your account on Pickyshop.com.<br />Customer Service: support@pickyshop.com<br />Thanks,<br />Pickyshop.com</p>"
 }
