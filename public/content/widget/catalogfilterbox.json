@@ -22,7 +22,8 @@
                         "category",
                         "size",
                         "color",
-                        "tag"
+                        "tag",
+                        "tagExclusive"
                     ],
                     "sorting": [],
                     "offset": "0",
@@ -42,7 +43,8 @@
                         "category",
                         "brand",
                         "color",
-                        "tag"
+                        "tag",
+                        "tagExclusive"
                     ],
                     "sorting": [],
                     "offset": "0",
@@ -62,7 +64,8 @@
                         "category",
                         "size",
                         "brand",
-                        "tag"
+                        "tag",
+                        "tagExclusive"
                     ],
                     "sorting": [],
                     "offset": "0",
@@ -82,7 +85,8 @@
                         "category",
                         "size",
                         "brand",
-                        "tag"
+                        "tag",
+                        "tagExclusive"
                     ],
                     "sorting": [],
                     "offset": "0",

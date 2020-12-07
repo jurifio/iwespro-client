@@ -17,7 +17,8 @@
                         "color",
                         "brand",
                         "size",
-                        "tag"
+                        "tag",
+                        "tagExclusive"
                     ],
                     "offset": "0",
                     "limit": "32"

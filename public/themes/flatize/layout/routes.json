@@ -250,7 +250,6 @@
       "CEditorialImage.default.summer10",
       "CEditorialImage.default.summer11",
       "CEditorialImage.default.summer12"
-
     ]
   },
   "CFooter.home": {
@@ -507,6 +506,7 @@
       "CMobileGridToolbar.default.default",
       "CCatalogCategoryfilterbox.categories.category",
       "CCatalogFilterBox.default.tag",
+      "CCatalogFilterBox.default.tagExclusive",
       "CCatalogFilterBox.default.brand",
       "CCatalogFilterBox.default.color",
       "CCatalogFilterBox.default.size",
@@ -637,56 +637,55 @@
       "CBrandDirectoryNav.default.default"
     ]
   },
-    "__comment": "+++ CONTACTS+++",
-    "CContacts.default": {
-        "children": [
-            "CHead.default.default",
-            "CPage.contacts.default"
-        ]
+  "__comment": "+++ CONTACTS+++",
+  "CContacts.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.contacts.default"
+    ]
+  },
+  "CPage.contacts": {
+    "template": {
+      "name": "page.php"
     },
-    "CPage.contacts": {
-        "template": {
-            "name": "page.php"
-        },
-        "data": {
-            "default": {
-                "src": "json"
-            }
-        },
-        "children": [
-            "CHeader.home.default",
-            "CGoogleTagManager.default.default",
-            "CContent.contacts.default",
-            "CFooter.home.default",
-            "COverlay.home.default"
-        ],
-        "assets": {
-            "js": [
-                {
-                    "src": "/js/home.js",
-                    "options": {
-                        "defer": true,
-                        "async": true
-                    }
-                }
-            ]
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CContent.contacts.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
         }
+      ]
+    }
+  },
+  "CContent.contacts": {
+    "template": {
+      "name": "contacts.php"
     },
-    "CContent.contacts": {
-        "template": {
-            "name": "contacts.php"
-        },
-        "data": {
-            "default": {
-                "src": "json"
-            }
-        },
-        "children": [
-            "CContentTitle.default.contacts",
-            "CTextbox.simple.contacts"
-        ]
+    "data": {
+      "default": {
+        "src": "json"
+      }
     },
-
+    "children": [
+      "CContentTitle.default.contacts",
+      "CTextbox.simple.contacts"
+    ]
+  },
   "__comment": "+++ ARTICLE +++",
   "CArticle.default": {
     "children": [
@@ -959,6 +958,59 @@
       "CAddressDisplay.checkout.billing",
       "CAddressDisplay.checkout.shipping",
       "CPaymentDisplay.checkout.default"
+    ]
+  },
+  "__comment": "+++ CHECKOUTEXPRESS +++",
+  "CCheckoutexpress.default": {
+    "children": [
+      "CHead.default.default",
+      "CPage.checkoutexpress.default"
+    ]
+  },
+  "CPage.checkoutexpress": {
+    "template": {
+      "name": "page.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CHeader.home.default",
+      "CGoogleTagManager.default.default",
+      "CFooter.home.default",
+      "COverlay.home.default"
+    ],
+    "assets": {
+      "js": [
+        {
+          "src": "/js/home.js",
+          "options": {
+            "defer": true,
+            "async": true
+          }
+        }
+      ]
+    }
+  },
+  "CContent.checkoutexpress": {
+    "template": {
+      "name": "checkoutexpress.php"
+    },
+    "data": {
+      "default": {
+        "src": "json"
+      }
+    },
+    "children": [
+      "CContentTitle.default.checkoutexpress",
+      "CCartSummary.checkoutexpress.default",
+      "CCartSideSummaryExpress.checkoutexpress.default",
+      "CCouponBox.cart.default",
+      "CAddressDisplay.checkoutexpress.billing",
+      "CAddressDisplay.checkoutexpress.shipping",
+      "CPaymentDisplay.checkoutexpress.default"
     ]
   },
   "__comment": "+++ PAYMENT METHOD +++",
@@ -2543,6 +2595,25 @@
     },
     "children": []
   },
+  "CUserReturnsList.user": {
+    "template": {
+      "name": "userreturnslist.php"
+    },
+    "data": {
+      "default": {
+        "src": "mixed",
+        "repository": "Return",
+        "type": "collection",
+        "method": "AllReturns",
+        "params": [],
+        "args": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "999"
+      }
+    },
+    "children": []
+  },
   "__comment": "+++ CART AND CHECKOUT WIDGETS +++",
   "COrderDisplay.thankYou": {
     "template": {
@@ -3238,7 +3309,8 @@
           "brand",
           "size",
           "color",
-          "tag"
+          "tag",
+          "tagExclusive"
         ],
         "sorting": [],
         "offset": "0",
@@ -3271,7 +3343,8 @@
           "category",
           "size",
           "color",
-          "tag"
+          "tag",
+          "tagExclusive"
         ],
         "sorting": [],
         "offset": "0",
@@ -3285,7 +3358,8 @@
           "category",
           "brand",
           "color",
-          "tag"
+          "tag",
+          "tagExclusive"
         ],
         "sorting": [],
         "offset": "0",
@@ -3299,7 +3373,8 @@
           "category",
           "size",
           "brand",
-          "tag"
+          "tag",
+          "tagExclusive"
         ],
         "sorting": [],
         "offset": "0",
@@ -3313,7 +3388,23 @@
           "category",
           "size",
           "brand",
-          "tag"
+          "tag",
+          "tagExclusive"
+        ],
+        "sorting": [],
+        "offset": "0",
+        "limit": "20"
+      },
+      "tagExclusive": {
+        "src": "mixed",
+        "repository": "TagExclusive",
+        "method": "AppliedFilters",
+        "params": [
+          "category",
+          "size",
+          "brand",
+          "tag",
+          "tagExclusive"
         ],
         "sorting": [],
         "offset": "0",
@@ -3388,6 +3479,36 @@
         "sorting": [],
         "offset": "0",
         "limit": "40"
+      },
+      "sameInterest": {
+        "src": "mixed",
+        "repository": "Product",
+        "type": "collection",
+        "method": "SameInterest",
+        "params": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "40"
+      },
+      "sameLook": {
+        "src": "mixed",
+        "repository": "Product",
+        "type": "collection",
+        "method": "SameLook",
+        "params": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "40"
+      },
+      "sameProduct": {
+        "src": "mixed",
+        "repository": "Product",
+        "type": "collection",
+        "method": "SameProduct",
+        "params": [],
+        "sorting": [],
+        "offset": "0",
+        "limit": "40"
       }
     },
     "children": []
@@ -3406,7 +3527,8 @@
           "color",
           "brand",
           "size",
-          "tag"
+          "tag",
+          "tagExclusive"
         ],
         "sorting": [],
         "offset": "0",
@@ -3440,7 +3562,8 @@
           "color",
           "brand",
           "size",
-          "tag"
+          "tag",
+          "tagExclusive"
         ],
         "offset": "0",
         "limit": "32"
@@ -3478,7 +3601,9 @@
       "CProductphotopreview.detail.default",
       "CProductsummary.detail.default",
       "CProductgrid.catalogexcerpt.sameBrand",
-      "CProductgrid.catalogexcerpt.sameCategory"
+      "CProductgrid.catalogexcerpt.sameCategory",
+      "CProductgrid.catalogexcerpt.sameLook",
+      "CProductgrid.catalogexcerpt.sameProduct"
     ]
   },
   "CProductphotopreview.detail": {

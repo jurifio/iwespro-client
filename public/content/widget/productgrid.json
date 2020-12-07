@@ -34,7 +34,8 @@
                         "color",
                         "brand",
                         "size",
-                        "tag"
+                        "tag",
+                        "tagExclusive"
                     ],
                     "sorting": [],
                     "offset": "0",
