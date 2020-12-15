@@ -1,8 +1,13 @@
 <?php
 ini_set("display_errors",1);
 error_reporting(~0);
+if(ENV=='dev'){
+    require "/media/sf_sites/cartechiniNew/BlueSeal.php";
 
-require "/data/www/redpanda/htdocs/cartechinishop/BlueSeal.php";
+}else{
+    require "/home/iwespro/public_html/BlueSeal.php";
+}
+
 
 
 $ninetyNineMonkey = new BlueSeal('BlueSeal','cartechinishop','/data/www/redpanda');
