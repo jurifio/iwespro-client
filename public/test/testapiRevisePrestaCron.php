@@ -29,175 +29,25 @@ $time = microtime(true);
 $monkey->eventManager;
 var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
-$request='<?xml version="1.0" encoding="utf-8"?>
-<AddItemRequest xmlns="urn:ebay:apis:eBLBaseComponents">
-  <ErrorLanguage>it_IT</ErrorLanguage>
-  <WarningLevel>High</WarningLevel>
-  <Item>
-  <AutoPay>false</AutoPay>
-    <Country>IT</Country>
-    <Currency>EUR</Currency>
-    <PostalCode>62012</PostalCode>
-    <Location>Civitanova Marche</Location>
-    <BestOfferDetails>
-    <BestOfferEnabled>False</BestOfferEnabled>
-    </BestOfferDetails>
-    <PrimaryCategory>
-      <CategoryID>15709</CategoryID>
-    </PrimaryCategory>
-    <HitCounter>RetroStyle</HitCounter>
-    <Variations>
-      <VariationSpecificsSet>
-        <NameValueList>
-          <Name>Taglia</Name>
-          <Value>40</Value>
-          <Value>41</Value>
-          <Value>42</Value>
-          <Value>43</Value>
-          <Value>44</Value>
-          <Value>45</Value>
-        </NameValueList>
-        <NameValueList>
-          <Name>Color</Name>
-          <Value>nero</Value>
-        </NameValueList>
-        </VariationSpecificsSet>
-      <Variation>
-        <SKU>prestashop-2537-15461</SKU>
-        <StartPrice>179</StartPrice>
-        <Quantity>1</Quantity>
-      <VariationProductListingDetails>
-<EAN>9145472942739</EAN>
-<UPC>Non applicabile</UPC>
-      </VariationProductListingDetails>
-        <VariationSpecifics>
-          <NameValueList>
-            <Name>Taglia</Name>
-            <Value>40</Value>
-          </NameValueList>
-          <NameValueList>
-            <Name>Color</Name>
-            <Value>nero</Value>
-          </NameValueList>
-        </VariationSpecifics>
-      </Variation>
-      <Variation>
-        <SKU>prestashop-2537-15462</SKU>
-        <StartPrice currencyID="EUR">179</StartPrice>
-        <Quantity>1</Quantity>
-      <VariationProductListingDetails>
-<EAN>9145472942746</EAN>
-<UPC>Non applicabile</UPC>
-      </VariationProductListingDetails>
-        <VariationSpecifics>
-          <NameValueList>
-            <Name>Taglia</Name>
-            <Value>41</Value>
-          </NameValueList>
-          <NameValueList>
-            <Name>Color</Name>
-            <Value>nero</Value>
-          </NameValueList>
-        </VariationSpecifics>
-      </Variation>
-      <Variation>
-        <SKU>prestashop-2537-15463</SKU>
-        <StartPrice>179</StartPrice>
-        <Quantity>2</Quantity>
-      <VariationProductListingDetails>
-<EAN>9145472942753</EAN>
-<UPC>Non applicabile</UPC>
-      </VariationProductListingDetails>
-        <VariationSpecifics>
-          <NameValueList>
-            <Name>Taglia</Name>
-            <Value>42</Value>
-          </NameValueList>
-          <NameValueList>
-            <Name>Color</Name>
-            <Value>nero</Value>
-          </NameValueList>
-        </VariationSpecifics>
-      </Variation>
-      <Variation>
-        <SKU>prestashop-2537-15464</SKU>
-        <StartPrice>179</StartPrice>
-        <Quantity>2</Quantity>
-      <VariationProductListingDetails>
-<EAN>9145472942760</EAN>
-<UPC>Non applicabile</UPC>
-      </VariationProductListingDetails>
-        <VariationSpecifics>
-          <NameValueList>
-            <Name>Taglia</Name>
-            <Value>43</Value>
-          </NameValueList>
-          <NameValueList>
-            <Name>Color</Name>
-            <Value>nero</Value>
-          </NameValueList>
-        </VariationSpecifics>
-      </Variation>
-      <Variation>
-        <SKU>prestashop-2537-15465</SKU>
-        <StartPrice>179</StartPrice>
-        <Quantity>2</Quantity>
-      <VariationProductListingDetails>
-<EAN>9145472942777</EAN>
-<UPC>Non applicabile</UPC>
-      </VariationProductListingDetails>
-        <VariationSpecifics>
-          <NameValueList>
-            <Name>Taglia</Name>
-            <Value>44</Value>
-          </NameValueList>
-          <NameValueList>
-            <Name>Color</Name>
-            <Value>nero</Value>
-          </NameValueList>
-        </VariationSpecifics>
-      </Variation>
-      <Variation>
-        <SKU>prestashop-2537-15466</SKU>
-        <StartPrice>179</StartPrice>
-        <Quantity>1</Quantity>
-      <VariationProductListingDetails>
-<EAN>9145472942784</EAN>
-<UPC>Non applicabile</UPC>
-      </VariationProductListingDetails>
-        <VariationSpecifics>
-          <NameValueList>
-            <Name>Taglia</Name>
-            <Value>45</Value>
-          </NameValueList>
-          <NameValueList>
-            <Name>Color</Name>
-            <Value>nero</Value>
-          </NameValueList>
-        </VariationSpecifics>
-      </Variation>
-    </Variations>
-    <ListingDuration>GTC</ListingDuration>
-    <ListingType>FixedPriceItem</ListingType>
-<PictureDetails>      <PictureURL>https://dev.iwes.shop/9688/ebay.jpg</PictureURL>
-      <PictureURL>https://dev.iwes.shop/9689/ebay.jpg</PictureURL>
-      <PictureURL>https://dev.iwes.shop/9690/ebay.jpg</PictureURL>
-      <PictureURL>https://dev.iwes.shop/9691/ebay.jpg</PictureURL>
-</PictureDetails>    <ItemSpecifics>
-      <NameValueList>
-        <Name><![CDATA[MPN]]></Name>
-        <Value><![CDATA[185887-5979540]]></Value>
+$request='<?xml version="1.0" encoding="utf-8"?><ReviseFixedPriceItem xmlns="urn:ebay:apis:eBLBaseComponents"><ErrorLanguage>it_IT</ErrorLanguage><WarningLevel>High</WarningLevel><Item><ItemID>233794650043</ItemID><Country>IT</Country><Currency>EUR</Currency><PostalCode>62012</PostalCode><Location>Civitanova Marche</Location><BestOfferDetails><BestOfferEnabled>False</BestOfferEnabled></BestOfferDetails><PrimaryCategory><CategoryID>63866</CategoryID></PrimaryCategory><HitCounter>RetroStyle</HitCounter><Variations><VariationSpecificsSet><NameValueList><Name>Taglia</Name><Value>XS</Value><Value>XS</Value><Value>S</Value><Value>S</Value></NameValueList><NameValueList><Name>Color</Name><Value>nero</Value></NameValueList></VariationSpecificsSet><Variation><SKU>188628-6200741-129</SKU><StartPrice>140.00</StartPrice><Quantity>2</Quantity><VariationProductListingDetails><EAN>11143853</EAN><UPC>Non applicabile</UPC></VariationProductListingDetails><VariationSpecifics><NameValueList><Name>Taglia</Name><Value>XS</Value></NameValueList><NameValueList><Name>Color</Name><Value>nero</Value></NameValueList></VariationSpecifics></Variation><Variation><SKU>188628-6200741-130</SKU><StartPrice>140.00</StartPrice><Quantity>1</Quantity><VariationProductListingDetails><EAN>11143854</EAN><UPC>Non applicabile</UPC></VariationProductListingDetails><VariationSpecifics><NameValueList><Name>Taglia</Name><Value>S</Value></NameValueList><NameValueList><Name>Color</Name><Value>nero</Value></NameValueList></VariationSpecifics></Variation></Variations><PictureDetails><PictureURL>https://cdn.iwes.it/manila-grace/188628-6200741-001-1124.jpg</PictureURL><PictureURL>https://cdn.iwes.it/manila-grace/188628-6200741-002-1124.jpg</PictureURL><PictureURL>https://cdn.iwes.it/manila-grace/188628-6200741-003-1124.jpg</PictureURL></PictureDetails><ItemSpecifics><NameValueList><Name><![CDATA[MPN]]></Name><Value><![CDATA[188628-6200741-130]]></Value></NameValueList><NameValueList><Name><![CDATA[Marca]]></Name><Value><![CDATA[Manila Grace]]></Value></NameValueList><NameValueList>
+        <Name><![CDATA[Materiale Tomaia]]></Name>
+        <Value><![CDATA[non applicabile]]></Value>
+      </NameValueList><NameValueList>
+        <Name><![CDATA[Larghezza della scarpa]]></Name>
+        <Value><![CDATA[non applicabile]]></Value>
       </NameValueList>
       <NameValueList>
-        <Name><![CDATA[Marca]]></Name>
-        <Value><![CDATA[P448]]></Value>
+        <Name><![CDATA[Tipo]]></Name>
+        <Value><![CDATA[non applicabile]]></Value>
       </NameValueList>
-    
-    </ItemSpecifics>
-    <ConditionID>1000</ConditionID>
-    <Title><![CDATA[Pluto Rita Basse P448 JHON WHITE BLACK nero]]></Title>
-    <Description>
-      <![CDATA[<!DOCTYPE html>
+       <NameValueList>
+        <Name><![CDATA[Modello]]></Name>
+        <Value><![CDATA[non applicabile]]></Value>
+      </NameValueList>
+        <NameValueList>
+        <Name><![CDATA[Reparto]]></Name>
+        <Value><![CDATA[non applicabile]]></Value>
+      </NameValueList><NameValueList><Name><![CDATA[Vintage]]></Name><Value><![CDATA[non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Allacciatura]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Articolo modificato]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Colore esatto]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Colore principale]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Descrizione della modifica]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Fantasia]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Lunghezza]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Materiale]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Paese di origine]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Scollatura]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Stagione]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Stile]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Stile lavorazione a maglia]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Taglia]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Tema]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Tipo di manica]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList><NameValueList><Name><![CDATA[Tipo di taglia]]></Name><Value><![CDATA[Non applicabile]]></Value></NameValueList></ItemSpecifics><ConditionID>1000</ConditionID><Title><![CDATA[Manila Grace Sconto del 30% da 200.00€ a 140.00€ M308WU nero]]></Title><Description><![CDATA[<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -597,46 +447,15 @@ footer {
 </li>
 </ul>
 <img src="https://wearephoenixteam.com/ebay/free-templates/images/temp6/gif-img.gif" class="gif_img" alt="" /></section>
-<section class="title">
-<h2>Basse P448 JHON WHITE BLACK nero</h2>
-</section>
-<section class="reference">
-<h2>185887-5979540</h2>
-</section>
-<section class="ean13">
-<h2>9145472942722</h2>
-</section>
-<section class="image_gallery" margin-top:="">
-<div class="container">
-<div class="white-box"></div>
-<ul class="thumbnails">
-<li><input type="radio" name="select" id="image1" checked="checked" />
-<div class="item-hugger"><img src="https://dev.iwes.shop/9688/ebay.jpg" class="bodyMainImageProductPrestashop"/><label for="image1"></label></div>
-<div class="gallery_content"><img src="https://dev.iwes.shop/9688/ebay.jpg" class="bodyMainImageProductPrestashop"/></div>
-</li>
-<li class="is-active"><input type="radio" name="select" id="image2" />
-<div class="item-hugger"><img src="https://dev.iwes.shop/9688/ebay.jpg" class="bodyFirstMediumImageProductPrestashop"/><label for="image2"></label></div>
-<div class="gallery_content"><img src="https://dev.iwes.shop/9688/ebay.jpg" class="bodyFirstMediumImageProductPrestashop"/></div>
-</li>
-<li><input type="radio" name="select" id="image3" />
-<div class="item-hugger"><img src="https://dev.iwes.shop/9689/ebay.jpg" class="bodyMediumImageProductPrestashop"/> <label for="image3"></label></div>
-<div class="gallery_content"><img src="https://dev.iwes.shop/9689/ebay.jpg" class="bodyMediumImageProductPrestashop"/></div>
-</li>
-<li><input type="radio" name="select" id="image4" />
-<div class="item-hugger"><img src="https://dev.iwes.shop/9690/ebay.jpg" class="bodyMediumImageProductPrestashop"/><label for="image4"></label></div>
-<div class="gallery_content"><img src="https://dev.iwes.shop/9690/ebay.jpg" class="bodyMediumImageProductPrestashop"/></div>
-</li>
-</ul>
-</div>
-</section>
+<section class="title"><h2>Manila Grace Sconto del 30% da 200.00€ a 140.00€ M308WU nero</h2></section>
+<section class="reference"><h2>188628-6200741</h2></section>
+<section class="ean13"><h2></h2></section>
 <section class="temp_content">
 <h2>Descrizione Prodotto</h2>
 <div class="description">
 <div vocab="https://schema.org/" typeof="Product">
 <p>descrizione</p>
-</div>
-<p>Basse P448 JHON WHITE BLACK nero<br /></p>
-</div>
+</div><p>Manila Grace Sconto del 30% da 200.00€ a 140.00€ M308WU nero<br/></p></div>
 </section>
 <section class="vertabs">
 <ul class="css_tab">
@@ -645,15 +464,7 @@ footer {
 <h2>MODALITA\'</h2>
 <p><br /> SPEDIZIONE IMMEDIATA ANCHE IN CONTRASSEGNO</p>
 <p>ACQUISTA ORA E RICEVI IN 24/48 ORE !!! (sabato e domenica esclusi)</p>
-<h2><a name="disponibilita-dei-prodotti"></a>Disponibilit&agrave; dei prodotti</h2>
-<p>Ricevuto l\'ordine, Cartechini Group snc procede, prima della spedizione, al controllo qualit&agrave; e alla conferma mediante e-mail dell\'ordine in lavorazione. Qualora gli articoli ordinati non siano pi&ugrave; disponibili o non abbiano superato il controllo qualit&agrave; ne daremo immediata comunicazione al cliente proponendo possibili alternative.</p>
-<h2><a name="evasione-degli-ordini"></a>Evasione degli ordini</h2>
-<p>Gli ordini saranno evasi entro 48 ore dall&rsquo;esito positivo del pagamento. E\' facolt&agrave; di Cartechini Group snc rifiutare ordini a chiunque per qualsiasi motivo.</p>
-<h2><a name="modalita-di-spedizione"></a>Modalit&agrave; di spedizione</h2>
-<p>Tutte le consegne effettuate da Cartechini Group snc sono coperte da assicurazione contro il furto e danni accidentali. Ritirata la consegna la copertura assicurativa si estingue.</p>
-<h2><a name="consegna"></a>Consegna</h2>
-<p>Gli ordini verranno spediti da Cartechini Group snc, da Luned&igrave; al Venerd&igrave; dalle 9:00 CET alle 17:30 CET.</p>
-<p>Gli ordini effettuati durante il fine settimana saranno processati il luned&igrave; successivo.</p>
+<h2><a name="disponibilita-dei-prodotti"></a>Disponibilit&agrave; dei prodotti</h2><p>Ricevuto l\'ordine, Cartechini Group snc procede, prima della spedizione, al controllo qualit&agrave; e alla conferma mediante e-mail dell\'ordine in lavorazione. Qualora gli articoli ordinati non siano pi&ugrave; disponibili o non abbiano superato il controllo qualit&agrave; ne daremo immediata comunicazione al cliente proponendo possibili alternative.</p><h2><a name="evasione-degli-ordini"></a>Evasione degli ordini</h2><p>Gli ordini saranno evasi entro 48 ore dall&rsquo;esito positivo del pagamento. E\' facolt&agrave; Cartechini Group snc rifiutare ordini a chiunque per qualsiasi motivo.</p><h2><a name="modalita-di-spedizione"></a>Modalit&agrave; di spedizione</h2><p>Tutte le consegne effettuate da Cartechini Group snc  sono coperte da assicurazione contro il furto e danni accidentali. Ritirata la consegna la copertura assicurativa si estingue.</p><h2><a name="consegna"></a>Consegna</h2><p>Gli ordini verranno spediti da Cartechini Group snc, da Luned&igrave; al Venerd&igrave; dalle 9:00 CET alle 17:30 CET.</p><p>Gli ordini effettuati durante il fine settimana saranno processati il luned&igrave; successivo.</p>
 <p>Gli ordini saranno processati entro le 48 ore dalla ricezione del pagamento per ordini ricevuti entro le ore 11:30 CET.</p>
 <p>Informiamo che non effettuiamo spedizioni verso caselle postali.</p>
 <h3>Spedizioni</h3>
@@ -740,9 +551,7 @@ footer {
 <h2><a name="paypal"></a>PayPal</h2>
 <p>In caso di pagamento tramite PayPal verrai automaticamente trasferito alla pagina di pagamento PayPal. Se si &egrave; gi&agrave; clienti PayPal, sar&agrave; sufficiente accedere con i propri dati e confermare il pagamento. Se non si possiede un conto PayPal, &egrave; possibile aprirne uno e confermare il pagamento.</p>
 <h2><a name="bonifico-bancario"></a>Bonifico bancario</h2>
-<p>Durante il processo di acquisto &egrave; possibile scegliere &ldquo;Bonifico Bancario&rdquo; come modalit&agrave; di pagamento. Il Cliente riceve automaticamente una email contenente i dati bancari di Cartechinishop.com. I prodotti ordinati verranno riservati in attesa dell&rsquo;arrivo del bonifico bancario sul conto. Il cliente dovr&agrave; inviare via email copia del pagamento entro 48 ore oltrepassate le quali l&rsquo;ordine verr&agrave; automaticamente cancellato. Scegliendo la &ldquo;modalit&agrave; di pagamento&rdquo; Bonifico Bancario dovr&agrave; trasferire il totale dell&rsquo;ordine al seguente conto bancario, indicando il numero dell&rsquo;ordine:</p>
-<p>CARTECHINI GROUP S.N.C DI CARTECHINI GIANLUCA & C.<br /> IBAN: IT68X0521613400000000001868</p>
-<p>L\'ordine sar&agrave; spedito subito dopo la ricezione dell&rsquo;accredito sul nostro conto bancario.</p>
+<p>Durante il processo di acquisto &egrave; possibile scegliere &ldquo;Bonifico Bancario&rdquo; come modalit&agrave; di pagamento. Il Cliente riceve automaticamente una email contenente i dati bancari di Cartechinishop.com. I prodotti ordinati verranno riservati in attesa dell&rsquo;arrivo del bonifico bancario sul conto. Il cliente dovr&agrave; inviare via email copia del pagamento entro 48 ore oltrepassate le quali l&rsquo;ordine verr&agrave; automaticamente cancellato. Scegliendo la &ldquo;modalit&agrave; di pagamento&rdquo; Bonifico Bancario dovr&agrave; trasferire il totale dell&rsquo;ordine al seguente conto bancario, indicando il numero dell&rsquo;ordine:</p><p>Cartechini Group snc<br /> IBAN:IT68X0521613400000000001868</p><p>L\'ordine sar&agrave; spedito subito dopo la ricezione dell&rsquo;accredito sul nostro conto bancario.</p>
 <h2><a name="contrassegno"></a>Contrassegno</h2>
 <p>Il pagamento con contrassegno &egrave; valido solo per i seguenti paesi: <strong>Italia</strong> e per importi inferiori a 1.000 EUR</p>
 <p>Tramite questo metodo di pagamento pagherai il totale dell\'ordine direttamente al corriere al momento della consegna. Ricordati di preparare l\'importo esatto dell\'ordine in quanto il corriere non &egrave; autorizzato a dare resto. Non &egrave; possibile pagare il contrassegno con assegno bancario di nessun genere</p>
@@ -769,8 +578,7 @@ footer {
 </li>
 <li><input id="tab7" class="css-tab" name="tab" type="radio" /> <label for="tab7" class="tab-label">CONTATTI</label>
 <div id="tab-content7" class="tab-content">
-<h2>CONTATTACI</h2>
-<p>tel. +39 02 379 20 266<br /> &nbsp;mob. +39 327 55 90 989<br /> &nbsp;email.&nbsp;support@cartechinishop.com&nbsp;</p>
+<h2>CONTATTACI</h2><p>tel. +39 02-379 20 266<br /> &nbsp;mob. +39 327 55 90 989<br /> &nbsp;email.&nbsp; support@iwes.it&nbsp;</p>
 </div>
 </li>
 </ul>
@@ -799,11 +607,7 @@ footer {
 <table valign="center" align="center" width="100%">
 <tbody>
 <tr>
-<td align="left" style="background: #323b47; font-color: #ffffff;">
-<p>Copyright &copy; Cartechini Group snc | All Rights Reserved</p>
-</td>
-<td align="right" style="background: #323b47;"><img width="150" height="35" src="https://www.iwes.it/wp-content/uploads/2018/09/Logo2.png" /></td>
-</tr>
+<td align="left" style="background: #323b47; font-color: #ffffff;"><p>Copyright &copy; Cartechini Group snc | All Rights Reserved</p></td><td align="right" style="background: #323b47;"><img width="150" height="35" src="https://www.cartechinishop.com/assets/img/logowideCartechini.png" /></td></tr>
 </tbody>
 </table>
 </footer>
@@ -854,7 +658,7 @@ footer {
 </body>
 </html><div style="font-size: small; visibility:hidden;">
 <center>
-<span style="font-size: small; color: #28BFB3;">Prestalia</span>
+<span style="font-size: small; color: #28BFB3;">IWES</span>
 <em> e-commerce solutions.</em>
 </center>
 </div>
@@ -863,22 +667,11 @@ footer {
 	</tr>
 </table><div style="font-size: small; visibility:hidden;">
 <center>
-<span style="font-size: small; color: #28BFB3;">Prestalia</span>
+<span style="font-size: small; color: #28BFB3;">Iwes</span>
 <em> e-commerce solutions.</em>
 </center>
 </div>]]>
-    </Description>
-<Storefront><StoreCategoryID>4895391011</StoreCategoryID></Storefront>    <PostalCode>62012</PostalCode>
-    <Location>Civitanova Marche</Location>
-        <DispatchTimeMax>2</DispatchTimeMax>
-    <PaymentMethods>PayPal</PaymentMethods>
-    <PayPalEmailAddress>transazioni@cartechinishop.com</PayPalEmailAddress>
-        <SellerProfiles> 
-        <SellerPaymentProfile> 
-         <PaymentProfileID>142598637016</PaymentProfileID>
-         <PaymentProfileName>PayPal:Bonifico bancario accettato:Copy (3)</PaymentProfileName>
-        </SellerPaymentProfile> 
-        <SellerReturnProfile> 
+    </Description><Storefront><StoreCategoryID>35937982011</StoreCategoryID></Storefront><PostalCode>62012</PostalCode><Location>Civitanova Marche</Location><DispatchTimeMax>2</DispatchTimeMax><PaymentMethods>PayPal</PaymentMethods><PayPalEmailAddress>transazioni@cartechinishop.com</PayPalEmailAddress><SellerProfiles><SellerPaymentProfile><PaymentProfileID>142598637016</PaymentProfileID> <PaymentProfileName>PayPal:Bonifico bancario accettato:Copy (3)</PaymentProfileName></SellerPaymentProfile> <SellerReturnProfile> 
          <ReturnProfileID>147965984016</ReturnProfileID>
          <ReturnProfileName>Restituzione accettata,Acquirente,30 giorni</ReturnProfileName>
         </SellerReturnProfile> 
@@ -886,15 +679,11 @@ footer {
          <ShippingProfileID>140157110016</ShippingProfileID>
          <ShippingProfileName>Tariffa fissa:Altro corriere Gratis/UE 10/EXUE 40</ShippingProfileName>
         </SellerShippingProfile> 
-        </SellerProfiles>
-     <SiteId>101</SiteId>    
-    <Site>Italy</Site>
-  </Item>
-  <RequesterCredentials>
-    <eBayAuthToken>AgAAAA**AQAAAA**aAAAAA**11TMXA**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6AFlIekDZKGpw2dj6x9nY+seQ**2noBAA**AAMAAA**e4WFyEzST7194ENmESCHB2uW8jxU5xxolrf7Nzy/8LOnKXWp5+PXmWQ6D7kl6eETCU9wshzpVtNTheq7+Wj99W19oACUqe2fTQgzWPiS1o0UlUgUvcdx8nvsVRBbZN/fuSSd12v+bZ9P7gukf09DSHq6wXuhmLxkx8nlrBmHXUBLgYT4e9tMkrGwASQq3uEdoHuUlihbwQxsOqLNv1U9yz0OO30FY7xvOvHR137Lz5CVW9q2IdjSsY45MmAMU8UbMsebDVruoKU59rRTk1kRqrzypuZXB8oo0qq2HNgPzHDBzr70S63ZVfg5QOMunvAIQOfTRGTjy4Jcl/YnIOsZclQRQbPLngZemCouDL+HoybdDKxtq/sSAVBV3EurGYGBYgsRVPv7WBmaPW1LJ5IfQhOosV3Tq9b7CDWupzzxFO9S5lpg4VGts+lsy04dEo5eMUgjWKeofdtMdkOSu2WaEDrFpR4L+kVYcZytqmDFipHZ4crpFhW++gzQthXtOi5wYyhjvEzf6Y82aD9tS9io/TYAiHhzUZhNOv3ofZQRyuJ5rkNwTqbaiqJuQJ7ZLtwnKO+o6cYi7QyJ928t8UEgmzoxvaA5pX1qmUbryz9b8lnPpUeVImOcxPKms8QS6/yL+Hj9iSXBADvcSGvU0lM4Rj6KRTPRsehSCIcWd2pQZ3SE++7ql13AHEyiwlHzvM+h+XM6yEpo40yo7EcwjNSWxqcsh6J+Hg4IJuFDlS5zW21mnz/0mBIaX7r8efcUnR+v</eBayAuthToken>
+        </SellerProfiles> <Site>Italy</Site></Item><RequesterCredentials>
+    <eBayAuthToken>v^1.1#i^1#r^1#p^3#I^3#f^0#t^Ul4xMF8xOjk3MDVGODY4MkI3QUI4QkZGNzlGRTAwMjQwMjk4NkI4XzBfMSNFXjI2MA==</eBayAuthToken>
   </RequesterCredentials>
   <WarningLevel>High</WarningLevel>
-</AddItemRequest>
+</ReviseFixedPriceItem>
 ';
 $devID = '9c29584f-1f9e-4c60-94dc-84f786d8670e';
 $appID = 'VendiloS-c310-4f4c-88a9-27362c05ea78';
@@ -902,7 +691,7 @@ $certID = '3050bb00-db24-4842-999c-b943deb09d1a';
 $siteID=101;
 
 $apiUrl = 'https://api.ebay.com/ws/api.dll';
-$apiCall = 'AddItem';
+$apiCall = 'ReviseFixedPriceItem';
 $compatibilityLevel = 741;
 
 $runame = 'Vendilo_SpA-VendiloS-c310-4-prlqnbrjv';
@@ -944,7 +733,8 @@ curl_setopt($connection, CURLOPT_RETURNTRANSFER, 1);
 
 // Send the Request
 $response = curl_exec($connection);
-var_dump($response);$ebayOrders = new \SimpleXMLElement($response);
+var_dump($response);
+$ebayOrders = new \SimpleXMLElement($response);
 
 $reponseNewProduct = new \SimpleXMLElement($response);
 
