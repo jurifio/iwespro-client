@@ -101,7 +101,7 @@ $ebayOrders = new \SimpleXMLElement($response);
 
     foreach( $ebayOrders->ItemArray->Item as $val){
         echo $val->ItemID.'<br>';
-    }
+      }
 
 
 
