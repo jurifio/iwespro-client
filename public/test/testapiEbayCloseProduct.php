@@ -31,7 +31,7 @@ $request .='<EndFixedPriceItemRequest xmlns="urn:ebay:apis:eBLBaseComponents">';
 $request .='<RequesterCredentials>';
 $request .='<eBayAuthToken>v^1.1#i^1#r^1#p^3#I^3#f^0#t^Ul4xMF8xOjk3MDVGODY4MkI3QUI4QkZGNzlGRTAwMjQwMjk4NkI4XzBfMSNFXjI2MA==</eBayAuthToken>';
 $request .='</RequesterCredentials><ErrorLanguage>it_IT</ErrorLanguage><WarningLevel>High</WarningLevel>';
-$request .='<ItemID>333800460762</ItemID>';
+$request .='<ItemID>333838630388</ItemID>';
 $request .='<EndingReason>NotAvailable</EndingReason><WarningLevel>High</WarningLevel><Version>1149</Version>';
 $request .='</EndFixedPriceItemRequest>';
 
