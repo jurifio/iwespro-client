@@ -97,7 +97,7 @@ curl_setopt($connection,CURLOPT_RETURNTRANSFER,1);
 // Send the Request
 $response = curl_exec($connection);
 $ebayOrders = new \SimpleXMLElement($response);
-
+echo $ebayOrders->Ack.'<br>';
 $ordersArray = $ebayOrders->OrderArray;
 foreach ($ordersArray as $orders) {
 
