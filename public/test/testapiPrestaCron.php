@@ -891,7 +891,7 @@ footer {
     <Site>Italy</Site>
   </Item>
   <RequesterCredentials>
-    <eBayAuthToken>AgAAAA**AQAAAA**aAAAAA**11TMXA**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6AFlIekDZKGpw2dj6x9nY+seQ**2noBAA**AAMAAA**e4WFyEzST7194ENmESCHB2uW8jxU5xxolrf7Nzy/8LOnKXWp5+PXmWQ6D7kl6eETCU9wshzpVtNTheq7+Wj99W19oACUqe2fTQgzWPiS1o0UlUgUvcdx8nvsVRBbZN/fuSSd12v+bZ9P7gukf09DSHq6wXuhmLxkx8nlrBmHXUBLgYT4e9tMkrGwASQq3uEdoHuUlihbwQxsOqLNv1U9yz0OO30FY7xvOvHR137Lz5CVW9q2IdjSsY45MmAMU8UbMsebDVruoKU59rRTk1kRqrzypuZXB8oo0qq2HNgPzHDBzr70S63ZVfg5QOMunvAIQOfTRGTjy4Jcl/YnIOsZclQRQbPLngZemCouDL+HoybdDKxtq/sSAVBV3EurGYGBYgsRVPv7WBmaPW1LJ5IfQhOosV3Tq9b7CDWupzzxFO9S5lpg4VGts+lsy04dEo5eMUgjWKeofdtMdkOSu2WaEDrFpR4L+kVYcZytqmDFipHZ4crpFhW++gzQthXtOi5wYyhjvEzf6Y82aD9tS9io/TYAiHhzUZhNOv3ofZQRyuJ5rkNwTqbaiqJuQJ7ZLtwnKO+o6cYi7QyJ928t8UEgmzoxvaA5pX1qmUbryz9b8lnPpUeVImOcxPKms8QS6/yL+Hj9iSXBADvcSGvU0lM4Rj6KRTPRsehSCIcWd2pQZ3SE++7ql13AHEyiwlHzvM+h+XM6yEpo40yo7EcwjNSWxqcsh6J+Hg4IJuFDlS5zW21mnz/0mBIaX7r8efcUnR+v</eBayAuthToken>
+    <eBayAuthToken>v^1.1#i^1#r^1#p^3#I^3#f^0#t^Ul4xMF8xOjk3MDVGODY4MkI3QUI4QkZGNzlGRTAwMjQwMjk4NkI4XzBfMSNFXjI2MA==</eBayAuthToken>
   </RequesterCredentials>
   <WarningLevel>High</WarningLevel>
 </AddItemRequest>
