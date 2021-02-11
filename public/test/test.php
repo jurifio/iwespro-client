@@ -38,7 +38,7 @@ $productRepo=\Monkey::app()->repoFactory->create('Product');
     $url=$product->getDummyPictureUrl();
    echo $url;
 
-$timeStartMaskCompare=(new \DateTime("next day this month last  year midnight"))->format('Y-m-d H:i:s');
+$timeStartMaskCompare=(new \DateTime("this day of this month last  year midnight"))->format('Y-m-d H:i:s');
 echo $timeStartMaskCompare;
 
 
