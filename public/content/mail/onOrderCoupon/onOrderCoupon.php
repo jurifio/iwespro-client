@@ -25,7 +25,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="center"
                                     style="display: inline-block; padding: 20px 0px 10px; margin: 0px;" class="tdBlock">
                                     <a href="<?php echo $shopSite ?>" target="_blank">
-                                        <img src="/assets/img/<?php echo $logoSite;?>" alt="" height="80"
+                                        <img src="<?php echo $shopSite.'/assets/img/'.$logoSite;?>" alt="" height="80"
                                              border="0"
                                              style="border-width: 0px; border-style: none; border-color: transparent; font-size: 12px; display: block;"/>
                                     </a>
@@ -54,7 +54,7 @@ use bamboo\core\theming\CMailerHelper;
                                     style="padding: 30px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
                                         Ciao  <?php echo $userName ?>,<br>
-                                        Abbiamo il piacere di rilasciare il seguente <b>coupong</b> del valore <?php echo (($amountTypeRemote=='P')? 'del '.$amountCouponRemote.' %': 'di '.$amountCouponRemote. 'Euro');?>
+                                        Abbiamo il piacere di rilasciare il seguente <b>coupon</b> del valore <?php echo (($amountTypeRemote=='P')? 'del '.$amountCouponRemote.' %': 'di '.$amountCouponRemote. 'Euro');?>
                                     </span>
                                 </td>
                             </tr>
