@@ -1,13 +1,4 @@
 {
-    "subject": "Kontoaktivierung",
-    "content": [
-        "<p>Vielen Dank für die Aktivierung Ihres Kontos!</p>",
-        "<p>Der Gutscheincode im Wert von amoun Rabatt ist: <strong>cod</strong></p>",
-        "<p>Der Gutschein ist gültig bis zum valid .</p>",
-        "<p>&nbsp;</p>",
-        "<p>Wenn Sie irrtümlich eine E-Mail von thomasboutique.it erhalten haben und Sie sind nicht im thomasboutique.it registriert, kontaktieren Sie bitte Kundendienst. In diesem Fall werden der Kontolöschung.</p>",
-        "<p>Kundenservice: support-iwes@thomasboutique.it</p>",
-        "<p>Vielen Dank,</p>",
-        "<p>thomasboutique.it</p>"
-    ]
+    "subject": "Your Coupon",
+    "content": []
 }

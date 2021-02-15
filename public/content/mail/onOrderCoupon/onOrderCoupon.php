@@ -54,7 +54,7 @@ use bamboo\core\theming\CMailerHelper;
                                     style="padding: 30px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
                                         Ciao  <?php echo $userName ?>,<br>
-                                        Abbiamo il piacere di rilasciare il seguente <b>coupong</b> del valore <?php echo (($amountType=='P')? 'del '.$amount.' %': 'di '.$amount. 'Euro');?>
+                                        Abbiamo il piacere di rilasciare il seguente <b>coupong</b> del valore <?php echo (($amountTypeRemote=='P')? 'del '.$amountCouponRemote.' %': 'di '.$amountCouponRemote. 'Euro');?>
                                     </span>
                                 </td>
                             </tr>
@@ -78,7 +78,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 20px 10px 0; margin: 0px; line-height: 1.5; font-size: 18px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:800;color:#3A3A3A; line-height:1.2;">
-                                    il Coupon Vale solo su articoli non in saldo e scadrà il <?php echo $validThru;?>
+                                    il Coupon Vale solo su articoli non in saldo e scadrà il <?php echo $couponValidThruEmail;?>
                                     </span>
                                 </td>
                             </tr>
@@ -86,7 +86,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-                                   Grazie per aver scelto <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2; font-weight: 600"><?php echo strtoupper($shopName)?></span>
+                                   Grazie per aver scelto <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2; font-weight: 600"><?php echo strtoupper($nameShop)?></span>
                                     </span>
                                 </td>
                             </tr>
@@ -104,7 +104,7 @@ use bamboo\core\theming\CMailerHelper;
                                     style="padding: 30px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
                                         Hi  <?php echo $userName ?>,<br>
-                                        We have pleasure to release for you a  <b>coupon</b> with value of  <?php echo (($amountType=='P')? ' '.$amount.' %': ' '.$amount. 'Euro');?>
+                                        We have pleasure to release for you a  <b>coupon</b> with value of  <?php echo (($amountTypeRemote=='P')? ' '.$amountCouponRemote.' %': ' '.$amountCouponRemote. 'Euro');?>
                                     </span>
                                 </td>
                             </tr>
@@ -128,7 +128,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 20px 10px 0; margin: 0px; line-height: 1.5; font-size: 18px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:800;color:#3A3A3A; line-height:1.2;">
-                                    The  Coupon can you only on good not in sale and its expiration will be  <?php echo $validThru;?>
+                                    The  Coupon can you only on good not in sale and its expiration will be  <?php echo $couponValidThruEmail;?>
                                     </span>
                                 </td>
                             </tr>
@@ -136,7 +136,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 10px 10px 0; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-                                   Thank You For choosing <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2; font-weight: 600"><?php echo strtoupper($shopName)?></span>
+                                   Thank You For choosing <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2; font-weight: 600"><?php echo strtoupper($nameShop)?></span>
                                     </span>
                                 </td>
                             </tr>
