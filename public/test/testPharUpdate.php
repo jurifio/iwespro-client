@@ -44,12 +44,13 @@ if (ENV == 'dev') {
 }
 $dateStart = (new \DateTime())->format('Y-m-d H:i:s');
 echo $dateStart;
+
 try {
     foreach ($files as $file) {
         $origingFile = basename($file,".gz") . PHP_EOL;
         $firstFileDay = substr($origingFile,-14,-12);
 
-        if ($firstFileDay == '01') {
+        if ($firstFileDay == '23') {
             $phar = new \PharData($file);
             if (ENV == 'dev') {
                 $phar->extractTo('/media/sf_sites/iwespro/temp/',null,true);
@@ -101,58 +102,62 @@ try {
                                 $productId = $dirtyProduct->productId;
                                 $productVariantId = $dirtyProduct->productVariantId;
                                 $shopHasProduct = $shopHasProductRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'shopId' => 58]);
-
-                                $productSoldInsert = $productSoldSizeRepo->getEmptyEntity();
-                                $productSoldInsert->productId = $productId;
-                                $productSoldInsert->productVariantId = $productVariantId;
-                                $productSoldInsert->productSizeId = $dirtySku->productSizeId;
-                                $productSoldInsert->shopId = 58;
-                                $productSoldInsert->dateStart = $dateStart;
-                                $productSoldInsert->startQuantity = $quantity;
-                                $productSoldInsert->dateEnd = $dateStart;
-                                $productSoldInsert->endQuantity = $quantity;
-                                if ($dateFile >= $dateStartSale1 && $dateFile <= $dateEndSale1) {
-                                    if ($shopHasProduct->salePrice == null) {
-                                        $priceActive = $values[39];
+                                $productSold = $productSoldSizeRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'productSizeId' => $dirtySku->productSizeId,'shopId' => 58,'year' => $year,'month' => $month,'day' => $day]);
+                                if ($productSold) {
+                                    $startQuantity = $productSold->startQuantity;
+                                    if ($startQuantity == $quantity) {
+                                        continue;
                                     } else {
-                                        $priceActive = $shopHasProduct->salePrice;
+                                        $soldQuantity = $startQuantity - $quantity;
+                                        $productSold->dateStart = $dateStart;
+                                        $productSold->startQuantity = $quantity;
+                                        $productSold->dateEnd = $dateStart;
+                                        $productSold->endQuantity = $quantity;
 
+                                         if ($dateFile >= $dateStartSale1 && $dateFile <= $dateEndSale1) {
+                                             if($shopHasProduct->salePrice==null ) {
+                                                 $priceActive = $values[39];
+                                                 $netTotal = $values[39] * $soldQuantity;
+                                             }else{
+                                                 $priceActive = $shopHasProduct->salePrice;
+                                                 $netTotal = $shopHasProduct->salePrice * $soldQuantity;
+                                             }
+                                         } else {
+                                             if($shopHasProduct->price==null) {
+                                                 $priceActive = $values[39];
+                                                 $netTotal = $values[39] * $soldQuantity;
+                                             }else{
+                                                 $priceActive = $shopHasProduct->price;
+                                                 $netTotal = $shopHasProduct->price * $soldQuantity;
+                                             }
+
+                                         }
+                                         if ($dateFile >= $dateStartSale2 && $dateFile <= $dateEndSale2) {
+                                             if($shopHasProduct->salePrice==null ) {
+                                                 $priceActive = $values[39];
+                                                 $netTotal = $values[39] * $soldQuantity;
+                                             }else{
+                                                 $priceActive = $shopHasProduct->salePrice;
+                                                 $netTotal = $shopHasProduct->salePrice * $soldQuantity;
+                                             }
+                                         } else {
+                                             if($shopHasProduct->price==null) {
+                                                 $priceActive = $values[39];
+                                                 $netTotal = $values[39] * $soldQuantity;
+                                             }else{
+                                                 $priceActive = $shopHasProduct->price;
+                                                 $netTotal = $shopHasProduct->price * $soldQuantity;
+                                             }
+
+                                         }
+                                        $productSold->priceActive = $priceActive;
+                                        $productSold->soldQuantity = $soldQuantity;
+                                        $productSold->netPrice = $netTotal;
+                                        $productSold->sourceUpgrade = $finalFile;
+
+                                        $productSold->update();
                                     }
-                                } else {
-                                    if ($shopHasProduct->price == null) {
-                                        $priceActive = $values[39];
-                                    } else {
-                                        $priceActive = $shopHasProduct->price;
-
-                                    }
-
                                 }
-                                if ($dateFile >= $dateStartSale2 && $dateFile <= $dateEndSale2) {
-                                    if ($shopHasProduct->salePrice == null) {
-                                        $priceActive = $values[39];
-
-                                    } else {
-                                        $priceActive = $shopHasProduct->salePrice;
-
-                                    }
-                                } else {
-                                    if ($shopHasProduct->price == null) {
-                                        $priceActive = $values[39];
-
-                                    } else {
-                                        $priceActive = $shopHasProduct->price;
-
-                                    }
-
-                                }
-                                $productSoldInsert->priceActive = $priceActive;
-                                $productSoldInsert->soldQuantity = 0;
-                                $productSoldInsert->netTotal = 0;
-                                $productSoldInsert->day = $day;
-                                $productSoldInsert->month = $month;
-                                $productSoldInsert->year = $year;
-                                $productSoldInsert->sourceInitial = $finalFile;
-                                $productSoldInsert->insert();
 
 
                             } else {
@@ -175,7 +180,6 @@ try {
     echo '</br>';
     echo $e->getLine();
 }
-
 
 
 
