@@ -106,16 +106,14 @@ echo $dateStart;
                                 $productSold = $productSoldSizeRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'productSizeId' => $dirtySku->productSizeId,'shopId' => 58,'year' => $year,'month' => $month,'day' => $day]);
                                 if ($productSold) {
                                     $startQuantity = $productSold->startQuantity;
+                                    $priceActive=$productSold->priceActive;
                                     if ($startQuantity != $quantity) {
                                         $soldQuantity = $startQuantity - $quantity;
                                         $productSold->dateStart = $dateStart;
                                         $productSold->startQuantity = $quantity;
                                         $productSold->dateEnd = $dateStart;
                                         $productSold->endQuantity = $quantity;
-                                        $priceActive = $values[39];
-                                        $netTotal = $values[39] * $soldQuantity;
-
-                                        $productSold->priceActive = $priceActive;
+                                        $netTotal = $priceActive * $soldQuantity;
                                         $productSold->soldQuantity = $soldQuantity;
                                         $productSold->netTotal = $netTotal;
                                         $productSold->sourceUpgrade = $finalFile;
