@@ -110,7 +110,7 @@ try {
                                     $soldQuantity = $startQuantity - $quantity;
                                     $productSold->dateStart = $dateStart;
                                     $productSold->startQuantity = $quantity;
-                                    $productSold->dateEnd = $dateEnd;
+                                    $productSold->dateEnd = $dateStart;
                                     $productSold->endQuantity = $quantity;
                                     if ($dateFile >= $dateStartSale1 && $dateFile <= $dateEndSale1) {
                                         $priceActive = $shopHasProduct->salePrice;
@@ -141,7 +141,7 @@ try {
                                 $productSoldInsert->shopId = 58;
                                 $productSoldInsert->dateStart = $dateStart;
                                 $productSoldInsert->startQuantity = $quantity;
-                                $productSoldInsert->dateEnd = $dateEnd;
+                                $productSoldInsert->dateEnd = $dateStart;
                                 $productSoldInsert->endQuantity = $quantity;
                                 if ($dateFile >= $dateStartSale1 && $dateFile <= $dateEndSale1) {
                                     $priceActive = $shopHasProduct->salePrice;
