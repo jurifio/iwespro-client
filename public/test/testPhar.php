@@ -8,7 +8,7 @@ $ttime = microtime(true);
 $time = microtime(true);
 require '../../iwesStatic.php';
 var_dump('Applicazione  \t\t\t\t' . (microtime(true) - $time));
-
+echo 'prova';
 $monkey = \Monkey::app();
 $time = microtime(true);
 $monkey->dbAdapter;
