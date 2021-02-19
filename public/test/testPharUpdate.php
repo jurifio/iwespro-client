@@ -47,7 +47,7 @@ try {
     foreach ($files as $file) {
         $origingFile = basename($file,".gz") . PHP_EOL;
         $firstFileDay = substr($origingFile,-14,-12);
-        if ($firstFileDay == '23') {
+        if ($firstFileDay == '20') {
             echo 'trovato';
             $phar = new \PharData($file);
             if (ENV == 'dev') {
@@ -84,40 +84,38 @@ try {
             fgets($f);
             $arrayProduct = [];
             $dirtyProduct = '';
+            $quantity=0;
             while (($values = fgetcsv($f,0,";")) !== false) {
                 $quantity = $values[30];
                 $barcode = $values[18];
-
-                $productSold=
-                $productSold = $productSoldSizeRepo->findOneBy(['barcode' => $barcode,'shopId' => 58,'year' => $year,'month' => $month,'day' => $day]);
-                if ($productSold) {
-                    echo 'trovato record</br>';
-                    $startQuantity = $productSold->startQuantity;
-                    echo $startQuantity.'</br>';
-                    echo $values[30].'</br>';
-                    $priceActive = $productSold->priceActive;
-                    echo $priceActive.'</br>';
-                    if ($startQuantity != $values[30]) {
-                        $soldQuantity = $startQuantity - $values[30];
-                        echo $soldQuantity.'</br>';
-                        $productSold->dateStart = $dateStart;
-                        $productSold->startQuantity = $values[30];
-                        $productSold->dateEnd = $dateStart;
-                        $productSold->endQuantity = $values[30];
-                        $netTotal = $priceActive * $soldQuantity;
-                        $productSold->soldQuantity = $soldQuantity;
-                        $productSold->netTotal = $netTotal;
-                        $productSold->sourceUpgrade = $finalFile;
-                        $productSold->update();
-                        echo 'record Aggiornato'.'</br>';
+                $sql="select productId,productVariantId,productSizeId,barcode,shopId,priceActive,startQuantity from ProductSizeSoldDay where barcode='".$barcode."' and shopId=58 and 
+                `year`='".$year."' and `month`='".$month."' and `day`='".$day."' ";
+                $res=\Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
+                if(count($res)>0) {
+                    foreach ($res as $result) {
+                        $productId = $result['productId'];
+                        $productVariantId = $result['productVariantId'];
+                        $productSizeId = $result['productSizeId'];
+                        $priceActive = $result['priceActive'];
+                        $startQuantity = $result['startQuantity'];
                     }
+
+                    $productSold = $productSoldSizeRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'productSizeId' => $productSizeId,'shopId' => 58,'year' => $year,'month' => $month,'day' => $day]);
+                    if ($productSold == null) {
+                        if ($startQuantity != $quantity) {
+                            $soldQuantity = $startQuantity - $quantity;
+                            $productSold->startQuantity = $quantity;
+                            $productSold->endQuantity = $quantity;
+                            $netTotal = $priceActive * $soldQuantity;
+                            $productSold->soldQuantity = $soldQuantity;
+                            $productSold->netTotal = $netTotal;
+                            $productSold->update();
+                        }
+                    }
+
                 }
-
-
             }
             fclose($f);
-        } else {
-            continue;
         }
         sleep(2);
     }

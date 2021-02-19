@@ -110,9 +110,9 @@ try {
                                     $productSoldInsert->productSizeId = $dirtySku->productSizeId;
                                     $productSoldInsert->shopId = 58;
                                     $productSoldInsert->barcode = $values[18];
-                                    $productSoldInsert->dateStart = $dateStart;
+                                    $productSoldInsert->dateStart = $year.'-'.$month.'-'.$day.' 00:00:00';
                                     $productSoldInsert->startQuantity = $quantity;
-                                    $productSoldInsert->dateEnd = $dateStart;
+                                    $productSoldInsert->dateEnd = $year.'-'.$month.'-'.$day.' 00:00:00';
                                     $productSoldInsert->endQuantity = $quantity;
                                     if ($dateFile >= $dateStartSale1 && $dateFile <= $dateEndSale1) {
                                         if ($shopHasProduct->salePrice == null) {
