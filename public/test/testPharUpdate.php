@@ -36,7 +36,6 @@ $dirtySkuRepo = \Monkey::app()->repoFactory->create('DirtySku');
 $dirtyProductRepo = \Monkey::app()->repoFactory->create('DirtyProduct');
 $productSoldSizeRepo = \Monkey::app()->repoFactory->create('ProductSizeSoldDay');
 $shopHasProductRepo = \Monkey::app()->repoFactory->create('ShopHasProduct');
-echo "inizio prova" . '</br>';
 if (ENV == 'dev') {
     $files = glob('/media/sf_sites/iwespro/temp/*.tar.gz');
 } else {
