@@ -36,8 +36,11 @@ $dirtySkuRepo = \Monkey::app()->repoFactory->create('DirtySku');
 $dirtyProductRepo = \Monkey::app()->repoFactory->create('DirtyProduct');
 $productSoldSizeRepo = \Monkey::app()->repoFactory->create('ProductSoldSize');
 $shopHasProductRepo = \Monkey::app()->repoFactory->create('ShopHasProduct');
-
-$files = glob('/media/sf_sites/iwespro/temp/*.tar.gz');
+if (ENV == 'dev') {
+    $files = glob('/media/sf_sites/iwespro/temp/*.tar.gz');
+}else{
+    $files = glob('/home/iwespro/public_html/temp-csv/*.tar.gz');
+}
 $dateStart = (new DateTime())->format('Y-m-d H:i:s');
 
 foreach ($files as $file) {
