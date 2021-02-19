@@ -44,7 +44,11 @@ foreach ($files as $file) {
 
 
     $phar = new PharData($file);
-    $phar->extractTo('/media/sf_sites/iwespro/temp/',null,true);
+    if (ENV == 'dev') {
+        $phar->extractTo('/media/sf_sites/iwespro/temp/',null,true);
+    }else{
+        $phar->extractTo('/home/iwespro/public_html/temp-eancsv/',null,true);
+    }
     $nameFile = basename($file,".csv") . PHP_EOL;
     echo $nameFile;
     $year = substr($nameFile,0,4);
