@@ -34,15 +34,16 @@ var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
 $dirtySkuRepo = \Monkey::app()->repoFactory->create('DirtySku');
 $dirtyProductRepo = \Monkey::app()->repoFactory->create('DirtyProduct');
-$productSoldSizeRepo = \Monkey::app()->repoFactory->create('ProductSoldSize');
+$productSoldSizeRepo = \Monkey::app()->repoFactory->create('ProductSizeSoldDay');
 $shopHasProductRepo = \Monkey::app()->repoFactory->create('ShopHasProduct');
 echo "inizio prova".'</br>';
 if (ENV == 'dev') {
     $files = glob('/media/sf_sites/iwespro/temp/*.tar.gz');
 }else{
-    $files = glob('/home/iwespro/public_html/temp-csv/*.tar.gz');
+    $files = glob('/home/iwespro/public_html/temp-eancsv/*.tar.gz');
 }
 $dateStart = (new \DateTime())->format('Y-m-d H:i:s');
+echo $dateStart;
 try {
     foreach ($files as $file) {
 
@@ -133,7 +134,7 @@ try {
                                     $productSold->update();
                                 }
                             } else {
-                                $productSoldInsert = $productSoldRepo->getEmptyEntity();
+                                $productSoldInsert = $productSoldSizeRepo->getEmptyEntity();
                                 $productSoldInsert->productId = $productId;
                                 $productSoldInsert->productVariantId = $productVariantId;
                                 $productSoldInsert->productSizeId = $dirtySku->productSizeId;
