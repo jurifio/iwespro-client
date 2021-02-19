@@ -44,94 +44,80 @@ if (ENV == 'dev') {
 $dateStart = (new \DateTime())->format('Y-m-d H:i:s');
 echo $dateStart;
 
-    foreach ($files as $file) {
-        $origingFile = basename($file,".gz") . PHP_EOL;
-        $firstFileDay = substr($origingFile,-14,-12);
+foreach ($files as $file) {
+    $origingFile = basename($file,".gz") . PHP_EOL;
+    $firstFileDay = substr($origingFile,-14,-12);
 
-        if ($firstFileDay == '23') {
-            echo 'trovato';
-            $phar = new \PharData($file);
-            if (ENV == 'dev') {
-                $phar->extractTo('/media/sf_sites/iwespro/temp/',null,true);
-            } else {
-                $phar->extractTo('/home/iwespro/public_html/temp-eancsv/',null,true);
-            }
-            $nameFile = basename($file,".csv") . PHP_EOL;
-            echo $nameFile;
-            $year = substr($nameFile,0,4);
-            $yearEndSale = $year + 1;
-            $month = substr($nameFile,4,2);
-            $day = substr($nameFile,6,2);
-            $dateFile = (new \DateTime($year . '-' . $month . '-' . $day))->format('Y-m-d');
-            $dateStartSale1 = (new \DateTime($year . '-01-01'))->format('Y-m-d');
-            $dateEndSale1 = (new \DateTime($yearEndSale . '-03-15'))->format('Y-m-d');
-            $dateStartSale2 = (new \DateTime($year . '-07-01'))->format('Y-m-d');
-            $dateEndSale1 = (new \DateTime($year . '-09-15'))->format('Y-m-d');
-            echo $year . '<br>';
-            echo $day . '<br>';
-            echo $month . '<br>';
+    if ($firstFileDay == '23') {
+        echo 'trovato';
+        $phar = new \PharData($file);
+        if (ENV == 'dev') {
+            $phar->extractTo('/media/sf_sites/iwespro/temp/',null,true);
+        } else {
+            $phar->extractTo('/home/iwespro/public_html/temp-eancsv/',null,true);
+        }
+        $nameFile = basename($file,".csv") . PHP_EOL;
+        echo $nameFile;
+        $year = substr($nameFile,0,4);
+        $yearEndSale = $year + 1;
+        $month = substr($nameFile,4,2);
+        $day = substr($nameFile,6,2);
+        $dateFile = (new \DateTime($year . '-' . $month . '-' . $day))->format('Y-m-d');
+        $dateStartSale1 = (new \DateTime($year . '-01-01'))->format('Y-m-d');
+        $dateEndSale1 = (new \DateTime($yearEndSale . '-03-15'))->format('Y-m-d');
+        $dateStartSale2 = (new \DateTime($year . '-07-01'))->format('Y-m-d');
+        $dateEndSale1 = (new \DateTime($year . '-09-15'))->format('Y-m-d');
+        echo $year . '<br>';
+        echo $day . '<br>';
+        echo $month . '<br>';
 
-            $fileexport = substr($nameFile,0,-8);
+        $fileexport = substr($nameFile,0,-8);
 
-            if (ENV == 'dev') {
-                $finalFile = '/media/sf_sites/iwespro/temp/' . substr($fileexport,15,100) . '.csv';
-            } else {
-                $finalFile = '/home/iwespro/public_html/temp-eancsv/' . substr($fileexport,15,100) . '.csv';
-            }
-            echo $finalFile . '</br>';
-
-
-            $f = fopen($finalFile,'r');
-            fgets($f);
-            $arrayProduct = [];
-            $dirtyProduct = '';
-            $quantity = 0;
-            $i=0;
-            while (($values = fgetcsv($f,0,";")) !== false) {
-              $i++;
-                $quantity = $values[30];
-
-                $dirtySku = $dirtySkuRepo->findOneBy(['barcode' => $values[18],'shopId' => 58]);
-                if ($dirtySku) {
-                    if ($dirtySku->productSizeId != null) {
-                        $dirtyProductId = $dirtySku->dirtyProductId;
-
-                        $dirtyProduct = $dirtyProductRepo->findOneBy(['id' => $dirtyProductId]);
-                        if ($dirtyProduct) {
-                            if ($dirtyProduct->productId != null) {
-                                $productId = $dirtyProduct->productId;
-                                $productVariantId = $dirtyProduct->productVariantId;
-                                $shopHasProduct = $shopHasProductRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'shopId' => 58]);
-                                $productSold = $productSoldSizeRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'productSizeId' => $dirtySku->productSizeId,'shopId' => 58,'year' => $year,'month' => $month,'day' => $day]);
-                                if ($productSold) {
-                                    $startQuantity = $productSold->startQuantity;
-                                    $priceActive=$productSold->priceActive;
-                                    if ($startQuantity != $quantity) {
-                                        $soldQuantity = $startQuantity - $quantity;
-                                        $productSold->dateStart = $dateStart;
-                                        $productSold->startQuantity = $quantity;
-                                        $productSold->dateEnd = $dateStart;
-                                        $productSold->endQuantity = $quantity;
-                                        $netTotal = $priceActive * $soldQuantity;
-                                        $productSold->soldQuantity = $soldQuantity;
-                                        $productSold->netTotal = $netTotal;
-                                        $productSold->sourceUpgrade = $finalFile;
-                                        $productSold->update();
-                                    }
-                                }
+        if (ENV == 'dev') {
+            $finalFile = '/media/sf_sites/iwespro/temp/' . substr($fileexport,15,100) . '.csv';
+        } else {
+            $finalFile = '/home/iwespro/public_html/temp-eancsv/' . substr($fileexport,15,100) . '.csv';
+        }
+        echo $finalFile . '</br>';
 
 
-                            }
-                        }
-                    }
+        $f = fopen($finalFile,'r');
+        fgets($f);
+        $arrayProduct = [];
+        $dirtyProduct = '';
+        $quantity = 0;
+        $i = 0;
+        while (($values = fgetcsv($f,0,";")) !== false) {
+            $i++;
+            $quantity = $values[30];
+            $barcode = $values[18];
 
+
+            $productSold = $productSoldSizeRepo->findOneBy(['barcode' => $barcode,'shopId' => 58,'year' => $year,'month' => $month,'day' => $day]);
+            if ($productSold) {
+                $startQuantity = $productSold->startQuantity;
+                $priceActive = $productSold->priceActive;
+                if ($startQuantity != $quantity) {
+                    $soldQuantity = $startQuantity - $quantity;
+                    $productSold->dateStart = $dateStart;
+                    $productSold->startQuantity = $quantity;
+                    $productSold->dateEnd = $dateStart;
+                    $productSold->endQuantity = $quantity;
+                    $netTotal = $priceActive * $soldQuantity;
+                    $productSold->soldQuantity = $soldQuantity;
+                    $productSold->netTotal = $netTotal;
+                    $productSold->sourceUpgrade = $finalFile;
+                    $productSold->update();
                 }
             }
 
-        } else {
-            continue;
+
         }
+
+    } else {
+        continue;
     }
+}
 
 
 
