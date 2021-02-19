@@ -66,7 +66,7 @@ foreach ($files as $file) {
         $dateStartSale1 = (new \DateTime($year . '-01-01'))->format('Y-m-d');
         $dateEndSale1 = (new \DateTime($yearEndSale . '-03-15'))->format('Y-m-d');
         $dateStartSale2 = (new \DateTime($year . '-07-01'))->format('Y-m-d');
-        $dateEndSale1 = (new \DateTime($year . '-09-15'))->format('Y-m-d');
+        $dateEndSale2 = (new \DateTime($year . '-09-15'))->format('Y-m-d');
         echo $year . '<br>';
         echo $day . '<br>';
         echo $month . '<br>';
