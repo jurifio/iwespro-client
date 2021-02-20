@@ -93,62 +93,45 @@ try {
                     $size = $values[2];
                     $extId = $values[9];
                     $var = $values[10];
-
-                    $dirtyProduct = $dirtyProductRepo->findOneBy(['extId' => $extId,'var' => $var]);
-                    if ($dirtyProduct) {
-                        $dirtyProductId = $dirtyProduct->id;
-                        if ($dirtyProduct->productId != null) {
-                            $dirtySku = $dirtySkuRepo->findOneBy(['dirtyProductId' => $dirtyProductId,'size' => $size]);
-                            if ($dirtySku) {
-                                if ($dirtySku->productSizeId != null) {
-
-                                    $productId = $dirtyProduct->productId;
-                                    $productVariantId = $dirtyProduct->productVariantId;
-                                    $shopHasProduct = $shopHasProductRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'shopId' => 1]);
-                                    $productSold = $productSoldSizeRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'productSizeId' => $dirtySku->productSizeId,'shopId' => 1,'year' => $year,'month' => $month,'day' => $day]);
-                                    if ($productSold == null) {
-                                        continue;
-                                    } else {
-                                        $priceActive = $productSold->priceActive;
-                                        $startQuantity=$productSold->startQuantity;
-                                        $soldQuantity = $startQuantity - $quantity;
-                                        $productSold->startQuantity = $quantity;
-                                        $productSold->endQuantity = $quantity;
-                                        $netTotal = $priceActive * $soldQuantity;
-                                        $productSold->soldQuantity = $soldQuantity;
-                                        $productSold->netTotal = $netTotal;
-                                        $productSold->sourceUpgrade = $finalFile;
-                                        $productSold->update();
-                                    }
-
-
-                                } else {
-                                    continue;
-                                }
-                            } else {
-                                continue;
-                            }
+                    $sql = "select ps.productId as productId,ps.productVariantId as productVariantId,
+                    ps.productSizeId as productSizeId, ds.barcode as barcode, ps.shopId as shopId, ps.priceActive as priceActive,
+                    ps.startQuantity as startQuantity from ProductSizeSoldDay ps join DirtyProduct dp on ps.productId=dp.productId and ps.productVariantId=dp.productVariantId and 
+                                                                                        ps.shopId=dp.shopId 
+join DirtySku ds on dp.id=ds.dirtyProductId where dp.extId='" . $extId . "' and ds.shopId=1 and ds.size='" . $size . "' and  
+                `ps`.`year`='" . $year . "' and `ps`.`month`='" . $month . "' and `ps`.`day`='" . $day . "' ";
+                    $res = \Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
+                    if (count($res) > 0) {
+                        foreach ($res as $result) {
+                            $productId = $result['productId'];
+                            $productVariantId = $result['productVariantId'];
+                            $productSizeId = $result['productSizeId'];
+                            $priceActive = $result['priceActive'];
+                            $startQuantity = $result['startQuantity'];
+                        }
+                        $productSold = $productSoldSizeRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'productSizeId' => $productSizeId,'shopId' => 1,'year' => $year,'month' => $month,'day' => $day]);
+                        if ($productSold) {
+                            $soldQuantity = $startQuantity - $quantity;
+                            $productSold->startQuantity = $quantity;
+                            $productSold->endQuantity = $quantity;
+                            $netTotal = $priceActive * $soldQuantity;
+                            $productSold->soldQuantity = $soldQuantity;
+                            $productSold->netTotal = $netTotal;
+                            $productSold->sourceUpgrade = $finalFile;
+                            $productSold->update();
                         }
 
                     }
                 }
-                $lineCount++;
             }
-            fclose($f);
-
-        } else {
-            continue;
+                fclose($f);
+            }
+            sleep(2);
         }
-        sleep(2);
+    } catch (\Throwable $e) {
+        echo $e->getMessage();
+        echo '</br>';
+        echo $e->getLine();
     }
-} catch (\Throwable $e) {
-    echo $e->getMessage();
-    echo '</br>';
-    echo $e->getLine();
-}
-
-
-
 
 
 
