@@ -101,16 +101,15 @@ try {
                     }
 
                     $productSold = $productSoldSizeRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'productSizeId' => $productSizeId,'shopId' => 58,'year' => $year,'month' => $month,'day' => $day]);
-                    if ($productSold == null) {
-                        if ($startQuantity != $quantity) {
+                    if ($productSold) {
                             $soldQuantity = $startQuantity - $quantity;
                             $productSold->startQuantity = $quantity;
                             $productSold->endQuantity = $quantity;
                             $netTotal = $priceActive * $soldQuantity;
                             $productSold->soldQuantity = $soldQuantity;
                             $productSold->netTotal = $netTotal;
+                            $productSold->sourceFinal=$finalFile;
                             $productSold->update();
-                        }
                     }
 
                 }
