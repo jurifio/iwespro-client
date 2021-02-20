@@ -36,28 +36,26 @@ $dirtySkuRepo = \Monkey::app()->repoFactory->create('DirtySku');
 $dirtyProductRepo = \Monkey::app()->repoFactory->create('DirtyProduct');
 $productSoldSizeRepo = \Monkey::app()->repoFactory->create('ProductSizeSoldDay');
 $shopHasProductRepo = \Monkey::app()->repoFactory->create('ShopHasProduct');
-echo "inizio prova" . '</br>';
 if (ENV == 'dev') {
     $files = glob('/media/sf_sites/iwespro/temp/*.tar.gz');
 } else {
     $files = glob('/home/iwespro/public_html/temp-eancsv/*.tar.gz');
 }
 $dateStart = (new \DateTime())->format('Y-m-d H:i:s');
-echo $dateStart.'</br>';
+echo $dateStart;
 try {
     foreach ($files as $file) {
         $origingFile = basename($file,".tar.gz") . PHP_EOL;
         echo $origingFile;
         $firstFileDay = substr($origingFile,8,2);
-
-        if ($firstFileDay == '00') {
+        if ($firstFileDay == '20') {
+            echo 'trovato';
             $phar = new \PharData($file);
             if (ENV == 'dev') {
                 $phar->extractTo('/media/sf_sites/iwespro/temp/',null,true);
             } else {
                 $phar->extractTo('/home/iwespro/public_html/temp-eancsv/',null,true);
             }
-            sleep(2);
             $nameFile = basename($file,".csv") . PHP_EOL;
             echo $nameFile;
             $year = substr($nameFile,0,4);
@@ -69,7 +67,7 @@ try {
             $dateEndSale1 = (new \DateTime($yearEndSale . '-03-15'))->format('Y-m-d');
             $dateStartSale2 = (new \DateTime($year . '-07-01'))->format('Y-m-d');
             $dateEndSale2 = (new \DateTime($year . '-09-15'))->format('Y-m-d');
-            echo $year . '<br>';
+            echo '</br>' . $year . '<br>';
             echo $day . '<br>';
             echo $month . '<br>';
 
@@ -88,9 +86,9 @@ try {
             $arrayProduct = [];
             $dirtyProduct = '';
             $quantity = 0;
-            $lineCount=0;
-                while (($values = fgetcsv($f, 0, ";", '|')) !== false) {
-                if($lineCount>0) {
+            $lineCount = 0;
+            while (($values = fgetcsv($f,0,";",'|')) !== false) {
+                if ($lineCount > 0) {
                     $quantity = $values[3];
                     $size = $values[2];
                     $extId = $values[9];
@@ -109,58 +107,18 @@ try {
                                     $shopHasProduct = $shopHasProductRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'shopId' => 1]);
                                     $productSold = $productSoldSizeRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'productSizeId' => $dirtySku->productSizeId,'shopId' => 58,'year' => $year,'month' => $month,'day' => $day]);
                                     if ($productSold == null) {
-                                        $productSoldInsert = $productSoldSizeRepo->getEmptyEntity();
-                                        $productSoldInsert->productId = $productId;
-                                        $productSoldInsert->productVariantId = $productVariantId;
-                                        $productSoldInsert->productSizeId = $dirtySku->productSizeId;
-                                        $productSoldInsert->shopId = 1;
-                                        $productSoldInsert->barcode = $dirtySku->barcode;
-                                        $productSoldInsert->dateStart = $year . '-' . $month . '-' . $day . ' 00:00:00';
-                                        $productSoldInsert->startQuantity = $quantity;
-                                        $productSoldInsert->dateEnd = $year . '-' . $month . '-' . $day . ' 00:00:00';
-                                        $productSoldInsert->endQuantity = $quantity;
-                                        if ($dateFile >= $dateStartSale1 && $dateFile <= $dateEndSale1) {
-                                            if ($shopHasProduct->salePrice == null) {
-                                                $priceActive = $values[5];
-                                            } else {
-                                                $priceActive = $shopHasProduct->salePrice;
-
-                                            }
-                                        } else {
-                                            if ($shopHasProduct->price == null) {
-                                                $priceActive = $values[6];
-                                            } else {
-                                                $priceActive = $shopHasProduct->price;
-
-                                            }
-
-                                        }
-                                        if ($dateFile >= $dateStartSale2 && $dateFile <= $dateEndSale2) {
-                                            if ($shopHasProduct->salePrice == null) {
-                                                $priceActive = $values[6];
-
-                                            } else {
-                                                $priceActive = $shopHasProduct->salePrice;
-
-                                            }
-                                        } else {
-                                            if ($shopHasProduct->price == null) {
-                                                $priceActive = $values[5];
-
-                                            } else {
-                                                $priceActive = $shopHasProduct->price;
-
-                                            }
-
-                                        }
-                                        $productSoldInsert->priceActive = $priceActive;
-                                        $productSoldInsert->soldQuantity = 0;
-                                        $productSoldInsert->netTotal = 0;
-                                        $productSoldInsert->day = $day;
-                                        $productSoldInsert->month = $month;
-                                        $productSoldInsert->year = $year;
-                                        $productSoldInsert->sourceInitial = $finalFile;
-                                        $productSoldInsert->insert();
+                                        continue;
+                                    } else {
+                                        $priceActive = $productSold->priceActive;
+                                        $startQuantity=$productSold->startQuantity;
+                                        $soldQuantity = $startQuantity - $quantity;
+                                        $productSold->startQuantity = $quantity;
+                                        $productSold->endQuantity = $quantity;
+                                        $netTotal = $priceActive * $soldQuantity;
+                                        $productSold->soldQuantity = $soldQuantity;
+                                        $productSold->netTotal = $netTotal;
+                                        $productSold->sourceUpgrade = $finalFile;
+                                        $productSold->update();
                                     }
 
 
@@ -188,6 +146,7 @@ try {
     echo '</br>';
     echo $e->getLine();
 }
+
 
 
 

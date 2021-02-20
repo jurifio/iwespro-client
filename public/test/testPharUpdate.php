@@ -108,7 +108,7 @@ try {
                             $netTotal = $priceActive * $soldQuantity;
                             $productSold->soldQuantity = $soldQuantity;
                             $productSold->netTotal = $netTotal;
-                            $productSold->sourceFinal=$finalFile;
+                            $productSold->sourceUpgrade=$finalFile;
                             $productSold->update();
                     }
 
