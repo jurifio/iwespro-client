@@ -39,7 +39,7 @@ $shopHasProductRepo = \Monkey::app()->repoFactory->create('ShopHasProduct');
 if (ENV == 'dev') {
     $files = glob('/media/sf_sites/iwespro/temp/*.tar.gz');
 } else {
-    $files = glob('/home/iwespro/public_html/temp-eancsv/*.tar.gz');
+    $files = glob('/home/iwespro/public_html/client/public/media/productsync/cartechini/import/done/*.tar.gz');
 }
 $dateStart = (new \DateTime())->format('Y-m-d H:i:s');
 echo $dateStart;
@@ -47,14 +47,15 @@ try {
     foreach ($files as $file) {
         $origingFile = basename($file,".tar.gz") . PHP_EOL;
         echo $origingFile;
-        $firstFileDay = substr($origingFile,8,2);
-        if ($firstFileDay == '20') {
+        $firstFileSku = substr($origingFile,15,4);
+
+        if (($firstFileDay == '20') && ($firstFileSku=='SKUS')) {
             echo 'trovato';
             $phar = new \PharData($file);
             if (ENV == 'dev') {
                 $phar->extractTo('/media/sf_sites/iwespro/temp/',null,true);
             } else {
-                $phar->extractTo('/home/iwespro/public_html/temp-eancsv/',null,true);
+                $phar->extractTo('/home/iwespro/public_html/client/public/media/productsync/cartechini/import/done/',null,true);
             }
             $nameFile = basename($file,".csv") . PHP_EOL;
             echo $nameFile;
@@ -76,7 +77,7 @@ try {
             if (ENV == 'dev') {
                 $finalFile = '/media/sf_sites/iwespro/temp/' . substr($fileexport,15,100) . '.csv';
             } else {
-                $finalFile = '/home/iwespro/public_html/temp-eancsv/' . substr($fileexport,15,100) . '.csv';
+                $finalFile = '/home/iwespro/public_html/client/public/media/productsync/cartechini/import/done/' . substr($fileexport,15,100) . '.csv';
             }
             echo $finalFile . '</br>';
 
@@ -125,8 +126,9 @@ join DirtySku ds on dp.id=ds.dirtyProductId where dp.extId='" . $extId . "' and 
                 $lineCount++;
             }
                 fclose($f);
+            unlink($finalFile);
             }
-            sleep(2);
+
         }
     } catch (\Throwable $e) {
         echo $e->getMessage();

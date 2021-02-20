@@ -39,7 +39,7 @@ $shopHasProductRepo = \Monkey::app()->repoFactory->create('ShopHasProduct');
 if (ENV == 'dev') {
     $files = glob('/media/sf_sites/iwespro/temp/*.tar.gz');
 } else {
-    $files = glob('/home/iwespro/public_html/temp-eancsv/*.tar.gz');
+    $files = glob('/home/iwespro/public_html/client/public/media/productsync/thomas/import/done/*.tar.gz');
 }
 $dateStart = (new \DateTime())->format('Y-m-d H:i:s');
 echo $dateStart;
@@ -53,7 +53,7 @@ try {
             if (ENV == 'dev') {
                 $phar->extractTo('/media/sf_sites/iwespro/temp/',null,true);
             } else {
-                $phar->extractTo('/home/iwespro/public_html/temp-eancsv/',null,true);
+                $phar->extractTo('/home/iwespro/public_html/client/public/media/productsync/thomas/import/done/',null,true);
             }
             $nameFile = basename($file,".csv") . PHP_EOL;
             echo $nameFile;
@@ -75,7 +75,7 @@ try {
             if (ENV == 'dev') {
                 $finalFile = '/media/sf_sites/iwespro/temp/' . substr($fileexport,15,100) . '.csv';
             } else {
-                $finalFile = '/home/iwespro/public_html/temp-eancsv/' . substr($fileexport,15,100) . '.csv';
+                $finalFile = '/home/iwespro/public_html/client/public/media/productsync/thomas/import/done/' . substr($fileexport,15,100) . '.csv';
             }
             echo $finalFile . '</br>';
 
@@ -115,8 +115,10 @@ try {
                 }
             }
             fclose($f);
+            unlink($finalFile);
+
         }
-        sleep(2);
+
     }
 } catch (\Throwable $e) {
     echo $e->getMessage();

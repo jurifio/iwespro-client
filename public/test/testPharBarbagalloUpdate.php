@@ -1,5 +1,6 @@
 <?php
 
+
 use bamboo\core\exceptions\BambooException;
 
 ini_set("memory_limit","2000M");
@@ -40,29 +41,30 @@ echo "inizio prova" . '</br>';
 if (ENV == 'dev') {
     $files = glob('/media/sf_sites/iwespro/temp/*.tar.gz');
 } else {
-    $files = glob('/home/iwespro/public_html/client/public/media/productsync/thomas/import/done/*.tar.gz');
+    $files = glob('/home/iwespro/public_html/client/public/media/productsync/barbagallo/import/done/.tar.gz');
 }
 $dateStart = (new \DateTime())->format('Y-m-d H:i:s');
-echo $dateStart;
+echo $dateStart . '</br>';
 try {
     foreach ($files as $file) {
-        $origingFile = basename($file,".gz") . PHP_EOL;
-        $firstFileDay = substr($origingFile,-14,-12);
+        $origingFile = basename($file,".tar.gz") . PHP_EOL;
+        echo $origingFile;
+        $firstFileDay = substr($origingFile,8,2);
+        $year = substr($origingFile,0,4);
+        $yearEndSale = $year + 1;
+        $month = substr($origingFile,4,2);
+        $day = substr($origingFile,6,2);
 
-        if ($firstFileDay == '01') {
+        if ($firstFileDay == '19') {
             $phar = new \PharData($file);
             if (ENV == 'dev') {
                 $phar->extractTo('/media/sf_sites/iwespro/temp/',null,true);
             } else {
-                $phar->extractTo('/home/iwespro/public_html/client/public/media/productsync/thomas/import/done/',null,true);
+                $phar->extractTo('/home/iwespro/public_html/client/public/media/productsync/barbagallo/import/done/',null,true);
             }
-            sleep(2);
-            $nameFile = basename($file,".csv") . PHP_EOL;
+            $nameFile = basename($file,".json") . PHP_EOL;
             echo $nameFile;
-            $year = substr($nameFile,0,4);
-            $yearEndSale = $year + 1;
-            $month = substr($nameFile,4,2);
-            $day = substr($nameFile,6,2);
+
             $dateFile = (new \DateTime($year . '-' . $month . '-' . $day))->format('Y-m-d');
             $dateStartSale1 = (new \DateTime($year . '-01-01'))->format('Y-m-d');
             $dateEndSale1 = (new \DateTime($yearEndSale . '-03-15'))->format('Y-m-d');
@@ -74,24 +76,26 @@ try {
 
             $fileexport = substr($nameFile,0,-8);
 
+
             if (ENV == 'dev') {
-                $finalFile = '/media/sf_sites/iwespro/temp/' . substr($fileexport,15,100) . '.csv';
+                $finalFile = '/media/sf_sites/iwespro/temp/' . substr($fileexport,15,100) . '.json';
             } else {
-                $finalFile = '/home/iwespro/public_html/client/public/media/productsync/thomas/import/done/' . substr($fileexport,15,100) . '.csv';
+                $finalFile = '/home/iwespro/public_html/client/public/media/productsync/barbagallo/import/done/' . substr($fileexport,15,100) . '.json';
             }
             echo $finalFile . '</br>';
 
+            $rawData = json_decode(file_get_contents($finalFile),true);
 
-            $f = fopen($finalFile,'r');
-            fgets($f);
             $arrayProduct = [];
             $dirtyProduct = '';
             $quantity = 0;
-            while (($values = fgetcsv($f,0,";")) !== false) {
-
-                $quantity = $values[30];
-
-                $dirtySku = $dirtySkuRepo->findOneBy(['barcode' => $values[18],'shopId' => 58]);
+            $lineCount = 0;
+            foreach ($rawData as $values) {
+                $quantity = $values['esistenza'];
+                $size = $values['size'];
+                $barcode = $values['barcode'];
+                $price = floatval(str_replace(',','.',$values["PrListino"]));
+                $dirtySku = $dirtySkuRepo->findOneBy(['barcode' => $barcode,'shopId' => 51]);
                 if ($dirtySku) {
                     if ($dirtySku->productSizeId != null) {
                         $dirtyProductId = $dirtySku->dirtyProductId;
@@ -101,29 +105,29 @@ try {
                             if ($dirtyProduct->productId != null) {
                                 $productId = $dirtyProduct->productId;
                                 $productVariantId = $dirtyProduct->productVariantId;
-                                $shopHasProduct = $shopHasProductRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'shopId' => 58]);
-                                $productSold = $productSoldSizeRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'productSizeId'=>$dirtySku->productSizeId,'shopId' => 58,'year' => $year,'month' => $month,'day' => $day]);
-                                if($productSold==null) {
+                                $shopHasProduct = $shopHasProductRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'shopId' => 51]);
+                                $productSold = $productSoldSizeRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'productSizeId' => $dirtySku->productSizeId,'shopId' => 51,'year' => $year,'month' => $month,'day' => $day]);
+                                if ($productSold == null) {
                                     $productSoldInsert = $productSoldSizeRepo->getEmptyEntity();
                                     $productSoldInsert->productId = $productId;
                                     $productSoldInsert->productVariantId = $productVariantId;
                                     $productSoldInsert->productSizeId = $dirtySku->productSizeId;
-                                    $productSoldInsert->shopId = 58;
-                                    $productSoldInsert->barcode = $values[18];
-                                    $productSoldInsert->dateStart = $year.'-'.$month.'-'.$day.' 00:00:00';
+                                    $productSoldInsert->shopId = 51;
+                                    $productSoldInsert->barcode = $barcode;
+                                    $productSoldInsert->dateStart = $year . '-' . $month . '-' . $day . ' 00:00:00';
                                     $productSoldInsert->startQuantity = $quantity;
-                                    $productSoldInsert->dateEnd = $year.'-'.$month.'-'.$day.' 00:00:00';
+                                    $productSoldInsert->dateEnd = $year . '-' . $month . '-' . $day . ' 00:00:00';
                                     $productSoldInsert->endQuantity = $quantity;
                                     if ($dateFile >= $dateStartSale1 && $dateFile <= $dateEndSale1) {
                                         if ($shopHasProduct->salePrice == null) {
-                                            $priceActive = $values[39];
+                                            $priceActive = $price;
                                         } else {
                                             $priceActive = $shopHasProduct->salePrice;
 
                                         }
                                     } else {
                                         if ($shopHasProduct->price == null) {
-                                            $priceActive = $values[39];
+                                            $priceActive = $price;
                                         } else {
                                             $priceActive = $shopHasProduct->price;
 
@@ -132,7 +136,7 @@ try {
                                     }
                                     if ($dateFile >= $dateStartSale2 && $dateFile <= $dateEndSale2) {
                                         if ($shopHasProduct->salePrice == null) {
-                                            $priceActive = $values[39];
+                                            $priceActive = $price;
 
                                         } else {
                                             $priceActive = $shopHasProduct->salePrice;
@@ -140,7 +144,7 @@ try {
                                         }
                                     } else {
                                         if ($shopHasProduct->price == null) {
-                                            $priceActive = $values[39];
+                                            $priceActive = $price;
 
                                         } else {
                                             $priceActive = $shopHasProduct->price;
@@ -169,17 +173,24 @@ try {
 
                 }
             }
-            fclose($f);
             unlink($finalFile);
+
         } else {
             continue;
         }
+
     }
 } catch (\Throwable $e) {
     echo $e->getMessage();
     echo '</br>';
     echo $e->getLine();
 }
+
+
+
+
+
+
 
 
 

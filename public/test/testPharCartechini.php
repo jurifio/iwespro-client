@@ -40,7 +40,7 @@ echo "inizio prova" . '</br>';
 if (ENV == 'dev') {
     $files = glob('/media/sf_sites/iwespro/temp/*.tar.gz');
 } else {
-    $files = glob('/home/iwespro/public_html/temp-eancsv/*.tar.gz');
+    $files = glob('/home/iwespro/public_html/client/public/media/productsync/cartechini/import/done/*.tar.gz');
 }
 $dateStart = (new \DateTime())->format('Y-m-d H:i:s');
 echo $dateStart.'</br>';
@@ -49,13 +49,14 @@ try {
         $origingFile = basename($file,".tar.gz") . PHP_EOL;
         echo $origingFile;
         $firstFileDay = substr($origingFile,8,2);
+        $firstFileSku = substr($origingFile,15,4);
 
-        if ($firstFileDay == '00') {
+        if (($firstFileDay == '00') && ($firstFileSku=='SKUS')) {
             $phar = new \PharData($file);
             if (ENV == 'dev') {
                 $phar->extractTo('/media/sf_sites/iwespro/temp/',null,true);
             } else {
-                $phar->extractTo('/home/iwespro/public_html/temp-eancsv/',null,true);
+                $phar->extractTo('/home/iwespro/public_html/client/public/media/productsync/cartechini/import/done/',null,true);
             }
             sleep(2);
             $nameFile = basename($file,".csv") . PHP_EOL;
@@ -177,6 +178,7 @@ try {
                 $lineCount++;
             }
             fclose($f);
+            unlink($finalFile);
 
         } else {
             continue;
