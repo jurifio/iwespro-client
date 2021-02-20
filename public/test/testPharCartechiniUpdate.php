@@ -122,6 +122,7 @@ join DirtySku ds on dp.id=ds.dirtyProductId where dp.extId='" . $extId . "' and 
 
                     }
                 }
+                $lineCount++;
             }
                 fclose($f);
             }
