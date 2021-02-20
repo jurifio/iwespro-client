@@ -105,7 +105,7 @@ try {
                                     $productId = $dirtyProduct->productId;
                                     $productVariantId = $dirtyProduct->productVariantId;
                                     $shopHasProduct = $shopHasProductRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'shopId' => 1]);
-                                    $productSold = $productSoldSizeRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'productSizeId' => $dirtySku->productSizeId,'shopId' => 58,'year' => $year,'month' => $month,'day' => $day]);
+                                    $productSold = $productSoldSizeRepo->findOneBy(['productId' => $productId,'productVariantId' => $productVariantId,'productSizeId' => $dirtySku->productSizeId,'shopId' => 1,'year' => $year,'month' => $month,'day' => $day]);
                                     if ($productSold == null) {
                                         continue;
                                     } else {
