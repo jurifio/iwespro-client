@@ -48,6 +48,7 @@ try {
         $origingFile = basename($file,".tar.gz") . PHP_EOL;
         echo $origingFile;
         $firstFileSku = substr($origingFile,15,4);
+        $firstFileDay = substr($origingFile,8,2);
 
         if (($firstFileDay == '20') && ($firstFileSku=='SKUS')) {
             echo 'trovato';
