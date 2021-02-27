@@ -29,10 +29,15 @@ $time = microtime(true);
 $monkey->eventManager;
 var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
-$billingAddressFind= \Monkey::app()->repoFactory->create('UserAddress')->findOneBy(['id'=>'45']);
+/*$billingAddressFind= \Monkey::app()->repoFactory->create('UserAddress')->findOneBy(['id'=>'45']);
 $billingAddress=$billingAddressFind->froze();
 
 
 
-var_dump($billingAddress);
+var_dump($billingAddress);*/
+$filename='/media/sf_sites/iwespro/temp/20190905103418_1567672262.tar.gz';
+$stat = stat($filename);
+$start_date = new DateTime();
+$start_date->setTimestamp($stat['ctime']);
+echo $start_date->format('Y-m-d H:i:s');
 
