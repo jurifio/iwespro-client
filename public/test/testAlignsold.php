@@ -55,7 +55,7 @@ foreach($res as $result){
         $productSoldDayInsert->soldQuantity=$result['soldQuantity'];
         $productSoldDayInsert->priceActive=$result['priceActive'];
         $productSoldDayInsert->netTotal=$result['netTotal'];
-        $productSolDayInsert->insert();
+        $productSoldDayInsert->insert();
     }
 }
 
