@@ -33,7 +33,7 @@ $monkey->eventManager;
 var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
 $sql='SELECT productId,productVariantId,shopId,dateStart,startQuantity,dateEnd,EndQuantity,priceActive,SUM(soldQuantity)AS soldQuantity, SUM(netTotal) AS netTotal,`year`,`month`,`year`
-FROM ProductSizeSoldDay  where dateStart <\'2021-02-16 00:00:00\' GROUP BY `day`,`month`,`year`,productId,productVariantId,shopId Order BY dateStart asc';
+FROM ProductSizeSoldDay  where dateStart <\'2021-02-16 00:00:00\' and shopId!=51 GROUP BY `day`,`month`,`year`,productId,productVariantId,shopId Order BY dateStart asc';
 $res=\Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
 $productSoldDayRepo=\Monkey::app()->repoFactory->create('ProductSoldDay');
 foreach($res as $result){
