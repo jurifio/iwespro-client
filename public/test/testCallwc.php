@@ -50,7 +50,7 @@ $woocommerce = new Client(
 try {
 
     // Array of response results.
-    $results = $woocommerce->get('products',array('filter[limit]' => -1 ));
+    $results = $woocommerce->get('products',array('filter[posts_per_page]'=>-1 ));
 var_dump($results);
 
 
