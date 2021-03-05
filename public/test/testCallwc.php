@@ -50,7 +50,7 @@ $woocommerce = new Client(
 try {
 
     // Array of response results.
-    $results = $woocommerce->get('products',array('filter[limit]' => 500 ));
+    $results = $woocommerce->get('products',array('filter[limit]' => -1 ));
 var_dump($results);
 
 
