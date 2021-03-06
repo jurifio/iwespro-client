@@ -3,8 +3,8 @@
 use bamboo\core\exceptions\BambooException;
 
 
-ini_set("memory_limit", "2000M");
-ini_set('max_execution_time', 0);
+ini_set("memory_limit","2000M");
+ini_set('max_execution_time',0);
 $ttime = microtime(true);
 $time = microtime(true);
 require '../../iwesStatic.php';
@@ -34,8 +34,10 @@ $time = microtime(true);
 $monkey->eventManager;
 var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
+
 use Automattic\WooCommerce\Client;
 use Automattic\WooCommerce\HttpClient\HttpClientException;
+
 $woocommerce = new Client(
     'http://www.soniafedeliparrucchieria.it/',
     'ck_bf857ee767ad48d531aa47971c8f431cecffb871',
@@ -48,16 +50,22 @@ $woocommerce = new Client(
 );
 
 try {
+    $page = 10;
+    $i = 1;
+    $countProduct = 0;
+    for ($i = 1; $i < $page; $i++) {
+        // Array of response results.
+        $results = $woocommerce->get('products',array('page' => $i,'per_page' => 100));
+            var_dump($results);
+        foreach ($results as $result) {
+            $countProduct++;
+            echo $result->name . '<br>';
+            foreach ($result->categories as $category)
+                echo $category->name;
+        }
 
-    // Array of response results.
-    $results = $woocommerce->get('products',array('filter[posts_per_page]'=>-1 ));
-var_dump($results);
-
-
-    foreach ($results as $one) {
-        echo $one->name;
     }
-
+    echo $countProduct;
 
 
     // Example: ['customers' => [[ 'id' => 8, 'created_at' => '2015-05-06T17:43:51Z', 'email' => ...
@@ -79,9 +87,9 @@ var_dump($results);
     echo '<pre><code>' . print_r( $lastResponse->getBody(), true ) . '</code><pre>'; // Response body (JSON).
 */
 } catch (HttpClientException $e) {
-    echo '<pre><code>' . print_r( $e->getMessage(), true ) . '</code><pre>'; // Error message.
-    echo '<pre><code>' . print_r( $e->getRequest(), true ) . '</code><pre>'; // Last request data.
-    echo '<pre><code>' . print_r( $e->getResponse(), true ) . '</code><pre>'; // Last response data.
+    echo '<pre><code>' . print_r($e->getMessage(),true) . '</code><pre>'; // Error message.
+    echo '<pre><code>' . print_r($e->getRequest(),true) . '</code><pre>'; // Last request data.
+    echo '<pre><code>' . print_r($e->getResponse(),true) . '</code><pre>'; // Last response data.
 }
 
 
