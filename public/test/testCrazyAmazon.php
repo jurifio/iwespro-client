@@ -50,9 +50,13 @@ $token='Atzr|IwEBIIShU9Sik7v3c947K12dzLh34leDHuIxIKmhGAlmzBm2Id-ucw5x4Ugpti0IU1M
 $stsCredentials='AKIAWP2CM7DXOW6TRZXL,l5lWa7yTLurvmqdeHEhv5Sa1HzH84nCPfLCVDyji';
 $arraySalt=[];
 $arraySalt=['lwa_access_token'=>[$token,'expiresOn'=>$res->expires_in],'sts_credentials'=>['access_key'=>'AKIAWP2CM7DXOW6TRZXL','secret_key'=>'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','expiresOn'=>$res->expires_in,'token'=>'Atzr|IwEBIIShU9Sik7v3c947K12dzLh34leDHuIxIKmhGAlmzBm2Id-ucw5x4Ugpti0IU1M3oLJwBLkPi00qY-IONqll04Nr8YVVF8ZEdkVaBiUnXEizDGmIPV8aPP0A9SG3jEaE6hxNYU3QH7muWUg1pEoZI1CHWX0DAT5_BhWYhEcdPmupiMvEaioNgYkDwyZsjLcO3jIABh1M5CwLscwJT9UWv13AKjz2CtbpVutOnWR1Aj8eVoJvghW6HZmgcwL-vhcL9aqAfV-9TYJNwlqOhtRW3nUPdRTY0iURX7Me1y8HF8CfVq2yOwCg-ZWGT_2Z0wWhPCU']];
-
-$fp = fopen('/media/sf_sites/iwespro/aws-token/aws-token', 'w');
-file_put_contents('/media/sf_sites/iwespro/aws-token/aws-token', json_encode($arraySalt));
+if (ENV == 'dev') {
+    $fp = fopen('/media/sf_sites/iwespro/aws-token/aws-token','w');
+    file_put_contents('/media/sf_sites/iwespro/aws-token/aws-token',json_encode($arraySalt));
+}else{
+    $fp = fopen('/media/sf_sites/iwespro/public_html/aws-token/aws-token','w');
+    file_put_contents('/media/sf_sites/iwespro/public_html/aws-token/aws-token',json_encode($arraySalt));
+}
 fclose($fp);
 //Create token storage which will store the temporary tokens
 
