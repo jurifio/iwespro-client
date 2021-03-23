@@ -54,8 +54,8 @@ if (ENV == 'dev') {
     $fp = fopen('/media/sf_sites/iwespro/aws-token/aws-token','w');
     file_put_contents('/media/sf_sites/iwespro/aws-token/aws-token',json_encode($arraySalt));
 }else{
-    $fp = fopen('/media/sf_sites/iwespro/public_html/aws-token/aws-token','w');
-    file_put_contents('/media/sf_sites/iwespro/public_html/aws-token/aws-token',json_encode($arraySalt));
+    $fp = fopen('/home/iwespro/public_html/aws-token/aws-token','w');
+    file_put_contents('/home/iwespro/public_html/aws-token/aws-token',json_encode($arraySalt));
 }
 fclose($fp);
 //Create token storage which will store the temporary tokens
