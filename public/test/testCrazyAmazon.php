@@ -59,7 +59,7 @@ fclose($fp);
 if (ENV == 'dev') {
     $tokenStorage = new DoubleBreak\Spapi\SimpleTokenStorage('/media/sf_sites/iwespro/aws-token/aws-token');
 }else{
-    $tokenStorage = new DoubleBreak\Spapi\SimpleTokenStorage('./aws-token');
+    $tokenStorage = new DoubleBreak\Spapi\SimpleTokenStorage('/home/iwespro/public_html/aws-token/aws-token');
 }
 
 //Create the request signer which will be automatically used to sign all of the
