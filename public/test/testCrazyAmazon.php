@@ -1,7 +1,9 @@
 <?php
 
 require '../../iwesStatic.php';
-\Monkey::app()->vendorLibraries->load('amazonapi');
+use Aws\S3\S3Client;
+use Aws\Common\Credentials\Credentials;
+\Monkey::app()->vendorLibraries->load('amazonsapi');
 
 $config = [
     //Guzzle configuration
@@ -19,7 +21,7 @@ $config = [
     // (a.k.a Secure token) for accessing and assuming the IAM role
     'access_key' => 'AKIAWP2CM7DXOW6TRZXL',
     'secret_key' => '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',
-    'role_arn' => 'arn:aws:iam::446278990062:user/PartnerRoleAPI' ,
+    'role_arn' => 'arn:aws:iam::446278990062:role/PartnerRoleAPI' ,
 
     //API: Actual configuration related to the SP API :)
     'region' => 'eu-west-1',
@@ -45,51 +47,115 @@ curl_close($ch);
 
 $res=json_decode($result);
 
-$nextToken= $res->access_token;
-$token='Atzr|IwEBIIShU9Sik7v3c947K12dzLh34leDHuIxIKmhGAlmzBm2Id-ucw5x4Ugpti0IU1M3oLJwBLkPi00qY-IONqll04Nr8YVVF8ZEdkVaBiUnXEizDGmIPV8aPP0A9SG3jEaE6hxNYU3QH7muWUg1pEoZI1CHWX0DAT5_BhWYhEcdPmupiMvEaioNgYkDwyZsjLcO3jIABh1M5CwLscwJT9UWv13AKjz2CtbpVutOnWR1Aj8eVoJvghW6HZmgcwL-vhcL9aqAfV-9TYJNwlqOhtRW3nUPdRTY0iURX7Me1y8HF8CfVq2yOwCg-ZWGT_2Z0wWhPCU';
-$stsCredentials='AKIAWP2CM7DXOW6TRZXL,l5lWa7yTLurvmqdeHEhv5Sa1HzH84nCPfLCVDyji';
-$arraySalt=[];
-$arraySalt=['lwa_access_token'=>[$token,'expiresOn'=>$res->expires_in],'sts_credentials'=>['access_key'=>'AKIAWP2CM7DXOW6TRZXL','secret_key'=>'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','expiresOn'=>$res->expires_in,'token'=>'Atzr|IwEBIIShU9Sik7v3c947K12dzLh34leDHuIxIKmhGAlmzBm2Id-ucw5x4Ugpti0IU1M3oLJwBLkPi00qY-IONqll04Nr8YVVF8ZEdkVaBiUnXEizDGmIPV8aPP0A9SG3jEaE6hxNYU3QH7muWUg1pEoZI1CHWX0DAT5_BhWYhEcdPmupiMvEaioNgYkDwyZsjLcO3jIABh1M5CwLscwJT9UWv13AKjz2CtbpVutOnWR1Aj8eVoJvghW6HZmgcwL-vhcL9aqAfV-9TYJNwlqOhtRW3nUPdRTY0iURX7Me1y8HF8CfVq2yOwCg-ZWGT_2Z0wWhPCU']];
-if (ENV == 'dev') {
-    $fp = fopen('/media/sf_sites/iwespro/aws-token/aws-token','w');
-    file_put_contents('/media/sf_sites/iwespro/aws-token/aws-token',json_encode($arraySalt));
-}else{
-    $fp = fopen('/home/iwespro/public_html/aws-token/aws-token','w');
-    file_put_contents('/home/iwespro/public_html/aws-token/aws-token',json_encode($arraySalt));
+$nextToken= $res->refresh_token;
+$token='Atzr|IwEBIFEh8rsv4QOPx-i4zw1WuEHIzTf7Mdrz9eE3uRsrqJjyTdJ1OtmhMQSSrkkws2hpTNow3yiDBZvpe8ZXwq3pheu7U0qyS7UYErcAeAxDnUq3BkATKAy5ziD5rubs4yFfD17yOx7FVyP4AgpNp50miQe-26xRNGyaHrKhCafeEjSFhWe5Msto9DW5fNQOdyAXOQOB2kYjATC6y1hn_OhVPBEjFZOG6GRphAwOK8j-jUiHZGNAfBGBRURoByW5LRhny1gxPRUmFDVjKIS20UJSA2CZEEap-cV6a8PujG7yDmBe4HxB9r_-XFcwjpi415IqN3w","client_id"=>"amzn1.application-oa2-client.1cf3ee13dbbe435caadced510a94f1f1","client_secret" => "2574f54cc10b20c7a814a2c81df7fcbd117c28ae02e3c95e42d43e04a36e4d8e';
+$options = [
+    'refresh_token' => $res->refresh_token,
+    'client_id' => 'amzn1.application-oa2-client.1cf3ee13dbbe435caadced510a94f1f1',
+    'client_secret' => '2574f54cc10b20c7a814a2c81df7fcbd117c28ae02e3c95e42d43e04a36e4d8e',
+    'region' =>  'eu-west-1',
+    'access_key' => 'AKIAWP2CM7DXOW6TRZXL',
+    'secret_key' => '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',
+    'endpoint' =>  'https://sellingpartnerapi-eu.amazon.com',
+    'role_arn' => 'arn:aws:iam::446278990062:user/PartnerRoleAPI',
+    'marketplaceId' =>'APJ6JRA9NG5V4'
+];
+
+
+//$credentials = new Credentials('AKIAWP2CM7DXOW6TRZXL', 'l5lWa7yTLurvmqdeHEhv5Sa1HzH84nCPfLCVDyji');
+
+
+// crea access token
+$accessToken = \ClouSale\AmazonSellingPartnerAPI\SellingPartnerOAuth::getAccessTokenFromRefreshToken(
+    $options['refresh_token'],
+    $options['client_id'],
+    $options['client_secret']
+);
+//imposta configurzione
+$config =   \ClouSale\AmazonSellingPartnerAPI\Configuration::getDefaultConfiguration();
+$config->setHost($options['endpoint']);
+$config->setAccessToken($accessToken);
+$config->setAccessKey($options['access_key']);
+$config->setSecretKey($options['secret_key']);
+$config->setRegion($options['region']);
+
+//crea prenotazoine feedDocumentId e importa il payload
+$apiInstance =  new \ClouSale\AmazonSellingPartnerAPI\Api\FeedsApi(
+// If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+// This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedDocumentSpecification(["content_type"=>"text/xml; charset=UTF-8"]); // \Swagger\Client\Models\CreateFeedDocumentSpecification |
+
+try {
+    $result = $apiInstance->createFeedDocument($body);
+    $decodeResult=json_decode($result,true);
+   // echo 'feedDocumentId: '.$decodeResult[0]payload->container->feed_document_id.'<br>';
+    /*
+    echo 'feedDocumentId: '.$decodeResult['payload']['feedDocumentId'].'<br>';
+    echo 'url: '.$decodeResult['payload']['url'].'<br>';
+    echo 'standard: '.$decodeResult['payload']['encryptionDetails']['standard'].'<br>';
+    echo 'encryptionDetails initializationVector: '.$decodeResult['payload']['encryptionDetails']['initializationVector'].'<br>';
+    echo 'encryptionDetails key: '.$decodeResult['payload']['encryptionDetails']['key'].'<br>';
+    */
+    $feedDocumentId=$decodeResult['payload']['feedDocumentId'];
+    $url=$decodeResult['payload']['url'];
+    $standard=$decodeResult['payload']['encryptionDetails']['standard'];
+    $initializationVector=$decodeResult['payload']['encryptionDetails']['initializationVector'];
+    $key=$decodeResult['payload']['encryptionDetails']['key'];
+    $payload=$decodeResult['payload'];
+
+} catch (Exception $e) {
+    echo 'Exception when calling FeedsApi->createFeedDocument: ', $e->getMessage(), PHP_EOL;
 }
-fclose($fp);
-//Create token storage which will store the temporary tokens
 
-if (ENV == 'dev') {
-    $tokenStorage = new DoubleBreak\Spapi\SimpleTokenStorage('/media/sf_sites/iwespro/aws-token/aws-token');
-}else{
-    $tokenStorage = new DoubleBreak\Spapi\SimpleTokenStorage('/home/iwespro/public_html/aws-token/aws-token');
+// crea feed in xml e cripta e upload
+$feedContentFilePath = '/media/sf_sites/iwespro/temp/productFeed_1_2021-03-23_111325.xml';
+
+$result = (new  \ClouSale\AmazonSellingPartnerAPI\Helpers\Feeder())->uploadFeedDocument($payload,"text/xml; charset=UTF-8",$feedContentFilePath);
+echo $feedDocumentId.'<br>';
+$resultDocumentResult = new \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\createFeedDocumentResult(['feed_document_id'=>$feedDocumentId,'url'=>$url,'encryption_details'=>$decodeResult['payload']['encryptionDetails']]);
+$resDocResult=json_decode($resultDocumentResult,true);
+
+
+$apiInstance =  new \ClouSale\AmazonSellingPartnerAPI\Api\FeedsApi(
+// If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+// This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedSpecification(['feed_type'=>'POST_PRODUCT_DATA','marketplace_ids'=>['APJ6JRA9NG5V4','A13V1IB3VIYZZH','A1RKKUPIHCS9HS','A1805IZSGTT6HS','A1PA6795UKMFR9','A1F83G8C2ARO7P'],'input_feed_document_id'=>$feedDocumentId]);
+//$body = new \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedSpecification(['feed_type'=>'POST_PRODUCT_DATA','marketplace_ids'=>['APJ6JRA9NG5V4'],'input_feed_document_id'=>$feedDocumentId]);
+try {
+   // $resultp=new \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\Feed(['feed_type'=>'POST_PRODUCT_DATA','marketplace_ids'=>['APJ6JRA9NG5V4','A13V1IB3VIYZZH','A1RKKUPIHCS9HS','A1805IZSGTT6HS','A1PA6795UKMFR9','A1F83G8C2ARO7P'],'input_feed_document_id'=>$feedDocumentId]);
+   $resultp = $apiInstance->createFeed($body);
+    $decodeResult=json_decode($resultp,true);
+    /*$feedDocumentId=$decodeResult['payload']['feedDocumentId'];
+    $url=$decodeResult['payload']['url'];
+    $standard=$decodeResult['payload']['encryptionDetails']['standard'];
+    $initializationVector=$decodeResult['payload']['encryptionDetails']['initializationVector'];
+    $key=$decodeResult['payload']['encryptionDetails']['key'];
+    $payload=$decodeResult['payload'];*/
+
+} catch (Exception $e) {
+    echo 'Exception when calling FeedsApi->createFeed: ', $e->getMessage(), PHP_EOL;
 }
 
-//Create the request signer which will be automatically used to sign all of the
-//requests to the API
-$signer = new DoubleBreak\Spapi\Signer();
-
-//Create Credentials service and call getCredentials() to obtain
-//all the tokens needed under the hood
-$credentials = new DoubleBreak\Spapi\Credentials($tokenStorage, $signer, $config);
-$cred = $credentials->getCredentials();
 
 
 
-/** The application logic implementation **/
 
 
-//Create SP API Catalog client and execute one ot its REST methods.
-$catalogClient = new DoubleBreak\Spapi\Api\CatalogItems($cred, $config);
-
-//Check the catalog info for B074Z9QH5F ASIN
-$result = $catalogClient->getCatalogItem('B074Z9QH5F', [
-    'MarketplaceId' => 'A1PA6795UKMFR9',
-])['payload'];
 
 
-print_r($result);
+//pubblica su s3 file
+
+
+// risposta di caricamento  e aggiornamento database
+
+
+//
 
 
 
