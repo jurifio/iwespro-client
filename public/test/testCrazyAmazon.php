@@ -129,7 +129,7 @@ $body = new \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedSpecificati
 //$body = new \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedSpecification(['feed_type'=>'POST_PRODUCT_DATA','marketplace_ids'=>['APJ6JRA9NG5V4'],'input_feed_document_id'=>$feedDocumentId]);
 try {
    // $resultp=new \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\Feed(['feed_type'=>'POST_PRODUCT_DATA','marketplace_ids'=>['APJ6JRA9NG5V4','A13V1IB3VIYZZH','A1RKKUPIHCS9HS','A1805IZSGTT6HS','A1PA6795UKMFR9','A1F83G8C2ARO7P'],'input_feed_document_id'=>$feedDocumentId]);
-   $resultp = $apiInstance->createFeed($body);
+    $resultp = $apiInstance->createFeed($body);
     $decodeResult=json_decode($resultp,true);
     /*$feedDocumentId=$decodeResult['payload']['feedDocumentId'];
     $url=$decodeResult['payload']['url'];

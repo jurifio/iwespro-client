@@ -1,5 +1,5 @@
 <?php
-
+require '../../iwesStatic.php';
 
 
 function callAPI($method, $url, $data){
@@ -35,11 +35,11 @@ function callAPI($method, $url, $data){
 }
 
 
-$get_data = callAPI('GET', 'http://testing.efashion.cloud/api/v3.0/products/condensed?storeCode=N1R3X', false);
+$get_data = callAPI('GET', 'http://testing.efashion.cloud/api/v3.0/products/condensed?storeCode=ASAHP', false);
 $response = json_decode($get_data, true);
 foreach ($response as $rawSkus) {
        foreach ($rawSkus['items'] as $rawSku){
-           echo $rawSku['product_id'];
+           echo $rawSku['product_id'].'</br>';
        }
 }
 ?>
