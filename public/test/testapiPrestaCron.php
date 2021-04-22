@@ -770,7 +770,7 @@ footer {
 <li><input id="tab7" class="css-tab" name="tab" type="radio" /> <label for="tab7" class="tab-label">CONTATTI</label>
 <div id="tab-content7" class="tab-content">
 <h2>CONTATTACI</h2>
-<p>tel. +39 02 379 20 266<br /> &nbsp;mob. +39 327 55 90 989<br /> &nbsp;email.&nbsp;support@cartechinishop.com&nbsp;</p>
+<p>tel. +39 0733 471365<br /> &nbsp;mob. +39 327 55 90 989<br /> &nbsp;email.&nbsp;support@cartechinishop.com&nbsp;</p>
 </div>
 </li>
 </ul>
