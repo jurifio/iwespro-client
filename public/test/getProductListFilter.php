@@ -76,7 +76,7 @@ $data=[];
 $i=0;
 $resultProduct=\Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
 foreach($resultProduct as $res) {
-   $data[$i]=['productId'=>$res['id'],'productVariantId'=>$res['productVariantId'],'cpf'=>$res['cpf'],'brand'=>$res['brand'],'season'=>$res['season']];
+   $data[$i]=['productId'=>$res['id'],'productVariantId'=>$res['productVariantId'],'cpf'=>preg_replace("/[\/\&%#\$]/","_",$res['cpf']),'brand'=>$res['brand'],'season'=>$res['season']];
    $i++;
 }
 echo json_encode($data);
