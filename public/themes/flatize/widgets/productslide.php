@@ -40,8 +40,14 @@
                             <h4>
                                 <a href="<?php echo $app->productUrl($product); ?>"><?php echo $product->productBrand->name; ?></a>
                             </h4>
+                            <?php
+                            $homeShop = \Monkey::app()->cfg()->fetch("general","shop-id");
+                            $productHasProductCategory=\Monkey::app()->repoFactory->create('ProductHasProductCategory')->findOneBy(['productId'=>$product->id,'productVariantId'=>$product->productVariantId]);
+                            $productCategoryId=$productHasProductCategory->productCategoryId;
+                            $langId=\Monkey::app()->getLang()->getId();
+                            ?>
                             <span class="item-cat"><small><a
-                                        href="#"><?php echo $product->productCategoryTranslation->findOneByKey('id', $app->lang()); ?></a></small></span>
+                                            href="#"><?php  echo \Monkey::app()->repoFactory->create('ProductCategoryTranslation')->findOneBy(['productCategoryId'=>$productCategoryId,'langId'=>$langId,'shopId'=>44])->name; ?></a></small></span>
                             <?php if ($pricesAreOnARange == true): ?>
                                 <?php if ($sale > 0): ?>
                                     <span class="oldprice"><?php echo $salePrices[0]; ?> &euro;

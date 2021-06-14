@@ -62,7 +62,7 @@
 					 JOIN ProductCategory parent ON parent.lft BETWEEN father.lft AND father.rght
 					 JOIN ProductCategory node ON node.lft BETWEEN parent.lft AND parent.rght 
                      JOIN Product p JOIN ProductStatus ps ON p.productStatusId = ps.id
-					 JOIN ProductCategoryTranslation pct on  parent.id=pct.productCategoryId and langId='.$langId.'   
+					 JOIN ProductCategoryTranslation pct on  parent.id=pct.productCategoryId and pct.langId=".$langId." and pct.shopId=44   
 					 JOIN ProductHasProductCategory phpc ON (p.id,p.productVariantId) = (phpc.productId,phpc.productVariantId) AND node.id = phpc.productCategoryId 
 					WHERE 
 					  ps.isVisible = 1 AND
@@ -85,7 +85,7 @@
 					 JOIN ProductCategory parent ON parent.lft BETWEEN father.lft AND father.rght
 					 JOIN ProductCategory node ON node.lft BETWEEN parent.lft AND parent.rght 
                      JOIN Product p JOIN ProductStatus ps ON p.productStatusId = ps.id
-					 JOIN ProductCategoryTranslation pct on  parent.id=pct.productCategoryId and langId='.$langId.'   
+					 JOIN ProductCategoryTranslation pct on  parent.id=pct.productCategoryId and langId='.$langId.' and pct.shopId=44  
 					 JOIN ProductHasProductCategory phpc ON (p.id,p.productVariantId) = (phpc.productId,phpc.productVariantId) AND node.id = phpc.productCategoryId 
 					WHERE 
 					  ps.isVisible = 1 AND
@@ -117,7 +117,7 @@
 					 JOIN ProductCategory parent ON parent.lft BETWEEN father.lft AND father.rght
 					 JOIN ProductCategory node ON node.lft BETWEEN parent.lft AND parent.rght 
                      JOIN Product p JOIN ProductStatus ps ON p.productStatusId = ps.id
-					 JOIN ProductCategoryTranslation pct on  parent.id=pct.productCategoryId and langId='.$langId.'   
+					 JOIN ProductCategoryTranslation pct on  parent.id=pct.productCategoryId and langId='.$langId.'   and pct.shopId=44
 					 JOIN ProductHasProductCategory phpc ON (p.id,p.productVariantId) = (phpc.productId,phpc.productVariantId) AND node.id = phpc.productCategoryId 
 					WHERE 
 					  ps.isVisible = 1 AND
@@ -140,7 +140,7 @@
 					 JOIN ProductCategory parent ON parent.lft BETWEEN father.lft AND father.rght
 					 JOIN ProductCategory node ON node.lft BETWEEN parent.lft AND parent.rght 
                      JOIN Product p JOIN ProductStatus ps ON p.productStatusId = ps.id
-					 JOIN ProductCategoryTranslation pct on  parent.id=pct.productCategoryId and langId='.$langId.'   
+					 JOIN ProductCategoryTranslation pct on  parent.id=pct.productCategoryId and langId='.$langId.'   and pct.shopId=44
 					 JOIN ProductHasProductCategory phpc ON (p.id,p.productVariantId) = (phpc.productId,phpc.productVariantId) AND node.id = phpc.productCategoryId 
 					WHERE 
 					  ps.isVisible = 1 AND
@@ -172,7 +172,7 @@
 					 JOIN ProductCategory parent ON parent.lft BETWEEN father.lft AND father.rght
 					 JOIN ProductCategory node ON node.lft BETWEEN parent.lft AND parent.rght 
                      JOIN Product p JOIN ProductStatus ps ON p.productStatusId = ps.id
-					 JOIN ProductCategoryTranslation pct on  parent.id=pct.productCategoryId and langId='.$langId.'   
+					 JOIN ProductCategoryTranslation pct on  parent.id=pct.productCategoryId and langId='.$langId.'   and pct.shopId=44
 					 JOIN ProductHasProductCategory phpc ON (p.id,p.productVariantId) = (phpc.productId,phpc.productVariantId) AND node.id = phpc.productCategoryId 
 					WHERE 
 					  ps.isVisible = 1 AND
@@ -195,7 +195,7 @@
 					 JOIN ProductCategory parent ON parent.lft BETWEEN father.lft AND father.rght
 					 JOIN ProductCategory node ON node.lft BETWEEN parent.lft AND parent.rght 
                      JOIN Product p JOIN ProductStatus ps ON p.productStatusId = ps.id
-					 JOIN ProductCategoryTranslation pct on  parent.id=pct.productCategoryId and langId='.$langId.'   
+					 JOIN ProductCategoryTranslation pct on  parent.id=pct.productCategoryId and langId='.$langId.'   and pct.shopId=44
 					 JOIN ProductHasProductCategory phpc ON (p.id,p.productVariantId) = (phpc.productId,phpc.productVariantId) AND node.id = phpc.productCategoryId 
 					WHERE 
 					  ps.isVisible = 1 AND
@@ -223,7 +223,7 @@
 					 JOIN ProductCategory parent ON parent.lft BETWEEN father.lft AND father.rght
 					 JOIN ProductCategory node ON node.lft BETWEEN parent.lft AND parent.rght 
                      JOIN Product p JOIN ProductStatus ps ON p.productStatusId = ps.id
-					 JOIN ProductCategoryTranslation pct on  parent.id=pct.productCategoryId and langId='.$langId.'   
+					 JOIN ProductCategoryTranslation pct on  parent.id=pct.productCategoryId and langId='.$langId.'   and pct.shopId=44
 					 JOIN ProductHasProductCategory phpc ON (p.id,p.productVariantId) = (phpc.productId,phpc.productVariantId) AND node.id = phpc.productCategoryId 
 					WHERE 
 					  ps.isVisible = 1 AND
@@ -246,7 +246,7 @@
 					 JOIN ProductCategory parent ON parent.lft BETWEEN father.lft AND father.rght
 					 JOIN ProductCategory node ON node.lft BETWEEN parent.lft AND parent.rght 
                      JOIN Product p JOIN ProductStatus ps ON p.productStatusId = ps.id
-					 JOIN ProductCategoryTranslation pct on  parent.id=pct.productCategoryId and langId='.$langId.'   
+					 JOIN ProductCategoryTranslation pct on  parent.id=pct.productCategoryId and langId='.$langId.'   and pct.shopId=44
 					 JOIN ProductHasProductCategory phpc ON (p.id,p.productVariantId) = (phpc.productId,phpc.productVariantId) AND node.id = phpc.productCategoryId 
 					WHERE 
 					  ps.isVisible = 1 AND

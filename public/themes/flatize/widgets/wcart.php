@@ -42,8 +42,13 @@
                                             echo "";
                                         }
                                         ?></small></span>
+                                <?php
+                                $productHasProductCategory=\Monkey::app()->repoFactory->create('ProductHasProductCategory')->findOneBy(['productId'=>$val->id,'productVariantId'=>$val->productVariantId]);
+                                $productCategoryId=$productHasProductCategory->productCategoryId;
+                                $langId=\Monkey::app()->getLang()->getId();
+                                ?>
                                 <span class="item-cat"><small><a
-                                                href="#"><?php echo $val->productPublicSku->product->productCategoryTranslation->findOneByKey('id', $app->lang()); ?></a></small></span>
+                                                href="#"><?php  echo \Monkey::app()->repoFactory->create('ProductCategoryTranslation')->findOneBy(['productCategoryId'=>$productCategoryId,'langId'=>$langId,'shopId'=>44])->name; ?></a></small></span>
                                 <?php if ($val->productPublicSku->isOnSale): ?>
                                     <span class="oldprice"><?php echo $val->productPublicSku->price; ?> &euro;</span>&ensp;
                                     <span class="saleprice"><?php echo $val->productPublicSku->salePrice; ?> &euro;</span>

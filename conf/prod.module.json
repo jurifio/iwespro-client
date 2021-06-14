@@ -11,7 +11,8 @@
         "main-shop-address": 4,
         "debug-mode": false,
         "name": "IwesPro",
-        "default-lang": "it"
+        "default-lang": "it",
+        "shop-id": 44
     },
     "paths": {
         "domain": "www.iwes.pro",
