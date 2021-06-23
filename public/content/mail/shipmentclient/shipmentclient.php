@@ -44,7 +44,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="center"
                                     style="display: inline-block; padding: 20px 0px 10px; margin: 0px;" class="tdBlock">
                                     <a href="<?php echo $urlSite?>" target="_blank">
-                                        <img src="https://cdn.iwes.it/assets/<?php echo $logoSite;?>" alt="" height="70"
+                                        <img src="https://pickyshop.com/assets/<?php echo $logoSite;?>" alt="" height="70"
                                              border="0"
                                              style="border-width: 0px; border-style: none; border-color: transparent; font-size: 12px; display: block;"/>
                                     </a>
