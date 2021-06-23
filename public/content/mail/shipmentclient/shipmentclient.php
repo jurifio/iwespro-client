@@ -207,7 +207,7 @@ use bamboo\core\theming\CMailerHelper;
                                                                         <td valign="top" align="center" class="lh-1"
                                                                             style="padding: 50px 0px; margin: 0px; line-height: 1.15; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                                             <span style="font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:300;color:#000000; line-height:0.5;">
-                                                                <?php echo $orderLine->productSku->product->getName() ?>
+                                                                <?php echo $orderLine->productSku->product->id.'-'.$orderLine->productSku->product->productVariantId.' '.$orderLine->productSku->product->itemno ?>
                                                             </span>
                                                                         </td>
                                                                     </tr>
@@ -236,33 +236,6 @@ use bamboo\core\theming\CMailerHelper;
                                 </td>
                             </tr>
 
-                            <?php if ($coupon): ?>
-                                <tr>
-                                    <td valign="top" align="left" class="lh-3"
-                                        style="padding: 5px 10px ; margin: 0px; line-height: 1; font-size: 16px; font-family: Times New Roman, Times, serif;">
-                                    <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-                                       <?php echo sprintf($data->line5, $coupon->amount) ?>
-                                     </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td valign="top" align="left" class="lh-3"
-                                        style="padding: 5px 10px; margin: 0px; line-height: 1; font-size: 16px; font-family: Times New Roman, Times, serif;">
-                                    <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-                                       <?php echo $data->line6 ?>
-                                     </span>
-                                    </td>
-                                </tr>
-                                <tr>
-
-                                    <td valign="top" align="left" class="lh-3"
-                                        style="padding: 5px 10px; line-height: 2; font-size: 16px; font-family: Times New Roman, Times, serif;">
-                                    <span style="font-family: 'Poppins', sans-serif; font-size:15px; color:#3A3A3A; line-height:2; font-weight: 600">
-                                      <?php echo $coupon->code ?></span>
-                                    </td>
-                                </tr>
-                            <?php endif; ?>
-                            <tr>
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 5px 10px 10px; margin: 0px; line-height: 1; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;"><?php echo $data->line7 ?>
