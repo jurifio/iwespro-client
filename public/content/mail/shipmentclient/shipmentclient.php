@@ -43,8 +43,8 @@ use bamboo\core\theming\CMailerHelper;
                             <tr>
                                 <td valign="top" align="center"
                                     style="display: inline-block; padding: 20px 0px 10px; margin: 0px;" class="tdBlock">
-                                    <a href="https://www.pickyshop.com" target="_blank">
-                                        <img src="https://cdn.iwes.it/assets/Pickyshop.png" alt="" height="70"
+                                    <a href="<?php echo $urlSite?>" target="_blank">
+                                        <img src="https://cdn.iwes.it/assets/<?php echo $logoSite;?>" alt="" height="70"
                                              border="0"
                                              style="border-width: 0px; border-style: none; border-color: transparent; font-size: 12px; display: block;"/>
                                     </a>
@@ -55,27 +55,20 @@ use bamboo\core\theming\CMailerHelper;
                         <table border="0" cellspacing="0" cellpadding="0" align="center">
                             <tr style="text-align: center;">
                                 <td style="clear: none; padding: 0 20px 0 20px; margin: 0px auto !important;"
-                                    align="center" valign="top">
-                                    <a href="https://www.pickyshop.com/<?php echo $app->lang(); ?>/donna-2/new-arrival-6"
-                                       style="color: grey; padding: 10px 10px; text-align: center; text-decoration: none"
-                                       target="_blank"
-                                       title="<?php echo $data->newArrivals ?>"><?php echo $data->newArrivals ?></a>
-                                </td>
-                                <td style="clear: none; padding: 0 20px 0 20px; margin: 0px auto !important;"
                                     align="right" valign="top">
-                                    <a href="https://www.pickyshop.com/<?php echo $app->lang(); ?>/donna-2"
+                                    <a href="<?php echo $urlSite.'/'.$app->lang(); ?>/donna-2"
                                        style="color: grey; padding: 10px 10px; text-align: center; text-decoration: none"
                                        target="_blank" title="<?php echo $data->woman ?>"><?php echo $data->woman ?></a>
                                 </td>
                                 <td style="clear: none; padding: 0 20px 0 20px; margin: 0px auto !important;"
                                     align="right" valign="top">
-                                    <a href="https://www.pickyshop.com/<?php echo $app->lang(); ?>/uomo-3"
+                                    <a href="<?php echo $urlSite.'/'.$app->lang(); ?>/uomo-3"
                                        style="color: grey; padding: 10px 10px; text-align: center; text-decoration: none"
                                        target="_blank" title="<?php echo $data->man ?>"><?php echo $data->man ?></a>
                                 </td>
                                 <td style="clear: none; padding: 0 20px 0 20px; margin: 0px auto !important;"
                                     align="right" valign="top">
-                                    <a href="https://www.pickyshop.com/<?php echo $app->lang(); ?>/brands/donna-2"
+                                    <a href="<?php echo $urlSite.'/'.$app->lang(); ?>/brands/donna-2"
                                        style="color: grey; padding: 10px 10px; text-align: center; text-decoration: none"
                                        target="_blank" title="DESIGNER">DESIGNER</a>
                                 </td>
@@ -274,88 +267,8 @@ use bamboo\core\theming\CMailerHelper;
                                     style="padding: 5px 10px 10px; margin: 0px; line-height: 1; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;"><?php echo $data->line7 ?>
                                         <br>
-                                        <span style="color: #AAAAAA">Pickyshop Team</span>
+                                        <span style="color: #AAAAAA"><?php echo  ucfirst(str_replace('https://www.','',$urlSite));?> Team</span>
                                     </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <hr>
-                                    <table border="0" cellspacing="0" cellpadding="0" align="center">
-                                        <tr style="text-align: center;">
-                                            <td style="clear: none; padding: 0 20px 0 20px; margin: 0px auto !important;"
-                                                align="center" valign="top">
-                                                <a href="https://www.pickyshop.com/<?php echo $app->lang(); ?>/donna-2/new-arrival-6"
-                                                   style="color: grey; padding: 10px 10px; text-align: center; text-decoration: none"
-                                                   target="_blank"
-                                                   title="<?php echo $data->newArrivals ?>"><?php echo $data->newArrivals ?></a>
-                                            </td>
-                                            <td style="clear: none; padding: 0 20px 0 20px; margin: 0px auto !important;"
-                                                align="right" valign="top">
-                                                <a href="https://www.pickyshop.com/<?php echo $app->lang(); ?>/donna-2"
-                                                   style="color: grey; padding: 10px 10px; text-align: center; text-decoration: none"
-                                                   target="_blank"
-                                                   title="<?php echo $data->woman ?>"><?php echo $data->woman ?></a>
-                                            </td>
-                                            <td style="clear: none; padding: 0 20px 0 20px; margin: 0px auto !important;"
-                                                align="right" valign="top">
-                                                <a href="https://www.pickyshop.com/<?php echo $app->lang(); ?>/uomo-3"
-                                                   style="color: grey; padding: 10px 10px; text-align: center; text-decoration: none"
-                                                   target="_blank"
-                                                   title="<?php echo $data->man ?>"><?php echo $data->man ?></a>
-                                            </td>
-                                            <td style="clear: none; padding: 0 20px 0 20px; margin: 0px auto !important;"
-                                                align="right" valign="top">
-                                                <a href="https://www.pickyshop.com/<?php echo $app->lang(); ?>/brands/donna-2"
-                                                   style="color: grey; padding: 10px 10px; text-align: center; text-decoration: none"
-                                                   target="_blank" title="DESIGNER">DESIGNER</a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <hr>
-
-                                    <table data-editable="socialmedia" style="margin: 0px auto;"
-                                           align="center" cellspacing="0"
-                                           cellpadding="0">
-                                        <tbody>
-                                        <tr>
-                                            <td align="left" valign="top" style="padding: 0; margin: 0px;">
-                                                <table align="center" width="100%" cellspacing="0"
-                                                       cellpadding="0">
-                                                    <tbody>
-                                                    <tr data-columns="no">
-                                                        <td style="display: inline-block !important; width: auto !important; margin: auto; padding: 5px;">
-                                                            <p style="font-family:Helvetica,Arial,sans-serif;font-size:18px;font-weight:300;color:#5E5E5E; line-height:1.3;">
-                                                                Follow Us</p></td>
-                                                        <td style="display: inline-block !important; width: auto !important; margin: auto; padding: 5px;">
-                                                            <a href="https://www.instagram.com/pkyshop/"
-                                                               title="Instagram"><img
-                                                                        src="https://cdn.iwes.it/assets/icon-ig.png"
-                                                                        alt="Follow"
-                                                                        style="display: block;" border="0"
-                                                                        target="_blank"></a></td>
-                                                        <td style="display: inline-block !important; width: auto !important; margin: auto; padding: 5px;">
-                                                            <a href="https://www.facebook.com/pickyshopcom/?fref=ts"
-                                                               title="Facebook"><img
-                                                                        src="https://cdn.iwes.it/assets/facebook.png"
-                                                                        alt="Like" style="display: block;"
-                                                                        border="0"
-                                                                        target="_blank"></a></td>
-                                                        <td style="display: inline-block !important; width: auto !important; margin: auto; padding: 5px;">
-                                                            <a href="https://twitter.com/pkyshop?lang=it"
-                                                               title="Twitter"><img
-                                                                        src="https://cdn.iwes.it/assets/ico_twitter.png"
-                                                                        alt="Twitter"
-                                                                        style="display: block;" border="0"
-                                                                        target="_blank"></a></td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-
-                                    </table>
                                 </td>
                             </tr>
                             <tr>
