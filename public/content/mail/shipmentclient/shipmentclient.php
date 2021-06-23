@@ -1,10 +1,13 @@
 <?php
 
 use bamboo\core\theming\CMailerHelper;
+use bamboo\core\utils\slugify\CSlugify;
+use bamboo\domain\repositories\CProductRepo;
 
 /** @var $app CMailerHelper */
 /** @var \bamboo\domain\entities\COrder $order */
 /** @var \bamboo\domain\entities\CShipment $shipment */
+
 ?>
 <html lang="<?php echo $app->lang(); ?>">
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
@@ -129,7 +132,7 @@ use bamboo\core\theming\CMailerHelper;
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 5px 10px 10px; margin: 0px; line-height: 1; font-size: 16px; font-family: Times New Roman, Times, serif;">
                                     <span style="font-family: 'Poppins', sans-serif; font-size:15px;font-weight:300;color:#3A3A3A; line-height:1.2;">
-                                           <?php echo sprintf($data->line3, $shipment->carrier->url) ?>
+                                           <?php echo $data->line3. '<a href="'.$shipment->carrier->url.'">'.$shipment->carrier->url.'</a>'.$data->line30; ?>
                                     </span>
                                 </td>
                             </tr>
@@ -227,6 +230,62 @@ use bamboo\core\theming\CMailerHelper;
                             </tr>
                             <tr>
                                 <td valign="top" align="center" class="lh-3"
+                                    style="padding: 0px 20px 0px; margin: 0px;">
+                                    <table>
+                                        <tbody>
+                                        <hr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" align="center" class="lh-3"
+                                    style="padding: 0px 20px 0px; margin: 0px;">
+                                    <table>
+                                        <tbody>
+                                        <hr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <?php  if(count($productBrand)>0):?>
+                            <tr>
+                                <td valign="top" align="left" class="lh-3"
+                                    style="padding: 20px 20px 0px; margin: 0px; line-height: 1.5; font-size: 16px; font-family: Times New Roman, Times, serif;">
+                                    <span style="font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:300;color:#000000; line-height:0;">
+                                       <b><?php echo $data->line8 ?></b>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <?php foreach($productBrand as $products):?>
+                                <?php
+                                    /** @var CProductRepo $productRepo */
+                                    $productRepo=\Monkey::app()->repoFactory->create('Product');
+
+                                    $productFind=  $productRepo->findOneBy(['id'=>$products['id'],'productVariantId'=>$products['productVariantId']]);
+                                    $slugy = new CSlugify();
+                                    $slug = $slugy->slugify($productFind->itemno);
+        $productUrl=$urlSite."/".$lang."/".$productFind->productBrand->slug."/cpf/".$slug."/p/".$productFind->id."/v/".$productFind->productVariantId;
+                                    ?>
+
+                                    <td valign="top" align="left"
+                                                                                        style="display: inline-block; padding: 0px 0px 0px 40px; margin: 0px;"
+                                                                                        class="tdBlock"><a href="<?php echo $productUrl;?>"><img
+                                                                                                src="https://cdn.iwes.it/<?php echo $productFind->getPhoto(1, \bamboo\domain\entities\CProductPhoto::SIZE_THUMB); ?>"
+                                                                                                height="100" border="0"
+                                                                                                style="border-width: 0px; border-style: none; border-color: transparent; font-size: 12px; display: block;"/></a>
+                                                                                    </td>
+                                <?php endforeach; ?>
+                            </tr>
+                                <td valign="top" align="center" class="lh-3"
+                                    style="padding: 0px 20px 10px; margin: 0px;">
+                                  <div class="row"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" align="center" class="lh-3"
                                     style="padding: 0px 20px 10px; margin: 0px;">
                                     <table>
                                         <tbody>
@@ -235,6 +294,7 @@ use bamboo\core\theming\CMailerHelper;
                                     </table>
                                 </td>
                             </tr>
+                            <?php endif;?>
 
                                 <td valign="top" align="left" class="lh-3"
                                     style="padding: 5px 10px 10px; margin: 0px; line-height: 1; font-size: 16px; font-family: Times New Roman, Times, serif;">
