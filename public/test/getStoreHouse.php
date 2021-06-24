@@ -46,7 +46,7 @@ $dateTwo[]=['success'=>$success,'Name'=>$datone];
 
 
 echo "
-[{\"success\":1,\"Name\":[{\"storeHouse\":\"Cartechini 1-1\"},{\"storeHouse\":\"Cartechini 2-3\"},{\"storeHouse\":\"Subage-4\"}]}]";
+{\"success\":1,\"Name\":[{\"storeHouse\":\"Cartechini 1-1\"},{\"storeHouse\":\"Cartechini 2-3\"},{\"storeHouse\":\"Subage-4\"}]}";
 
 //echo  json_encode($dateTwo);
 
