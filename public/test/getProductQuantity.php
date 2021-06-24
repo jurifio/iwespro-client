@@ -46,12 +46,13 @@ $sql=" SELECT  dst.dirtyProductId as dirtyProductId,
                  group BY dst.storeHouseId,dst.qty,dst.size   Order BY ps.name,st.name asc";
 
 
+
+$resultProduct = \Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
 $datone = [];
 $i = 0;
-$resultProduct = \Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
 foreach ($resultProduct as $res) {
 
-    array_push($datone,['store' => $res['storeHouse'],'color' => $res['color'],'size' => $res['productSizeId'],'qty' => $res['qty']]);
+    $datone[] = ['store' => $res['storeHouse'],'color' => $res['color'],'size' => $res['productSizeId'],'qty' => $res['qty']];
     $i++;
 }
 
