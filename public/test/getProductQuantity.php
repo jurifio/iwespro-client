@@ -51,9 +51,7 @@ $i = 0;
 $resultProduct = \Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
 foreach ($resultProduct as $res) {
 
-
-
-    $datone[] = ['store' => $res['storeHouse'],'color' => $res['color'],'size' => $res['productSizeId'],'qty' => $res['qty']];
+    array_push($datone,['store' => $res['storeHouse'],'color' => $res['color'],'size' => $res['productSizeId'],'qty' => $res['qty']]);
     $i++;
 }
 
