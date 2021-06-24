@@ -35,6 +35,7 @@ $datone = [];
 $dateTwo=[];
 $i = 0;
 $success=0;
+$datone[] = ['storeHouse' => ''];
 foreach ($resultProduct as $res) {
     $datone[] = ['storeHouse' => $res['storehouse']];
     $success=1;
