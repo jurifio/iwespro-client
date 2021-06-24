@@ -50,7 +50,7 @@ $sql = "SELECT
   concat(ifnull(p.externalId, ''), '-', ifnull(dp.extId, ''), '-', ifnull(ds.extSkuId, '')) AS externalId,
   `pss`.`name`                                         AS `status`,
    `PS`.`name` as season,
-    `p`.id as qty  
+    `p`.qty as qty  
 FROM `Product` `p`
     join ProductSku sku ON (`p`.`id`, `p`.`productVariantId`) = (`sku`.`productId`, `sku`.`productVariantId`)
   JOIN `ShopHasProduct` `shp` ON (`p`.`id`, `p`.`productVariantId`) = (`shp`.`productId`, `shp`.`productVariantId`)
