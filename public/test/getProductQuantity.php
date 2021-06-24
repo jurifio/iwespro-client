@@ -19,7 +19,8 @@ if ($_GET['productVariantId']) {
     $productVariantId = $_GET['productVariantId'];
 }
 if($_GET['storehouse']!=''){
-    $storehouse=' and dst.storeHouseId='.$_GET['storehouse'];
+    $values=explode('-',$_GET['storehouse']);
+    $storehouse=' and dst.storeHouseId='.$values[1];
 }else{
     $storehouse='';
 }
