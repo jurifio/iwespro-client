@@ -28,7 +28,7 @@ foreach ($resShop as $shopResult) {
 
 
 
-$sql = "SELECT dst.dirtyProduct as dirtyProductId, 
+$sql = "SELECT dst.dirtyProductId as dirtyProductId, 
                dst.productId as productId, 
                dst.productVariantId as productVariantId, 
                dpe.generalColor as color,
