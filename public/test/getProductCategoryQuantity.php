@@ -51,7 +51,7 @@ $sql = "SELECT dp.id as dirtyProductId,
                 join ProductSize ps on dst.productSizeId=ps.id where dst.shopId=".$shopId." AND dp.productId!=".$productId."  and dp.productVariantId!=".$productVariantId."
                 and p.productCategoryId=".$productCategoryId."  
              
-                 group BY dst.shopId,dp.productId,dp.productVariantId Order BY concat(dp.productId,'-',dp.productVariantId,st.name) asc     
+                 group BY dst.shopId,dp.productId,dp.productVariantId Order BY concat(dp.productId,'-',dp.productVariantId,st.name) asc     limit 20 
   ";
 $datone = [];
 $i = 0;
