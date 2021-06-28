@@ -10,8 +10,8 @@ $response = json_decode($get_data, true);
 foreach ($response as $rawSkus) {
        foreach ($rawSkus['items'] as $rawSku){
            echo $rawSku['product_id'].'</br>';
-           foreach($rawSku['variants'] as $rawDirtySku){
-               echo $rawDirtySku['size'].'-'.$rawDirtySku['barcodes'][0].'</br>';
+           foreach($rawSku['item_images']['full'] as $rawDirtySku){
+               echo $rawDirtySku.'</br>';
            }
        }
 }
