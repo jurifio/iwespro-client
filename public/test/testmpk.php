@@ -2,6 +2,20 @@
 require '../../iwesStatic.php';
 
 
+
+
+
+$get_data = callAPI('GET', 'https://testing.efashion.cloud/api/v3.0/products/condensed?storeCode=ASAHP', false);
+$response = json_decode($get_data, true);
+foreach ($response as $rawSkus) {
+       foreach ($rawSkus['items'] as $rawSku){
+           echo $rawSku['product_id'].'</br>';
+           foreach($rawSku['variants'] as $rawDirtySku){
+               echo $rawDirtySku['size'].'-'.$rawDirtySku['barcodes'][0].'</br>';
+           }
+       }
+}
+
 function callAPI($method, $url, $data){
     $curl = curl_init();
 
@@ -32,14 +46,5 @@ function callAPI($method, $url, $data){
     if(!$result){die("Connection Failure");}
     curl_close($curl);
     return $result;
-}
-
-
-$get_data = callAPI('GET', 'http://testing.efashion.cloud/api/v3.0/products/condensed?storeCode=ASAHP', false);
-$response = json_decode($get_data, true);
-foreach ($response as $rawSkus) {
-       foreach ($rawSkus['items'] as $rawSku){
-           echo $rawSku['product_id'].'</br>';
-       }
 }
 ?>
