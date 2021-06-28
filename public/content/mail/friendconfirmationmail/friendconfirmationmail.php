@@ -100,7 +100,7 @@ Ti prego di confermare le righe dell'ordine (previo login) e preparare il pacco 
         $logoSite='logoiwes.png';
 
             $findShopParallel = \Monkey::app()->repoFactory->create('Shop')->findOneBy(['id' => $line['shopId']]);
-            if ($findShopParallel->hasEcommerce == 1) {
+            if ($findShopParallel->hasEcommerce == '1') {
                 echo '<a href="' . $findShopParallel->urlSite . '/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
                 $logoSite=$findShopParallel->logoSite;
             } else {
