@@ -103,8 +103,10 @@ Ti prego di confermare le righe dell'ordine (previo login) e preparare il pacco 
             if ($findShopParallel->hasEcommerce == '1') {
                 echo '<a href="' . $findShopParallel->urlSite . '/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
                 $logoSite=$findShopParallel->logoSite;
+                \Monkey::app()->applicationLog('frienconfrimationmail','log','checklineshopid',$line['shopId'],$findShopParallel->hasEcommerce);
             } else {
                 echo '<a href="https://www.iwes.pro/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
+                \Monkey::app()->applicationLog('frienconfrimationmail','log','checklineshopid',$line['shopId'],$findShopParallel->hasEcommerce);
             }
         echo '</td>';
         echo '<td>';
