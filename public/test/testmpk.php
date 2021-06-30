@@ -55,8 +55,14 @@ $order ='{
         "items" : [
             {
             "product":"5938005afd7955c0bff4caa8",
-            "quantity":"1",
+            "quantity":"2",
             "size":"9.5",
+            "purchase_price":"282"
+            },
+            {
+            "product":"5938005afd7955c0bff4caa8",
+            "quantity":"2",
+            "size":"9",
             "purchase_price":"282"
             }
        ]
