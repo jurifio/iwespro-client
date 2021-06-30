@@ -1,7 +1,6 @@
 <?php
 require '../../iwesStatic.php';
-$orderLine=\Monkey::app()->repoFactory->create('OrderLine')->findOneBy(['id'=>576,'orderId'=>11791377]);
-
+$orderLine=\Monkey::app()->repoFactory->create('OrderLine')->findOneBy(['id'=>1,'orderId'=>494113]);
 $shop=\Monkey::app()->repoFactory->create('Shop')->findOneBy(['id'=>1]);
 $dirtyProduct=\Monkey::app()->repoFactory->create('DirtyProduct')->findOneBy(['productId'=>$orderLine->productId,'productVariantId'=>$orderLine->productVariantId]);
 $dirtySku=\Monkey::app()->repoFactory->create('DirtySku')->findOneBy(['dirtyProductId'=>$dirtyProduct->id,'productSizeId'=>$orderLine->productSizeId]);
