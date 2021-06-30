@@ -49,7 +49,7 @@ function callAPI($method, $url, $data){
 }*/
 
 $order ='{
-        "order_number" : "19558914",
+        "order_number" : "19558915",
         "date":"2021-06-29",
         "items_count":"2",
         "items" : [
@@ -57,13 +57,13 @@ $order ='{
             "product":"5938005afd7955c0bff4caa8",
             "quantity":"2",
             "size":"9.5",
-            "purchase_price":"282"
+            "purchase_price":"282.79"
             },
             {
             "product":"5938005afd7955c0bff4caa8",
             "quantity":"2",
             "size":"8.5",
-            "purchase_price":"282"
+            "purchase_price":"282.79"
             }
        ]
       }      
@@ -99,6 +99,31 @@ curl_close($ch);
 echo $result;
 */
 $url = "https://testing.efashion.cloud/api/v3.0/place/order.json?storeCode=ASAHP";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+    "Content-Type: application/x-www-form-urlencoded",
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = "order=".$order;
+
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+var_dump($resp);
+
+
+$url = "https://testing.efashion.cloud/api/v3.0/cancel/order.json?storeCode=ASAHP";
 
 $curl = curl_init($url);
 curl_setopt($curl, CURLOPT_URL, $url);
