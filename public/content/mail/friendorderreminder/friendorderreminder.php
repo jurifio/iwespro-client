@@ -91,7 +91,7 @@ Ciao,<br>
         }
         echo '</td>';
         echo '<td>';
-
+        if($line['remoteShopSellerId']!=44) {
             $findShopParallel = \Monkey::app()->repoFactory->create('Shop')->findOneBy(['id' => $line['shopId']]);
             if ($findShopParallel->hasEcommerce == 1) {
                 echo '<a href="' . $findShopParallel->urlSite . '/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
@@ -99,6 +99,10 @@ Ciao,<br>
             } else {
                 echo '<a href="https://www.iwes.pro/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
             }
+        }else{
+            echo '<a href="https://www.iwes.pro/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
+            $logoSite='logowidePickyshop.png';
+        }
 
         echo '</td>';
         echo '<td>';
