@@ -5,7 +5,7 @@ $shop=\Monkey::app()->repoFactory->create('Shop')->findOneBy(['id'=>1]);
 $dirtyProduct=\Monkey::app()->repoFactory->create('DirtyProduct')->findOneBy(['productId'=>$orderLine->productId,'productVariantId'=>$orderLine->productVariantId]);
 $dirtySku=\Monkey::app()->repoFactory->create('DirtySku')->findOneBy(['dirtyProductId'=>$dirtyProduct->id,'productSizeId'=>$orderLine->productSizeId]);
 $codiceNegozio='0'.$dirtySku->storeHouseId;
-$lenCodiceNegozio=strlen($codiceNego);
+$lenCodiceNegozio=strlen($codiceNegozio);
 $defCodiceNegozio=str_repeat(' ',2-$lenCodiceNegozio).$codiceNegozio;
 $codiceArticolo=$dirtyProduct->extId;
 $lenCodiceArticolo=strlen($codiceArticolo);
