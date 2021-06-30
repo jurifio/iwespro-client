@@ -1,6 +1,6 @@
 <?php
 use bamboo\core\theming\CMailerHelper;
-use applicationLog;
+use bamboo\core\base\CLogger;
 
 /** @var CMailerHelper $app */ ?>
 <html lang="<?php echo $app->lang(); ?>">
@@ -105,10 +105,24 @@ Ti prego di confermare le righe dell'ordine (previo login) e preparare il pacco 
             if ($findShopParallel->hasEcommerce == '1') {
                 echo '<a href="' . $findShopParallel->urlSite . '/blueseal/friend/ordini" target="_blank">confermare la riga</a>';
                 $logoSite=$findShopParallel->logoSite;
-                \Monkey::app()->applicationReport('frienconfirmationmail','log','checklineshopid',$line['shopId'].$findShopParallel->hasEcommerce);
+                $applicationLog=\Monkey::app()->repoFactory->create('ApplicationLog')->getEmptyEntity();
+                $applicationLog->source='frienconfirmationmail';
+                $applicationLog->severity='Report';
+                $applicationLog->title='checklineshopid';
+                $applicationLog->context=$line['shopId'];
+                $applicationLog->message=$findShopParallel->hasEcommerce;
+                $applicationLog->update();
+
+                    \Monkey::app()->applicationReport('frienconfirmationmail','log','checklineshopid',$line['shopId'].$findShopParallel->hasEcommerce);
             } else {
                 echo '<a href="https://www.iwes.pro/blueseal/friend/ordini" target="_blank">confermare la riga </a>';
-                \Monkey::app()->applicationReport('frienconfirmationmail','log','checklineshopid',$line['shopId'].$findShopParallel->hasEcommerce);
+                $applicationLog=\Monkey::app()->repoFactory->create('ApplicationLog')->getEmptyEntity();
+                $applicationLog->source='frienconfirmationmail';
+                $applicationLog->severity='Report';
+                $applicationLog->title='checklineshopid';
+                $applicationLog->context=$line['shopId'];
+                $applicationLog->message=$findShopParallel->hasEcommerce;
+                $applicationLog->update();
             }
         echo '</td>';
         echo '<td>';
