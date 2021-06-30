@@ -19,7 +19,8 @@ $lenTaglia=strlen($taglia);
 $defTaglia=str_repeat(' ',4-$lenTaglia).$taglia;
 $defBarcode='000000000000';
 $defCausale='VE';
-$defData=(new DateTime())->format('ymd_His');
+$defData=(new DateTime())->format('ymd');
+$defDataNew=(new DateTime())->format('ymd_his');
 $defBolla=str_repeat(' ',14);
 $realizzo=$orderLine->activePrice*1000;
 $lenRealizzo=strlen($realizzo);
@@ -42,6 +43,6 @@ if(ENV=='prod') {
 }else{
     $directory='/media/sf_sites/iwespro/client/public/media/productync/'.$name.'/export/';
 }
-$fp = fopen($directory.$orderLine->orderId.'-'.$defData.'.csv','w');
+$fp = fopen($directory.$orderLine->orderId.'-'.$defDataNew.'.csv','w');
 fwrite($fp, $orderLineString);
 fclose($fp);
