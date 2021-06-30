@@ -68,7 +68,7 @@ foreach ($array as $key=>$value) {
    echo $pippo;
 $to=['jurif@hotmail.com'];
 //$emailRepo = \Monkey::app()->repoFactory->create('Email');
-//$emailRepo->newPackagedEmail('neworderclient','no-reply@pickyshop.com', $to,[],[],$arraVar);
+//$emailRepo->newPackagedMail('neworderclient','no-reply@pickyshop.com', $to,[],[],$arraVar);
 
 
 $arr=['prova','prova2'];
