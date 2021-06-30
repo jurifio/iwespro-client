@@ -51,7 +51,7 @@ function callAPI($method, $url, $data){
 $order ='{
         "order_number" : "19558912",
         "date":"2021-06-29",
-        "items_count":"1",
+        "items_count":"2",
         "items" : [
             {
             "product":"5938005afd7955c0bff4caa8",
