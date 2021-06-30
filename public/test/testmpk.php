@@ -49,7 +49,7 @@ function callAPI($method, $url, $data){
 }*/
 
 $order ='{
-        "order_number" : "19558912",
+        "order_number" : "19558914",
         "date":"2021-06-29",
         "items_count":"2",
         "items" : [
@@ -62,7 +62,7 @@ $order ='{
             {
             "product":"5938005afd7955c0bff4caa8",
             "quantity":"2",
-            "size":"9",
+            "size":"8.5",
             "purchase_price":"282"
             }
        ]
