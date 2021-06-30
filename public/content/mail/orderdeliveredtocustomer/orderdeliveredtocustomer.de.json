@@ -1,0 +1,12 @@
+{
+    "subject": "Il tuo ordine # {orderId} è stato Consegnato!",
+    "newArrivals": "NUOVI ARRIVI",
+    "woman": "DONNA",
+    "man": "UOMO",
+    "hallo": "Ciao %s,",
+    "line1": "Ho il piacere di comunicarti che il tuo ordine è stato consegnato dal  corriere <b>%s<\/b>.",
+    "line2": "Per omaggiare la decisione di averci scelto abbiamo pensato di offrirti un <span style=\"font-weight: 600\">COUPON DEL %s%%</span> che potrai utilizzare per l'acquisto di qualsiasi altro prodotto del nostro catalogo entro 10 giorni da oggi.",
+    "line4": "DETTAGLIO ORDINE",
+    "line7": "Grazie per averci scelto,",
+    "line8": "Ti Potrebbe interessare"
+}
