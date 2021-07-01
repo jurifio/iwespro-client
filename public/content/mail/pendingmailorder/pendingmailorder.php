@@ -13,7 +13,7 @@ use bamboo\core\application;
 <img width="600"  src="https://www.iwes.pro/it/assets/logoiwes.png"><br>
 Ciao,<br>
 Ho il piacere di comunicarTi che sono stati venduti i seguenti oggetti<br>
-Ti prego gestire le seguenti righe di ordine per i rispetti fornitori.<br>
+Ti prego di gestire le seguenti righe di ordine per i rispetti fornitori.<br>
 
 <br>
 <table>
