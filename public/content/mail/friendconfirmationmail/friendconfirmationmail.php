@@ -30,7 +30,9 @@ Ti prego di confermare le righe dell'ordine (previo login) e preparare il pacco 
     echo '<th>Colore</th>';
     echo '<th>Brand</th>';
     echo '<th>Taglia</th>';
-    echo '<th>Prezzo Friend</th>';
+    if($line['remoteShopSellerId']!=44) {
+        echo '<th>Prezzo Friend</th>';
+    }
     echo '<th>Anteprima</th>';
     echo '<th>Indirizzo di Spedizione</th>';
     echo '<th>Tipologia di Nastro</th>';
@@ -49,7 +51,11 @@ Ti prego di confermare le righe dell'ordine (previo login) e preparare il pacco 
         echo '<td>'; echo $line['var']; echo '</td>';
         echo '<td>'; echo $line['brand']; echo '</td>';
         echo '<td>'; echo $line['size']; echo '</td>';
-        echo '<td>'; echo $line['friendRevenue']; echo '</td>';
+    if($line['remoteShopSellerId']!=44) {
+        echo '<td>';
+        echo $line['friendRevenue'];
+        echo '</td>';
+    }
         echo '<td><img height="70" src="'.$app->image($line['photo'],'amazon').'"></td>';
         array_push($checkParallal,$line['shopId']);
         $order=$orderRepo->findOneBy(['id'=>$line['orderId']]);
