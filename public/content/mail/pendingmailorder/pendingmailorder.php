@@ -125,7 +125,7 @@ Ti prego gestire le seguenti righe di ordine per i rispetti fornitori.<br>
 
 </table>
 <br>
-Affrettati a gestire gli ordini .<br>
+Affrettati a gestire gli ordini.<br>
 
 
 
