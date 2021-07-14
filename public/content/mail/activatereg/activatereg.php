@@ -95,7 +95,7 @@
                             <tbody>
                             <tr>
                                 <td>
-                                    <img src="https://cdn.iwes.it/assets/mail.jpg" alt="" width="640px" border="0"
+                                    <img src="https://cdn.iwes.it/assets/saldiluglioneutro.jpg" alt="" width="640px" border="0"
                                          style="border-width: 0px; border-style: none; border-color: transparent; font-size: 12px; display: block;">
                                 </td>
                             </tr>
