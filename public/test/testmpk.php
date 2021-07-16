@@ -15,9 +15,11 @@ for($i=1;$i<=$maxProducts;$i++) {
         $urlDef = $url . '&offset=' . $limitStart . '&limit=500';
         echo $urlDef.'<br>';
         $get_data = callAPI('GET',$urlDef,false);
-        $response = json_decode($get_data,true);
-        foreach ($response as $rawSkus) {
-            foreach ($rawSkus['items'] as $rawSku) {
+        $response = json_decode($get_data);
+        file_put_contents('/media/sf_sites/iwespro/temp/prova.json',json_encode($response->results->items));
+        foreach ($response->results->items as $rawSkus) {
+
+
 
                 echo $k.'-'.$rawSku['product_id'] . '</br>';
                /* foreach ($rawSku['item_images']['full'] as $rawDirtySku) {
@@ -25,7 +27,7 @@ for($i=1;$i<=$maxProducts;$i++) {
                 }*/
                 $k++;
             }
-        }
+
         $offSet++;
         $limitStart=$limitStart+500;
     }
