@@ -4,7 +4,7 @@ $maxProducts=4000;
 $offSet=1;
 $limitStart=1;
 $limitEnd=0;
-$k=1;
+$k=0;
 $url='https://di.efashion.cloud/api/v3.0/products/condensed?storeCode=YHPE6';
 for($i=1;$i<=$maxProducts;$i++) {
 
@@ -12,11 +12,13 @@ for($i=1;$i<=$maxProducts;$i++) {
         continue;
     }else{
         $limitEnd = $limitEnd + 500;
-        $urlDef = $url . '&offset=' . $offSet . '&limit=' . $limitStart . ',' . $limitEnd;
+        $urlDef = $url . '&offset=' . $limitStart . '&limit=500';
+        echo $urlDef.'<br>';
         $get_data = callAPI('GET',$urlDef,false);
         $response = json_decode($get_data,true);
         foreach ($response as $rawSkus) {
             foreach ($rawSkus['items'] as $rawSku) {
+
                 echo $k.'-'.$rawSku['product_id'] . '</br>';
                /* foreach ($rawSku['item_images']['full'] as $rawDirtySku) {
                     echo $rawDirtySku . '</br>';
@@ -28,6 +30,25 @@ for($i=1;$i<=$maxProducts;$i++) {
         $limitStart=$limitStart+500;
     }
 }
+/*if($k<$maxProducts) {
+    $limitStart=$limitStart-500;
+    $limitEnd =  $k;
+    echo 'inizio differenza';
+    $urlDef = $url . '&offset=' . $offSet . '&limit=' . $limitStart . ',' . $limitEnd;
+    echo $urlDef.'<br>';
+    $get_data = callAPI('GET',$urlDef,false);
+    $response = json_decode($get_data,true);
+    foreach ($response as $rawSkus) {
+        foreach ($rawSkus['items'] as $rawSku) {
+            $k++;
+            echo $k.'-'.$rawSku['product_id'] . '</br>';
+            /* foreach ($rawSku['item_images']['full'] as $rawDirtySku) {
+                 echo $rawDirtySku . '</br>';
+             }
+
+        }
+    }
+}*/
 
 function callAPI($method, $url, $data){
     $curl = curl_init();
