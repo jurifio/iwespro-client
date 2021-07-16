@@ -1,19 +1,32 @@
 <?php
 require '../../iwesStatic.php';
+$maxProducts=4000;
+$offSet=1;
+$limitStart=1;
+$limitEnd=0;
+$k=1;
+$url='https://di.efashion.cloud/api/v3.0/products/condensed?storeCode=YHPE6';
+for($i=1;$i<=$maxProducts;$i++) {
 
-
-
-/*
-
-$get_data = callAPI('GET', 'https://testing.efashion.cloud/api/v3.0/products/condensed?storeCode=ASAHP', false);
-$response = json_decode($get_data, true);
-foreach ($response as $rawSkus) {
-       foreach ($rawSkus['items'] as $rawSku){
-           echo $rawSku['product_id'].'</br>';
-           foreach($rawSku['item_images']['full'] as $rawDirtySku){
-               echo $rawDirtySku.'</br>';
-           }
-       }
+    if ($i%500) {
+        continue;
+    }else{
+        $limitEnd = $limitEnd + 500;
+        $urlDef = $url . '&offset=' . $offSet . '&limit=' . $limitStart . ',' . $limitEnd;
+        $get_data = callAPI('GET',$urlDef,false);
+        $response = json_decode($get_data,true);
+        foreach ($response as $rawSkus) {
+            foreach ($rawSkus['items'] as $rawSku) {
+                echo $k.'-'.$rawSku['product_id'] . '</br>';
+               /* foreach ($rawSku['item_images']['full'] as $rawDirtySku) {
+                    echo $rawDirtySku . '</br>';
+                }*/
+                $k++;
+            }
+        }
+        $offSet++;
+        $limitStart=$limitStart+500;
+    }
 }
 
 function callAPI($method, $url, $data){
@@ -46,8 +59,8 @@ function callAPI($method, $url, $data){
     if(!$result){die("Connection Failure");}
     curl_close($curl);
     return $result;
-}*/
-
+}
+/*
 $order ='{
         "order_number" : "19558915",
         "date":"2021-06-29",
@@ -97,7 +110,7 @@ $result = curl_exec($ch);
 $e = curl_error($ch);
 curl_close($ch);
 echo $result;
-*/
+
 $url = "https://testing.efashion.cloud/api/v3.0/place/order.json?storeCode=ASAHP";
 
 $curl = curl_init($url);
@@ -146,3 +159,4 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 $resp = curl_exec($curl);
 curl_close($curl);
 var_dump($resp);
+*/
