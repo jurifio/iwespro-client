@@ -1,5 +1,5 @@
 /**
- * Created by Fabrizio Marconi on 08/10/2015.
+ * Revisioned by Juri Fiorani after Created by Fabrizio Marconi on 08/10/2015.
  */
 var logger = function()
 {
@@ -141,7 +141,7 @@ window.HFCHAT_CONFIG = {
 
 
 })();/**
- * Created by Fabrizio Marconi on 23/04/2015.
+ * Revisioned by Juri Fiorani after Created by Fabrizio Marconi on 23/04/2015.
  */
 
 function updateCartWidget(selfopen)
@@ -213,7 +213,7 @@ function updateCartWidget(selfopen)
     });
 
 })(jQuery);/**
- * Created by Fabrizio Marconi on 10/11/2015.
+ * Revisioned by Juri Fiorani after Created by Fabrizio Marconi on 10/11/2015.
  */
 /**
  * @returns {Modal}
@@ -302,7 +302,7 @@ Modal.prototype.detachDropZoneEvent = function(event) {
 	this.dz.off(event);
 };
 /**
- * Created by Fabrizio Marconi on 10/11/2015.
+ * Revisioned by Juri Fiorani after Created by Fabrizio Marconi on 10/11/2015.
  */
 $(document).on('ready',function(){
 	var m = new Modal();

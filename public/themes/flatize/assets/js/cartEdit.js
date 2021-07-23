@@ -1,5 +1,5 @@
 /**
- * Created by Fabrizio Marconi on 23/04/2015.
+ * Revisioned by Juri Fiorani after Created by Fabrizio Marconi on 23/04/2015.
  */
 
 $(document).on('click', ".cart_table_item .remove", function () {

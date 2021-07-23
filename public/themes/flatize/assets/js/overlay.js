@@ -1,5 +1,5 @@
 /**
- * Created by Fabrizio Marconi on 10/11/2015.
+ * Revisioned by Juri Fiorani after Created by Fabrizio Marconi on 10/11/2015.
  */
 $(document).ready(function () {
     var PAGES_FOR_NEWSLETTER_VIEW = 2;
