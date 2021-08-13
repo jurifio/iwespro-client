@@ -67,11 +67,14 @@
         "api_uid": "34021",
         "api_key": "443884d05056b5f0831446538c6e840f"
     },
+    "exchangeratesapi": {
+        "access_key": "d0ebc4ec51befe0de5dfe328d1a83eba"
+    },
     "miscellaneous": {
         "facebook": {
             "app_id": "828467800598522",
             "app_secret": "1b1b2fe1f918e4608f4fbecdab9bb4b6",
-            "default_graph_version":"v2.8"
+            "default_graph_version": "v2.8"
         },
         "cacheEntityExpiration": 84600,
         "orderGateways": {
@@ -153,13 +156,13 @@
         "newsletterOverly": true,
         "siteInvoiceChar": "P",
         "fiscalData": {
-          "intestation" : "Iwes snc",
-          "intestation2" : "International Web Ecommerce Services",
-          "address" : "Via Cesare Pavese, 1",
-          "address2" : "62012 - Civitanova Marche (MC)",
-          "iva" : "P.IVA: 01865380438",
-          "tel" : "Tel.: +39.0733.471365",
-          "email" : "Email: support@pickyshop.com"
+            "intestation": "Iwes snc",
+            "intestation2": "International Web Ecommerce Services",
+            "address": "Via Cesare Pavese, 1",
+            "address2": "62012 - Civitanova Marche (MC)",
+            "iva": "P.IVA: 01865380438",
+            "tel": "Tel.: +39.0733.471365",
+            "email": "Email: support@pickyshop.com"
         },
         "logipblacklist": [
             "79.6.214.120",
