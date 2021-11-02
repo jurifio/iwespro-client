@@ -18,7 +18,8 @@ foreach($resShop as $shopResult) {
 }
 if ($shopId == 1) {
     if ($_GET['ean'] != "0") {
-        $sqlEan = " and ds.barcode= '" . substr($_GET['ean'],0,-1) . "'";
+        $sqlEan = " and ds.barcode= '" . $_GET['ean'] . "'";
+
     }
 } elseif ($shopId == 58) {
     if ($_GET['ean'] != "0") {
@@ -26,12 +27,12 @@ if ($shopId == 1) {
     }
 } else {
     if ($_GET['ean'] != "0") {
-        $sqlEan = " and ds.barcode= '".$_GET['ean']."'";
+
     }
 
 }
 
-
+$sqlEan = " and ds.barcode= '".$_GET['ean']."'";
 
 $sql = "SELECT
   `p`.`id`                                             AS `id`,
