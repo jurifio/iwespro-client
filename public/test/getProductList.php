@@ -32,7 +32,7 @@ if ($shopId == 1) {
 
 }
 
-$sqlEan = " and ds.barcode= '".$_GET['ean']."'";
+$sqlEan = " and ds.barcode like '%".$_GET['ean']."%'";
 
 $sql = "SELECT
   `p`.`id`                                             AS `id`,
