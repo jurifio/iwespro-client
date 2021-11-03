@@ -16,21 +16,7 @@ $resShop=\Monkey::app()->dbAdapter->query('select shopId as shopId from UserHasS
 foreach($resShop as $shopResult) {
     $shopId=$shopResult['shopId'];
 }
-if ($shopId == 1) {
-    if ($_GET['ean'] != "0") {
-        $sqlEan = " and ds.barcode= '" . $_GET['ean'] . "'";
 
-    }
-} elseif ($shopId == 58) {
-    if ($_GET['ean'] != "0") {
-        $sqlEan = " and ds.barcode='" . substr($_GET['ean'],0,8) . "'";
-    }
-} else {
-    if ($_GET['ean'] != "0") {
-
-    }
-
-}
 
 $sqlEan = " and ds.barcode like '%".$_GET['ean']."%'";
 
