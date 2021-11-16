@@ -47,7 +47,7 @@ $apiInstance = new Swagger\Client\Api\DefaultApi(
     $config
 );
 $max_results_per_page = 100; // int | The maximum number of results to return per page.
-$financial_event_group_started_before = new \DateTime("2020-12-01T19:20:30+01:00"); // \DateTime | A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned.
+$financial_event_group_started_before = new \DateTime("2020-10-01T19:20:30+01:00"); // \DateTime | A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned.
 $financial_event_group_started_after = new \DateTime("2021-01-01T19:20:30+01:00"); // \DateTime | A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted.
 $next_token = $nextToken; // string | A string token returned in the response of your previous request.
 

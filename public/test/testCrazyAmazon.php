@@ -46,6 +46,7 @@ $result = curl_exec($ch);
 curl_close($ch);
 
 $res=json_decode($result);
+//A1FX2QYUII0BXR
 
 $nextToken= $res->refresh_token;
 $token='Atzr|IwEBIFEh8rsv4QOPx-i4zw1WuEHIzTf7Mdrz9eE3uRsrqJjyTdJ1OtmhMQSSrkkws2hpTNow3yiDBZvpe8ZXwq3pheu7U0qyS7UYErcAeAxDnUq3BkATKAy5ziD5rubs4yFfD17yOx7FVyP4AgpNp50miQe-26xRNGyaHrKhCafeEjSFhWe5Msto9DW5fNQOdyAXOQOB2kYjATC6y1hn_OhVPBEjFZOG6GRphAwOK8j-jUiHZGNAfBGBRURoByW5LRhny1gxPRUmFDVjKIS20UJSA2CZEEap-cV6a8PujG7yDmBe4HxB9r_-XFcwjpi415IqN3w","client_id"=>"amzn1.application-oa2-client.1cf3ee13dbbe435caadced510a94f1f1","client_secret" => "2574f54cc10b20c7a814a2c81df7fcbd117c28ae02e3c95e42d43e04a36e4d8e';
@@ -111,11 +112,11 @@ try {
 }
 
 // crea feed in xml e cripta e upload
-$feedContentFilePath = '/media/sf_sites/iwespro/temp/productFeed_1_2021-03-23_111325.xml';
+$feedContentFilePath = '/media/sf_sites/iwespro/temp/productFeed_1_2021-11-13_165224.xml';
 
 $result = (new  \ClouSale\AmazonSellingPartnerAPI\Helpers\Feeder())->uploadFeedDocument($payload,"text/xml; charset=UTF-8",$feedContentFilePath);
 echo $feedDocumentId.'<br>';
-$resultDocumentResult = new \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\createFeedDocumentResult(['feed_document_id'=>$feedDocumentId,'url'=>$url,'encryption_details'=>$decodeResult['payload']['encryptionDetails']]);
+$resultDocumentResult = new \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedDocumentResult(['feed_document_id'=>$feedDocumentId,'url'=>$url,'encryption_details'=>$decodeResult['payload']['encryptionDetails']]);
 $resDocResult=json_decode($resultDocumentResult,true);
 
 
