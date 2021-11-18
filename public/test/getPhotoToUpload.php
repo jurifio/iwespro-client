@@ -45,7 +45,9 @@ while($rowStmtDirtyPhoto=$stmtDirtyPhoto->fetch(PDO::FETCH_ASSOC)){
 
 //Check to see if it failed to save or not.
     if($save === false){
-        echo'Failed to save file to: ' , $fileName;
+        echo 'Failed to save file to: ' . $fileName;
+    }else{
+        echo 'saved '. $fileName.'<br>';
     }
 
 };
