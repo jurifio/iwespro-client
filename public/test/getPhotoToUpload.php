@@ -34,7 +34,7 @@ while($rowStmtDirtyPhoto=$stmtDirtyPhoto->fetch(PDO::FETCH_ASSOC)){
     if(ENV=='dev') {
         $path = '/media/sf_sites/iwespro/temp/';
     }else{
-        $path = '/home/iwespro/public_html/temp/';
+        $path = '/home/iwespro/public_html/temp-blog/';
     }
 //The path and filename that you want to save the file to.
     $fileName = $rowStmtDirtyPhoto['nameFile'];
