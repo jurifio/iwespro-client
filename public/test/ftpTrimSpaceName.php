@@ -8,11 +8,11 @@ require '../../iwesStatic.php';
 
 
 
-$ftpDestDir = '/shootImport/newage2/todo/stylecommerce/';
+$ftpDestDir = '/shootImport/newage2/todo2/prova';
 $ftp_server = 'fiber.office.iwes.it';
 $ftp_server_port = "21";
-$ftp_user_name = 'admin';
-$ftp_user_pass = "geh22fed";
+$ftp_user_name = 'jobimages';
+$ftp_user_pass = "cartne01";
 
 // setto la connessione al ftp
 $conn_id = ftp_connect($ftp_server, $ftp_server_port);
