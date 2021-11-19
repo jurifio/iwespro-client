@@ -23,7 +23,7 @@ foreach ($files as $file) {
 $oldFileName=$file;
 $newFileName=str_replace(' ','',$oldFileName);
 
-if($ftpDestination->rename($oldFileNam,$newFileName)){
+if($ftpDestination->rename($oldFileName,$newFileName)){
     echo 'file '.$oldFileName. ' rinominato in  '. $newFileName;
 }else{
     echo 'file '.$oldFileName. ' non rinominato';
