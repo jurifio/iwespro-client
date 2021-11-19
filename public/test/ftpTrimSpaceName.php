@@ -7,36 +7,28 @@ require '../../iwesStatic.php';
 
 
 
-
+$ftpDestination = new CFTPClient(\Monkey::app(),[
+    'host' => 'fiber.office.iwes.it',
+    'user' => 'admin',
+    'pass' => 'geh22fed',
+    'port' => '21',
+    'timeout' => '10',
+    'mode' => '2'
+]);
 $ftpDestDir = '/shootImport/newage2/todo2/prova';
-$ftp_server = 'fiber.office.iwes.it';
-$ftp_server_port = "21";
-$ftp_user_name = 'jobimages';
-$ftp_user_pass = "cartne01";
+$ftpDestination->changeDir($ftpDestDir);
+$files=$ftpDestination->nList($ftpDestDir);
 
-// setto la connessione al ftp
-$conn_id = ftp_connect($ftp_server, $ftp_server_port);
-// Eseguo il login con  username e password
-$login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
-if ((!$conn_id) || (!$login_result)) {
-    echo "Fail</br>";
-} else {
-    echo "Success</br>";
-    // enabling passive mode
-    ftp_pasv($conn_id,true);
-    // prendo il contenuto di tutta la directory sul server
-    $files = ftp_nlist($conn_id,$ftpDestDir);
-    foreach ($files as $file) {
-        $oldFileName = $file;
-        $newFileName = str_replace(' ','',$oldFileName);
+foreach ($files as $file) {
+$oldFileName=$file;
+$newFileName=str_replace(' ','',$oldFileName);
 
-        if (ftp_rename($conn_id,$oldFileNam,$newFileName)) {
-            echo 'file ' . $oldFileName . ' rinominato in  ' . $newFileName;
-        } else {
-            echo 'file ' . $oldFileName . ' non rinominato';
-        }
+if($ftpDestination->rename($oldFileNam,$newFileName)){
+    echo 'file '.$oldFileName. ' rinominato in  '. $newFileName;
+}else{
+    echo 'file '.$oldFileName. ' non rinominato';
+}
 
-    }
 }
 
 
