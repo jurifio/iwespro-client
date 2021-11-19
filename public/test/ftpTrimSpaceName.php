@@ -15,7 +15,7 @@ $ftpDestination = new CFTPClient(\Monkey::app(),[
     'timeout' => '10',
     'mode' => '2'
 ]);
-$ftpDestDir = '/shootImport/newage2/todo2/prova';
+$ftpDestDir = '/shootImport/newage2/todo/stylecommerce';
 $ftpDestination->changeDir($ftpDestDir);
 $files=$ftpDestination->nList($ftpDestDir);
 
