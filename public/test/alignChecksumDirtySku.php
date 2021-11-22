@@ -7,7 +7,7 @@ require '../../iwesStatic.php';
 
 try {
     $dsRepo=\Monkey::app()->repoFactory->create('DirtySku');
-    $sql='SELECT id,dirtyProductId,shopId,size,extSkuId,qty,price,`value`,barcode,storeHouseId from DirtySku where `checksum` is null and shp.shopId=61';
+    $sql='SELECT id,dirtyProductId,shopId,size,extSkuId,qty,price,`value`,barcode,storeHouseId from DirtySku where `checksum` is null and shopId=61';
     $res=\Monkey::app()->dbAdapter->query($sql,[])->fetchAll();
     foreach($res as $rawDirtySku) {
         $dirtySku = [];
