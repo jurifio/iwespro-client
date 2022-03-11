@@ -13,8 +13,8 @@ use bamboo\core\Application;
 use bamboo\blueseal\controllers\CBlueSealLoginController;
 
 require '../../iwesStatic.php';
-$userEmail=$_GET['email'];
-$password=$_GET['password'];
+$userEmail=$_POST['email'];
+$password=$_POST['password'];
 $session=\Monkey::app()->getSession()->getSid();
 
 \Monkey::app()->authManager->auth();
@@ -36,12 +36,13 @@ if ($user) {
 }
 
 if( $session != 0 ) {
-        \Monkey::app()->router->response()->autoRedirectTo(\Monkey::app()->baseUrl(false).'/blueseal/dashboard');
-        return;
 
+        return "https://www.iwes.pro/blueseal/dashboard";
+
+} else {
+      return "https://www.iwes.pro/blueseal/login";
 }
-Monkey::app()->setLang(new CLang(1,'it'));
-$page = new \bamboo\blueseal\business\CBlueSealPage('login',\Monkey::app());
+
 
 
 
