@@ -36,8 +36,8 @@ if ($user) {
 }
 
 if( $session != 0 ) {
-        \Monkey::app()->router->response()->autoRedirectTo(\Monkey::app()->baseUrl(false).'/blueseal/dashboard');
-        return;
+
+        return \Monkey::app()->router->response()->autoRedirectTo(\Monkey::app()->baseUrl(false).'/blueseal/dashboard');
 
 }
 Monkey::app()->setLang(new CLang(1,'it'));
