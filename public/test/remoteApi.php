@@ -37,10 +37,10 @@ if ($user) {
 
 if( $session != 0 ) {
 
-        return "https://www.iwes.pro/blueseal/dashboard";
+        echo "https://www.iwes.pro/blueseal/dashboard";
 
 } else {
-      return "https://www.iwes.pro/blueseal/login";
+       echo "https://www.iwes.pro/blueseal/login";
 }
 
 
