@@ -39,9 +39,10 @@ if( $session != 0 ) {
 
         return \Monkey::app()->router->response()->autoRedirectTo(\Monkey::app()->baseUrl(false).'/blueseal/dashboard');
 
+}else{
+    return \Monkey::app()->router->response()->autoRedirectTo(\Monkey::app()->baseUrl(false).'/blueseal/login');
 }
-Monkey::app()->setLang(new CLang(1,'it'));
-$page = new \bamboo\blueseal\business\CBlueSealPage('login',\Monkey::app());
+
 
 
 
