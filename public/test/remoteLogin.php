@@ -22,10 +22,11 @@ $user=\Monkey::app()->repoFactory->create('User')->findOneBy(['email'=>$userEmai
 if ($user) {
     $userSession = \Monkey::app()->dbAdapter->select('UserSession', array('sid' => \Monkey::app()->getSession()->getSid()))->fetch();
     if ($userSession['sid'] === \Monkey::app()->getSession()->getSid()) {
+        date("Y-m-d H:i:s", Monkey::app()->getSession()->expiration());
         if ($userSession['expire'] > time()) {
             \Monkey::app()->sessionManager->invalidateSession();
         }
-        \Monkey::app()->dbAdapter->update('UserSession', array( 'expire' => date("Y-m-d H:i:s", Monkey::app()->getSession()->expiration())), array('sid' => \Monkey::app()->getSession()->getSid()));
+        \Monkey::app()->dbAdapter->update('UserSession', array('userId'=>$user->id, 'expire' => date("Y-m-d H:i:s", Monkey::app()->getSession()->expiration())), array('sid' => \Monkey::app()->getSession()->getSid()));
     } else {
         \Monkey::app()->dbAdapter->insert('UserSession', array('sid' => \Monkey::app()->getSession()->getSid(),'userId'=>$user->id, 'expire' => date("Y-m-d H:i:s", Monkey::app()->getSession()->expiration())));
     }
@@ -37,7 +38,7 @@ if ($user) {
 
 if( $session != 0 ) {
 
-        return \Monkey::app()->router->response()->autoRedirectTo(\Monkey::app()->baseUrl(false).'/blueseal/dashboard');
+        return \Monkey::app()->router->response()->autoRedirectTo('/blueseal/importatori/dizionari/brand');
 
 }else{
     return \Monkey::app()->router->response()->autoRedirectTo(\Monkey::app()->baseUrl(false).'/blueseal/');
