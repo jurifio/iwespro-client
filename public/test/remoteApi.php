@@ -36,8 +36,9 @@ if ($user) {
 }
 
 if( $session != 0 ) {
-
-        echo "https://www.iwes.pro/blueseal/dashboard";
+    \Monkey::app()->router->response()->autoRedirectTo(\Monkey::app()->baseUrl(false).'/blueseal/dashboard');
+    return;
+        //echo "https://www.iwes.pro/blueseal/dashboard";
 
 } else {
        echo "https://www.iwes.pro/blueseal/login";
