@@ -57,7 +57,7 @@ Ti prego di confermare le righe dell'ordine (previo login) e preparare il pacco 
         echo '</td>';
     }
         echo '<td><img height="70" src="'.$app->image($line['photo'],'amazon').'"></td>';
-        array_push($checkParallal,$line['shopId']);
+        $checkParallal[] = $line['shopId'];
         $order=$orderRepo->findOneBy(['id'=>$line['orderId']]);
         $checkOrigin=[];
         foreach($checkParallal as $check){
