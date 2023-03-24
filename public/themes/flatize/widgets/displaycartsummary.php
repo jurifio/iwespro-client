@@ -60,18 +60,18 @@ use bamboo\core\theming\CWidgetHelper;
                                 </td>
                                 <td class="product-subtotal">
                                     <?php if ($val->productPublicSku->isOnSale) : ?>
-                                        <span class="amount oldprice"><?php echo money_format("%.2n", $val->productPublicSku->price * $val->qty); ?>
+                                        <span class="amount oldprice"><?php echo number_format(($val->productPublicSku->price * $val->qty),2,'.'); ?>
                                             &euro;</span><br/>
-                                        <span class="amount saleprice active-price"><?php echo money_format("%.2n", $val->productPublicSku->salePrice * $val->qty); ?>
+                                        <span class="amount saleprice active-price"><?php echo number_format( ($val->productPublicSku->salePrice * $val->qty),2,'.'); ?>
                                             &euro;</span>
                                     <?php else: ?>
-                                        <span class="amount active-price"><?php echo money_format("%.2n", $val->productPublicSku->price * $val->qty); ?>
+                                        <span class="amount active-price"><?php echo number_format( $val->productPublicSku->price * $val->qty,2,'.'); ?>
                                             &euro;</span>
                                     <?php endif; ?>
                                     <?php if ($val->getCouponDiscount()): ?>
                                         <div class="cart-line-coupon">
                                             <span class="amount">Coupon:</span><br/>
-                                            <span class="amount"><?php echo money_format("%.2n", $val->getCouponDiscount() * $val->qty); ?>
+                                            <span class="amount"><?php echo number_format($val->getCouponDiscount() * $val->qty,2,'.',''); ?>
                                                 &euro;</span>
                                         </div>
                                     <?php endif; ?>

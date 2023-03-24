@@ -37,7 +37,7 @@ if (!$data->entity instanceof AEntity): ?>
                         <p>
                             <?php if ($data->entity->orderPaymentMethodId == 5):
                                 echo $data->OrderPaymentMethod->{$data->entity->orderPaymentMethodId}->text;
-                                echo money_format("%.2n",$data->entity->netTotal); ?> &euro;
+                                echo number_format($data->entity->netTotal,2,'.'); ?> &euro;
                             <?php else:
                                 echo $data->OrderPaymentMethod->{$data->entity->orderPaymentMethodId}->text;
                             endif; ?>

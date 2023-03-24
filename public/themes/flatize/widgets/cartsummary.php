@@ -90,21 +90,22 @@ use bamboo\core\theming\CWidgetHelper;
                             <div class="col-md-2 col-xs-6 product-subtotal">
                                 <?php if ($line->productPublicSku->isOnSale) : ?>
                                     <span
-                                            class="amount oldprice"><?php echo money_format("%.2n", $line->productPublicSku->price * $line->qty); ?>
+                                            class="amount oldprice"><?php echo number_format(($line->productPublicSku->price * $line->qty),2,'.'); ?>
                                         &euro;</span>
                                     <br/>
                                     <span
-                                            class="amount saleprice"><?php echo money_format("%.2n", $line->productPublicSku->salePrice * $line->qty); ?>
+                                            class="amount saleprice"><?php echo number_format( $line->productPublicSku->salePrice * $line->qty),2,'.'
+                                        ); ?>
                                         &euro;</span>
                                 <?php else: ?>
                                     <span
-                                            class="amount"><?php echo money_format("%.2n", $line->productPublicSku->price * $line->qty); ?>
+                                            class="amount"><?php echo number_format("%.2n", $line->productPublicSku->price * $line->qty); ?>
                                         &euro;</span>
                                 <?php endif; ?>
                                 <?php if ($line->getCouponDiscount()): ?>
                                     <div class="cart-line-coupon">
                                         <span class="amount">Coupon:</span><br/>
-                                        <span class="amount"><?php echo money_format("%.2n", $line->getCouponDiscount() * $line->qty); ?>
+                                        <span class="amount"><?php echo number_format(($line->getCouponDiscount() * $line->qty),2,'.'); ?>
                                             &euro;</span>
                                     </div>
                                 <?php endif; ?>

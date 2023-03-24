@@ -56,11 +56,11 @@
 
                                 </td>
                                 <td class="product-subtotal">
-                                    <span class="amount active-price"><?php echo money_format("%.2n",$orderLine->activePrice); ?> &euro;</span>
+                                    <span class="amount active-price"><?php echo number_format($orderLine->activePrice,2,'.'); ?> &euro;</span>
                                     <?php if($orderLine->couponCharge): ?>
                                         <div class="cart-line-coupon">
                                             <span class="amount">Coupon:</span><br />
-                                            <span class="amount"><?php echo money_format("%.2n", $orderLine->couponCharge); ?> &euro;</span>
+                                            <span class="amount"><?php echo number_format( $orderLine->couponCharge,2,'.'); ?> &euro;</span>
                                         </div>
                                     <?php endif; ?>
                                 </td>
@@ -79,7 +79,7 @@
                         </li>
                         <li>
                             <span class="list-title"><?php tpe('Totale') ?>:</span>
-                            <span><?php echo money_format('%.2n', $order->netTotal) ?></span>
+                            <span><?php echo number_format( $order->netTotal) ?></span>
                         </li>
                         <li>
                             <span class="list-title"><?php tpe('Pagamento') ?>:</span>

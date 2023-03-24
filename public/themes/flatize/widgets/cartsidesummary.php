@@ -6,7 +6,7 @@
                 <tr class="cart-subtotal">
                     <th><?php tpe($data->subTotal); ?></th>
                     <td class="product-price">
-                        <span class="amount"><?php echo money_format("%.2n",$total); ?> &euro;</span>
+                        <span class="amount"><?php echo number_format($total,2,'.'); ?> &euro;</span>
                     </td>
                 </tr>
 
@@ -17,7 +17,7 @@
                 if(!empty($data->entity->coupon) && $couponSale != 0):?>
                 <tr class="coupon">
                     <th><?php tpe($data->coupon) ?></th>
-                    <td><?php echo money_format("%.2n",$couponSale); ?> &euro;</td>
+                    <td><?php echo number_format($couponSale,2,'.'); ?> &euro;</td>
                 </tr>
                 <?php endif;
 
@@ -35,7 +35,7 @@
                         } else {
                             $difference = (double) $data->entity->orderPaymentMethod->modifier;
                         }
-                        echo money_format("%.2n",$difference) ?> &euro;<input type="hidden" value="<?php echo $difference ?>" id="coupon" name="coupon">
+                        echo number_format($difference,2,'.') ?> &euro;<input type="hidden" value="<?php echo $difference ?>" id="coupon" name="coupon">
                     </td>
                 </tr>
                 <?php endif;
@@ -49,16 +49,16 @@
                         <?php if($data->entity->shippingModifier == 0) {
                             echo $data->freeShipping;
                         } else {
-                            echo money_format("%.2n",$data->entity->shippingModifier)." &euro;";
+                            echo number_format($data->entity->shippingModifier,2,'.')." &euro;";
                         } ?>
-                        <input type="hidden" value="<?php echo money_format("%.2n",$data->entity->shippingModifier); ?> &euro;" id="shippingCost" name="shipping_method">
+                        <input type="hidden" value="<?php echo number_format($data->entity->shippingModifier,2,'.'); ?> &euro;" id="shippingCost" name="shipping_method">
                     </td>
                 </tr>
 
                 <tr class="total">
                     <th><?php tpe($data->cartTotal); ?></th>
                     <td class="product-price">
-                        <span data-total="" class="amount"><?php echo money_format("%.2n",$data->entity->getNetTotal()); ?> &euro;</span>
+                        <span data-total="" class="amount"><?php echo number_format($data->entity->getNetTotal(),2,'.'); ?> &euro;</span>
                     </td>
                 </tr>
             </tbody>
@@ -79,7 +79,7 @@
                    data-checkout-step="<?php echo $checkoutStep['pointer'] ?>"
                    href="<?php echo $nextCheckoutStepAddress ?>"
                    type="submit"
-                   data-total-amount="<?php echo money_format("%.2n",$total + $data->entity->shippingModifier + $difference + $couponSale); ?>"
+                   data-total-amount="<?php echo number_format(($total + $data->entity->shippingModifier + $difference + $couponSale),2,'.'); ?>"
                    data-order-id="<?php echo $data->entity->id; ?>"
                    class="btn btn-primary btn-block btn-sm"
                    data-loading-text="Loading..."> <?php echo $data->confirmAndContinue; ?> &nbsp;&nbsp;&nbsp;<i class="fa fa-hand-o-right"></i>
