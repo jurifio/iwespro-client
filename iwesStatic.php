@@ -11,7 +11,7 @@ define('DATE_MYSQL_FORMAT','Y-m-d H:i:s');
 
 require __DIR__."/../core/application/CMonkey.php";
 
-$ninetyNineMonkey = new \Monkey('NinetyNineMonkeys','pickyshop',dirname(__DIR__));
+$ninetyNineMonkey = new Monkey('NinetyNineMonkeys','pickyshop',dirname(__DIR__));
 $ninetyNineMonkey->setDefaultLanguage('it');
 $ninetyNineMonkey->enableDebugging();
 if (ENV == 'dev') {
