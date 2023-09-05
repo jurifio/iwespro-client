@@ -60,7 +60,7 @@
             "expire": 256320,
             "path": "/",
             "httpOnly": true,
-            "secure": false
+            "secure": true
         }
     },
     "fattureInCloud": {
@@ -78,12 +78,12 @@
         },
         "cacheEntityExpiration": 84600,
         "orderGateways": {
-            "thankYou": "http://dev.iwes.pro/:loc/thank-you/:ord",
-            "error": "http://dev.iwes.pro/:loc/error/:ord",
+            "thankYou": "https://dev.iwes.pro/:loc/thank-you/:ord",
+            "error": "https://dev.iwes.pro/:loc/error/:ord",
             "creditCard": {
                 "secret": "nY39ECW86g6x323Si78u1Zn7671hV6RR2DEVq32R",
                 "alias": "payment_756234",
-                "urlpost": "http://dev.iwes.pro/WebServiceLight/CreditCard"
+                "urlpost": "https://dev.iwes.pro/WebServiceLight/CreditCard"
             },
             "payPal": {
                 "business": "transazioni@pickyshop.com",

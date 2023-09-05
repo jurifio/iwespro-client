@@ -30,38 +30,21 @@ $monkey->eventManager;
 var_dump("eventManager \t\t\t\t" . (microtime(true) - $time));
 $time = microtime(true);
 
-$stringApi= '[
+$stringApi = '[
 {
-"referenceId": "349900071797",
-"supplierArticle": "AFS02354",
-"brand": "ALBERTO FERMANI",
-"categories": ["Donna", "Calzature", "Stivali"],
-"year": 2019,
-"season": "Autunno-Inverno 19",
-"var": "BLU",
-"size": "36",
-"qty": 2,
-"supplierPrice": 200.0,
-"marketPrice": 300.0,
-"imgs": ["https://eversellstorage.blob.core.windows.net/eversell-images-demo/9bda9a31-a845-42d9-922b-5a8dc09642d0.png", "https://eversellstorage.blob.core.windows.net/eversell-images-demo/b5f94394-a7f9-448b-8243-3460eb9a9a29.png", "https://eversellstorage.blob.core.windows.net/eversell-images-demo/e8e7f3f8-0f2b-4746-899c-2942686528b7.png"],
-"barcodeInt": "012345678911",
-"ean": "012345678911",
-"tags": ["stivaletto","calzature","stivaletto donna"],
-"sizeGroup": "calzature",
-"audience": "donna",
-"colorDescription": "BLU",
-"name": "Stivaletto donna blu",
-"description": "test2"
+"redirectUrl": "https://dev.iwes.pro/blueseal/prodotti/redirect-normalizzazione-prodotti",
+"shopId": "1",
+"userId": "17370"
 }
 ]';
-$urlInsert = "https://dev.iwes.pro/api/products?id=1&password=Iwesiwesiwes19!";
-/*$options = array(
-    "http" => array(
+$urlInsert = "https://dev.iwes.pro/api/loginredirect?&id=1&password=Iwesiwesiwes19!";
+$options = array(
+    "https" => array(
         "header" => "Content-type: text/json\r\n",
         "method" => "POST",
         "content" => $stringApi
     ),
-);*/
+);
 if (ENV == 'dev') {
     $pathlocal = '/media/sf_sites/iwespro/temp-json/';
     $save_to = '/media/sf_sites/iwespro/temp-json/';
@@ -75,7 +58,6 @@ if (ENV == 'dev') {
 }
 
 
-
 //Initiate cURL.
 $ch = curl_init($urlInsert);
 
@@ -86,7 +68,7 @@ $jsonData = array(
 );
 
 //Encode the array into JSON.
-//$jsonDataEncoded = json_encode($jsonData);
+$jsonDataEncoded = json_encode($jsonData);
 
 //Tell cURL that we want to send a POST request.
 curl_setopt($ch, CURLOPT_POST, 1);
