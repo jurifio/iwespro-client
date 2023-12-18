@@ -17,10 +17,10 @@ RewriteRule (.*) https://%{HTTP_HOST} [L,R=301]
 
 #if is you
 RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteCond %{REMOTE_ADDR} 93.43.116.170
+#RewriteCond %{REMOTE_ADDR} http://134.255.163.4/
 RewriteRule ^(.*)$ /router.php/$1 [L]
 
 #if is mine (dev)
 #RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteCond %{REMOTE_ADDR} !=93.43.116.170
+#RewriteCond %{REMOTE_ADDR} !=http://134.255.163.4/
 #RewriteRule ^(.*)$ /maintenance.php/$1 [L]

@@ -11,4 +11,4 @@ allow from 93.40.237.61
 allow from 82.49.6.4
 allow from 192.168.1.246
 allow from 192.168.1.156
-allow from 93.43.116.170
+allow from http://134.255.163.4/
