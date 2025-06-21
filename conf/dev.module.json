@@ -12,7 +12,7 @@
         "debug-mode": true,
         "name": "Iwes",
         "default-lang": "it",
-        "shop-id": 44
+        "shop-id": 1
     },
     "paths": {
         "domain": "dev.iwes.pro",
