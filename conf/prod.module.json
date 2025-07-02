@@ -38,6 +38,7 @@
         "productSync": "/client/public/media/productsync",
         "blogImages": "/client/public/media/blogImages",
         "tempFolder": "/temp",
+        "productFolder":"/client/public/product",
         "tempFolderCsv":"/temp-eancsv",
         "blueseal-addon": "/back/addon"
     },
