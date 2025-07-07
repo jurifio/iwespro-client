@@ -6,7 +6,7 @@
     "general": {
         "timezone": "Europe/Rome",
         "admin-email": "it@iwes.it",
-        "product-photo-host": "iwes.s3.eu-west-1.amazonaws.com/",
+        "product-photo-host": "https://iwes.s3.eu-west-1.amazonaws.com/",
         "product-photo-local": "https://iwes.pro/",
         "multi-shop": true,
         "main-shop-address": 4,
